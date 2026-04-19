@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Budget Tool — Free Online Budget Calculator</title>
+<title>AI Budget Tool — Free Online Budget Calculator | Track Income & Expenses</title>
+<meta name="description" content="Free online budget calculator. Track your monthly income, expenses and savings in 50+ global currencies. No sign-up required. Instant results.">
+<meta name="keywords" content="budget calculator, free budget tool, income expense tracker, savings calculator, personal finance">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AI Budget Tool — Free Online Budget Calculator">
+<meta property="og:description" content="Track income, expenses and savings in 50+ currencies. Free, instant, no sign-up.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.aibudgettool.com">
+<link rel="canonical" href="https://www.aibudgettool.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,124 +36,123 @@
     overflow-x: hidden;
   }
   body::before, body::after {
-    content: '';
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.25;
-    pointer-events: none;
-    z-index: 0;
-    animation: drift 12s ease-in-out infinite alternate;
+    content:'';position:fixed;border-radius:50%;filter:blur(80px);opacity:0.2;pointer-events:none;z-index:0;animation:drift 12s ease-in-out infinite alternate;
   }
-  body::before { width:500px;height:500px;background:radial-gradient(circle,#7c3aed,transparent);top:-100px;left:-100px; }
-  body::after  { width:400px;height:400px;background:radial-gradient(circle,#2563eb,transparent);bottom:-80px;right:-80px;animation-delay:-6s; }
-  @keyframes drift { from{transform:translate(0,0) scale(1)} to{transform:translate(40px,30px) scale(1.1)} }
+  body::before{width:400px;height:400px;background:radial-gradient(circle,#7c3aed,transparent);top:-100px;left:-100px;}
+  body::after{width:350px;height:350px;background:radial-gradient(circle,#2563eb,transparent);bottom:-80px;right:-80px;animation-delay:-6s;}
+  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.1)}}
 
-  .container { max-width:860px;margin:0 auto;padding:0 20px 60px;position:relative;z-index:1; }
+  .container{max-width:780px;margin:0 auto;padding:0 16px 40px;position:relative;z-index:1;}
 
-  nav { display:flex;justify-content:space-between;align-items:center;padding:24px 0 20px; }
-  .logo { font-size:18px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-  .nav-links { display:flex;gap:24px; }
-  .nav-links a { color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s; }
-  .nav-links a:hover { color:var(--text); }
+  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;}
+  .logo{font-size:16px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .nav-links{display:flex;gap:20px;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
 
-  .hero { text-align:center;padding:48px 0 40px; }
-  .hero-badge { display:inline-block;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:var(--accent);font-size:12px;font-weight:500;padding:5px 16px;border-radius:20px;margin-bottom:20px;letter-spacing:.04em; }
-  .hero h1 { font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.15;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#c4b5fd 50%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-  .hero p { font-size:17px;color:var(--text-muted);max-width:520px;margin:0 auto;line-height:1.7; }
+  .hero{text-align:center;padding:24px 0 20px;}
+  .hero-badge{display:inline-block;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:var(--accent);font-size:11px;font-weight:500;padding:4px 14px;border-radius:20px;margin-bottom:12px;letter-spacing:.04em;}
+  .hero h1{font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:10px;background:linear-gradient(135deg,#fff 0%,#c4b5fd 50%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .hero p{font-size:15px;color:var(--text-muted);max-width:480px;margin:0 auto;line-height:1.6;}
 
-  .glass { background:var(--glass-bg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--glass-shadow);padding:28px 32px;margin-bottom:20px;transition:border-color .3s,transform .3s; }
-  .glass:hover { border-color:rgba(167,139,250,0.3);transform:translateY(-2px); }
+  .glass{background:var(--glass-bg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--glass-shadow);padding:18px 22px;margin-bottom:12px;transition:border-color .3s;}
+  .glass:hover{border-color:rgba(167,139,250,0.3);}
 
-  .section-title { font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:8px; }
-  .section-title::after { content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,0.4),transparent); }
+  .section-title{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,0.4),transparent);}
 
-  /* CURRENCY SELECTOR */
-  .currency-selector-wrap { margin-bottom:24px; }
-  .currency-selector-wrap label { font-size:13px;color:var(--text-muted);font-weight:500;display:block;margin-bottom:8px; }
-  .currency-row { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
-  select {
-    width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-    border-radius:10px;padding:11px 14px;color:var(--text);font-size:14px;
-    font-family:'Inter',sans-serif;outline:none;cursor:pointer;
-    transition:border-color .2s,background .2s;
-    -webkit-appearance:none;appearance:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
+  .currency-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:12px;}
+  select{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:8px 32px 8px 10px;color:var(--text);font-size:13px;font-family:'Inter',sans-serif;outline:none;cursor:pointer;width:100%;transition:border-color .2s;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+  select:focus{border-color:var(--accent);}
+  select option{background:#1a1040;color:#f1f5f9;}
+
+  .currency-pill{display:flex;align-items:center;gap:6px;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);border-radius:8px;padding:7px 12px;white-space:nowrap;}
+  .currency-pill .sym{font-size:16px;font-weight:700;color:var(--accent);}
+  .currency-pill .code{font-size:13px;font-weight:600;color:var(--text);}
+
+  .income-row{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;}
+  .income-label{font-size:13px;color:var(--text-muted);font-weight:500;white-space:nowrap;}
+  .input-wrap{position:relative;}
+  .currency-symbol{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:14px;font-weight:500;pointer-events:none;z-index:1;}
+
+  input[type="number"],input[type="text"]{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:9px 10px 9px 28px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;-moz-appearance:textfield;width:100%;}
+  input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;}
+  input[type="number"]:focus,input[type="text"]:focus{border-color:var(--accent);background:rgba(167,139,250,0.08);}
+  input::placeholder{color:rgba(148,163,184,0.5);}
+
+  .expense-row{display:grid;grid-template-columns:1fr 120px 32px;gap:8px;margin-bottom:8px;align-items:center;animation:fadeIn .2s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  .expense-row input[type="text"]{padding-left:10px;}
+
+  .btn-remove{width:32px;height:32px;border-radius:7px;border:1px solid rgba(248,113,113,0.3);background:rgba(248,113,113,0.08);color:var(--red);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;}
+  .btn-remove:hover{background:rgba(248,113,113,0.2);}
+
+  .btn-add{display:flex;align-items:center;gap:6px;background:rgba(167,139,250,0.08);border:1px dashed rgba(167,139,250,0.3);border-radius:8px;color:var(--accent);font-size:12px;font-weight:500;padding:8px 14px;cursor:pointer;width:100%;margin-top:6px;transition:background .2s;font-family:'Inter',sans-serif;}
+  .btn-add:hover{background:rgba(167,139,250,0.15);}
+
+  .btn-calc{width:100%;padding:14px;background:linear-gradient(135deg,#7c3aed,#2563eb);border:none;border-radius:12px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.02em;transition:opacity .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(124,58,237,0.4);margin-top:4px;}
+  .btn-calc:hover{opacity:.92;transform:translateY(-1px);box-shadow:0 6px 26px rgba(124,58,237,0.5);}
+  .btn-calc:active{transform:translateY(0);}
+
+  #results{display:none;}
+  #results.visible{display:block;animation:fadeIn .4s ease;}
+
+  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+  .result-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:14px 12px;text-align:center;}
+  .rc-label{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
+  .rc-value{font-size:20px;font-weight:700;line-height:1;word-break:break-all;}
+  .rc-sub{font-size:11px;color:var(--text-muted);margin-top:4px;}
+  .color-income{color:var(--accent2);}
+  .color-expense{color:#fb923c;}
+  .color-green{color:var(--green);}
+  .color-red{color:var(--red);}
+
+  .savings-bar-wrap{margin:12px 0 4px;}
+  .savings-bar-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);margin-bottom:5px;}
+  .savings-bar-track{height:6px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden;}
+  .savings-bar-fill{height:100%;border-radius:999px;transition:width .8s cubic-bezier(.4,0,.2,1);width:0%;}
+  .bar-green{background:linear-gradient(90deg,#34d399,#059669);}
+  .bar-red{background:linear-gradient(90deg,#f87171,#dc2626);}
+
+  .advice-box{border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.6;margin-top:12px;}
+  .advice-green{background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25);color:#6ee7b7;}
+  .advice-red{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.25);color:#fca5a5;}
+
+  /* ABOUT SECTION */
+  .about-section{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:18px 22px;margin-bottom:12px;}
+  .about-section h2{font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px;}
+  .about-section p{font-size:13px;color:var(--text-muted);line-height:1.7;}
+
+  /* COMING SOON BANNER */
+  .coming-soon{border:1px dashed rgba(167,139,250,0.3);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:12px;background:rgba(167,139,250,0.04);}
+  .coming-soon-text{font-size:12px;color:var(--text-muted);letter-spacing:.03em;}
+  .coming-soon-text span{color:var(--accent);font-weight:600;}
+  .stars{color:var(--accent);font-size:11px;display:block;margin-bottom:4px;letter-spacing:.15em;}
+
+  /* AD SLOT - bottom only, invisible placeholder */
+  .ad-slot-bottom{min-height:100px;margin:12px 0;text-align:center;}
+
+  footer{text-align:center;padding:20px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.07);margin-top:12px;}
+  footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
+  footer a:hover{color:var(--accent);}
+  .footer-copy{margin-top:8px;font-size:11px;opacity:.5;}
+
+  @media(max-width:600px){
+    .container{padding:0 12px 32px;}
+    .glass,.about-section{padding:14px 16px;}
+    .results-grid{grid-template-columns:1fr 1fr;gap:8px;}
+    .rc-value{font-size:17px;}
+    .expense-row{grid-template-columns:1fr 100px 32px;gap:6px;}
+    .currency-row{grid-template-columns:1fr auto;}
+    .income-row{grid-template-columns:1fr;gap:6px;}
+    nav{padding:14px 0 10px;}
+    .hero{padding:16px 0 14px;}
+    .hero h1{font-size:26px;}
+    .hero p{font-size:14px;}
   }
-  select:focus { border-color:var(--accent);background-color:rgba(167,139,250,0.08); }
-  select option { background:#1a1040;color:#f1f5f9; }
-
-  .currency-preview { background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 16px;font-size:14px;color:var(--text-muted);display:flex;align-items:center;gap:8px; }
-  .currency-preview .sym { font-size:20px;font-weight:600;color:var(--accent); }
-  .currency-preview .cur-name { font-size:13px; }
-
-  .input-group { display:flex;flex-direction:column;gap:6px;margin-bottom:16px; }
-  label { font-size:13px;color:var(--text-muted);font-weight:500; }
-  .input-wrap { position:relative; }
-  .currency-symbol { position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:15px;font-weight:500;pointer-events:none;z-index:1;min-width:16px;text-align:center; }
-
-  input[type="number"], input[type="text"] {
-    width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-    border-radius:10px;padding:12px 14px 12px 36px;color:var(--text);font-size:15px;
-    font-family:'Inter',sans-serif;outline:none;transition:border-color .2s,background .2s;
-    -moz-appearance:textfield;
-  }
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance:none; }
-  input[type="number"]:focus, input[type="text"]:focus { border-color:var(--accent);background:rgba(167,139,250,0.08); }
-  input::placeholder { color:rgba(148,163,184,0.5); }
-
-  .expense-row { display:grid;grid-template-columns:1fr 140px 36px;gap:10px;margin-bottom:10px;align-items:center;animation:fadeIn .25s ease; }
-  @keyframes fadeIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:none} }
-  .expense-row input[type="text"] { padding-left:14px; }
-
-  .btn-remove { width:36px;height:36px;border-radius:8px;border:1px solid rgba(248,113,113,0.3);background:rgba(248,113,113,0.08);color:var(--red);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s;flex-shrink:0; }
-  .btn-remove:hover { background:rgba(248,113,113,0.2);transform:scale(1.1); }
-
-  .btn-add { display:flex;align-items:center;gap:8px;background:rgba(167,139,250,0.1);border:1px dashed rgba(167,139,250,0.35);border-radius:10px;color:var(--accent);font-size:13px;font-weight:500;padding:10px 16px;cursor:pointer;width:100%;margin-top:8px;transition:background .2s;font-family:'Inter',sans-serif; }
-  .btn-add:hover { background:rgba(167,139,250,0.18); }
-
-  .btn-calc { width:100%;padding:15px;background:linear-gradient(135deg,#7c3aed,#2563eb);border:none;border-radius:12px;color:#fff;font-size:16px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.02em;transition:opacity .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 24px rgba(124,58,237,0.4);margin-top:8px; }
-  .btn-calc:hover { opacity:.92;transform:translateY(-1px);box-shadow:0 8px 30px rgba(124,58,237,0.5); }
-  .btn-calc:active { transform:translateY(0); }
-
-  #results { display:none; }
-  #results.visible { display:block;animation:fadeIn .4s ease; }
-
-  .results-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px; }
-  .result-card { background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;text-align:center;transition:transform .2s; }
-  .result-card:hover { transform:translateY(-3px); }
-  .rc-label { font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px; }
-  .rc-value { font-size:24px;font-weight:700;line-height:1;word-break:break-all; }
-  .rc-sub { font-size:12px;color:var(--text-muted);margin-top:5px; }
-  .color-income { color:var(--accent2); }
-  .color-expense { color:#fb923c; }
-  .color-green { color:var(--green); }
-  .color-red { color:var(--red); }
-
-  .savings-bar-wrap { margin:16px 0 6px; }
-  .savings-bar-labels { display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-bottom:7px; }
-  .savings-bar-track { height:8px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden; }
-  .savings-bar-fill { height:100%;border-radius:999px;transition:width .8s cubic-bezier(.4,0,.2,1);width:0%; }
-  .bar-green { background:linear-gradient(90deg,#34d399,#059669); }
-  .bar-red   { background:linear-gradient(90deg,#f87171,#dc2626); }
-
-  .advice-box { border-radius:12px;padding:16px 20px;font-size:14px;line-height:1.7;margin-top:16px; }
-  .advice-green { background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25);color:#6ee7b7; }
-  .advice-red   { background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.25);color:#fca5a5; }
-
-  footer { text-align:center;padding:32px 0 0;font-size:13px;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.07);margin-top:20px; }
-  footer a { color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color .2s; }
-  footer a:hover { color:var(--accent); }
-  .footer-copy { margin-top:10px;font-size:12px;opacity:.5; }
-
-  @media(max-width:600px) {
-    .glass { padding:20px 18px; }
-    .expense-row { grid-template-columns:1fr 110px 36px;gap:7px; }
-    nav { flex-direction:column;gap:12px; }
-    .results-grid { grid-template-columns:1fr 1fr; }
-    .currency-row { grid-template-columns:1fr; }
+  @media(max-width:400px){
+    .expense-row{grid-template-columns:1fr 88px 32px;}
+    .results-grid{grid-template-columns:1fr 1fr;}
   }
 </style>
 </head>
@@ -161,97 +168,73 @@
   </nav>
 
   <div class="hero">
-    <div class="hero-badge">Free Online Budget Calculator — Global Currencies</div>
-    <h1>Take Control of<br/>Your Finances</h1>
-    <p>Track income, manage expenses, and discover how much you can save — in your currency, instantly, with zero sign-up.</p>
+    <div class="hero-badge">Free · 50+ Global Currencies · No Sign-up</div>
+    <h1>Take Control of Your Finances</h1>
+    <p>Track income, manage expenses, and discover how much you can save — in your currency, instantly.</p>
   </div>
 
-  <!-- CURRENCY SELECTOR CARD -->
+  <!-- CURRENCY + INCOME -->
   <div class="glass">
-    <div class="section-title">Your Currency</div>
-    <div class="currency-selector-wrap">
-      <div class="currency-row">
-        <div>
-          <label for="currency-select">Select currency</label>
-          <select id="currency-select" onchange="updateCurrency()">
-            <optgroup label="Popular">
-              <option value="INR|₹|Indian Rupee">🇮🇳 INR — Indian Rupee (₹)</option>
-              <option value="USD|$|US Dollar" selected>🇺🇸 USD — US Dollar ($)</option>
-              <option value="EUR|€|Euro">🇪🇺 EUR — Euro (€)</option>
-              <option value="GBP|£|British Pound">🇬🇧 GBP — British Pound (£)</option>
-              <option value="JPY|¥|Japanese Yen">🇯🇵 JPY — Japanese Yen (¥)</option>
-              <option value="AUD|A$|Australian Dollar">🇦🇺 AUD — Australian Dollar (A$)</option>
-              <option value="CAD|C$|Canadian Dollar">🇨🇦 CAD — Canadian Dollar (C$)</option>
-              <option value="SGD|S$|Singapore Dollar">🇸🇬 SGD — Singapore Dollar (S$)</option>
-              <option value="AED|د.إ|UAE Dirham">🇦🇪 AED — UAE Dirham (د.إ)</option>
-              <option value="SAR|﷼|Saudi Riyal">🇸🇦 SAR — Saudi Riyal (﷼)</option>
-            </optgroup>
-            <optgroup label="Asia Pacific">
-              <option value="CNY|¥|Chinese Yuan">🇨🇳 CNY — Chinese Yuan (¥)</option>
-              <option value="KRW|₩|South Korean Won">🇰🇷 KRW — South Korean Won (₩)</option>
-              <option value="IDR|Rp|Indonesian Rupiah">🇮🇩 IDR — Indonesian Rupiah (Rp)</option>
-              <option value="MYR|RM|Malaysian Ringgit">🇲🇾 MYR — Malaysian Ringgit (RM)</option>
-              <option value="THB|฿|Thai Baht">🇹🇭 THB — Thai Baht (฿)</option>
-              <option value="PHP|₱|Philippine Peso">🇵🇭 PHP — Philippine Peso (₱)</option>
-              <option value="VND|₫|Vietnamese Dong">🇻🇳 VND — Vietnamese Dong (₫)</option>
-              <option value="PKR|₨|Pakistani Rupee">🇵🇰 PKR — Pakistani Rupee (₨)</option>
-              <option value="BDT|৳|Bangladeshi Taka">🇧🇩 BDT — Bangladeshi Taka (৳)</option>
-              <option value="LKR|Rs|Sri Lankan Rupee">🇱🇰 LKR — Sri Lankan Rupee (Rs)</option>
-              <option value="NZD|NZ$|New Zealand Dollar">🇳🇿 NZD — New Zealand Dollar (NZ$)</option>
-              <option value="HKD|HK$|Hong Kong Dollar">🇭🇰 HKD — Hong Kong Dollar (HK$)</option>
-              <option value="TWD|NT$|Taiwan Dollar">🇹🇼 TWD — Taiwan Dollar (NT$)</option>
-            </optgroup>
-            <optgroup label="Europe">
-              <option value="CHF|Fr|Swiss Franc">🇨🇭 CHF — Swiss Franc (Fr)</option>
-              <option value="SEK|kr|Swedish Krona">🇸🇪 SEK — Swedish Krona (kr)</option>
-              <option value="NOK|kr|Norwegian Krone">🇳🇴 NOK — Norwegian Krone (kr)</option>
-              <option value="DKK|kr|Danish Krone">🇩🇰 DKK — Danish Krone (kr)</option>
-              <option value="PLN|zł|Polish Zloty">🇵🇱 PLN — Polish Zloty (zł)</option>
-              <option value="CZK|Kč|Czech Koruna">🇨🇿 CZK — Czech Koruna (Kč)</option>
-              <option value="HUF|Ft|Hungarian Forint">🇭🇺 HUF — Hungarian Forint (Ft)</option>
-              <option value="RON|lei|Romanian Leu">🇷🇴 RON — Romanian Leu (lei)</option>
-              <option value="TRY|₺|Turkish Lira">🇹🇷 TRY — Turkish Lira (₺)</option>
-              <option value="RUB|₽|Russian Ruble">🇷🇺 RUB — Russian Ruble (₽)</option>
-              <option value="UAH|₴|Ukrainian Hryvnia">🇺🇦 UAH — Ukrainian Hryvnia (₴)</option>
-            </optgroup>
-            <optgroup label="Americas">
-              <option value="BRL|R$|Brazilian Real">🇧🇷 BRL — Brazilian Real (R$)</option>
-              <option value="MXN|$|Mexican Peso">🇲🇽 MXN — Mexican Peso ($)</option>
-              <option value="ARS|$|Argentine Peso">🇦🇷 ARS — Argentine Peso ($)</option>
-              <option value="CLP|$|Chilean Peso">🇨🇱 CLP — Chilean Peso ($)</option>
-              <option value="COP|$|Colombian Peso">🇨🇴 COP — Colombian Peso ($)</option>
-              <option value="PEN|S/|Peruvian Sol">🇵🇪 PEN — Peruvian Sol (S/)</option>
-            </optgroup>
-            <optgroup label="Africa & Middle East">
-              <option value="ZAR|R|South African Rand">🇿🇦 ZAR — South African Rand (R)</option>
-              <option value="NGN|₦|Nigerian Naira">🇳🇬 NGN — Nigerian Naira (₦)</option>
-              <option value="KES|KSh|Kenyan Shilling">🇰🇪 KES — Kenyan Shilling (KSh)</option>
-              <option value="GHS|₵|Ghanaian Cedi">🇬🇭 GHS — Ghanaian Cedi (₵)</option>
-              <option value="EGP|£|Egyptian Pound">🇪🇬 EGP — Egyptian Pound (£)</option>
-              <option value="QAR|﷼|Qatari Riyal">🇶🇦 QAR — Qatari Riyal (﷼)</option>
-              <option value="KWD|د.ك|Kuwaiti Dinar">🇰🇼 KWD — Kuwaiti Dinar (د.ك)</option>
-            </optgroup>
-          </select>
-        </div>
-        <div>
-          <label>Selected currency</label>
-          <div class="currency-preview">
-            <span class="sym" id="preview-sym">$</span>
-            <div>
-              <div style="font-weight:500;color:var(--text)" id="preview-code">USD</div>
-              <div class="cur-name" id="preview-name">US Dollar</div>
-            </div>
-          </div>
-        </div>
+    <div class="section-title">Currency & Income</div>
+    <div class="currency-row">
+      <select id="currency-select" onchange="updateCurrency()">
+        <optgroup label="Popular">
+          <option value="INR|₹|Indian Rupee">🇮🇳 INR — Indian Rupee (₹)</option>
+          <option value="USD|$|US Dollar" selected>🇺🇸 USD — US Dollar ($)</option>
+          <option value="EUR|€|Euro">🇪🇺 EUR — Euro (€)</option>
+          <option value="GBP|£|British Pound">🇬🇧 GBP — Pound (£)</option>
+          <option value="JPY|¥|Japanese Yen">🇯🇵 JPY — Yen (¥)</option>
+          <option value="AUD|A$|Australian Dollar">🇦🇺 AUD — AUD (A$)</option>
+          <option value="CAD|C$|Canadian Dollar">🇨🇦 CAD — CAD (C$)</option>
+          <option value="SGD|S$|Singapore Dollar">🇸🇬 SGD — SGD (S$)</option>
+          <option value="AED|د.إ|UAE Dirham">🇦🇪 AED — Dirham (د.إ)</option>
+          <option value="SAR|﷼|Saudi Riyal">🇸🇦 SAR — Riyal (﷼)</option>
+        </optgroup>
+        <optgroup label="Asia Pacific">
+          <option value="CNY|¥|Chinese Yuan">🇨🇳 CNY — Yuan (¥)</option>
+          <option value="KRW|₩|South Korean Won">🇰🇷 KRW — Won (₩)</option>
+          <option value="IDR|Rp|Indonesian Rupiah">🇮🇩 IDR — Rupiah (Rp)</option>
+          <option value="MYR|RM|Malaysian Ringgit">🇲🇾 MYR — Ringgit (RM)</option>
+          <option value="THB|฿|Thai Baht">🇹🇭 THB — Baht (฿)</option>
+          <option value="PHP|₱|Philippine Peso">🇵🇭 PHP — Peso (₱)</option>
+          <option value="VND|₫|Vietnamese Dong">🇻🇳 VND — Dong (₫)</option>
+          <option value="PKR|₨|Pakistani Rupee">🇵🇰 PKR — Rupee (₨)</option>
+          <option value="BDT|৳|Bangladeshi Taka">🇧🇩 BDT — Taka (৳)</option>
+          <option value="NZD|NZ$|New Zealand Dollar">🇳🇿 NZD — NZD (NZ$)</option>
+          <option value="HKD|HK$|Hong Kong Dollar">🇭🇰 HKD — HKD (HK$)</option>
+        </optgroup>
+        <optgroup label="Europe">
+          <option value="CHF|Fr|Swiss Franc">🇨🇭 CHF — Franc (Fr)</option>
+          <option value="SEK|kr|Swedish Krona">🇸🇪 SEK — Krona (kr)</option>
+          <option value="NOK|kr|Norwegian Krone">🇳🇴 NOK — Krone (kr)</option>
+          <option value="DKK|kr|Danish Krone">🇩🇰 DKK — Krone (kr)</option>
+          <option value="PLN|zł|Polish Zloty">🇵🇱 PLN — Zloty (zł)</option>
+          <option value="TRY|₺|Turkish Lira">🇹🇷 TRY — Lira (₺)</option>
+          <option value="RUB|₽|Russian Ruble">🇷🇺 RUB — Ruble (₽)</option>
+        </optgroup>
+        <optgroup label="Americas">
+          <option value="BRL|R$|Brazilian Real">🇧🇷 BRL — Real (R$)</option>
+          <option value="MXN|$|Mexican Peso">🇲🇽 MXN — Peso ($)</option>
+          <option value="ARS|$|Argentine Peso">🇦🇷 ARS — Peso ($)</option>
+          <option value="CLP|$|Chilean Peso">🇨🇱 CLP — Peso ($)</option>
+          <option value="COP|$|Colombian Peso">🇨🇴 COP — Peso ($)</option>
+        </optgroup>
+        <optgroup label="Africa & Middle East">
+          <option value="ZAR|R|South African Rand">🇿🇦 ZAR — Rand (R)</option>
+          <option value="NGN|₦|Nigerian Naira">🇳🇬 NGN — Naira (₦)</option>
+          <option value="KES|KSh|Kenyan Shilling">🇰🇪 KES — Shilling (KSh)</option>
+          <option value="GHS|₵|Ghanaian Cedi">🇬🇭 GHS — Cedi (₵)</option>
+          <option value="EGP|£|Egyptian Pound">🇪🇬 EGP — Pound (£)</option>
+          <option value="KWD|د.ك|Kuwaiti Dinar">🇰🇼 KWD — Dinar (د.ك)</option>
+        </optgroup>
+      </select>
+      <div class="currency-pill">
+        <span class="sym" id="preview-sym">$</span>
+        <span class="code" id="preview-code">USD</span>
       </div>
     </div>
-  </div>
-
-  <!-- INCOME -->
-  <div class="glass">
-    <div class="section-title">Monthly Income</div>
-    <div class="input-group">
-      <label for="income">Total monthly income</label>
+    <div class="income-row">
+      <span class="income-label">Monthly income</span>
       <div class="input-wrap">
         <span class="currency-symbol" id="income-sym">$</span>
         <input type="number" id="income" placeholder="e.g. 5000" min="0"/>
@@ -270,27 +253,27 @@
 
   <!-- RESULTS -->
   <div id="results" class="glass">
-    <div class="section-title">Your Budget Summary</div>
+    <div class="section-title">Budget Summary</div>
     <div class="results-grid">
       <div class="result-card">
-        <div class="rc-label">Total Income</div>
+        <div class="rc-label">Income</div>
         <div class="rc-value color-income" id="r-income">—</div>
         <div class="rc-sub">per month</div>
       </div>
       <div class="result-card">
-        <div class="rc-label">Total Expenses</div>
+        <div class="rc-label">Expenses</div>
         <div class="rc-value color-expense" id="r-expense">—</div>
         <div class="rc-sub">per month</div>
       </div>
       <div class="result-card">
-        <div class="rc-label">Net Savings</div>
+        <div class="rc-label">Savings</div>
         <div class="rc-value" id="r-savings">—</div>
         <div class="rc-sub">per month</div>
       </div>
       <div class="result-card">
-        <div class="rc-label">Savings Rate</div>
+        <div class="rc-label">Rate</div>
         <div class="rc-value" id="r-rate">—</div>
-        <div class="rc-sub">of income saved</div>
+        <div class="rc-sub">of income</div>
       </div>
     </div>
     <div class="savings-bar-wrap">
@@ -300,133 +283,143 @@
     <div class="advice-box" id="advice-box"></div>
   </div>
 
+  <!-- ABOUT SECTION (2-3 lines, helps AdSense & SEO) -->
+  <div class="about-section">
+    <h2>About AI Budget Tool</h2>
+    <p>AI Budget Tool is a free, no-login budget calculator that helps you track monthly income and expenses across 50+ global currencies. Enter your numbers, get instant savings analysis, and take control of your personal finances — whether you're in India, the US, Europe, or anywhere in the world.</p>
+  </div>
+
+  <!-- COMING SOON BANNER -->
+  <div class="coming-soon">
+    <span class="stars">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
+    <div class="coming-soon-text">
+      <span>More tools on the fly — stay tuned for this website!</span><br>
+      <span style="font-size:11px;opacity:.7;">World Clock · Age Calculator · Currency Converter · JPG Converter · and more coming soon</span>
+    </div>
+    <span class="stars" style="margin-top:6px;">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
+  </div>
+
+  <!-- AD SLOT BOTTOM — invisible, ready for AdSense code -->
+  <div class="ad-slot-bottom" id="ad-bottom">
+    <!-- Google AdSense code goes here after approval -->
+  </div>
+
   <footer>
     <div>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="mailto:hello@aibudgettool.com">Contact</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
   </footer>
 
 </div>
 <script>
-  // Currency state
-  let curSym = '$', curCode = 'USD', curName = 'US Dollar';
+  let curSym='$',curCode='USD',curName='US Dollar';
 
-  // Parse selected option
-  function updateCurrency() {
-    const val = document.getElementById('currency-select').value;
-    const parts = val.split('|');
-    curCode = parts[0]; curSym = parts[1]; curName = parts[2];
-    document.getElementById('preview-sym').textContent = curSym;
-    document.getElementById('preview-code').textContent = curCode;
-    document.getElementById('preview-name').textContent = curName;
-    document.getElementById('income-sym').textContent = curSym;
-    // Update all expense row symbols
-    document.querySelectorAll('.exp-sym').forEach(el => el.textContent = curSym);
+  function updateCurrency(){
+    const val=document.getElementById('currency-select').value;
+    const parts=val.split('|');
+    curCode=parts[0];curSym=parts[1];curName=parts[2];
+    document.getElementById('preview-sym').textContent=curSym;
+    document.getElementById('preview-code').textContent=curCode;
+    document.getElementById('income-sym').textContent=curSym;
+    document.querySelectorAll('.exp-sym').forEach(el=>el.textContent=curSym);
   }
 
-  // Format number with currency
-  function fmt(n) {
-    const abs = Math.abs(n);
-    // For currencies with large denominations use no decimals
-    const noDecimals = ['JPY','KRW','VND','IDR','HUF','CLP','COP'];
-    const opts = noDecimals.includes(curCode)
-      ? { maximumFractionDigits: 0 }
-      : { minimumFractionDigits: 0, maximumFractionDigits: 2 };
-    return curSym + abs.toLocaleString('en-US', opts);
+  function fmt(n){
+    const abs=Math.abs(n);
+    const noDecimals=['JPY','KRW','VND','IDR','HUF','CLP','COP'];
+    const opts=noDecimals.includes(curCode)?{maximumFractionDigits:0}:{minimumFractionDigits:0,maximumFractionDigits:2};
+    return curSym+abs.toLocaleString('en-US',opts);
   }
 
-  // Expense rows
-  const defaults = [
-    { name: 'Rent / Housing', amount: '' },
-    { name: 'Food & Groceries', amount: '' },
-    { name: 'Transport', amount: '' },
-    { name: 'Utilities', amount: '' },
-    { name: 'Entertainment', amount: '' },
+  const defaults=[
+    {name:'Rent / Housing',amount:''},
+    {name:'Food & Groceries',amount:''},
+    {name:'Transport',amount:''},
+    {name:'Utilities',amount:''},
+    {name:'Entertainment',amount:''},
   ];
-  let rows = defaults.map(r => ({...r}));
+  let rows=defaults.map(r=>({...r}));
 
-  function buildRows(rows) {
-    const list = document.getElementById('expense-list');
-    list.innerHTML = '';
-    rows.forEach((r, i) => {
-      const row = document.createElement('div');
-      row.className = 'expense-row';
-      row.innerHTML = `
-        <div class="input-wrap">
-          <input type="text" placeholder="Category name" value="${r.name}" oninput="rows[${i}].name=this.value"/>
-        </div>
+  function buildRows(rows){
+    const list=document.getElementById('expense-list');
+    list.innerHTML='';
+    rows.forEach((r,i)=>{
+      const row=document.createElement('div');
+      row.className='expense-row';
+      row.innerHTML=`
+        <input type="text" placeholder="Category" value="${r.name}" oninput="rows[${i}].name=this.value"/>
         <div class="input-wrap">
           <span class="currency-symbol exp-sym">${curSym}</span>
           <input type="number" placeholder="Amount" value="${r.amount}" min="0" oninput="rows[${i}].amount=this.value"/>
         </div>
-        <button class="btn-remove" onclick="removeRow(${i})" title="Remove">×</button>
+        <button class="btn-remove" onclick="removeRow(${i})">×</button>
       `;
       list.appendChild(row);
     });
   }
   buildRows(rows);
 
-  function addRow() {
-    rows.push({ name: '', amount: '' });
+  function addRow(){
+    rows.push({name:'',amount:''});
     buildRows(rows);
-    document.querySelectorAll('.expense-row input[type="text"]').forEach((el,i,arr)=>{ if(i===arr.length-1) el.focus(); });
+    document.querySelectorAll('.expense-row input[type="text"]').forEach((el,i,arr)=>{if(i===arr.length-1)el.focus();});
   }
-  function removeRow(i) {
-    if (rows.length === 1) return;
-    rows.splice(i, 1);
+  function removeRow(i){
+    if(rows.length===1)return;
+    rows.splice(i,1);
     buildRows(rows);
   }
 
-  function calculate() {
-    const income = parseFloat(document.getElementById('income').value) || 0;
-    let expenses = 0;
-    rows.forEach(r => { expenses += parseFloat(r.amount) || 0; });
-    const savings = income - expenses;
-    const rate = income > 0 ? (savings / income) * 100 : 0;
-    const positive = savings >= 0;
+  function calculate(){
+    const income=parseFloat(document.getElementById('income').value)||0;
+    let expenses=0;
+    rows.forEach(r=>{expenses+=parseFloat(r.amount)||0;});
+    const savings=income-expenses;
+    const rate=income>0?(savings/income)*100:0;
+    const positive=savings>=0;
 
-    document.getElementById('r-income').textContent = fmt(income);
-    document.getElementById('r-expense').textContent = fmt(expenses);
+    document.getElementById('r-income').textContent=fmt(income);
+    document.getElementById('r-expense').textContent=fmt(expenses);
 
-    const savEl = document.getElementById('r-savings');
-    savEl.textContent = (positive ? '' : '-') + fmt(savings);
-    savEl.className = 'rc-value ' + (positive ? 'color-green' : 'color-red');
+    const savEl=document.getElementById('r-savings');
+    savEl.textContent=(positive?'':'-')+fmt(savings);
+    savEl.className='rc-value '+(positive?'color-green':'color-red');
 
-    const rateEl = document.getElementById('r-rate');
-    rateEl.textContent = Math.abs(rate).toFixed(1) + '%';
-    rateEl.className = 'rc-value ' + (positive ? 'color-green' : 'color-red');
+    const rateEl=document.getElementById('r-rate');
+    rateEl.textContent=Math.abs(rate).toFixed(1)+'%';
+    rateEl.className='rc-value '+(positive?'color-green':'color-red');
 
-    const bar = document.getElementById('savings-bar');
-    const pct = Math.min(Math.max(Math.abs(rate), 0), 100);
-    setTimeout(() => { bar.style.width = pct + '%'; }, 50);
-    bar.className = 'savings-bar-fill ' + (positive ? 'bar-green' : 'bar-red');
-    document.getElementById('bar-label').textContent = positive ? 'Savings' : 'Deficit';
+    const bar=document.getElementById('savings-bar');
+    const pct=Math.min(Math.max(Math.abs(rate),0),100);
+    setTimeout(()=>{bar.style.width=pct+'%';},50);
+    bar.className='savings-bar-fill '+(positive?'bar-green':'bar-red');
+    document.getElementById('bar-label').textContent=positive?'Savings':'Deficit';
 
-    const advice = document.getElementById('advice-box');
-    const savTarget = fmt(income * 0.1);
-    if (income === 0) {
-      advice.className = 'advice-box advice-red';
-      advice.innerHTML = '⚠️ Please enter your monthly income to get a full budget analysis.';
-    } else if (rate >= 20) {
-      advice.className = 'advice-box advice-green';
-      advice.innerHTML = `🎉 <strong>Excellent!</strong> You're saving ${rate.toFixed(1)}% of your income (${fmt(savings)}/month). Financial experts recommend at least 20% — you're right on track. Consider investing the surplus in index funds or a savings account.`;
-    } else if (rate >= 10) {
-      advice.className = 'advice-box advice-green';
-      advice.innerHTML = `✅ <strong>Good progress!</strong> You're saving ${rate.toFixed(1)}% of income (${fmt(savings)}/month). Try to push toward 20% by trimming discretionary expenses. Small cuts add up quickly over 12 months.`;
-    } else if (rate >= 0) {
-      advice.className = 'advice-box advice-red';
-      advice.innerHTML = `⚡ <strong>Low savings rate (${rate.toFixed(1)}%).</strong> You're covering expenses but leaving little buffer. Review your top expense categories and aim to cut 10–15% from each. Target saving at least ${savTarget}/month.`;
-    } else {
-      advice.className = 'advice-box advice-red';
-      advice.innerHTML = `🚨 <strong>Budget deficit of ${fmt(savings)}!</strong> Your expenses exceed your income by ${fmt(Math.abs(savings))}. Prioritise cutting non-essential spending immediately and focus on your largest expense categories above.`;
+    const advice=document.getElementById('advice-box');
+    const savTarget=fmt(income*0.1);
+    if(income===0){
+      advice.className='advice-box advice-red';
+      advice.innerHTML='⚠️ Please enter your monthly income to get a full budget analysis.';
+    }else if(rate>=20){
+      advice.className='advice-box advice-green';
+      advice.innerHTML=`🎉 <strong>Excellent!</strong> You're saving ${rate.toFixed(1)}% (${fmt(savings)}/month). You're right on track — consider investing the surplus in index funds or a savings account.`;
+    }else if(rate>=10){
+      advice.className='advice-box advice-green';
+      advice.innerHTML=`✅ <strong>Good progress!</strong> Saving ${rate.toFixed(1)}% (${fmt(savings)}/month). Try to push toward 20% by trimming discretionary expenses.`;
+    }else if(rate>=0){
+      advice.className='advice-box advice-red';
+      advice.innerHTML=`⚡ <strong>Low savings (${rate.toFixed(1)}%).</strong> Review your top expenses and aim to save at least ${savTarget}/month.`;
+    }else{
+      advice.className='advice-box advice-red';
+      advice.innerHTML=`🚨 <strong>Deficit of ${fmt(savings)}!</strong> Expenses exceed income by ${fmt(Math.abs(savings))}. Cut non-essential spending immediately.`;
     }
 
-    const results = document.getElementById('results');
+    const results=document.getElementById('results');
     results.classList.add('visible');
-    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    results.scrollIntoView({behavior:'smooth',block:'start'});
   }
 </script>
 </body>

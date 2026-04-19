@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — AI Budget Tool</title>
+<meta name="description" content="Learn about AI Budget Tool — a free online budget calculator supporting 50+ global currencies. No sign-up, no ads, just instant financial clarity.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--accent:#a78bfa;--accent2:#60a5fa;--text:#f1f5f9;--text-muted:#94a3b8;--radius:16px;--glass-bg:rgba(255,255,255,0.07);--glass-border:rgba(255,255,255,0.15);}
+  body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#0f0c29 0%,#1a1040 40%,#0d1b3e 70%,#0f0c29 100%);min-height:100vh;color:var(--text);overflow-x:hidden;}
+  body::before,body::after{content:'';position:fixed;border-radius:50%;filter:blur(80px);opacity:0.2;pointer-events:none;z-index:0;animation:drift 12s ease-in-out infinite alternate;}
+  body::before{width:400px;height:400px;background:radial-gradient(circle,#7c3aed,transparent);top:-100px;left:-100px;}
+  body::after{width:350px;height:350px;background:radial-gradient(circle,#2563eb,transparent);bottom:-80px;right:-80px;animation-delay:-6s;}
+  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.1)}}
+  .container{max-width:780px;margin:0 auto;padding:0 16px 60px;position:relative;z-index:1;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;}
+  .logo{font-size:16px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
+  .nav-links{display:flex;gap:20px;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .page-hero{text-align:center;padding:32px 0 28px;}
+  .page-hero h1{font-size:clamp(28px,4vw,42px);font-weight:700;background:linear-gradient(135deg,#fff 0%,#c4b5fd 50%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
+  .page-hero p{font-size:15px;color:var(--text-muted);max-width:500px;margin:0 auto;line-height:1.7;}
+  .glass{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius);padding:24px 28px;margin-bottom:16px;transition:border-color .3s;}
+  .glass:hover{border-color:rgba(167,139,250,0.3);}
+  .section-title{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,0.4),transparent);}
+  .about-text{font-size:14px;color:var(--text-muted);line-height:1.8;}
+  .about-text p{margin-bottom:14px;}
+  .about-text p:last-child{margin-bottom:0;}
+  .about-text strong{color:var(--text);font-weight:500;}
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:4px;}
+  .feature-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px;}
+  .feature-icon{font-size:20px;margin-bottom:8px;}
+  .feature-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
+  .feature-desc{font-size:12px;color:var(--text-muted);line-height:1.6;}
+  .coming-soon{border:1px dashed rgba(167,139,250,0.3);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:16px;background:rgba(167,139,250,0.04);}
+  .stars{color:var(--accent);font-size:11px;display:block;margin-bottom:4px;letter-spacing:.15em;}
+  .coming-soon-text{font-size:12px;color:var(--text-muted);}
+  .coming-soon-text span{color:var(--accent);font-weight:600;}
+  footer{text-align:center;padding:20px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.07);margin-top:12px;}
+  footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
+  footer a:hover{color:var(--accent);}
+  .footer-copy{margin-top:8px;font-size:11px;opacity:.5;}
+  @media(max-width:600px){.glass{padding:16px 18px;}.features-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">✦ AI Budget Tool</a>
+    <div class="nav-links">
+      <a href="index.html">Calculator</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <h1>About AI Budget Tool</h1>
+    <p>A free, fast, and private budget calculator built for everyone — no sign-up, no tracking, just clarity.</p>
+  </div>
+
+  <div class="glass">
+    <div class="section-title">Our Mission</div>
+    <div class="about-text">
+      <p><strong>AI Budget Tool</strong> was built with one simple goal — to give everyone, anywhere in the world, a fast and free way to understand their personal finances. Whether you're a student in India, a freelancer in Europe, or a professional in the US, managing your money should be simple and free.</p>
+      <p>Most budgeting apps require you to sign up, connect your bank account, or pay a subscription. We believe that's unnecessary for the basics. Enter your income, add your expenses, get your numbers — instantly, privately, without giving away your data.</p>
+      <p>We support <strong>50+ global currencies</strong> so this tool works for everyone, not just users in one country. Our savings analysis gives you smart, actionable feedback based on globally recognised personal finance benchmarks.</p>
+    </div>
+  </div>
+
+  <div class="glass">
+    <div class="section-title">What We Offer</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Budget Calculator</div>
+        <div class="feature-desc">Track income vs expenses and see your savings rate instantly.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <div class="feature-title">50+ Currencies</div>
+        <div class="feature-desc">Works in INR, USD, EUR, GBP, AED and 45+ more currencies.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">Mobile Friendly</div>
+        <div class="feature-desc">Fully responsive — works perfectly on any phone or tablet.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">100% Private</div>
+        <div class="feature-desc">No data stored, no sign-up. Your numbers stay on your device.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Instant Results</div>
+        <div class="feature-desc">Smart savings analysis with financial advice in real time.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🆓</div>
+        <div class="feature-title">Always Free</div>
+        <div class="feature-desc">No subscriptions, no hidden fees. Free forever.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="coming-soon">
+    <span class="stars">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
+    <div class="coming-soon-text">
+      <span>More tools on the fly — stay tuned for this website!</span><br>
+      <span style="font-size:11px;opacity:.7;">World Clock · Age Calculator · Currency Converter · JPG Converter · and more coming soon</span>
+    </div>
+    <span class="stars" style="margin-top:6px;">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
+  </div>
+
+  <footer>
+    <div>
+      <a href="index.html">Calculator</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
+  </footer>
+</div>
+</body>
+</html>
