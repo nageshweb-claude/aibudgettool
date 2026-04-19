@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budgeting Tips & Personal Finance Guides — AI Budget Tool</title>
+<meta name="description" content="Free budgeting tips, personal finance guides and money-saving strategies. Learn the 50/30/20 rule, zero-based budgeting, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--accent:#a78bfa;--accent2:#60a5fa;--text:#f1f5f9;--text-muted:#94a3b8;--radius:16px;--glass-bg:rgba(255,255,255,0.07);--glass-border:rgba(255,255,255,0.15);}
+  body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#0f0c29 0%,#1a1040 40%,#0d1b3e 70%,#0f0c29 100%);min-height:100vh;color:var(--text);overflow-x:hidden;}
+  body::before,body::after{content:'';position:fixed;border-radius:50%;filter:blur(80px);opacity:0.2;pointer-events:none;z-index:0;animation:drift 12s ease-in-out infinite alternate;}
+  body::before{width:400px;height:400px;background:radial-gradient(circle,#7c3aed,transparent);top:-100px;left:-100px;}
+  body::after{width:350px;height:350px;background:radial-gradient(circle,#2563eb,transparent);bottom:-80px;right:-80px;animation-delay:-6s;}
+  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.1)}}
+  .container{max-width:780px;margin:0 auto;padding:0 16px 60px;position:relative;z-index:1;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;}
+  .logo{font-size:16px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
+  .nav-links{display:flex;gap:20px;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .page-hero{text-align:center;padding:28px 0 24px;}
+  .page-hero h1{font-size:clamp(24px,4vw,38px);font-weight:700;background:linear-gradient(135deg,#fff 0%,#c4b5fd 50%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
+  .page-hero p{font-size:14px;color:var(--text-muted);max-width:480px;margin:0 auto;line-height:1.6;}
+  .articles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;margin-bottom:24px;}
+  .article-card{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius);overflow:hidden;transition:border-color .3s,transform .2s;cursor:pointer;}
+  .article-card:hover{border-color:rgba(167,139,250,0.4);transform:translateY(-2px);}
+  .article-card.open{border-color:rgba(167,139,250,0.5);}
+  .card-header{padding:20px 22px 16px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .card-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:rgba(167,139,250,0.12);padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+  .card-title{font-size:16px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:6px;}
+  .card-meta{font-size:12px;color:var(--text-muted);}
+  .card-excerpt{padding:14px 22px;font-size:13px;color:var(--text-muted);line-height:1.7;}
+  .card-body{padding:0 22px 20px;display:none;}
+  .card-body.show{display:block;animation:fadeIn .3s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  .card-body h2{font-size:15px;font-weight:600;color:var(--accent);margin:16px 0 8px;}
+  .card-body h2:first-child{margin-top:0;}
+  .card-body p{font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:12px;}
+  .card-body ul{margin:8px 0 12px 16px;}
+  .card-body ul li{font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:4px;}
+  .card-body strong{color:var(--text);font-weight:500;}
+  .card-body .highlight{background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:13px;color:#c4b5fd;line-height:1.7;}
+  .read-btn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--accent);padding:0 22px 16px;cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif;}
+  .read-btn:hover{opacity:.8;}
+  .try-btn{display:inline-block;margin-top:14px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;text-decoration:none;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;}
+  .coming-soon{border:1px dashed rgba(167,139,250,0.3);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:16px;background:rgba(167,139,250,0.04);}
+  .stars{color:var(--accent);font-size:11px;display:block;margin-bottom:4px;letter-spacing:.15em;}
+  footer{text-align:center;padding:20px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.07);margin-top:12px;}
+  footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
+  footer a:hover{color:var(--accent);}
+  .footer-copy{margin-top:8px;font-size:11px;opacity:.5;}
+  @media(max-width:600px){.articles-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">✦ AI Budget Tool</a>
+    <div class="nav-links">
+      <a href="index.html">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Budgeting Tips & Finance Guides</h1>
+    <p>Simple, practical money advice to help you save more, spend smarter, and reach your financial goals faster.</p>
+  </div>
+
+  <div class="articles-grid" id="articles"></div>
+
+  <div class="coming-soon">
+    <span class="stars">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
+    <div style="font-size:12px;color:var(--text-muted);"><span style="color:var(--accent);font-weight:600;">More tools on the fly — stay tuned for this website!</span><br><span style="font-size:11px;opacity:.7;">World Clock · Age Calculator · Currency Converter · JPG Converter · and more coming soon</span></div>
+    <span class="stars" style="margin-top:6px;">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
+  </div>
+
+  <footer>
+    <div><a href="index.html">Calculator</a><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+    <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
+  </footer>
+</div>
+
+<script>
+const articles = [
+  {
+    tag: "Budgeting Basics",
+    title: "How to Save Money on a Budget: 10 Proven Strategies",
+    meta: "5 min read · Personal Finance",
+    excerpt: "Saving money doesn't mean living without. These 10 practical strategies work for any income level, anywhere in the world.",
+    content: `
+      <h2>Why Most People Struggle to Save</h2>
+      <p>The biggest reason people fail to save money is not that they don't earn enough — it's that they don't have a system. Without tracking where your money goes, it quietly disappears into small daily expenses that feel insignificant in the moment but add up to thousands over a year.</p>
+      <p>The good news? You don't need a finance degree or a high salary to save effectively. You just need the right habits and a simple plan.</p>
+      <h2>1. Track Every Expense for 30 Days</h2>
+      <p>Before you can cut spending, you need to know where your money is going. Use a budget calculator or even a simple notebook to record every purchase for one full month. Most people are shocked to discover how much they spend on food delivery, subscriptions, and impulse buys.</p>
+      <h2>2. Apply the 24-Hour Rule on Non-Essential Purchases</h2>
+      <p>Before buying anything that costs more than ₹500 / $10, wait 24 hours. This simple pause eliminates most impulse purchases. If you still want it the next day, it's probably worth buying. Most of the time, you'll forget about it entirely.</p>
+      <h2>3. Pay Yourself First</h2>
+      <p>The moment your salary arrives, immediately transfer a fixed amount to savings — before paying any bills or spending on anything. Even 5–10% of your income set aside automatically builds a powerful habit over time.</p>
+      <div class="highlight">💡 If your monthly income is ₹50,000, saving just 10% = ₹5,000/month = ₹60,000/year — with zero lifestyle change.</div>
+      <h2>4. Cut Subscriptions You Don't Use</h2>
+      <p>The average person has 5–7 active subscriptions but actively uses only 2–3. Go through your bank statements and cancel everything you haven't used in the last 30 days. Streaming services, gym memberships, app subscriptions — these add up fast.</p>
+      <h2>5. Cook at Home 5 Days a Week</h2>
+      <p>Food is one of the highest variable expenses for most households. Cooking at home instead of ordering or eating out just 5 days a week can save 40–60% on your monthly food budget without any sacrifice in quality.</p>
+      <h2>6. Use the Envelope Method for Variable Spending</h2>
+      <p>Allocate a fixed cash amount for groceries, entertainment, and personal spending each month. When the envelope is empty, spending in that category stops. This physical boundary makes overspending impossible.</p>
+      <h2>7. Negotiate Your Bills</h2>
+      <p>Most people never try to negotiate recurring bills — internet, insurance, phone plans. Call your provider and ask for a better rate. Mention competitor pricing. In many cases, they will offer a discount rather than lose a customer. This takes 10 minutes and can save thousands annually.</p>
+      <h2>8. Buy Generic Brands</h2>
+      <p>For groceries, medicines, and household items, generic brands are usually identical in quality to premium brands but cost 20–40% less. This one switch alone can save a significant amount every month.</p>
+      <h2>9. Set a Monthly Savings Goal — Not Just a Vague Wish</h2>
+      <p>Saying "I want to save more" is not a goal. Saying "I will save ₹8,000 this month by reducing food delivery to twice a week and skipping one weekend outing" is a goal. Specific, measurable targets work. Vague intentions don't.</p>
+      <h2>10. Review Your Budget Weekly</h2>
+      <p>Spend 5 minutes every Sunday reviewing your spending for the week. Are you on track? Where did you overspend? What can you adjust? This weekly check-in keeps you accountable and prevents small overruns from becoming large ones.</p>
+      <a href="index.html" class="try-btn">Try the Free Budget Calculator →</a>
+    `
+  },
+  {
+    tag: "Budgeting Rules",
+    title: "The 50/30/20 Rule Explained: The Simplest Budget You'll Ever Use",
+    meta: "4 min read · Budgeting Strategy",
+    excerpt: "The 50/30/20 rule is the most widely recommended budgeting framework in the world. Here's exactly how it works and how to apply it to your income.",
+    content: `
+      <h2>What Is the 50/30/20 Rule?</h2>
+      <p>The 50/30/20 rule is a simple budgeting framework that divides your after-tax income into three categories: 50% for needs, 30% for wants, and 20% for savings and debt repayment. It was popularised by US Senator Elizabeth Warren in her book "All Your Worth" and has since become the most recommended starting point for personal budgeting worldwide.</p>
+      <div class="highlight">📊 Example on ₹60,000/month income:<br>• Needs (50%) = ₹30,000<br>• Wants (30%) = ₹18,000<br>• Savings (20%) = ₹12,000</div>
+      <h2>The 50% — Needs</h2>
+      <p>Needs are expenses you cannot avoid — things that are essential for basic living and working. This category includes rent or housing, groceries, utility bills, transport to work, minimum debt repayments, and basic insurance. If your needs exceed 50% of your income, you may need to consider downsizing your home, finding a cheaper commute, or increasing your income.</p>
+      <h2>The 30% — Wants</h2>
+      <p>Wants are things that improve your quality of life but aren't strictly necessary. This includes dining out, entertainment, streaming services, gym memberships, vacations, shopping for non-essential clothes, and hobbies. This category is where most people overspend. Being honest about what is a "want" vs a "need" is the first step.</p>
+      <h2>The 20% — Savings & Debt</h2>
+      <p>This is the most important category for your financial future. It covers emergency fund contributions, retirement savings (PPF, NPS, 401k), investments (SIP, index funds), and extra repayments on any high-interest debt. Prioritise building an emergency fund of 3–6 months of expenses before investing aggressively.</p>
+      <h2>How to Apply It to Your Life</h2>
+      <p>Start by calculating your monthly after-tax income. Then list all your current expenses in each category. Use a budget calculator to see your actual percentages. Most people find their wants category is much higher than 30%, which immediately shows where adjustments are needed.</p>
+      <h2>Does the 50/30/20 Rule Work for Everyone?</h2>
+      <p>The 50/30/20 rule is a guideline, not a rigid law. In high cost-of-living cities, needs may consume 60–65% of income. In those cases, adjust to 60/20/20 or even 65/15/20 — the key is always to protect that savings percentage as much as possible. The rule is a starting framework, not a straitjacket.</p>
+      <a href="index.html" class="try-btn">Calculate Your 50/30/20 Split →</a>
+    `
+  },
+  {
+    tag: "Beginners",
+    title: "Best Budgeting Tips for Beginners: Start From Zero",
+    meta: "5 min read · Getting Started",
+    excerpt: "Never budgeted before? This step-by-step guide takes you from complete beginner to confident money manager — no financial background needed.",
+    content: `
+      <h2>Why Budgeting Feels Hard (But Isn't)</h2>
+      <p>Most people avoid budgeting because they think it means restriction, spreadsheets, and guilt. In reality, a good budget is the opposite — it's a plan that gives you permission to spend on what matters, while making sure your future is taken care of. Think of it as a roadmap, not a cage.</p>
+      <h2>Step 1: Know Your Income</h2>
+      <p>Start with your actual take-home pay — the amount that lands in your bank account after all deductions. If you're self-employed or freelance, use your average monthly income over the last 3 months. Don't use your gross salary — it's not money you can actually spend.</p>
+      <h2>Step 2: List Every Single Expense</h2>
+      <p>Go through your last 2–3 bank statements and write down every expense — rent, groceries, phone bill, subscriptions, coffee, everything. Group them into categories: housing, food, transport, entertainment, personal care, and savings. This is the most important step and most people skip it.</p>
+      <h2>Step 3: Calculate the Gap</h2>
+      <p>Subtract your total expenses from your income. If the number is positive, you have a surplus — money available to save or invest. If it's negative, you're spending more than you earn and need to identify where to cut immediately.</p>
+      <div class="highlight">🎯 Use the free AI Budget Tool calculator on this site — enter your income and expenses and it calculates your savings rate instantly.</div>
+      <h2>Step 4: Set One Savings Goal</h2>
+      <p>Don't try to fix everything at once. Pick one savings target for the next 30 days. Maybe it's saving ₹5,000 or $100. Give it a purpose — emergency fund, holiday, new phone. A goal with a purpose is far more motivating than a vague "I want to save more."</p>
+      <h2>Step 5: Review Weekly, Adjust Monthly</h2>
+      <p>Budgeting is not a one-time event. Spend 5 minutes each Sunday checking how you're tracking. At the end of the month, review what worked and what didn't, and adjust the next month's plan accordingly. It takes 3–4 months to find a budget that truly fits your lifestyle.</p>
+      <h2>Common Beginner Mistakes to Avoid</h2>
+      <ul>
+        <li>Setting an unrealistic budget that's too restrictive</li>
+        <li>Forgetting irregular expenses like annual subscriptions or car servicing</li>
+        <li>Not having an emergency fund before investing</li>
+        <li>Giving up after one bad month — budgets need adjustment, not abandonment</li>
+      </ul>
+      <a href="index.html" class="try-btn">Start Your First Budget →</a>
+    `
+  },
+  {
+    tag: "Emergency Fund",
+    title: "How to Build an Emergency Fund From Scratch",
+    meta: "4 min read · Financial Safety",
+    excerpt: "An emergency fund is the single most important financial safety net you can have. Here's how to build one even on a tight budget.",
+    content: `
+      <h2>What Is an Emergency Fund?</h2>
+      <p>An emergency fund is money set aside specifically for unexpected expenses — job loss, medical bills, urgent car repairs, or any sudden financial shock. It acts as a financial buffer that prevents you from going into debt every time life throws something unexpected at you.</p>
+      <h2>How Much Should You Save?</h2>
+      <p>The standard recommendation is 3–6 months of your essential living expenses. If your monthly essentials cost ₹25,000, your target emergency fund is ₹75,000 to ₹1,50,000. Start with a smaller target of one month's expenses, then build from there.</p>
+      <div class="highlight">🛡️ Even ₹10,000 / $200 saved as an emergency fund puts you ahead of most people. Start small. Start now.</div>
+      <h2>Where Should You Keep It?</h2>
+      <p>Keep your emergency fund in a separate savings account — not your everyday account where it can be accidentally spent. A high-yield savings account is ideal. The key is it must be easily accessible within 24 hours, but not so easy that you dip into it for non-emergencies.</p>
+      <h2>How to Build It on a Tight Budget</h2>
+      <p>Even saving ₹500 or $10 per week builds ₹26,000 / $520 in a year. The key is consistency, not amount. Set up an automatic transfer to your emergency fund account on payday — before you can spend it. Treat it like a non-negotiable bill.</p>
+      <h2>When Can You Use It?</h2>
+      <p>Only use your emergency fund for genuine emergencies — unexpected medical expenses, urgent home repairs, job loss. A sale at your favourite store is not an emergency. A concert ticket is not an emergency. When in doubt, ask: "If I don't spend this money right now, will something important break down or go wrong?" If the answer is no, don't touch it.</p>
+      <a href="index.html" class="try-btn">Calculate Your Emergency Fund Target →</a>
+    `
+  },
+  {
+    tag: "Saving Strategies",
+    title: "Zero-Based Budgeting: Give Every Rupee a Job",
+    meta: "4 min read · Advanced Budgeting",
+    excerpt: "Zero-based budgeting is one of the most powerful methods to eliminate wasteful spending and maximise savings. Here's how it works.",
+    content: `
+      <h2>What Is Zero-Based Budgeting?</h2>
+      <p>Zero-based budgeting means allocating every single unit of your income to a specific purpose until you have zero left unassigned. Income minus expenses, savings, and investments equals zero. This doesn't mean spending everything — it means every rupee or dollar has a deliberate destination, including your savings account.</p>
+      <h2>How It Differs From Regular Budgeting</h2>
+      <p>Traditional budgeting tracks what you spent last month and tries to spend less. Zero-based budgeting starts from scratch each month and intentionally decides where every unit of income goes before the month begins. It's proactive, not reactive.</p>
+      <div class="highlight">📝 Example: Income ₹60,000<br>Rent ₹15,000 + Food ₹8,000 + Transport ₹3,000 + Utilities ₹2,000 + Entertainment ₹5,000 + Savings ₹12,000 + Investment ₹8,000 + Emergency Fund ₹5,000 + Miscellaneous ₹2,000 = ₹60,000 ✓</div>
+      <h2>The Key Steps</h2>
+      <ul>
+        <li><strong>List your income</strong> — all sources, total take-home amount</li>
+        <li><strong>List all expenses</strong> — fixed and variable, including savings as an expense</li>
+        <li><strong>Assign every unit</strong> — keep adjusting until income minus all assignments = 0</li>
+        <li><strong>Track throughout the month</strong> — check against your plan weekly</li>
+        <li><strong>Repeat next month</strong> — each month is a fresh start</li>
+      </ul>
+      <h2>Who Should Use It?</h2>
+      <p>Zero-based budgeting works best for people who feel their money disappears without explanation, those paying off debt aggressively, or anyone who wants maximum control over their finances. It requires more effort than the 50/30/20 rule but delivers more precise results.</p>
+      <a href="index.html" class="try-btn">Try Zero-Based Budgeting Now →</a>
+    `
+  },
+  {
+    tag: "Debt Management",
+    title: "How to Pay Off Debt Fast: The Avalanche vs Snowball Method",
+    meta: "5 min read · Debt Freedom",
+    excerpt: "Carrying debt? These two proven strategies help you pay it off faster and save thousands in interest. Find out which one works best for you.",
+    content: `
+      <h2>Why Your Debt Payoff Strategy Matters</h2>
+      <p>Paying minimum balances on multiple debts can keep you in debt for decades and cost you far more in interest than the original amount borrowed. Having a deliberate payoff strategy can cut years off your debt journey and save significant money in interest charges.</p>
+      <h2>The Avalanche Method: Mathematically Optimal</h2>
+      <p>With the avalanche method, you pay minimum payments on all debts, then throw every extra rupee at the debt with the <strong>highest interest rate</strong> first. Once that's paid off, you roll that payment into the next highest-interest debt. This approach saves the most money in interest over time.</p>
+      <div class="highlight">💰 Best for: People who are motivated by numbers and want to minimise total interest paid.</div>
+      <h2>The Snowball Method: Psychologically Powerful</h2>
+      <p>With the snowball method, you pay minimum payments on all debts, then focus extra payments on the <strong>smallest balance first</strong>, regardless of interest rate. Each small debt you eliminate gives you a psychological win and frees up cash to attack the next debt. Dave Ramsey popularised this approach.</p>
+      <div class="highlight">🔥 Best for: People who need motivation and quick wins to stay committed to their debt payoff plan.</div>
+      <h2>Which Method Should You Choose?</h2>
+      <p>If the interest rate difference between your debts is significant, use the avalanche method — the savings are real. If your debts are similar interest rates or you struggle with motivation, use the snowball method. The best method is the one you'll actually stick to consistently.</p>
+      <h2>The Debt Payoff Formula</h2>
+      <ul>
+        <li>List all debts with balance, interest rate, and minimum payment</li>
+        <li>Find any extra money in your budget to accelerate payoff</li>
+        <li>Pick avalanche or snowball — commit to it for at least 6 months</li>
+        <li>Never take on new high-interest debt while paying off existing debt</li>
+        <li>Celebrate each debt eliminated — it keeps you motivated</li>
+      </ul>
+      <a href="index.html" class="try-btn">Free Up Budget Money for Debt →</a>
+    `
+  },
+  {
+    tag: "Saving Tips",
+    title: "50 Small Ways to Save Money Every Month",
+    meta: "6 min read · Money Saving",
+    excerpt: "Small savings add up to big results. Here are 50 practical, immediately actionable ways to reduce your monthly expenses without sacrificing quality of life.",
+    content: `
+      <h2>Food & Groceries</h2>
+      <ul>
+        <li>Make a shopping list and stick to it — never shop hungry</li>
+        <li>Buy in bulk for non-perishables (rice, lentils, pasta, oil)</li>
+        <li>Choose store brands over premium brands for staples</li>
+        <li>Meal prep on Sundays to reduce weekday food delivery orders</li>
+        <li>Use frozen vegetables — they're equally nutritious and cheaper</li>
+        <li>Drink water instead of buying soft drinks or juice</li>
+        <li>Limit dining out to once a week — cook the rest at home</li>
+        <li>Use grocery apps with cashback or discount coupons</li>
+      </ul>
+      <h2>Bills & Utilities</h2>
+      <ul>
+        <li>Switch off lights and appliances when not in use</li>
+        <li>Set your air conditioner 2 degrees warmer — significant bill savings</li>
+        <li>Compare insurance providers annually and switch if cheaper</li>
+        <li>Bundle internet and phone plans for a discount</li>
+        <li>Call your providers and ask for a loyalty discount</li>
+        <li>Use LED bulbs throughout your home</li>
+      </ul>
+      <h2>Subscriptions & Entertainment</h2>
+      <ul>
+        <li>Audit all subscriptions — cancel anything unused for 30 days</li>
+        <li>Share streaming service accounts with family members</li>
+        <li>Use free library services for books, audiobooks, and magazines</li>
+        <li>Look for free local events instead of paid entertainment</li>
+        <li>Use YouTube for fitness workouts instead of a gym membership</li>
+      </ul>
+      <h2>Shopping & Lifestyle</h2>
+      <ul>
+        <li>Always wait 24 hours before any non-essential purchase</li>
+        <li>Buy second-hand for furniture, books, and electronics</li>
+        <li>Sell items you haven't used in 6 months — declutter and earn</li>
+        <li>Use cashback credit cards for everyday spending (pay in full monthly)</li>
+        <li>Shop end-of-season sales for clothing</li>
+        <li>Repair items before replacing them</li>
+        <li>Borrow tools or equipment instead of buying for one-time use</li>
+      </ul>
+      <h2>Transport</h2>
+      <ul>
+        <li>Use public transport or carpool when possible</li>
+        <li>Walk or cycle for short distances — free and healthy</li>
+        <li>Service your vehicle regularly to avoid expensive repairs</li>
+        <li>Compare fuel prices before filling up</li>
+      </ul>
+      <div class="highlight">🎯 If just 10 of these tips save you ₹500 each per month, that's ₹5,000 saved — ₹60,000 per year — with no major lifestyle change.</div>
+      <a href="index.html" class="try-btn">Track Your Monthly Savings →</a>
+    `
+  },
+  {
+    tag: "Financial Goals",
+    title: "How to Set and Achieve Financial Goals in 2026",
+    meta: "4 min read · Goal Setting",
+    excerpt: "Vague financial goals don't work. Here's a proven framework for setting specific, achievable money goals — and actually reaching them.",
+    content: `
+      <h2>Why Most Financial Goals Fail</h2>
+      <p>The most common financial goal in the world is "I want to save more money." It fails almost universally because it has no number, no deadline, and no plan. A goal without a plan is just a wish. The solution is to make your financial goals SMART — Specific, Measurable, Achievable, Relevant, and Time-bound.</p>
+      <h2>Types of Financial Goals</h2>
+      <p><strong>Short-term (0–1 year):</strong> Emergency fund, holiday savings, clearing a small debt, buying a specific item.</p>
+      <p><strong>Medium-term (1–5 years):</strong> Down payment for a home, buying a car, further education, starting a business.</p>
+      <p><strong>Long-term (5+ years):</strong> Retirement savings, children's education fund, paying off a home loan, financial independence.</p>
+      <h2>The SMART Goal Framework Applied to Money</h2>
+      <div class="highlight">❌ Vague goal: "I want to save for a holiday"<br>✅ SMART goal: "I will save ₹60,000 for a Goa trip by December 2026 by saving ₹5,000 per month starting May 2026."</div>
+      <h2>How to Prioritise Multiple Goals</h2>
+      <ul>
+        <li><strong>First:</strong> Build a 1-month emergency fund</li>
+        <li><strong>Second:</strong> Pay off high-interest debt (above 15% interest rate)</li>
+        <li><strong>Third:</strong> Build emergency fund to 3–6 months</li>
+        <li><strong>Fourth:</strong> Save for medium-term goals</li>
+        <li><strong>Fifth:</strong> Invest for long-term wealth building</li>
+      </ul>
+      <h2>Tracking Progress</h2>
+      <p>Review your financial goals monthly. Celebrate small milestones — reaching 25%, 50%, 75% of your target. Visibility matters: write your goals somewhere you see them daily. A budget calculator helps you see exactly how your monthly decisions are moving you toward or away from your goals.</p>
+      <a href="index.html" class="try-btn">Calculate How Fast You Can Reach Your Goal →</a>
+    `
+  },
+  {
+    tag: "Global Finance",
+    title: "Budgeting in Different Currencies: A Global Guide",
+    meta: "4 min read · International Finance",
+    excerpt: "Whether you earn in INR, USD, EUR, AED or any other currency — the principles of budgeting are universal. Here's how to apply them wherever you are.",
+    content: `
+      <h2>Money Management Is Universal</h2>
+      <p>The fundamentals of personal finance work the same whether you earn ₹40,000 in Hyderabad, $5,000 in New York, €3,000 in Berlin, or AED 15,000 in Dubai. Spend less than you earn, save consistently, and invest the difference. The currency changes, but the principles don't.</p>
+      <h2>Cost of Living Adjustments</h2>
+      <p>The 50/30/20 rule needs to be adjusted based on your local cost of living. In high cost-of-living cities like London, Singapore, or Mumbai, housing alone can consume 40–50% of income. In those cases, accepting a 60/20/20 or even 65/15/20 split is realistic — the priority is always to protect savings.</p>
+      <div class="highlight">🌍 Our budget calculator supports 50+ currencies including INR, USD, EUR, GBP, AED, SGD, AUD, BRL, NGN and many more — so your numbers always make sense in your local context.</div>
+      <h2>Currency-Specific Tips</h2>
+      <p><strong>INR (India):</strong> Take advantage of PPF, NPS, and SIP investment options. India's low-cost index funds offer excellent long-term wealth building.</p>
+      <p><strong>USD (USA):</strong> Maximise 401k employer matching — it's free money. Build a 6-month emergency fund given healthcare costs.</p>
+      <p><strong>EUR (Europe):</strong> Strong social safety nets reduce emergency fund requirements, allowing more to go into investments earlier.</p>
+      <p><strong>AED (UAE):</strong> No income tax is an enormous advantage — the 20% savings target is very achievable. Prioritise remittances efficiently.</p>
+      <h2>Expats and Multi-Currency Budgets</h2>
+      <p>If you earn in one currency and send money home in another, budget in both currencies separately. Track your local living expenses in your earning currency, and your remittance in your home currency. Factor exchange rate fluctuations into your savings targets.</p>
+      <a href="index.html" class="try-btn">Budget in Your Currency →</a>
+    `
+  },
+  {
+    tag: "Savings Psychology",
+    title: "The Psychology of Saving: Why We Overspend and How to Stop",
+    meta: "5 min read · Money Mindset",
+    excerpt: "Understanding why we make poor financial decisions is the first step to making better ones. Here's the science behind overspending and the mindset shifts that fix it.",
+    content: `
+      <h2>Your Brain Is Not Wired to Save</h2>
+      <p>Human brains evolved to prioritise immediate rewards over future benefits — a survival mechanism from our prehistoric past. This "present bias" means spending money today always feels better than saving it for tomorrow, even when we know intellectually that saving is the right choice. Understanding this is not an excuse — it's the starting point for designing better financial habits.</p>
+      <h2>The 5 Psychological Traps That Drain Your Wallet</h2>
+      <p><strong>1. Lifestyle inflation:</strong> Every time your income increases, your spending increases proportionally. You earn more but save the same percentage — or less. The fix: automatically increase your savings rate with every pay rise.</p>
+      <p><strong>2. Social comparison:</strong> Spending to match or exceed the lifestyle of peers, colleagues, or social media — often funded by debt. The fix: compare your current self to your past self, not to others.</p>
+      <p><strong>3. Mental accounting:</strong> Treating a tax refund or bonus as "free money" and spending it freely, while struggling to save from regular income. The fix: all money is real money — give windfalls the same respect as your salary.</p>
+      <p><strong>4. The sunk cost fallacy:</strong> Continuing to spend on something because you've already invested in it (a gym membership you don't use, a subscription you're "getting value from eventually"). The fix: ask only "Does this serve me now?" — past spending is irrelevant.</p>
+      <p><strong>5. Instant gratification:</strong> Choosing a small reward now over a larger reward later. The fix: make future rewards tangible — give your savings goal a name, a picture, a deadline.</p>
+      <div class="highlight">🧠 The most effective financial habit isn't willpower — it's automation. Remove the decision entirely by auto-transferring savings on payday.</div>
+      <h2>Building a Savings Identity</h2>
+      <p>The most powerful shift is moving from "I am trying to save money" to "I am someone who manages money well." Identity-based habits are far more durable than goal-based ones. Every time you choose to save instead of spend, you're voting for the kind of person you want to become.</p>
+      <a href="index.html" class="try-btn">Start Building Better Money Habits →</a>
+    `
+  }
+];
+
+const container = document.getElementById('articles');
+
+articles.forEach((article, i) => {
+  const card = document.createElement('div');
+  card.className = 'article-card';
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-tag">${article.tag}</div>
+      <div class="card-title">${article.title}</div>
+      <div class="card-meta">${article.meta}</div>
+    </div>
+    <div class="card-excerpt">${article.excerpt}</div>
+    <button class="read-btn" onclick="toggleArticle(${i})">Read full article ↓</button>
+    <div class="card-body" id="body-${i}">${article.content}</div>
+  `;
+  container.appendChild(card);
+});
+
+function toggleArticle(i) {
+  const body = document.getElementById('body-' + i);
+  const btn = body.previousElementSibling;
+  const card = body.closest('.article-card');
+  const isOpen = body.classList.contains('show');
+  body.classList.toggle('show');
+  card.classList.toggle('open');
+  btn.textContent = isOpen ? 'Read full article ↓' : 'Close ↑';
+}
+</script>
+</body>
+</html>
