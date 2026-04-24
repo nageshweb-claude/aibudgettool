@@ -3,595 +3,532 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Budget Tool — Free Online Budget Calculator | Track Income & Expenses</title>
-<meta name="description" content="Free online budget calculator. Track your monthly income, expenses and savings in 50+ global currencies. No sign-up required. Instant results.">
-<meta name="keywords" content="budget calculator, free budget tool, income expense tracker, savings calculator, personal finance">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="eLlpTrkbJcYYqXwNdK_PlCwG8vKrRyUyXfi_a5NqGt4" />
-<meta property="og:title" content="AI Budget Tool — Free Online Budget Calculator">
-<meta property="og:description" content="Track income, expenses and savings in 50+ currencies. Free, instant, no sign-up.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.aibudgettool.com">
-<link rel="canonical" href="https://www.aibudgettool.com">
+<title>AI Budget Tool — Free Online Budget Calculator | Track Income &amp; Expenses</title>
+<meta name="description" content="AI Budget Tool is a free, no-login budget calculator that helps you track monthly income and expenses across 50+ global currencies. Enter your numbers, get instant savings analysis, and take control of your personal finances.">
+<link rel="canonical" href="https://www.aibudgettool.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Budget Tool",
+  "url": "https://www.aibudgettool.com",
+  "description": "Free online budget calculator supporting 50+ global currencies. No sign-up required.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#faf9ff;
+  --bg2:#f3f1ff;
+  --card:#ffffff;
+  --border:#e8e4f7;
+  --accent:#7c3aed;
+  --accent2:#4f46e5;
+  --accent-light:#ede9fe;
+  --text:#1e1b2e;
+  --text-muted:#6b6882;
+  --text-light:#9994b0;
+  --danger:#ef4444;
+  --danger-bg:#fef2f2;
+  --danger-border:#fecaca;
+  --radius:14px;
+  --shadow:0 1px 3px rgba(124,58,237,0.06),0 4px 16px rgba(124,58,237,0.06);
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.04);
+}
 
-  :root {
-    --bg: #f0ebff;
-    --bg2: #e8e0ff;
-    --surface: rgba(255,255,255,0.70);
-    --surface-hover: rgba(255,255,255,0.82);
-    --border: rgba(139,92,246,0.18);
-    --border-hover: rgba(139,92,246,0.35);
-    --accent: #7c3aed;
-    --accent2: #4f46e5;
-    --accent-light: #ede9fe;
-    --text: #1e1b4b;
-    --text-mid: #4c3d8f;
-    --text-muted: #7c6fa0;
-    --green: #059669;
-    --red: #dc2626;
-    --orange: #d97706;
-    --blur: blur(20px);
-    --radius: 16px;
-    --shadow: 0 4px 24px rgba(124,58,237,0.08);
-    --shadow-lg: 0 8px 40px rgba(124,58,237,0.12);
-  }
+body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:var(--text);overflow-x:hidden;}
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    min-height: 100vh;
-    color: var(--text);
-    overflow-x: hidden;
-  }
+/* ─── NAV ─── */
+.topnav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.logo{font-size:15px;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.01em;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
 
-  /* Subtle background orbs */
-  body::before, body::after {
-    content: '';
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    animation: drift 14s ease-in-out infinite alternate;
-  }
-  body::before {
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(167,139,250,0.25), transparent 70%);
-    top: -150px; right: -100px;
-  }
-  body::after {
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(99,102,241,0.18), transparent 70%);
-    bottom: -100px; left: -80px;
-    animation-delay: -7s;
-  }
-  @keyframes drift {
-    from { transform: translate(0,0) scale(1); }
-    to   { transform: translate(30px,20px) scale(1.08); }
-  }
+/* ─── HERO ─── */
+.hero{text-align:center;padding:48px 24px 32px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--accent);margin-bottom:18px;}
+.hero-badge span{width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;}
+.hero h1{font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--text);letter-spacing:-.03em;line-height:1.15;margin-bottom:12px;}
+.hero p{font-size:15px;color:var(--text-muted);max-width:480px;margin:0 auto;line-height:1.7;}
 
-  .container { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; position: relative; z-index: 1; }
+/* ─── MAIN LAYOUT ─── */
+.page-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 16px 60px;}
 
-  /* NAV */
-  nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 16px 0 12px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 4px;
-  }
-  .logo {
-    font-size: 16px; font-weight: 700; color: var(--accent);
-    text-decoration: none; letter-spacing: -.01em;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .logo-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: linear-gradient(135deg, #a78bfa, #6366f1);
-  }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a {
-    color: var(--text-muted); text-decoration: none;
-    font-size: 13px; font-weight: 500; transition: color .15s;
-  }
-  .nav-links a:hover { color: var(--accent); }
+/* ─── TOOLS SIDEBAR ─── */
+.tools-sidebar{padding:24px 0 24px 0;border-right:1px solid var(--border);position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto;}
+.sidebar-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);padding:0 16px;margin-bottom:10px;}
+.tool-btn{display:flex;align-items:center;gap:9px;width:100%;padding:9px 16px;border:none;background:transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--text-muted);text-align:left;transition:all .15s;border-right:2px solid transparent;}
+.tool-btn:hover{background:var(--bg2);color:var(--text);}
+.tool-btn.active{background:var(--accent-light);color:var(--accent);border-right-color:var(--accent);}
+.tool-btn .tool-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0;}
+.tool-btn.soon{opacity:.5;cursor:default;}
+.tool-btn.soon:hover{background:transparent;color:var(--text-muted);}
+.soon-chip{font-size:9px;background:var(--bg2);color:var(--text-light);border:1px solid var(--border);border-radius:4px;padding:1px 5px;margin-left:auto;font-weight:600;letter-spacing:.04em;}
 
-  /* HERO */
-  .hero { text-align: center; padding: 32px 0 24px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--surface); border: 1px solid var(--border);
-    color: var(--accent); font-size: 11px; font-weight: 600;
-    padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
-    letter-spacing: .04em; backdrop-filter: var(--blur);
-    box-shadow: var(--shadow);
-  }
-  .hero-badge::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent); opacity: .7;
-  }
-  .hero h1 {
-    font-size: clamp(26px, 4vw, 40px); font-weight: 700;
-    color: var(--text); line-height: 1.2; margin-bottom: 12px;
-    letter-spacing: -.02em;
-  }
-  .hero h1 span { color: var(--accent); }
-  .hero p { font-size: 15px; color: var(--text-muted); max-width: 460px; margin: 0 auto; line-height: 1.7; }
+/* ─── TOOL CONTENT AREA ─── */
+.tool-content{padding:24px 0 24px 28px;}
 
-  /* GLASS CARD */
-  .glass {
-    background: var(--surface);
-    backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 20px 24px;
-    margin-bottom: 12px;
-    transition: border-color .2s, box-shadow .2s, transform .2s;
-  }
-  .glass:hover {
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-1px);
-  }
+/* ─── SECTION LABEL ─── */
+.section-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
 
-  .section-title {
-    font-size: 10px; font-weight: 700; letter-spacing: .09em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
-  }
-  .section-title::after {
-    content: ''; flex: 1; height: 1px;
-    background: linear-gradient(90deg, var(--border-hover), transparent);
-  }
+/* ─── CARDS ─── */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);}
 
-  /* CURRENCY ROW */
-  .currency-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; margin-bottom: 14px; }
-  select {
-    background: rgba(255,255,255,0.6);
-    border: 1px solid var(--border);
-    border-radius: 10px; padding: 9px 32px 9px 12px;
-    color: var(--text); font-size: 13px; font-family: 'Inter', sans-serif;
-    outline: none; cursor: pointer; width: 100%;
-    -webkit-appearance: none; appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237c3aed' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 10px center;
-    transition: border-color .2s, background .2s;
-  }
-  select:focus { border-color: var(--accent); background-color: rgba(255,255,255,0.8); outline: none; }
-  select option { background: #f0ebff; color: var(--text); }
+/* ─── CURRENCY & INCOME ─── */
+.currency-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:14px;}
+select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--text);background:var(--card);outline:none;cursor:pointer;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6882' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;}
+select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
+.currency-badge{background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:700;padding:10px 14px;border-radius:9px;white-space:nowrap;border:1px solid var(--border);}
+.income-row{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:0;border:1px solid var(--border);border-radius:9px;overflow:hidden;background:var(--card);}
+.income-prefix{padding:10px 12px;background:var(--bg2);font-size:14px;color:var(--text-muted);border-right:1px solid var(--border);font-weight:500;}
+input[type="number"]{width:100%;padding:10px 14px;border:none;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--card);outline:none;}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
+input[type="number"]{-moz-appearance:textfield;}
 
-  .currency-pill {
-    display: flex; align-items: center; gap: 6px;
-    background: var(--accent-light); border: 1px solid rgba(124,58,237,0.25);
-    border-radius: 10px; padding: 8px 14px; white-space: nowrap;
-  }
-  .currency-pill .sym { font-size: 17px; font-weight: 700; color: var(--accent); }
-  .currency-pill .code { font-size: 12px; font-weight: 600; color: var(--accent2); }
+/* ─── EXPENSE ROWS ─── */
+.expense-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
+.expense-row{display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;}
+.expense-name{padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;color:var(--text);background:var(--card);outline:none;transition:border-color .2s;}
+.expense-name:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
+.expense-amount-wrap{display:grid;grid-template-columns:auto 1fr;align-items:center;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card);}
+.expense-prefix{padding:9px 10px;background:var(--bg2);font-size:13px;color:var(--text-muted);border-right:1px solid var(--border);}
+.expense-amount{width:100%;min-width:80px;padding:9px 10px;border:none;font-family:'Inter',sans-serif;font-size:13px;color:var(--text);background:var(--card);outline:none;}
+.btn-remove{width:30px;height:30px;background:var(--danger-bg);border:1px solid var(--danger-border);border-radius:7px;cursor:pointer;color:var(--danger);font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;}
+.btn-remove:hover{background:#fee2e2;}
+.btn-add{width:100%;padding:9px;border:1px dashed var(--border);border-radius:9px;background:transparent;font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-add:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);}
 
-  /* INCOME */
-  .income-row { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; }
-  .income-label { font-size: 13px; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
-  .input-wrap { position: relative; }
-  .currency-symbol {
-    position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
-    color: var(--accent); font-size: 14px; font-weight: 600;
-    pointer-events: none; z-index: 1;
-  }
-  input[type="number"], input[type="text"] {
-    background: rgba(255,255,255,0.6);
-    border: 1px solid var(--border);
-    border-radius: 10px; padding: 9px 12px 9px 28px;
-    color: var(--text); font-size: 14px; font-family: 'Inter', sans-serif;
-    outline: none; width: 100%;
-    transition: border-color .2s, background .2s;
-    -moz-appearance: textfield;
-  }
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
-  input[type="number"]:focus, input[type="text"]:focus {
-    border-color: var(--accent);
-    background: rgba(255,255,255,0.85);
-    box-shadow: 0 0 0 3px rgba(124,58,237,0.08);
-  }
-  input::placeholder { color: rgba(124,112,160,0.5); }
+/* ─── CALCULATE BUTTON ─── */
+.btn-calc{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .1s;letter-spacing:-.01em;margin-top:4px;}
+.btn-calc:hover{opacity:.92;}
+.btn-calc:active{transform:scale(0.99);}
 
-  /* EXPENSE ROWS */
-  .expense-row { display: grid; grid-template-columns: 1fr 120px 30px; gap: 8px; margin-bottom: 8px; align-items: center; animation: fadeIn .2s ease; }
-  @keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
-  .expense-row input[type="text"] { padding-left: 12px; }
+/* ─── RESULTS ─── */
+.results{display:none;}
+.results.show{display:block;}
+.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px;}
+.result-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.result-label{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.result-value{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.02em;}
+.result-value.green{color:#059669;}
+.result-value.red{color:var(--danger);}
+.result-sub{font-size:11px;color:var(--text-light);margin-top:2px;}
+.donut-wrap{display:flex;align-items:center;gap:20px;padding:8px 0;}
+.donut-legend{flex:1;}
+.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.advice-box{background:var(--accent-light);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--accent2);line-height:1.7;}
 
-  .btn-remove {
-    width: 30px; height: 30px; border-radius: 8px;
-    border: 1px solid rgba(220,38,38,0.2);
-    background: rgba(220,38,38,0.06);
-    color: var(--red); font-size: 16px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .15s; flex-shrink: 0;
-  }
-  .btn-remove:hover { background: rgba(220,38,38,0.12); }
+/* ─── ABOUT SECTION ─── */
+.about-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);}
+.about-section h2{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.about-section p{font-size:13px;color:var(--text-muted);line-height:1.8;}
 
-  .btn-add {
-    display: flex; align-items: center; gap: 6px;
-    background: rgba(124,58,237,0.06);
-    border: 1px dashed rgba(124,58,237,0.3);
-    border-radius: 10px; color: var(--accent);
-    font-size: 12px; font-weight: 500; padding: 9px 14px;
-    cursor: pointer; width: 100%; margin-top: 6px;
-    transition: background .15s; font-family: 'Inter', sans-serif;
-  }
-  .btn-add:hover { background: rgba(124,58,237,0.1); }
+/* ─── AD SLOTS (ready for AdSense) ─── */
+.ad-slot-sidebar{background:var(--bg2);border:1px dashed var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-light);margin-top:16px;}
+.ad-slot-banner{background:var(--bg2);border:1px dashed var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-light);width:100%;height:90px;margin:16px 0;}
 
-  /* CALCULATE BUTTON */
-  .btn-calc {
-    width: 100%; padding: 14px;
-    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-    border: none; border-radius: 12px; color: #fff;
-    font-size: 15px; font-weight: 600; cursor: pointer;
-    font-family: 'Inter', sans-serif; letter-spacing: .01em;
-    transition: opacity .2s, transform .15s, box-shadow .2s;
-    box-shadow: 0 4px 20px rgba(124,58,237,0.3);
-    margin-top: 4px;
-  }
-  .btn-calc:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(124,58,237,0.4); }
-  .btn-calc:active { transform: translateY(0); }
+/* ─── FOOTER ─── */
+footer{text-align:center;padding:24px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:0;}
+footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
+footer a:hover{color:var(--accent);}
+.footer-copy{margin-top:8px;font-size:11px;color:var(--text-light);}
 
-  /* RESULTS */
-  #results { display: none; }
-  #results.visible { display: block; animation: fadeIn .4s ease; }
+/* ─── HIDDEN TOOL PANELS ─── */
+.tool-panel{display:none;}
+.tool-panel.active{display:block;}
+.coming-soon-panel{text-align:center;padding:60px 24px;}
+.coming-soon-panel h2{font-size:20px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.coming-soon-panel p{font-size:13.5px;color:var(--text-muted);margin-bottom:20px;}
+.coming-soon-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;border:1px solid var(--border);}
 
-  .results-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
-  .result-card {
-    background: rgba(255,255,255,0.55);
-    border: 1px solid var(--border);
-    border-radius: 12px; padding: 14px 10px; text-align: center;
-    transition: transform .15s;
-  }
-  .result-card:hover { transform: translateY(-2px); }
-  .rc-label { font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
-  .rc-value { font-size: 19px; font-weight: 700; line-height: 1; word-break: break-all; }
-  .rc-sub { font-size: 10px; color: var(--text-muted); margin-top: 4px; }
-  .color-income { color: var(--accent2); }
-  .color-expense { color: var(--orange); }
-  .color-green { color: var(--green); }
-  .color-red { color: var(--red); }
-
-  .savings-bar-wrap { margin: 12px 0 4px; }
-  .savings-bar-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
-  .savings-bar-track { height: 6px; border-radius: 999px; background: rgba(124,58,237,0.1); overflow: hidden; }
-  .savings-bar-fill { height: 100%; border-radius: 999px; transition: width .8s cubic-bezier(.4,0,.2,1); width: 0%; }
-  .bar-green { background: linear-gradient(90deg, #34d399, #059669); }
-  .bar-red   { background: linear-gradient(90deg, #f87171, #dc2626); }
-
-  .advice-box { border-radius: 10px; padding: 12px 16px; font-size: 13px; line-height: 1.65; margin-top: 12px; }
-  .advice-green { background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.2); color: #065f46; }
-  .advice-red   { background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.2); color: #7f1d1d; }
-
-  /* ABOUT */
-  .about-section {
-    background: rgba(255,255,255,0.5);
-    border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 18px 22px; margin-bottom: 12px;
-  }
-  .about-section h2 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-  .about-section p { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
-
-  /* COMING SOON */
-  .coming-soon {
-    border: 1px dashed rgba(124,58,237,0.3); border-radius: 12px;
-    padding: 14px 20px; text-align: center; margin-bottom: 12px;
-    background: rgba(255,255,255,0.35);
-  }
-  .stars { color: var(--accent); font-size: 11px; display: block; margin-bottom: 4px; letter-spacing: .15em; opacity: .6; }
-  .coming-text { font-size: 12px; color: var(--text-muted); }
-  .coming-text strong { color: var(--accent); font-weight: 600; }
-
-  /* AD SLOT */
-  .ad-slot-bottom { min-height: 90px; margin: 12px 0; text-align: center; }
-
-  /* FOOTER */
-  footer {
-    text-align: center; padding: 20px 0 0;
-    font-size: 12px; color: var(--text-muted);
-    border-top: 1px solid var(--border); margin-top: 12px;
-  }
-  footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; transition: color .15s; }
-  footer a:hover { color: var(--accent); }
-  .footer-copy { margin-top: 8px; font-size: 11px; opacity: .6; }
-
-  /* MOBILE */
-  @media (max-width: 600px) {
-    .container { padding: 0 12px 32px; }
-    .glass, .about-section { padding: 14px 16px; }
-    .results-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .rc-value { font-size: 16px; }
-    .expense-row { grid-template-columns: 1fr 100px 30px; gap: 6px; }
-    .income-row { grid-template-columns: 1fr; gap: 6px; }
-    nav { padding: 12px 0 10px; }
-    .hero { padding: 20px 0 16px; }
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 14px; }
-  }
-  @media (max-width: 400px) {
-    .expense-row { grid-template-columns: 1fr 88px 30px; }
-  }
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .page-layout{grid-template-columns:1fr;}
+  .tools-sidebar{display:none;}
+  .tool-content{padding:16px 0;}
+  .hero{padding:32px 16px 24px;}
+}
+@media(max-width:520px){
+  .topnav{padding:14px 16px;}
+  .result-grid{grid-template-columns:1fr;}
+  .currency-row{grid-template-columns:1fr auto;}
+}
 </style>
 </head>
 <body>
-<div class="container">
 
-  <nav>
-    <a href="index.html" class="logo">
-      <div class="logo-dot"></div>
-      AI Budget Tool
-    </a>
-    <div class="nav-links">
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <div class="hero">
-    <div class="hero-badge">Free · 50+ Global Currencies · No Sign-up</div>
-    <h1>Take Control of<br/><span>Your Finances</span></h1>
-    <p>Track income, manage expenses, and discover how much you can save — in your currency, instantly.</p>
+<!-- NAV -->
+<nav class="topnav">
+  <a href="index.html" class="logo">✦ AI Budget Tool</a>
+  <div class="nav-links">
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
   </div>
+</nav>
 
-  <!-- CURRENCY + INCOME -->
-  <div class="glass">
-    <div class="section-title">Currency & Income</div>
-    <div class="currency-row">
-      <select id="currency-select" onchange="updateCurrency()">
-        <optgroup label="Popular">
-          <option value="INR|₹|Indian Rupee">🇮🇳 INR — Indian Rupee (₹)</option>
-          <option value="USD|$|US Dollar" selected>🇺🇸 USD — US Dollar ($)</option>
-          <option value="EUR|€|Euro">🇪🇺 EUR — Euro (€)</option>
-          <option value="GBP|£|British Pound">🇬🇧 GBP — Pound (£)</option>
-          <option value="JPY|¥|Japanese Yen">🇯🇵 JPY — Yen (¥)</option>
-          <option value="AUD|A$|Australian Dollar">🇦🇺 AUD — AUD (A$)</option>
-          <option value="CAD|C$|Canadian Dollar">🇨🇦 CAD — CAD (C$)</option>
-          <option value="SGD|S$|Singapore Dollar">🇸🇬 SGD — SGD (S$)</option>
-          <option value="AED|د.إ|UAE Dirham">🇦🇪 AED — Dirham (د.إ)</option>
-          <option value="SAR|﷼|Saudi Riyal">🇸🇦 SAR — Riyal (﷼)</option>
-        </optgroup>
-        <optgroup label="Asia Pacific">
-          <option value="CNY|¥|Chinese Yuan">🇨🇳 CNY — Yuan (¥)</option>
-          <option value="KRW|₩|South Korean Won">🇰🇷 KRW — Won (₩)</option>
-          <option value="IDR|Rp|Indonesian Rupiah">🇮🇩 IDR — Rupiah (Rp)</option>
-          <option value="MYR|RM|Malaysian Ringgit">🇲🇾 MYR — Ringgit (RM)</option>
-          <option value="THB|฿|Thai Baht">🇹🇭 THB — Baht (฿)</option>
-          <option value="PHP|₱|Philippine Peso">🇵🇭 PHP — Peso (₱)</option>
-          <option value="VND|₫|Vietnamese Dong">🇻🇳 VND — Dong (₫)</option>
-          <option value="PKR|₨|Pakistani Rupee">🇵🇰 PKR — Rupee (₨)</option>
-          <option value="BDT|৳|Bangladeshi Taka">🇧🇩 BDT — Taka (৳)</option>
-          <option value="NZD|NZ$|New Zealand Dollar">🇳🇿 NZD — NZD (NZ$)</option>
-          <option value="HKD|HK$|Hong Kong Dollar">🇭🇰 HKD — HKD (HK$)</option>
-        </optgroup>
-        <optgroup label="Europe">
-          <option value="CHF|Fr|Swiss Franc">🇨🇭 CHF — Franc (Fr)</option>
-          <option value="SEK|kr|Swedish Krona">🇸🇪 SEK — Krona (kr)</option>
-          <option value="NOK|kr|Norwegian Krone">🇳🇴 NOK — Krone (kr)</option>
-          <option value="DKK|kr|Danish Krone">🇩🇰 DKK — Krone (kr)</option>
-          <option value="PLN|zł|Polish Zloty">🇵🇱 PLN — Zloty (zł)</option>
-          <option value="TRY|₺|Turkish Lira">🇹🇷 TRY — Lira (₺)</option>
-          <option value="RUB|₽|Russian Ruble">🇷🇺 RUB — Ruble (₽)</option>
-        </optgroup>
-        <optgroup label="Americas">
-          <option value="BRL|R$|Brazilian Real">🇧🇷 BRL — Real (R$)</option>
-          <option value="MXN|$|Mexican Peso">🇲🇽 MXN — Peso ($)</option>
-          <option value="ARS|$|Argentine Peso">🇦🇷 ARS — Peso ($)</option>
-          <option value="CLP|$|Chilean Peso">🇨🇱 CLP — Peso ($)</option>
-          <option value="COP|$|Colombian Peso">🇨🇴 COP — Peso ($)</option>
-        </optgroup>
-        <optgroup label="Africa & Middle East">
-          <option value="ZAR|R|South African Rand">🇿🇦 ZAR — Rand (R)</option>
-          <option value="NGN|₦|Nigerian Naira">🇳🇬 NGN — Naira (₦)</option>
-          <option value="KES|KSh|Kenyan Shilling">🇰🇪 KES — Shilling (KSh)</option>
-          <option value="GHS|₵|Ghanaian Cedi">🇬🇭 GHS — Cedi (₵)</option>
-          <option value="EGP|£|Egyptian Pound">🇪🇬 EGP — Pound (£)</option>
-          <option value="KWD|د.ك|Kuwaiti Dinar">🇰🇼 KWD — Dinar (د.ك)</option>
-        </optgroup>
-      </select>
-      <div class="currency-pill">
-        <span class="sym" id="preview-sym">$</span>
-        <span class="code" id="preview-code">USD</span>
-      </div>
-    </div>
-    <div class="income-row">
-      <span class="income-label">Monthly income</span>
-      <div class="input-wrap">
-        <span class="currency-symbol" id="income-sym">$</span>
-        <input type="number" id="income" placeholder="e.g. 5000" min="0"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- EXPENSES -->
-  <div class="glass">
-    <div class="section-title">Monthly Expenses</div>
-    <div id="expense-list"></div>
-    <button class="btn-add" onclick="addRow()">＋ Add expense category</button>
-  </div>
-
-  <button class="btn-calc" onclick="calculate()">Calculate My Budget</button>
-
-  <!-- RESULTS -->
-  <div id="results" class="glass">
-    <div class="section-title">Budget Summary</div>
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="rc-label">Income</div>
-        <div class="rc-value color-income" id="r-income">—</div>
-        <div class="rc-sub">per month</div>
-      </div>
-      <div class="result-card">
-        <div class="rc-label">Expenses</div>
-        <div class="rc-value color-expense" id="r-expense">—</div>
-        <div class="rc-sub">per month</div>
-      </div>
-      <div class="result-card">
-        <div class="rc-label">Savings</div>
-        <div class="rc-value" id="r-savings">—</div>
-        <div class="rc-sub">per month</div>
-      </div>
-      <div class="result-card">
-        <div class="rc-label">Rate</div>
-        <div class="rc-value" id="r-rate">—</div>
-        <div class="rc-sub">of income</div>
-      </div>
-    </div>
-    <div class="savings-bar-wrap">
-      <div class="savings-bar-labels"><span>Expenses</span><span id="bar-label">Savings</span></div>
-      <div class="savings-bar-track"><div class="savings-bar-fill" id="savings-bar"></div></div>
-    </div>
-    <div class="advice-box" id="advice-box"></div>
-  </div>
-
-  <!-- ABOUT -->
-  <div class="about-section">
-    <h2>About AI Budget Tool</h2>
-    <p>AI Budget Tool is a free, no-login budget calculator that helps you track monthly income and expenses across 50+ global currencies. Enter your numbers, get instant savings analysis, and take control of your personal finances — whether you're in India, the US, Europe, or anywhere in the world.</p>
-  </div>
-
-  <!-- COMING SOON -->
-  <div class="coming-soon">
-    <span class="stars">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
-    <div class="coming-text">
-      <strong>More tools on the fly — stay tuned for this website!</strong><br>
-      <span style="font-size:11px;opacity:.8;">World Clock · Age Calculator · Currency Converter · JPG Converter · and more coming soon</span>
-    </div>
-    <span class="stars" style="margin-top:6px;">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</span>
-  </div>
-
-  <!-- AD SLOT BOTTOM -->
-  <div class="ad-slot-bottom" id="ad-bottom">
-    <!-- Google AdSense code goes here after approval -->
-  </div>
-
-  <footer>
-    <div>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
-  </footer>
-
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><span></span> Free · 50+ Global Currencies · No Sign-up</div>
+  <h1>Take Control of Your Finances</h1>
+  <p>Track income, manage expenses, and discover how much you can save — in your currency, instantly.</p>
 </div>
-<script>
-  let curSym='$', curCode='USD', curName='US Dollar';
 
-  function updateCurrency() {
-    const val = document.getElementById('currency-select').value;
-    const parts = val.split('|');
-    curCode=parts[0]; curSym=parts[1]; curName=parts[2];
-    document.getElementById('preview-sym').textContent = curSym;
-    document.getElementById('preview-code').textContent = curCode;
-    document.getElementById('income-sym').textContent = curSym;
-    document.querySelectorAll('.exp-sym').forEach(el => el.textContent = curSym);
-  }
+<!-- MAIN LAYOUT -->
+<div class="page-layout">
 
-  function fmt(n) {
-    const abs = Math.abs(n);
-    const noDecimals = ['JPY','KRW','VND','IDR','HUF','CLP','COP'];
-    const opts = noDecimals.includes(curCode)
-      ? {maximumFractionDigits:0}
-      : {minimumFractionDigits:0, maximumFractionDigits:2};
-    return curSym + abs.toLocaleString('en-US', opts);
-  }
+  <!-- LEFT SIDEBAR — TOOLS -->
+  <aside class="tools-sidebar">
+    <div class="sidebar-label">Tools</div>
 
-  const defaults = [
-    {name:'Rent / Housing', amount:''},
-    {name:'Food & Groceries', amount:''},
-    {name:'Transport', amount:''},
-    {name:'Utilities', amount:''},
-    {name:'Entertainment', amount:''},
-  ];
-  let rows = defaults.map(r => ({...r}));
+    <button class="tool-btn active" onclick="switchTool('budget', this)">
+      <span class="tool-icon">💰</span> Budget Calculator
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">🕐</span> World Clock
+      <span class="soon-chip">Soon</span>
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">🎂</span> Age Calculator
+      <span class="soon-chip">Soon</span>
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">💱</span> Currency Converter
+      <span class="soon-chip">Soon</span>
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">🖼️</span> JPG → PNG
+      <span class="soon-chip">Soon</span>
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">📄</span> JPG → PDF
+      <span class="soon-chip">Soon</span>
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">📏</span> Unit Converter
+      <span class="soon-chip">Soon</span>
+    </button>
+    <button class="tool-btn soon" disabled>
+      <span class="tool-icon">🌐</span> IP Address
+      <span class="soon-chip">Soon</span>
+    </button>
 
-  function buildRows(rows) {
-    const list = document.getElementById('expense-list');
-    list.innerHTML = '';
-    rows.forEach((r, i) => {
-      const row = document.createElement('div');
-      row.className = 'expense-row';
-      row.innerHTML = `
-        <input type="text" placeholder="Category" value="${r.name}" oninput="rows[${i}].name=this.value"/>
-        <div class="input-wrap">
-          <span class="currency-symbol exp-sym">${curSym}</span>
-          <input type="number" placeholder="Amount" value="${r.amount}" min="0" oninput="rows[${i}].amount=this.value"/>
+    <!-- Ad slot — replace with AdSense code after approval -->
+    <div class="ad-slot-sidebar" style="min-height:250px;margin:16px 12px 0;">
+      <!-- Ad: 160x250 sidebar -->
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="tool-content">
+
+    <!-- ── BUDGET TOOL PANEL ── -->
+    <div id="panel-budget" class="tool-panel active">
+
+      <div class="card">
+        <div class="section-label">Currency &amp; Income</div>
+        <div class="currency-row">
+          <select id="currencySelect" onchange="updateCurrency()">
+            <option value="USD" data-symbol="$" data-flag="🇺🇸">🇺🇸 USD — US Dollar ($)</option>
+            <option value="INR" data-symbol="₹" data-flag="🇮🇳">🇮🇳 INR — Indian Rupee (₹)</option>
+            <option value="EUR" data-symbol="€" data-flag="🇪🇺">🇪🇺 EUR — Euro (€)</option>
+            <option value="GBP" data-symbol="£" data-flag="🇬🇧">🇬🇧 GBP — Pound (£)</option>
+            <option value="JPY" data-symbol="¥" data-flag="🇯🇵">🇯🇵 JPY — Yen (¥)</option>
+            <option value="AUD" data-symbol="A$" data-flag="🇦🇺">🇦🇺 AUD — AUD (A$)</option>
+            <option value="CAD" data-symbol="C$" data-flag="🇨🇦">🇨🇦 CAD — CAD (C$)</option>
+            <option value="SGD" data-symbol="S$" data-flag="🇸🇬">🇸🇬 SGD — SGD (S$)</option>
+            <option value="AED" data-symbol="د.إ" data-flag="🇦🇪">🇦🇪 AED — Dirham (د.إ)</option>
+            <option value="SAR" data-symbol="﷼" data-flag="🇸🇦">🇸🇦 SAR — Riyal (﷼)</option>
+            <option value="CNY" data-symbol="¥" data-flag="🇨🇳">🇨🇳 CNY — Yuan (¥)</option>
+            <option value="KRW" data-symbol="₩" data-flag="🇰🇷">🇰🇷 KRW — Won (₩)</option>
+            <option value="IDR" data-symbol="Rp" data-flag="🇮🇩">🇮🇩 IDR — Rupiah (Rp)</option>
+            <option value="MYR" data-symbol="RM" data-flag="🇲🇾">🇲🇾 MYR — Ringgit (RM)</option>
+            <option value="THB" data-symbol="฿" data-flag="🇹🇭">🇹🇭 THB — Baht (฿)</option>
+            <option value="PHP" data-symbol="₱" data-flag="🇵🇭">🇵🇭 PHP — Peso (₱)</option>
+            <option value="VND" data-symbol="₫" data-flag="🇻🇳">🇻🇳 VND — Dong (₫)</option>
+            <option value="PKR" data-symbol="₨" data-flag="🇵🇰">🇵🇰 PKR — Rupee (₨)</option>
+            <option value="BDT" data-symbol="৳" data-flag="🇧🇩">🇧🇩 BDT — Taka (৳)</option>
+            <option value="NZD" data-symbol="NZ$" data-flag="🇳🇿">🇳🇿 NZD — NZD (NZ$)</option>
+            <option value="HKD" data-symbol="HK$" data-flag="🇭🇰">🇭🇰 HKD — HKD (HK$)</option>
+            <option value="CHF" data-symbol="Fr" data-flag="🇨🇭">🇨🇭 CHF — Franc (Fr)</option>
+            <option value="SEK" data-symbol="kr" data-flag="🇸🇪">🇸🇪 SEK — Krona (kr)</option>
+            <option value="NOK" data-symbol="kr" data-flag="🇳🇴">🇳🇴 NOK — Krone (kr)</option>
+            <option value="DKK" data-symbol="kr" data-flag="🇩🇰">🇩🇰 DKK — Krone (kr)</option>
+            <option value="PLN" data-symbol="zł" data-flag="🇵🇱">🇵🇱 PLN — Zloty (zł)</option>
+            <option value="TRY" data-symbol="₺" data-flag="🇹🇷">🇹🇷 TRY — Lira (₺)</option>
+            <option value="RUB" data-symbol="₽" data-flag="🇷🇺">🇷🇺 RUB — Ruble (₽)</option>
+            <option value="BRL" data-symbol="R$" data-flag="🇧🇷">🇧🇷 BRL — Real (R$)</option>
+            <option value="MXN" data-symbol="$" data-flag="🇲🇽">🇲🇽 MXN — Peso ($)</option>
+            <option value="ARS" data-symbol="$" data-flag="🇦🇷">🇦🇷 ARS — Peso ($)</option>
+            <option value="CLP" data-symbol="$" data-flag="🇨🇱">🇨🇱 CLP — Peso ($)</option>
+            <option value="COP" data-symbol="$" data-flag="🇨🇴">🇨🇴 COP — Peso ($)</option>
+            <option value="ZAR" data-symbol="R" data-flag="🇿🇦">🇿🇦 ZAR — Rand (R)</option>
+            <option value="NGN" data-symbol="₦" data-flag="🇳🇬">🇳🇬 NGN — Naira (₦)</option>
+            <option value="KES" data-symbol="KSh" data-flag="🇰🇪">🇰🇪 KES — Shilling (KSh)</option>
+            <option value="GHS" data-symbol="₵" data-flag="🇬🇭">🇬🇭 GHS — Cedi (₵)</option>
+            <option value="EGP" data-symbol="£" data-flag="🇪🇬">🇪🇬 EGP — Pound (£)</option>
+            <option value="KWD" data-symbol="د.ك" data-flag="🇰🇼">🇰🇼 KWD — Dinar (د.ك)</option>
+          </select>
+          <div class="currency-badge" id="currencyBadge">$ USD</div>
         </div>
-        <button class="btn-remove" onclick="removeRow(${i})">×</button>
-      `;
-      list.appendChild(row);
-    });
+        <div style="display:flex;align-items:center;gap:10px;">
+          <label style="font-size:13px;color:var(--text-muted);white-space:nowrap;font-weight:500;">Monthly income</label>
+          <div class="income-row" style="flex:1;">
+            <span class="income-prefix" id="incomePrefix">$</span>
+            <input type="number" id="incomeInput" placeholder="e.g. 5000" min="0" onwheel="this.blur()">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-label">Monthly Expenses</div>
+        <div class="expense-rows" id="expenseRows">
+          <!-- rows added by JS -->
+        </div>
+        <button class="btn-add" onclick="addExpense()">＋ Add expense category</button>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Calculate My Budget</button>
+
+      <!-- RESULTS -->
+      <div class="results" id="results">
+        <div class="card" style="margin-top:14px;">
+          <div class="section-label">Budget Summary</div>
+          <div class="result-grid">
+            <div class="result-item">
+              <div class="result-label">Income</div>
+              <div class="result-value" id="resIncome">—</div>
+              <div class="result-sub">per month</div>
+            </div>
+            <div class="result-item">
+              <div class="result-label">Expenses</div>
+              <div class="result-value red" id="resExpenses">—</div>
+              <div class="result-sub">per month</div>
+            </div>
+            <div class="result-item">
+              <div class="result-label">Savings</div>
+              <div class="result-value green" id="resSavings">—</div>
+              <div class="result-sub">per month</div>
+            </div>
+            <div class="result-item">
+              <div class="result-label">Savings Rate</div>
+              <div class="result-value" id="resRate">—</div>
+              <div class="result-sub">of income</div>
+            </div>
+          </div>
+          <div class="donut-wrap">
+            <canvas id="donutChart" width="120" height="120" style="flex-shrink:0;"></canvas>
+            <div class="donut-legend">
+              <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span><span id="legendExp">Expenses</span></div>
+              <div class="legend-item"><span class="legend-dot" style="background:#7c3aed;"></span><span id="legendSav">Savings</span></div>
+            </div>
+          </div>
+          <div class="advice-box" id="adviceBox"></div>
+        </div>
+      </div>
+
+      <!-- Ad slot bottom banner — replace content with AdSense code after approval -->
+      <div class="ad-slot-banner">
+        <!-- Ad: 728x90 leaderboard -->
+      </div>
+
+      <div class="about-section">
+        <h2>About AI Budget Tool</h2>
+        <p>AI Budget Tool is a free, no-login budget calculator that helps you track monthly income and expenses across 50+ global currencies. Enter your numbers, get instant savings analysis, and take control of your personal finances — whether you're in India, the US, Europe, or anywhere in the world.</p>
+      </div>
+    </div>
+
+    <!-- ── COMING SOON PANELS ── -->
+    <div id="panel-worldclock" class="tool-panel">
+      <div class="coming-soon-panel">
+        <div style="font-size:48px;margin-bottom:16px;">🕐</div>
+        <h2>World Clock</h2>
+        <p>Check the time in any city worldwide, instantly. Coming very soon.</p>
+        <span class="coming-soon-badge">Coming Soon</span>
+      </div>
+    </div>
+    <div id="panel-age" class="tool-panel">
+      <div class="coming-soon-panel">
+        <div style="font-size:48px;margin-bottom:16px;">🎂</div>
+        <h2>Age Calculator</h2>
+        <p>Calculate your exact age in years, months, and days. Coming soon.</p>
+        <span class="coming-soon-badge">Coming Soon</span>
+      </div>
+    </div>
+    <div id="panel-currency" class="tool-panel">
+      <div class="coming-soon-panel">
+        <div style="font-size:48px;margin-bottom:16px;">💱</div>
+        <h2>Currency Converter</h2>
+        <p>Convert between 50+ world currencies with live rates. Coming soon.</p>
+        <span class="coming-soon-badge">Coming Soon</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
+</footer>
+
+<script>
+// ─── SCROLL FIX: prevents mouse wheel from changing number input values ───
+document.addEventListener('wheel', function(e) {
+  if (document.activeElement && document.activeElement.type === 'number') {
+    document.activeElement.blur();
   }
-  buildRows(rows);
+}, { passive: true });
 
-  function addRow() {
-    rows.push({name:'', amount:''});
-    buildRows(rows);
-    document.querySelectorAll('.expense-row input[type="text"]').forEach((el,i,arr)=>{ if(i===arr.length-1) el.focus(); });
+// ─── TOOLS SIDEBAR SWITCHING ───
+var toolMap = {
+  'budget': 'panel-budget',
+  'worldclock': 'panel-worldclock',
+  'age': 'panel-age',
+  'currency': 'panel-currency'
+};
+function switchTool(id, btn) {
+  // only switch if not "soon"
+  if (btn && btn.classList.contains('soon')) return;
+  Object.values(toolMap).forEach(function(pid) {
+    var el = document.getElementById(pid);
+    if (el) el.classList.remove('active');
+  });
+  var target = document.getElementById('panel-' + id);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.tool-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+}
+
+// ─── CURRENCY HANDLING ───
+var currentSymbol = '$';
+function updateCurrency() {
+  var sel = document.getElementById('currencySelect');
+  var opt = sel.options[sel.selectedIndex];
+  currentSymbol = opt.getAttribute('data-symbol') || '$';
+  var code = sel.value;
+  document.getElementById('currencyBadge').textContent = currentSymbol + ' ' + code;
+  document.getElementById('incomePrefix').textContent = currentSymbol;
+  document.querySelectorAll('.expense-prefix').forEach(function(el) {
+    el.textContent = currentSymbol;
+  });
+}
+
+// ─── EXPENSE ROWS ───
+var defaultExpenses = ['Rent / Housing','Food & Groceries','Transport','Utilities','Entertainment'];
+function addExpense(name) {
+  var container = document.getElementById('expenseRows');
+  var row = document.createElement('div');
+  row.className = 'expense-row';
+  row.innerHTML =
+    '<input type="text" class="expense-name" placeholder="Expense name" value="' + (name || '') + '">' +
+    '<div class="expense-amount-wrap">' +
+      '<span class="expense-prefix">' + currentSymbol + '</span>' +
+      '<input type="number" class="expense-amount" placeholder="Amount" min="0" onwheel="this.blur()">' +
+    '</div>' +
+    '<button class="btn-remove" onclick="this.parentNode.remove()" title="Remove">×</button>';
+  container.appendChild(row);
+}
+defaultExpenses.forEach(function(n) { addExpense(n); });
+
+// ─── CALCULATE ───
+function fmt(n) {
+  return currentSymbol + Number(n).toLocaleString('en-IN', {maximumFractionDigits: 0});
+}
+function calculate() {
+  var income = parseFloat(document.getElementById('incomeInput').value) || 0;
+  var amounts = document.querySelectorAll('.expense-amount');
+  var total = 0;
+  amounts.forEach(function(a) { total += parseFloat(a.value) || 0; });
+  var savings = income - total;
+  var rate = income > 0 ? (savings / income * 100) : 0;
+
+  document.getElementById('resIncome').textContent = fmt(income);
+  document.getElementById('resExpenses').textContent = fmt(total);
+  document.getElementById('resSavings').textContent = fmt(savings);
+  document.getElementById('resSavings').className = 'result-value ' + (savings >= 0 ? 'green' : 'red');
+  document.getElementById('resRate').textContent = rate.toFixed(1) + '%';
+  document.getElementById('resRate').className = 'result-value ' + (rate >= 20 ? 'green' : rate >= 10 ? '' : 'red');
+
+  // Legend
+  document.getElementById('legendExp').textContent = 'Expenses: ' + fmt(total);
+  document.getElementById('legendSav').textContent = 'Savings: ' + fmt(Math.max(0, savings));
+
+  // Advice
+  var advice;
+  if (income === 0) {
+    advice = 'Enter your monthly income above to see your personalised savings analysis.';
+  } else if (savings < 0) {
+    advice = '⚠️ Your expenses exceed your income by ' + fmt(Math.abs(savings)) + '. Consider reducing discretionary spending to avoid debt.';
+  } else if (rate >= 30) {
+    advice = '🌟 Excellent! A ' + rate.toFixed(0) + '% savings rate is outstanding. You\'re well on track for financial independence. Consider investing the surplus in index funds or SIPs.';
+  } else if (rate >= 20) {
+    advice = '✅ Great work! Saving ' + rate.toFixed(0) + '% meets the recommended 20% target. Keep it up and look for ways to grow that surplus through investing.';
+  } else if (rate >= 10) {
+    advice = '📊 You\'re saving ' + rate.toFixed(0) + '% of your income — a solid start. Try to reach 20% by gradually trimming non-essential expenses.';
+  } else {
+    advice = '💡 Your current savings rate of ' + rate.toFixed(0) + '% is below the recommended 20%. Review your largest expense categories to find room to save more.';
   }
-  function removeRow(i) {
-    if(rows.length===1) return;
-    rows.splice(i,1);
-    buildRows(rows);
-  }
+  document.getElementById('adviceBox').textContent = advice;
 
-  function calculate() {
-    const income = parseFloat(document.getElementById('income').value)||0;
-    let expenses = 0;
-    rows.forEach(r => { expenses += parseFloat(r.amount)||0; });
-    const savings = income - expenses;
-    const rate = income > 0 ? (savings/income)*100 : 0;
-    const positive = savings >= 0;
+  // Donut chart
+  drawDonut(Math.max(0, total), Math.max(0, savings), income);
 
-    document.getElementById('r-income').textContent = fmt(income);
-    document.getElementById('r-expense').textContent = fmt(expenses);
+  document.getElementById('results').classList.add('show');
+  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
 
-    const savEl = document.getElementById('r-savings');
-    savEl.textContent = (positive?'':'-') + fmt(savings);
-    savEl.className = 'rc-value ' + (positive?'color-green':'color-red');
-
-    const rateEl = document.getElementById('r-rate');
-    rateEl.textContent = Math.abs(rate).toFixed(1)+'%';
-    rateEl.className = 'rc-value ' + (positive?'color-green':'color-red');
-
-    const bar = document.getElementById('savings-bar');
-    const pct = Math.min(Math.max(Math.abs(rate),0),100);
-    setTimeout(()=>{ bar.style.width = pct+'%'; },50);
-    bar.className = 'savings-bar-fill '+(positive?'bar-green':'bar-red');
-    document.getElementById('bar-label').textContent = positive?'Savings':'Deficit';
-
-    const advice = document.getElementById('advice-box');
-    const savTarget = fmt(income*0.1);
-    if(income===0){
-      advice.className='advice-box advice-red';
-      advice.innerHTML='⚠️ Please enter your monthly income to get a full budget analysis.';
-    } else if(rate>=20){
-      advice.className='advice-box advice-green';
-      advice.innerHTML=`🎉 <strong>Excellent!</strong> You're saving ${rate.toFixed(1)}% (${fmt(savings)}/month). You're right on track — consider investing the surplus in index funds or a savings account.`;
-    } else if(rate>=10){
-      advice.className='advice-box advice-green';
-      advice.innerHTML=`✅ <strong>Good progress!</strong> Saving ${rate.toFixed(1)}% (${fmt(savings)}/month). Try to push toward 20% by trimming discretionary expenses.`;
-    } else if(rate>=0){
-      advice.className='advice-box advice-red';
-      advice.innerHTML=`⚡ <strong>Low savings (${rate.toFixed(1)}%).</strong> Review your top expenses and aim to save at least ${savTarget}/month.`;
-    } else {
-      advice.className='advice-box advice-red';
-      advice.innerHTML=`🚨 <strong>Deficit of ${fmt(savings)}!</strong> Expenses exceed income by ${fmt(Math.abs(savings))}. Cut non-essential spending immediately.`;
-    }
-
-    const results = document.getElementById('results');
-    results.classList.add('visible');
-    results.scrollIntoView({behavior:'smooth', block:'start'});
-  }
+// ─── DONUT CHART ───
+function drawDonut(expenses, savings, income) {
+  var canvas = document.getElementById('donutChart');
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  var cx = W / 2, cy = H / 2, r = 48, thick = 16;
+  var total = expenses + savings;
+  if (total <= 0) return;
+  var expAngle = (expenses / total) * Math.PI * 2;
+  var savAngle = (savings / total) * Math.PI * 2;
+  var start = -Math.PI / 2;
+  // Expenses arc
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, start, start + expAngle);
+  ctx.lineWidth = thick;
+  ctx.strokeStyle = '#ef4444';
+  ctx.lineCap = 'round';
+  ctx.stroke();
+  // Savings arc
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, start + expAngle, start + expAngle + savAngle);
+  ctx.lineWidth = thick;
+  ctx.strokeStyle = '#7c3aed';
+  ctx.lineCap = 'round';
+  ctx.stroke();
+  // Center text
+  var rate = income > 0 ? (savings / income * 100).toFixed(0) : '0';
+  ctx.fillStyle = '#1e1b2e';
+  ctx.font = 'bold 16px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(rate + '%', cx, cy - 6);
+  ctx.font = '10px Inter, sans-serif';
+  ctx.fillStyle = '#6b6882';
+  ctx.fillText('saved', cx, cy + 10);
+}
 </script>
 </body>
 </html>

@@ -4,56 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us — AI Budget Tool</title>
-<meta name="description" content="Get in touch with AI Budget Tool. We'd love to hear your feedback, suggestions or questions.">
+<meta name="description" content="Contact AI Budget Tool. Send us feedback, bug reports, or suggestions. We reply within 24-48 hours.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{--accent:#a78bfa;--accent2:#60a5fa;--text:#f1f5f9;--text-muted:#94a3b8;--radius:16px;--glass-bg:rgba(255,255,255,0.07);--glass-border:rgba(255,255,255,0.15);--green:#34d399;--red:#f87171;}
-  body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#0f0c29 0%,#1a1040 40%,#0d1b3e 70%,#0f0c29 100%);min-height:100vh;color:var(--text);overflow-x:hidden;}
-  body::before,body::after{content:'';position:fixed;border-radius:50%;filter:blur(80px);opacity:0.2;pointer-events:none;z-index:0;animation:drift 12s ease-in-out infinite alternate;}
-  body::before{width:400px;height:400px;background:radial-gradient(circle,#7c3aed,transparent);top:-100px;left:-100px;}
-  body::after{width:350px;height:350px;background:radial-gradient(circle,#2563eb,transparent);bottom:-80px;right:-80px;animation-delay:-6s;}
-  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.1)}}
-  .container{max-width:600px;margin:0 auto;padding:0 16px 60px;position:relative;z-index:1;}
-  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;}
-  .logo{font-size:16px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
-  .nav-links{display:flex;gap:20px;}
-  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
-  .nav-links a:hover{color:var(--text);}
-  .page-hero{text-align:center;padding:32px 0 28px;}
-  .page-hero h1{font-size:clamp(28px,4vw,42px);font-weight:700;background:linear-gradient(135deg,#fff 0%,#c4b5fd 50%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
-  .page-hero p{font-size:15px;color:var(--text-muted);line-height:1.6;}
-  .glass{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius);padding:28px 32px;margin-bottom:16px;}
-  .section-title{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
-  .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,0.4),transparent);}
-  .form-group{margin-bottom:16px;}
-  .form-group label{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;}
-  .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:11px 14px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s,background .2s;resize:none;}
-  .form-group input:focus,.form-group textarea:focus{border-color:var(--accent);background:rgba(167,139,250,0.08);}
-  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(148,163,184,0.5);}
-  .form-group textarea{height:130px;line-height:1.6;}
-  .btn-submit{width:100%;padding:14px;background:linear-gradient(135deg,#7c3aed,#2563eb);border:none;border-radius:12px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(124,58,237,0.4);margin-top:4px;}
-  .btn-submit:hover{opacity:.92;transform:translateY(-1px);}
-  .btn-submit:active{transform:translateY(0);}
-  .btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;}
-  .success-box{display:none;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25);border-radius:12px;padding:20px 24px;text-align:center;margin-top:16px;}
-  .success-box.show{display:block;animation:fadeIn .4s ease;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-  .success-icon{font-size:32px;margin-bottom:8px;}
-  .success-title{font-size:16px;font-weight:600;color:var(--green);margin-bottom:6px;}
-  .success-sub{font-size:13px;color:var(--text-muted);}
-  .error-box{display:none;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.25);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--red);margin-top:10px;}
-  .error-box.show{display:block;}
-  .info-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
-  .info-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px;text-align:center;}
-  .info-card .ic-icon{font-size:22px;margin-bottom:6px;}
-  .info-card .ic-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;}
-  .info-card .ic-sub{font-size:11px;color:var(--text-muted);line-height:1.5;}
-  footer{text-align:center;padding:20px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.07);margin-top:12px;}
-  footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
-  footer a:hover{color:var(--accent);}
-  .footer-copy{margin-top:8px;font-size:11px;opacity:.5;}
-  @media(max-width:600px){.glass{padding:18px 16px;}.info-cards{grid-template-columns:1fr 1fr;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#faf9ff;--bg2:#f3f1ff;--card:#ffffff;--border:#e8e4f7;
+  --accent:#7c3aed;--accent2:#4f46e5;--accent-light:#ede9fe;
+  --text:#1e1b2e;--text-muted:#6b6882;--text-light:#9994b0;
+  --radius:14px;--shadow:0 1px 3px rgba(124,58,237,0.06),0 4px 16px rgba(124,58,237,0.06);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:var(--text);overflow-x:hidden;}
+.container{max-width:680px;margin:0 auto;padding:0 16px 60px;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;border-bottom:1px solid var(--border);}
+.logo{font-size:15px;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.01em;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.page-hero{text-align:center;padding:40px 0 28px;}
+.page-hero h1{font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:-.02em;}
+.page-hero p{font-size:14px;color:var(--text-muted);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:16px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.reason{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center;}
+.reason-icon{font-size:20px;margin-bottom:6px;}
+.reason-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.reason-desc{font-size:11px;color:var(--text-muted);}
+label{display:block;font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:5px;letter-spacing:.02em;text-transform:uppercase;}
+input,textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--text);background:var(--bg);outline:none;transition:border-color .2s;margin-bottom:14px;}
+input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
+textarea{resize:vertical;min-height:120px;}
+.btn{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:9px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,transform .1s;}
+.btn:hover{background:var(--accent2);}
+.btn:active{transform:scale(0.99);}
+.success-msg{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px 18px;font-size:13.5px;color:#166534;line-height:1.7;margin-top:12px;text-align:center;}
+.error-msg{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;font-size:13px;color:#dc2626;margin-top:10px;}
+footer{text-align:center;padding:24px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:12px;}
+footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
+footer a:hover{color:var(--accent);}
+.footer-copy{margin-top:8px;font-size:11px;color:var(--text-light);}
+@media(max-width:520px){.reasons{grid-template-columns:1fr;}.card{padding:16px 18px;}}
 </style>
 </head>
 <body>
@@ -72,43 +64,39 @@
     <p>We value your feedback, suggestions and questions. We typically respond within 24–48 hours.</p>
   </div>
 
-  <div class="info-cards">
-    <div class="info-card">
-      <div class="ic-icon">💬</div>
-      <div class="ic-title">Feedback & Suggestions</div>
-      <div class="ic-sub">Help us improve the tool with your ideas</div>
+  <div class="card">
+    <div class="reasons">
+      <div class="reason">
+        <div class="reason-icon">💬</div>
+        <div class="reason-title">Feedback & Suggestions</div>
+        <div class="reason-desc">Help us improve the tool with your ideas</div>
+      </div>
+      <div class="reason">
+        <div class="reason-icon">🐛</div>
+        <div class="reason-title">Report a Bug</div>
+        <div class="reason-desc">Found something broken? Let us know</div>
+      </div>
     </div>
-    <div class="info-card">
-      <div class="ic-icon">🐛</div>
-      <div class="ic-title">Report a Bug</div>
-      <div class="ic-sub">Found something broken? Let us know</div>
-    </div>
-  </div>
 
-  <div class="glass">
-    <div class="section-title">Send Us a Message</div>
-    <form id="contact-form">
-      <div class="form-group">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required/>
-      </div>
-      <div class="form-group">
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required/>
-      </div>
-      <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
-      </div>
-      <input type="hidden" name="_subject" value="New message from aibudgettool.com"/>
-      <input type="text" name="_gotcha" style="display:none"/>
-      <button type="submit" class="btn-submit" id="submit-btn">Send Message</button>
-      <div class="error-box" id="error-box">Something went wrong. Please try again in a moment.</div>
+    <div class="section-label">Send Us a Message</div>
+
+    <form id="contactForm" action="https://formspree.io/f/xeevkdlz" method="POST">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+
+      <button type="submit" class="btn" id="submitBtn">Send Message</button>
+      <div class="error-msg" id="errorMsg">Something went wrong. Please try again in a moment.</div>
     </form>
-    <div class="success-box" id="success-box">
-      <div class="success-icon">✅</div>
-      <div class="success-title">Message sent successfully!</div>
-      <div class="success-sub">Thank you for reaching out. We'll get back to you within 24–48 hours.</div>
+
+    <div class="success-msg" id="successMsg">
+      ✅ <strong>Message sent successfully!</strong><br>
+      Thank you for reaching out. We'll get back to you within 24–48 hours.
     </div>
   </div>
 
@@ -121,38 +109,33 @@
     <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
   </footer>
 </div>
-
 <script>
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    const errorBox = document.getElementById('error-box');
-    const successBox = document.getElementById('success-box');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-    errorBox.classList.remove('show');
-    try {
-      const response = await fetch('https://formspree.io/f/xeevkdlz', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify({
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          message: document.getElementById('message').value
-        })
-      });
-      if (response.ok) {
-        document.getElementById('contact-form').style.display = 'none';
-        successBox.classList.add('show');
-      } else {
-        throw new Error('Failed');
-      }
-    } catch(err) {
-      errorBox.classList.add('show');
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const err = document.getElementById('errorMsg');
+  const suc = document.getElementById('successMsg');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  err.style.display = 'none';
+  try {
+    const res = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      this.style.display = 'none';
+      suc.style.display = 'block';
+    } else {
+      throw new Error('failed');
     }
-  });
+  } catch {
+    err.style.display = 'block';
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+  }
+});
 </script>
 </body>
 </html>
