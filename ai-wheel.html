@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompt Wheel — Spin Daily for Free ChatGPT, Claude, Gemini &amp; Perplexity Prompts</title>
+<meta name="description" content="Spin the AI Prompt Wheel and unlock one expert-crafted prompt daily for ChatGPT, Claude, Gemini, or Perplexity. 50+ professional AI prompts for work, coding, writing &amp; productivity. Free.">
+<meta name="keywords" content="AI prompts, ChatGPT prompts, Claude prompts, Gemini prompts, best AI prompts 2026, prompt wheel, free AI prompts, Perplexity prompts">
+<meta property="og:title" content="AI Prompt Wheel — Free Daily AI Prompts">
+<meta property="og:description" content="Spin daily to unlock expert prompts for ChatGPT, Claude, Gemini &amp; Perplexity. 50+ battle-tested prompts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.aibudgettool.com/ai-wheel.html">
+<link rel="canonical" href="https://www.aibudgettool.com/ai-wheel.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is the AI Prompt Wheel?","acceptedAnswer":{"@type":"Answer","text":"The AI Prompt Wheel is a free daily game where you spin a wheel that lands on one of four AI tools — ChatGPT, Claude, Gemini, or Perplexity — and unlocks one expert-crafted prompt for that AI. One spin per day keeps it special."}},
+{"@type":"Question","name":"Are the AI prompts really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. Each daily spin unlocks one professional prompt you can copy or download. The library includes 50+ prompts for productivity, coding, writing, learning, and business."}},
+{"@type":"Question","name":"What kind of prompts are included?","acceptedAnswer":{"@type":"Answer","text":"Expert-level prompts optimized for each AI: coding and debugging prompts for Claude, research prompts for Perplexity, productivity and creative prompts for ChatGPT, and analysis prompts for Gemini. Each prompt is battle-tested and ready to use."}},
+{"@type":"Question","name":"How often can I spin the wheel?","acceptedAnswer":{"@type":"Answer","text":"Once per day. This daily limit creates a habit loop and ensures you actually use each prompt rather than hoarding hundreds. Your streak counter tracks consecutive daily spins."}}
+]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:#a78bfa;--accent2:#60a5fa;--green:#34d399;--text:#f1f5f9;--muted:#94a3b8;--glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.12);
+--openai:#10a37f;--gemini:#4285f4;--claude:#d97757;--perplexity:#20b8cd}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(135deg,#0f0c29 0%,#1a1040 40%,#0d1b3e 70%,#0f0c29 100%);min-height:100vh;color:var(--text);overflow-x:hidden}
+body::before{content:'';position:fixed;width:500px;height:500px;background:radial-gradient(circle,#7c3aed,transparent);border-radius:50%;filter:blur(100px);opacity:.18;top:-150px;left:-150px;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+body::after{content:'';position:fixed;width:400px;height:400px;background:radial-gradient(circle,#2563eb,transparent);border-radius:50%;filter:blur(100px);opacity:.15;bottom:-100px;right:-100px;pointer-events:none;animation:drift 14s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(50px,40px) scale(1.15)}}
+.container{max-width:920px;margin:0 auto;padding:0 16px 60px;position:relative;z-index:1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;flex-wrap:wrap;gap:8px}
+.logo{font-size:16px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:8px;border:1px solid transparent;transition:.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--accent);background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.3)}
+h1{font-size:clamp(28px,5vw,46px);font-weight:800;background:linear-gradient(135deg,#fff,#c4b5fd 50%,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin:24px 0 10px;line-height:1.2}
+.sub{text-align:center;color:var(--muted);font-size:15px;margin-bottom:8px}
+.streak-bar{text-align:center;margin-bottom:24px;font-size:13px;color:var(--accent)}
+.wheel-stage{display:flex;flex-direction:column;align-items:center;position:relative;margin:10px 0 30px}
+.wheel-wrap{position:relative;width:min(420px,88vw);height:min(420px,88vw)}
+#wheel-canvas{width:100%;height:100%;filter:drop-shadow(0 10px 40px rgba(124,58,237,.35))}
+.pointer{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-top:30px solid #fbbf24;z-index:10;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.spin-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#1e1b4b,#312e81);border:3px solid rgba(255,255,255,.25);color:#fff;font-weight:800;font-size:18px;letter-spacing:.08em;cursor:pointer;z-index:5;transition:.25s;font-family:inherit;box-shadow:0 0 30px rgba(124,58,237,.4),inset 0 2px 10px rgba(255,255,255,.1)}
+.spin-btn:hover:not(:disabled){transform:translate(-50%,-50%) scale(1.07);box-shadow:0 0 50px rgba(124,58,237,.6)}
+.spin-btn:disabled{opacity:.55;cursor:not-allowed}
+.spin-btn.spinning{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 60px rgba(124,58,237,.8)}}
+.legend{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);background:var(--glass);border:1px solid var(--glass-border);padding:7px 14px;border-radius:20px}
+.dot{width:11px;height:11px;border-radius:50%}
+.modal-overlay{position:fixed;inset:0;background:rgba(5,5,20,.78);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.modal-overlay.show{display:flex;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}}
+.modal{background:linear-gradient(160deg,#1a1342,#12102e);border:1px solid rgba(167,139,250,.35);border-radius:22px;padding:30px;max-width:560px;width:100%;max-height:85vh;overflow-y:auto;position:relative;animation:popIn .4s cubic-bezier(.18,1.4,.4,1)}
+@keyframes popIn{from{transform:scale(.7);opacity:0}}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+.modal-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;font-weight:700;font-size:14px;margin-bottom:14px}
+.modal h3{font-size:22px;font-weight:700;margin-bottom:4px}
+.modal .cat-label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.prompt-box{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px;font-size:14px;line-height:1.75;color:#e2e8f0;white-space:pre-wrap;margin-bottom:18px;max-height:300px;overflow-y:auto}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s;flex:1;min-width:120px;text-align:center}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(167,139,250,.35)}
+.btn.alt{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+.come-back{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+.glass{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:16px;padding:24px 28px;margin-bottom:16px}
+h2{font-size:19px;font-weight:600;margin:22px 0 10px}
+h2:first-child{margin-top:0}
+p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+strong{color:var(--text);font-weight:500}
+.preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+.preview-card{background:rgba(0,0,0,.25);border:1px solid var(--glass-border);border-radius:12px;padding:16px;border-top:3px solid var(--accent)}
+.preview-card .ai-name{font-weight:700;font-size:13px;margin-bottom:6px}
+.preview-card p{font-size:12px;margin:0}
+.cta-row{text-align:center;margin:24px 0}
+.cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;padding:13px 30px;border-radius:10px;font-weight:600;text-decoration:none;margin:6px}
+.cta.blue{background:linear-gradient(135deg,#60a5fa,#3b82f6)}
+footer{text-align:center;padding:20px 0;font-size:12px;color:var(--muted);border-top:1px solid rgba(255,255,255,.07);margin-top:12px}
+footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--accent)}
+#confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:200}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1e1b4b;border:1px solid rgba(167,139,250,.4);color:#fff;padding:12px 26px;border-radius:12px;font-size:14px;font-weight:500;transition:.35s;z-index:300;opacity:0;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media(max-width:600px){.glass{padding:16px 18px}.modal{padding:22px 18px}.nav-links a{padding:5px 8px;font-size:12px}}
+</style>
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+<div class="toast" id="toast"></div>
+
+<div class="container">
+<nav>
+  <a href="index.html" class="logo">✦ AI Budget Tool</a>
+  <div class="nav-links">
+    <a href="index.html">Calculator</a>
+    <a href="ai-tools.html">AI Tools</a>
+    <a href="ai-wheel.html" class="active">🎡 Spin Wheel</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<h1>🎡 AI Prompt Wheel</h1>
+<p class="sub">Spin once a day · Land on an AI · Unlock one expert prompt</p>
+<div class="streak-bar" id="streak-bar"></div>
+
+<div class="wheel-stage">
+  <div class="wheel-wrap">
+    <div class="pointer"></div>
+    <canvas id="wheel-canvas" width="840" height="840"></canvas>
+    <button class="spin-btn" id="spin-btn" onclick="spin()">SPIN</button>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><span class="dot" style="background:var(--openai)"></span>ChatGPT</div>
+    <div class="legend-item"><span class="dot" style="background:var(--claude)"></span>Claude</div>
+    <div class="legend-item"><span class="dot" style="background:var(--gemini)"></span>Gemini</div>
+    <div class="legend-item"><span class="dot" style="background:var(--perplexity)"></span>Perplexity</div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- SEO CONTENT BELOW WHEEL -->
+<div class="glass">
+  <h2>What is the AI Prompt Wheel?</h2>
+  <p>Most people use AI tools at 10% of their potential because they don't know how to prompt. The AI Prompt Wheel fixes that — one expert-crafted prompt per day, randomly chosen across <strong>ChatGPT, Claude, Gemini, and Perplexity</strong>. Each prompt is battle-tested, copy-paste ready, and optimized for the specific AI it lands on.</p>
+  <p>Why one per day? Because scarcity makes you actually <strong>use</strong> the prompt instead of hoarding a list of 500 you'll never open. Come back tomorrow for the next one — your streak counter tracks your progress.</p>
+
+  <h2>What kind of prompts will I get?</h2>
+  <div class="preview-grid">
+    <div class="preview-card" style="border-top-color:var(--openai)"><div class="ai-name" style="color:var(--openai)">🤖 ChatGPT</div><p>Productivity, email mastery, brainstorming, learning, planning, negotiation, decision-making.</p></div>
+    <div class="preview-card" style="border-top-color:var(--claude)"><div class="ai-name" style="color:var(--claude)">🧠 Claude</div><p>Code review, debugging, refactoring, documentation, system design, SQL optimization.</p></div>
+    <div class="preview-card" style="border-top-color:var(--gemini)"><div class="ai-name" style="color:var(--gemini)">💎 Gemini</div><p>Research synthesis, data analysis, Workspace automation, presentations, trip planning.</p></div>
+    <div class="preview-card" style="border-top-color:var(--perplexity)"><div class="ai-name" style="color:var(--perplexity)">🔍 Perplexity</div><p>Deep research, fact-checking, competitor intelligence, market analysis, source ranking.</p></div>
+  </div>
+
+  <h2>50 expert prompts across 4 AI platforms</h2>
+  <p>Our prompt library includes 13 prompts per AI tool, spanning categories like productivity, coding, writing, career, research, finance, learning, business, health, and planning. Every prompt uses advanced techniques — role assignment, step-by-step reasoning, output formatting, and constraint design — so you learn prompting patterns naturally through daily use.</p>
+
+  <h2>Why daily prompts make you better at AI</h2>
+  <p>Prompting is a skill built through repetition. Each daily prompt teaches you a <strong>pattern</strong>. After 30 spins, you won't need prompt libraries anymore — you'll write better prompts yourself. That's the real prize.</p>
+</div>
+
+<div class="cta-row">
+  <a href="ai-tools.html" class="cta">📊 Compare AI Tools →</a>
+  <a href="ai-tools.html" class="cta blue">🎮 Take the AI Quiz →</a>
+</div>
+
+<footer>
+  <div>
+    <a href="index.html">Calculator</a>
+    <a href="ai-tools.html">AI Tools</a>
+    <a href="ai-wheel.html">🎡 Spin Wheel</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div style="margin-top:8px;font-size:11px;opacity:.5">© 2026 AI Budget Tool · Free forever</div>
+</footer>
+</div>
+
+<script>
+// ═══════════ PROMPT LIBRARY (50 prompts) ═══════════
+const PROMPTS={
+chatgpt:{name:"ChatGPT",color:"#10a37f",icon:"🤖",url:"https://chat.openai.com",items:[
+{cat:"Productivity",title:"The Weekly Reset",text:"Act as my personal productivity strategist. I'll describe my upcoming week. Analyze it and: 1) Identify my 3 highest-leverage tasks, 2) Flag anything I should delegate or delete, 3) Design an ideal time-blocked schedule with deep work in the morning, 4) Predict my biggest distraction risk and give a countermeasure. Ask me 3 questions first to understand my situation.\n\nMy week: [DESCRIBE YOUR WEEK]"},
+{cat:"Learning",title:"The Feynman Tutor",text:"You are a tutor using the Feynman Technique. I want to learn: [TOPIC]. Step 1: Explain it simply, as if I'm 12 years old. Step 2: Ask me to explain it back to you. Step 3: Identify gaps in my explanation and re-teach ONLY those gaps with new analogies. Step 4: Give me one real-world problem to apply it. Don't move to the next step until I respond."},
+{cat:"Writing",title:"Email Surgeon",text:"Rewrite the email below in 3 versions: 1) DIRECT — 50% shorter, leads with the ask, 2) DIPLOMATIC — same ask but softened for a senior stakeholder, 3) PERSUASIVE — restructured using the problem-agitate-solve framework. For each, explain in one line what changed and why.\n\nEmail: [PASTE EMAIL]"},
+{cat:"Career",title:"Interview Pressure Test",text:"You are a tough but fair hiring manager interviewing me for the role of [JOB TITLE]. Ask me one challenging behavioral or technical question at a time. After each answer: score it 1-10, tell me exactly what a 10/10 answer includes, then ask the next question. Increase difficulty as we go. Start now."},
+{cat:"Business",title:"Devil's Advocate Board",text:"I'm going to share a business decision I'm about to make. Respond as a board of 3 advisors: THE SKEPTIC (finds every flaw and risk), THE OPERATOR (focuses on execution reality and hidden costs), THE INVESTOR (evaluates ROI and opportunity cost). Each gives their honest verdict, then they vote: proceed, modify, or kill.\n\nMy decision: [DESCRIBE DECISION]"},
+{cat:"Creativity",title:"Idea Multiplier",text:"Take my idea below and run it through 5 creative lenses: 1) INVERT — what's the opposite approach? 2) COMBINE — merge it with an unrelated industry, 3) EXTREME — what if budget/time were 10x or 1/10th? 4) USER FLIP — redesign for a completely different audience, 5) SUBTRACT — remove the most 'essential' feature. Give one concrete variation per lens.\n\nIdea: [YOUR IDEA]"},
+{cat:"Daily Planning",title:"The 5PM Review",text:"Act as my end-of-day coach. Ask me these one at a time, wait for my answer each time: 1) What did I actually complete today? 2) What did I avoid and why? 3) What consumed time but created no value? Then: summarize my day in 2 sentences, give me ONE specific behavioral change for tomorrow, and write my top-3 task list for tomorrow morning."},
+{cat:"Negotiation",title:"Negotiation Simulator",text:"Roleplay a negotiation with me. You are [THE OTHER PARTY — e.g., 'a client pushing back on my price']. Be realistic and moderately difficult. After every exchange, pause and add a [COACH NOTE] rating my last message and suggesting a stronger alternative phrasing. Begin by stating your opening position.\n\nContext: [DESCRIBE THE NEGOTIATION]"},
+{cat:"Health",title:"Habit Architect",text:"I want to build this habit: [HABIT]. Using behavioral science (cue-routine-reward, habit stacking, friction design): 1) Design the smallest version that takes under 2 minutes, 2) Attach it to an existing habit I'll tell you about, 3) Identify my 2 most likely failure points, 4) Create an if-then plan for each, 5) Give me a simple 30-day tracking method. Ask about my current routine first."},
+{cat:"Decision",title:"The Regret Minimizer",text:"Help me decide: [DECISION]. Walk me through 4 frameworks one at a time: 1) 10/10/10 — how will I feel in 10 minutes, 10 months, 10 years? 2) Regret test — at 80, which choice would I regret NOT making? 3) Fear check — am I choosing this from fear or growth? 4) Reversibility — is this a one-way or two-way door? After all 4, tell me what my answers reveal."},
+{cat:"Communication",title:"Difficult Conversation Script",text:"I need to have a difficult conversation: [DESCRIBE SITUATION]. Build me a script using nonviolent communication: 1) Opening line that doesn't trigger defensiveness, 2) Observation without judgment, 3) My feelings and needs stated cleanly, 4) A clear, specific request, 5) Three likely responses they might give and how to handle each."},
+{cat:"Finance",title:"Money Leak Detector",text:"Act as a no-nonsense personal finance auditor. I'll list my monthly expenses. For each one: classify it as ESSENTIAL, VALUE (worth it), or LEAK (cut it), estimate yearly cost of every leak, then design a realistic plan to redirect 80% of leak money toward [GOAL] without making my life miserable. Be brutally honest.\n\nExpenses: [LIST THEM]"},
+{cat:"Self-Improvement",title:"Blind Spot Finder",text:"I'll describe a recurring problem in my life. Your job: identify the pattern I can't see. Ask me 5 probing questions one at a time — about when it happens, who's involved, what I do right before, what I get out of it (hidden payoff), and what I'm avoiding. Then give me your honest hypothesis about the root cause and one experiment to test it.\n\nProblem: [DESCRIBE]"}
+]},
+claude:{name:"Claude",color:"#d97757",icon:"🧠",url:"https://claude.ai",items:[
+{cat:"Coding",title:"Senior Code Reviewer",text:"Review this code as a senior engineer doing a thorough PR review. Structure your review: 1) BUGS — actual defects with line references, 2) SECURITY — vulnerabilities or unsafe patterns, 3) PERFORMANCE — bottlenecks and complexity issues, 4) MAINTAINABILITY — naming, structure, future-proofing, 5) VERDICT — approve, request changes, or block. Rate severity of each issue. Then show the corrected version of the worst problem.\n\n[PASTE CODE]"},
+{cat:"Debugging",title:"The Debugging Partner",text:"I have a bug. Act as a rubber-duck debugging partner who actually talks back. Process: 1) I describe the bug and expected vs actual behavior, 2) You ask me clarifying questions ONE at a time (max 4), 3) You list the 3 most likely root causes ranked by probability, 4) For each, give me a specific test to confirm or eliminate it, 5) Once found, explain WHY it happened so I avoid it next time.\n\nBug: [DESCRIBE BUG + PASTE RELEVANT CODE]"},
+{cat:"Documentation",title:"README Generator Pro",text:"Write a professional README.md for my project. Include: project description with a one-line hook, badges placeholder, features list, installation steps, quick-start example with real code, configuration table, API/usage documentation, troubleshooting section with 3 common issues, and contribution guidelines. Match the tone of top open-source projects. Ask me 3 questions about the project first.\n\nProject: [DESCRIBE OR PASTE CODE]"},
+{cat:"Refactoring",title:"Refactor Strategist",text:"Analyze this code and create a refactoring plan: 1) Identify code smells (name each one specifically), 2) Rank refactors by impact-to-risk ratio, 3) Show before/after for the top 2 refactors, 4) Flag anything that needs tests BEFORE refactoring, 5) Estimate what could break. Do NOT rewrite everything — surgical changes only.\n\n[PASTE CODE]"},
+{cat:"Architecture",title:"System Design Consultant",text:"I'm designing: [SYSTEM DESCRIPTION]. Walk through it like a staff engineer: 1) Clarify requirements with 4 sharp questions, 2) Propose the simplest architecture that works, 3) Identify the 2 components most likely to fail at scale, 4) Show how the design evolves at 10x and 100x load, 5) List what I should explicitly NOT build yet. Justify every choice with a trade-off."},
+{cat:"Writing",title:"Long-Form Article Architect",text:"Help me write a deeply researched article on: [TOPIC]. Phase 1: Generate 3 unique angles no one else is covering, let me pick. Phase 2: Build a detailed outline with a narrative arc — hook, tension, insight, payoff. Phase 3: Write section by section, pausing for my feedback. Style: confident but not arrogant, specific examples over abstractions, no filler phrases."},
+{cat:"Analysis",title:"Document Interrogator",text:"I'm pasting a long document. Your tasks: 1) Summarize it in 3 sentences, 2) Extract every claim that lacks supporting evidence, 3) Identify what the author conveniently leaves out, 4) Find internal contradictions if any, 5) Tell me what questions I should ask before trusting or acting on this document.\n\nDocument: [PASTE TEXT]"},
+{cat:"Learning",title:"Code Explainer (Beginner Mode)",text:"Explain this code to me like I'm a beginner who knows basic syntax but not patterns. For each significant block: 1) WHAT it does in plain English, 2) WHY the author wrote it this way, 3) An analogy from everyday life, 4) What would break if it were removed. End with one question to test whether I understood.\n\n[PASTE CODE]"},
+{cat:"Testing",title:"Test Suite Designer",text:"Design a test suite for this code: 1) List test cases by category — happy path, edge cases, error handling, boundary values, 2) Identify the 3 most dangerous untested scenarios, 3) Write actual test code for the top 5 cases using [FRAMEWORK], 4) Point out any code that's hard to test and how to fix that.\n\n[PASTE CODE]"},
+{cat:"Career",title:"Technical Resume Surgeon",text:"Rewrite my resume bullet points to be interview-magnet quality. Rules: start with strong verbs, quantify impact (help me estimate if I don't have numbers), follow the formula 'Did X using Y resulting in Z', cut buzzwords, keep each under 2 lines. For each bullet, show: original → rewritten → what interview question it will trigger.\n\nMy bullets: [PASTE THEM]"},
+{cat:"SQL/Data",title:"Query Optimizer",text:"Analyze this SQL query: 1) Explain what it does in plain English, 2) Identify performance problems — missing indexes, full scans, bad joins, N+1 patterns, 3) Rewrite it optimized with comments explaining each change, 4) Suggest what indexes to create, 5) Estimate the performance difference and explain how to verify with an execution plan.\n\n[PASTE QUERY]"},
+{cat:"Communication",title:"Technical to Executive Translator",text:"Translate my technical update into an executive summary: 1) Lead with business impact, not technical detail, 2) Convert jargon into outcomes, 3) Frame problems with solutions attached, 4) Max 5 sentences + 3 bullet points, 5) End with the ONE decision or resource I need from leadership.\n\nMy update: [PASTE TECHNICAL UPDATE]"},
+{cat:"DevOps",title:"Incident Postmortem Writer",text:"Help me write a blameless postmortem: 1) Build a clean timeline from my messy notes, 2) Separate root cause from triggers and contributing factors (5 Whys), 3) Identify what detection/alerting gap let it grow, 4) Draft action items that are specific and assignable — no 'be more careful', 5) Write the 3-sentence executive summary.\n\nIncident notes: [PASTE NOTES]"}
+]},
+gemini:{name:"Gemini",color:"#4285f4",icon:"💎",url:"https://gemini.google.com",items:[
+{cat:"Research",title:"Research Synthesizer",text:"I'm researching: [TOPIC]. Create a structured research brief: 1) Break the topic into 5 sub-questions that matter most, 2) For each, summarize the current consensus and the main disagreement, 3) Identify what data would settle the debate, 4) List the 3 most credible source types to check, 5) Give me a one-page synthesis I could present tomorrow."},
+{cat:"Data Analysis",title:"Spreadsheet Strategist",text:"I have data in Google Sheets about: [DESCRIBE DATA]. Help me: 1) Design the 5 most insightful analyses for this data, 2) Write the exact formulas or steps for each, 3) Recommend the best chart type per analysis and why, 4) Identify what data I'm NOT collecting that would unlock better insights, 5) Build a simple dashboard layout plan."},
+{cat:"Productivity",title:"Workspace Automation Finder",text:"Analyze my weekly workflow and find automation opportunities in Google Workspace. For each repetitive task I describe: 1) Rate automation potential (easy/medium/hard), 2) Name the exact tool — Apps Script, Gmail filters, Calendar rules, Forms, etc., 3) Describe the setup in numbered steps, 4) Estimate hours saved per month.\n\nMy tasks: [LIST REPETITIVE TASKS]"},
+{cat:"Comparison",title:"Decision Matrix Builder",text:"I'm choosing between: [OPTIONS]. Build a rigorous comparison: 1) Interview me — ask 4 questions to discover my real priorities, 2) Create a weighted decision matrix with my criteria, 3) Score each option with justification, 4) Run a sensitivity check — does the winner change if my top priority shifts? 5) Give your recommendation with confidence level."},
+{cat:"Learning",title:"Visual Learning Map",text:"Create a learning roadmap for: [SKILL/TOPIC]. Structure: 1) Map the territory — what are the 4-6 major sub-domains? 2) Order them by dependency, 3) For each: the ONE core concept, the best free resource, and a mini-project to prove understanding, 4) Realistic timeline at 5 hours/week, 5) The most common way beginners fail and how to avoid it."},
+{cat:"Business",title:"Market Snapshot Generator",text:"Give me a structured market snapshot for: [INDUSTRY/PRODUCT]. Cover: 1) Market size and growth direction, 2) Top 3-5 players and their distinct positioning, 3) What's changed in the last 12 months, 4) Underserved segments or gaps, 5) The 3 biggest risks for a new entrant. Mark clearly which parts are facts vs. your inference."},
+{cat:"Content",title:"Presentation Builder",text:"Build me a presentation on: [TOPIC] for [AUDIENCE]. Deliver: 1) A 10-slide structure with a narrative arc — problem, stakes, insight, solution, action, 2) Exact title + 3 bullet points per slide, 3) One data point or visual suggestion per slide, 4) Speaker notes for the 2 hardest slides, 5) The single takeaway sentence the audience must remember."},
+{cat:"Email",title:"Inbox Zero Architect",text:"Design my personal email management system: 1) Ask me about my email volume and types, 2) Create a label/folder taxonomy (max 7 labels), 3) Write the exact Gmail filter rules to auto-sort 80% of mail, 4) Give me a 2-touch processing rule for what remains, 5) Design my end-of-day email shutdown ritual. Sustainable, not perfectionist."},
+{cat:"Planning",title:"Project Kickoff Pack",text:"I'm starting a project: [DESCRIBE]. Generate the complete kickoff pack: 1) One-paragraph project charter with success criteria, 2) Work breakdown into phases and milestones, 3) RACI-style role clarity, 4) Top 5 risks with early warning signs, 5) The first 3 actions to take this week. Be concrete, not corporate."},
+{cat:"Travel",title:"Trip Optimizer",text:"Plan my trip to: [DESTINATION] for [DAYS] days, budget [BUDGET], interests: [INTERESTS]. Build: 1) Day-by-day itinerary balancing must-sees with discovery time, 2) Logistics reality check — actual travel times between spots, 3) Budget breakdown with where to splurge vs save, 4) One non-obvious local experience per day, 5) Backup plan for one rainy day."},
+{cat:"Analysis",title:"Trend Decoder",text:"Analyze this trend: [TREND]. Structure: 1) Separate the signal from the hype — what's actually new? 2) Who profits if this continues, and who loses? 3) Leading indicators to watch over 6 months, 4) Historical parallel — when did something similar happen? 5) Your honest probability estimate: durable vs. fad."},
+{cat:"Writing",title:"Multi-Format Repurposer",text:"Take my content below and repurpose into 5 formats: 1) LinkedIn post with a scroll-stopping first line, 2) Twitter/X thread (6 tweets max), 3) Email newsletter section with subject line, 4) 60-second video script with hook, 5) Single quotable graphic text. Same core message — only packaging changes.\n\nContent: [PASTE CONTENT]"}
+]},
+perplexity:{name:"Perplexity",color:"#20b8cd",icon:"🔍",url:"https://perplexity.ai",items:[
+{cat:"Research",title:"Deep Dive Protocol",text:"Research [TOPIC] with academic rigor: 1) Current state of knowledge — what's established consensus? 2) The 3 most significant recent developments with dates and sources, 3) Where do credible experts disagree, and what's each side's strongest argument? 4) What's the most cited primary source? 5) What questions remain genuinely unanswered? Cite everything."},
+{cat:"Fact-Check",title:"Claim Verifier",text:"Fact-check this claim: \"[CLAIM]\". Process: 1) Trace it to its original source — who said it first and in what context? 2) What does the best available evidence say — supporting AND contradicting? 3) Rate it: TRUE / MOSTLY TRUE / MISLEADING / FALSE / UNVERIFIABLE, 4) Explain what nuance is usually lost when people share this, 5) Give me the one-sentence accurate version."},
+{cat:"Market Research",title:"Competitor Intelligence Scan",text:"Build a competitive intelligence report on: [COMPANY/PRODUCT]. Find: 1) Their current positioning and recent strategic moves, 2) Pricing structure and recent changes, 3) What customers praise and complain about most, 4) Recent hiring patterns that signal direction, 5) Their most vulnerable point. Sources for everything."},
+{cat:"Buying",title:"Purchase Researcher",text:"I'm buying: [PRODUCT, BUDGET]. Research: 1) Top 3 options at my budget with current prices, 2) What professional reviewers consistently say about each, 3) What actual long-term owners complain about (stuff reviews miss), 4) Is a new model about to launch that should make me wait? 5) Best verdict for MY use case: [DESCRIBE USE]. Recent sources only."},
+{cat:"News",title:"Story Behind the Story",text:"Regarding this news: [EVENT]. Go deeper: 1) Timeline — what actually happened in sequence? 2) What's the context most coverage skips? 3) How are different outlets framing it differently, and what does that reveal? 4) Who benefits from each framing? 5) What should I watch for next that will reveal how this really ends?"},
+{cat:"Health",title:"Evidence-Based Health Check",text:"Research the evidence on: [HEALTH TOPIC]. Strictly evidence-based: 1) What do systematic reviews and meta-analyses conclude? 2) Effect size — meaningful or just statistically significant? 3) Known risks and who should avoid it, 4) What do mainstream medical bodies recommend? 5) Rate the overall evidence quality: strong/moderate/weak/insufficient. Note: I'll verify with my doctor."},
+{cat:"Career",title:"Industry Pulse Check",text:"Analyze the current job market for: [ROLE/FIELD]. Find: 1) Demand trend — growing, stable, or shrinking with data, 2) Salary ranges by experience level and region, 3) Skills appearing most in recent job postings, 4) What's being automated in this role, 5) The adjacent skill that most increases market value right now. Recent data only."},
+{cat:"Tech",title:"Tool Comparison Researcher",text:"Compare [TOOL A] vs [TOOL B] for [USE CASE]: 1) Feature-by-feature on what matters for my use case, 2) Real user sentiment from recent reviews — not marketing, 3) Pricing including hidden costs users discover later, 4) Migration difficulty if I switch, 5) Which one is gaining vs losing momentum? Verdict with reasoning."},
+{cat:"Local",title:"Local Deep Search",text:"Research the best [SERVICE/BUSINESS TYPE] in [LOCATION]: 1) Top 5 options with what makes each distinct, 2) Pattern analysis of their recent reviews — praise and complaints, 3) Price comparison if available, 4) Red flags to check before choosing, 5) The 3 questions I should ask before committing."},
+{cat:"Finance",title:"Investment Context Builder",text:"Build context on: [STOCK/SECTOR/ASSET]. NOT advice — just facts: 1) Recent performance and the events that drove it, 2) What bulls vs bears argue — strongest case each side, 3) Upcoming events that could move it, 4) How analysts' views have shifted recently, 5) What a skeptical investor would investigate before deciding. Sources throughout."},
+{cat:"Learning",title:"Source Quality Ranker",text:"I want to learn [TOPIC] from the best sources: 1) Find the 5 most respected resources — courses, books, channels, docs, 2) For each: who's behind it and why are they credible? 3) Which is best for beginners vs advanced? 4) What do learners say after finishing — did it actually work? 5) The optimal sequence to consume them."},
+{cat:"Science",title:"Study Decoder",text:"A study is making headlines: [STUDY/HEADLINE]. Decode it: 1) What did the study ACTUALLY find vs what headlines claim? 2) Methodology check — sample size, duration, controls, conflicts of interest, 3) What do other researchers say? 4) Does it confirm or contradict prior research? 5) The accurate one-sentence takeaway."}
+]}};
+
+// ═══════════ WHEEL SEGMENTS (8 slices, 4 AIs × 2) ═══════════
+const SEGMENTS=[
+{ai:"chatgpt",label:"ChatGPT",color:"#10a37f",colorDark:"#0d8a6a"},
+{ai:"claude",label:"Claude",color:"#d97757",colorDark:"#c0633f"},
+{ai:"gemini",label:"Gemini",color:"#4285f4",colorDark:"#2f6fd6"},
+{ai:"perplexity",label:"Perplexity",color:"#20b8cd",colorDark:"#189fb2"},
+{ai:"chatgpt",label:"ChatGPT",color:"#0d8a6a",colorDark:"#0a7058"},
+{ai:"claude",label:"Claude",color:"#c0633f",colorDark:"#a85535"},
+{ai:"gemini",label:"Gemini",color:"#2f6fd6",colorDark:"#2558b0"},
+{ai:"perplexity",label:"Perplexity",color:"#189fb2",colorDark:"#14889a"}
+];
+
+const canvas=document.getElementById('wheel-canvas');
+const ctx=canvas.getContext('2d');
+const CX=420,CY=420,R=400;
+const N=SEGMENTS.length,ARC=2*Math.PI/N;
+let currentAngle=0;
+
+function drawWheel(rot){
+  ctx.clearRect(0,0,840,840);
+  for(let i=0;i<N;i++){
+    const start=rot+i*ARC,end=start+ARC;
+    ctx.beginPath();ctx.moveTo(CX,CY);ctx.arc(CX,CY,R,start,end);ctx.closePath();
+    const g=ctx.createRadialGradient(CX,CY,60,CX,CY,R);
+    g.addColorStop(0,SEGMENTS[i].color);g.addColorStop(1,SEGMENTS[i].colorDark);
+    ctx.fillStyle=g;ctx.fill();
+    ctx.strokeStyle="rgba(255,255,255,0.2)";ctx.lineWidth=2.5;ctx.stroke();
+    ctx.save();ctx.translate(CX,CY);ctx.rotate(start+ARC/2);
+    ctx.textAlign="right";ctx.fillStyle="#fff";ctx.font="700 32px Inter,sans-serif";
+    ctx.shadowColor="rgba(0,0,0,0.5)";ctx.shadowBlur=6;
+    ctx.fillText(SEGMENTS[i].label,R-30,11);ctx.restore();
+  }
+  ctx.beginPath();ctx.arc(CX,CY,R,0,2*Math.PI);
+  ctx.strokeStyle="rgba(255,255,255,0.3)";ctx.lineWidth=5;ctx.stroke();
+  for(let i=0;i<16;i++){
+    const a=rot+i*(Math.PI/8);
+    ctx.beginPath();ctx.arc(CX+Math.cos(a)*R,CY+Math.sin(a)*R,5,0,2*Math.PI);
+    ctx.fillStyle="#fbbf24";ctx.fill();
+  }
+}
+drawWheel(0);
+
+// ═══════════ DAILY LIMIT + STREAK ═══════════
+function todayKey(){const d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
+function getState(){try{return JSON.parse(localStorage.getItem("ai-wheel-v2")||"{}")}catch(e){return{}}}
+function setState(s){try{localStorage.setItem("ai-wheel-v2",JSON.stringify(s))}catch(e){}}
+function hasSpunToday(){return getState().lastSpin===todayKey();}
+function updateStreakBar(){
+  const s=getState();const streak=s.streak||0;const el=document.getElementById('streak-bar');
+  if(hasSpunToday()){
+    el.innerHTML="🔥 Streak: <strong>"+streak+" day"+(streak!==1?"s":"")+"</strong> · Come back tomorrow for your next prompt!";
+    document.getElementById('spin-btn').disabled=true;
+    document.getElementById('spin-btn').textContent="✓ DONE";
+  }else{
+    el.innerHTML=streak>0?"🔥 Streak: <strong>"+streak+" day"+(streak!==1?"s":"")+"</strong> · Spin now to keep it alive!":"✨ Spin the wheel to unlock your first AI prompt!";
+  }
+}
+updateStreakBar();
+
+// ═══════════ FIXED SPIN LOGIC ═══════════
+let spinning=false;
+function spin(){
+  if(spinning||hasSpunToday())return;
+  spinning=true;
+  const btn=document.getElementById('spin-btn');
+  btn.disabled=true;btn.classList.add('spinning');btn.textContent="···";
+  // Random total spin: 6-9 full rotations + random offset
+  const totalSpin=(6+Math.random()*3)*2*Math.PI + Math.random()*2*Math.PI;
+  const finalAngle=currentAngle+totalSpin;
+  const duration=5500;
+  const startTime=performance.now();
+  const startAngle=currentAngle;
+  function easeOutQuint(t){return 1-Math.pow(1-t,5);}
+  function frame(now){
+    const t=Math.min(1,(now-startTime)/duration);
+    currentAngle=startAngle+(finalAngle-startAngle)*easeOutQuint(t);
+    drawWheel(currentAngle);
+    if(t<1){requestAnimationFrame(frame);}
+    else{
+      spinning=false;btn.classList.remove('spinning');
+      // ★ BUG FIX: Calculate which segment is ACTUALLY under the pointer
+      // Pointer is at top = -PI/2. Segment i goes from currentAngle+i*ARC to currentAngle+(i+1)*ARC
+      // Normalize the pointer angle relative to the wheel's rotation
+      var pointerAngle=-Math.PI/2;
+      var rel=((pointerAngle-currentAngle)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);
+      var landedIndex=Math.floor(rel/ARC)%N;
+      onWin(SEGMENTS[landedIndex].ai);
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+// ═══════════ WIN HANDLER ═══════════
+let currentPrompt=null,currentAI=null;
+function onWin(aiKey){
+  const ai=PROMPTS[aiKey];
+  const prompt=ai.items[Math.floor(Math.random()*ai.items.length)];
+  currentPrompt=prompt;currentAI=ai;
+  const s=getState();
+  const yesterday=(()=>{const d=new Date();d.setDate(d.getDate()-1);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();})();
+  s.streak=(s.lastSpin===yesterday)?(s.streak||0)+1:1;
+  s.lastSpin=todayKey();s.totalSpins=(s.totalSpins||0)+1;
+  setState(s);updateStreakBar();fireConfetti();
+  document.getElementById('modal-content').innerHTML=
+    '<div class="modal-badge" style="background:'+ai.color+'22;color:'+ai.color+'">'+ai.icon+' '+ai.name+' &middot; Today\'s Prompt 🎉</div>'+
+    '<h3>'+prompt.title+'</h3>'+
+    '<div class="cat-label">'+prompt.cat+' prompt</div>'+
+    '<div class="prompt-box">'+prompt.text.replace(/\n/g,'<br>')+'</div>'+
+    '<div class="modal-actions">'+
+    '<button class="btn" onclick="copyPrompt()">📋 Copy Prompt</button>'+
+    '<button class="btn alt" onclick="downloadPrompt()">⬇ Download .txt</button>'+
+    '<a class="btn alt" style="text-decoration:none;line-height:1.4" href="'+ai.url+'" target="_blank" rel="noopener">↗ Open '+ai.name+'</a>'+
+    '</div>'+
+    '<div class="come-back">🎡 Streak: '+s.streak+' day'+(s.streak!==1?'s':'')+'! Spin again tomorrow.</div>';
+  document.getElementById('modal-overlay').classList.add('show');
+}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('show');}
+document.getElementById('modal-overlay').addEventListener('click',function(e){if(e.target.id==='modal-overlay')closeModal();});
+
+function copyPrompt(){
+  if(!currentPrompt)return;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(currentPrompt.text).then(function(){showToast("📋 Prompt copied!")}).catch(function(){fallbackCopy(currentPrompt.text)});
+  }else fallbackCopy(currentPrompt.text);
+}
+function fallbackCopy(tx){
+  var ta=document.createElement('textarea');ta.value=tx;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');showToast("📋 Prompt copied!")}catch(e){showToast("Copy failed")}
+  document.body.removeChild(ta);
+}
+function downloadPrompt(){
+  if(!currentPrompt||!currentAI)return;
+  var content="=== "+currentAI.name.toUpperCase()+" PROMPT ===\n"+currentPrompt.title+" ("+currentPrompt.cat+")\n\n"+currentPrompt.text+"\n\n--- Unlocked at aibudgettool.com/ai-wheel.html";
+  var blob=new Blob([content],{type:"text/plain"});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=currentAI.name.toLowerCase()+"-prompt-"+todayKey()+".txt";
+  a.click();URL.revokeObjectURL(a.href);showToast("⬇ Downloaded!");
+}
+
+var toastTimer;
+function showToast(msg){
+  var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.remove('show')},2600);
+}
+
+function fireConfetti(){
+  var c=document.getElementById('confetti-canvas');c.width=window.innerWidth;c.height=window.innerHeight;
+  var cx2=c.getContext('2d');
+  var colors=["#a78bfa","#60a5fa","#34d399","#f59e0b","#ef4444","#ec4899","#fbbf24","#10a37f","#4285f4","#d97757","#20b8cd"];
+  var pieces=[];for(var p=0;p<160;p++)pieces.push({
+    x:c.width/2+(Math.random()-.5)*200,y:c.height/2,
+    w:Math.random()*9+4,h:Math.random()*5+2,
+    color:colors[Math.floor(Math.random()*colors.length)],
+    vy:-(Math.random()*9+5),vx:(Math.random()-.5)*12,
+    rot:Math.random()*360,rv:Math.random()*10-5,gravity:.25});
+  var af;
+  function draw(){
+    cx2.clearRect(0,0,c.width,c.height);var alive=false;
+    pieces.forEach(function(p){if(p.y>c.height+30)return;alive=true;
+      p.vy+=p.gravity;p.y+=p.vy;p.x+=p.vx;p.rot+=p.rv;
+      cx2.save();cx2.translate(p.x,p.y);cx2.rotate(p.rot*Math.PI/180);
+      cx2.fillStyle=p.color;cx2.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx2.restore();});
+    if(alive)af=requestAnimationFrame(draw);else cx2.clearRect(0,0,c.width,c.height);
+  }
+  draw();setTimeout(function(){cancelAnimationFrame(af);cx2.clearRect(0,0,c.width,c.height)},5000);
+}
+</script>
+</body>
+</html>
