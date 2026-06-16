@@ -3,532 +3,928 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Budget Tool — Free Online Budget Calculator | Track Income &amp; Expenses</title>
-<meta name="description" content="AI Budget Tool is a free, no-login budget calculator that helps you track monthly income and expenses across 50+ global currencies. Enter your numbers, get instant savings analysis, and take control of your personal finances.">
+<title>AI Budget Tool — Free Budget Calculator, AI Prompt Wheel & AI Quiz 2026</title>
+<meta name="description" content="Spin the AI Prompt Wheel daily, take the AI knowledge quiz, compare GPT-5.5 vs Claude vs Gemini, and calculate your budget. All free, no signup.">
+<meta name="keywords" content="AI budget tool, budget calculator, AI prompt wheel, AI quiz, ChatGPT prompts, Claude prompts, AI comparison 2026">
 <link rel="canonical" href="https://www.aibudgettool.com/">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "AI Budget Tool",
-  "url": "https://www.aibudgettool.com",
-  "description": "Free online budget calculator supporting 50+ global currencies. No sign-up required.",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#faf9ff;
-  --bg2:#f3f1ff;
-  --card:#ffffff;
-  --border:#e8e4f7;
-  --accent:#7c3aed;
-  --accent2:#4f46e5;
-  --accent-light:#ede9fe;
-  --text:#1e1b2e;
-  --text-muted:#6b6882;
-  --text-light:#9994b0;
-  --danger:#ef4444;
-  --danger-bg:#fef2f2;
-  --danger-border:#fecaca;
-  --radius:14px;
-  --shadow:0 1px 3px rgba(124,58,237,0.06),0 4px 16px rgba(124,58,237,0.06);
-  --shadow-sm:0 1px 2px rgba(0,0,0,0.04);
+  --bg:#080616;--bg2:#100d28;--bg3:#0b1835;
+  --accent:#a78bfa;--accent2:#60a5fa;--green:#34d399;--amber:#f59e0b;
+  --openai:#10a37f;--claude:#d97757;--gemini:#4285f4;--perp:#20b8cd;
+  --text:#f1f5f9;--muted:#94a3b8;--dim:#475569;
+  --glass:rgba(255,255,255,0.055);--glass2:rgba(255,255,255,0.035);
+  --bd:rgba(255,255,255,0.10);--bd2:rgba(255,255,255,0.065);
+  --sidebar:230px;--r:13px
 }
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 45%,var(--bg3) 75%,var(--bg) 100%);min-height:100vh;color:var(--text);overflow-x:hidden}
+body::before{content:'';position:fixed;width:600px;height:600px;background:radial-gradient(circle,#7c3aed1e,transparent 70%);border-radius:50%;top:-200px;left:-200px;pointer-events:none;animation:drift 16s ease-in-out infinite alternate}
+body::after{content:'';position:fixed;width:500px;height:500px;background:radial-gradient(circle,#1d4ed81a,transparent 70%);border-radius:50%;bottom:-150px;right:-150px;pointer-events:none;animation:drift 16s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(60px,50px) scale(1.2)}}
 
-body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:var(--text);overflow-x:hidden;}
+/* LAYOUT */
+.layout{display:flex;min-height:100vh;position:relative;z-index:1}
 
-/* ─── NAV ─── */
-.topnav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
-.logo{font-size:15px;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.01em;}
-.nav-links{display:flex;gap:20px;}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--accent);}
+/* SIDEBAR */
+.sidebar{width:var(--sidebar);min-height:100vh;background:rgba(8,6,22,.9);backdrop-filter:blur(24px);border-right:1px solid var(--bd2);padding:0;position:fixed;top:0;left:0;z-index:50;display:flex;flex-direction:column;transition:.28s}
+.sb-logo{padding:18px 16px 14px;border-bottom:1px solid var(--bd2)}
+.sb-logo a{font-size:15px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;display:block}
+.sb-logo span{font-size:10px;color:var(--dim);display:block;margin-top:2px}
+.sb-nav{flex:1;padding:10px 8px;overflow-y:auto}
+.sb-sec{margin-bottom:18px}
+.sb-sec-label{font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;padding:0 8px;margin-bottom:5px}
+.sb-link{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:9px;text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;transition:.15s;border:1px solid transparent;cursor:pointer}
+.sb-link:hover{color:var(--text);background:var(--glass);border-color:var(--bd2)}
+.sb-link.on{color:var(--accent);background:rgba(167,139,250,.11);border-color:rgba(167,139,250,.22)}
+.sb-link .ico{font-size:15px;flex-shrink:0;width:20px;text-align:center}
+.badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(167,139,250,.18);color:var(--accent)}
+.sb-foot{padding:10px 14px;border-top:1px solid var(--bd2);font-size:10px;color:var(--dim)}
 
-/* ─── HERO ─── */
-.hero{text-align:center;padding:48px 24px 32px;}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--accent);margin-bottom:18px;}
-.hero-badge span{width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;}
-.hero h1{font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--text);letter-spacing:-.03em;line-height:1.15;margin-bottom:12px;}
-.hero p{font-size:15px;color:var(--text-muted);max-width:480px;margin:0 auto;line-height:1.7;}
+/* MAIN */
+.main{margin-left:var(--sidebar);flex:1;min-width:0}
 
-/* ─── MAIN LAYOUT ─── */
-.page-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 16px 60px;}
+/* TOPBAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--bd2);background:rgba(8,6,22,.75);backdrop-filter:blur(14px);position:sticky;top:0;z-index:40;gap:10px;flex-wrap:wrap}
+.tb-brand{font-size:14px;font-weight:600;color:var(--text);white-space:nowrap}
+.tb-links{display:flex;gap:6px;flex-wrap:wrap}
+.tb-link{color:var(--muted);text-decoration:none;font-size:12px;font-weight:500;padding:5px 11px;border-radius:7px;border:1px solid var(--bd2);transition:.15s;white-space:nowrap;cursor:pointer}
+.tb-link:hover{color:var(--text);background:var(--glass)}
+.tb-link.on{color:var(--accent);border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.08)}
 
-/* ─── TOOLS SIDEBAR ─── */
-.tools-sidebar{padding:24px 0 24px 0;border-right:1px solid var(--border);position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto;}
-.sidebar-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);padding:0 16px;margin-bottom:10px;}
-.tool-btn{display:flex;align-items:center;gap:9px;width:100%;padding:9px 16px;border:none;background:transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--text-muted);text-align:left;transition:all .15s;border-right:2px solid transparent;}
-.tool-btn:hover{background:var(--bg2);color:var(--text);}
-.tool-btn.active{background:var(--accent-light);color:var(--accent);border-right-color:var(--accent);}
-.tool-btn .tool-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0;}
-.tool-btn.soon{opacity:.5;cursor:default;}
-.tool-btn.soon:hover{background:transparent;color:var(--text-muted);}
-.soon-chip{font-size:9px;background:var(--bg2);color:var(--text-light);border:1px solid var(--border);border-radius:4px;padding:1px 5px;margin-left:auto;font-weight:600;letter-spacing:.04em;}
+/* PAGES */
+.page{display:none;padding:0 22px 60px}
+.page.on{display:block}
 
-/* ─── TOOL CONTENT AREA ─── */
-.tool-content{padding:24px 0 24px 28px;}
+/* HERO */
+.hero{text-align:center;padding:36px 0 26px;max-width:680px;margin:0 auto}
+.hero h1{font-size:clamp(28px,5vw,48px);font-weight:900;background:linear-gradient(135deg,#fff 0%,#c4b5fd 40%,#93c5fd 75%,#6ee7b7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.15;margin-bottom:10px}
+.hero p{font-size:15px;color:var(--muted)}
 
-/* ─── SECTION LABEL ─── */
-.section-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+/* CARDS */
+.card{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--bd);border-radius:var(--r);padding:22px;margin-bottom:14px}
+.card-t{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.card-t::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,.3),transparent)}
 
-/* ─── CARDS ─── */
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);}
+/* AD SLOTS */
+.ad{background:rgba(255,255,255,.025);border:1px dashed rgba(255,255,255,.09);border-radius:10px;padding:10px;text-align:center;color:var(--dim);font-size:11px;margin:14px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
 
-/* ─── CURRENCY & INCOME ─── */
-.currency-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:14px;}
-select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--text);background:var(--card);outline:none;cursor:pointer;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6882' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;}
-select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
-.currency-badge{background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:700;padding:10px 14px;border-radius:9px;white-space:nowrap;border:1px solid var(--border);}
-.income-row{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:0;border:1px solid var(--border);border-radius:9px;overflow:hidden;background:var(--card);}
-.income-prefix{padding:10px 12px;background:var(--bg2);font-size:14px;color:var(--text-muted);border-right:1px solid var(--border);font-weight:500;}
-input[type="number"]{width:100%;padding:10px 14px;border:none;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--card);outline:none;}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
-input[type="number"]{-moz-appearance:textfield;}
+/* FEATURE GRID (home) */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px;margin:18px 0}
+.feat{background:var(--glass2);border:1px solid var(--bd2);border-radius:var(--r);padding:18px;cursor:pointer;transition:.18s;border-top:2px solid transparent}
+.feat:hover{background:var(--glass);transform:translateY(-2px)}
+.feat .fi{font-size:28px;margin-bottom:8px}
+.feat h3{font-size:14px;font-weight:600;margin-bottom:5px}
+.feat p{font-size:12px;color:var(--muted);line-height:1.55}
 
-/* ─── EXPENSE ROWS ─── */
-.expense-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
-.expense-row{display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;}
-.expense-name{padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;color:var(--text);background:var(--card);outline:none;transition:border-color .2s;}
-.expense-name:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
-.expense-amount-wrap{display:grid;grid-template-columns:auto 1fr;align-items:center;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card);}
-.expense-prefix{padding:9px 10px;background:var(--bg2);font-size:13px;color:var(--text-muted);border-right:1px solid var(--border);}
-.expense-amount{width:100%;min-width:80px;padding:9px 10px;border:none;font-family:'Inter',sans-serif;font-size:13px;color:var(--text);background:var(--card);outline:none;}
-.btn-remove{width:30px;height:30px;background:var(--danger-bg);border:1px solid var(--danger-border);border-radius:7px;cursor:pointer;color:var(--danger);font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;}
-.btn-remove:hover{background:#fee2e2;}
-.btn-add{width:100%;padding:9px;border:1px dashed var(--border);border-radius:9px;background:transparent;font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
-.btn-add:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);}
+/* BLOG CARDS */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.bc{background:var(--glass2);border:1px solid var(--bd2);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;transition:.18s;display:block;border-left:3px solid var(--accent2)}
+.bc:hover{background:var(--glass);transform:translateY(-2px)}
+.bc .bt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.bc h3{font-size:14px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4}
+.bc p{font-size:12px;color:var(--muted);line-height:1.55}
+.bc .rm{font-size:12px;color:var(--accent);margin-top:8px;display:block}
 
-/* ─── CALCULATE BUTTON ─── */
-.btn-calc{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .1s;letter-spacing:-.01em;margin-top:4px;}
-.btn-calc:hover{opacity:.92;}
-.btn-calc:active{transform:scale(0.99);}
+/* WHEEL */
+.wheel-wrap{position:relative;width:min(360px,82vw);height:min(360px,82vw);margin:0 auto 18px}
+#wc{width:100%;height:100%;filter:drop-shadow(0 8px 30px rgba(124,58,237,.4))}
+.ptr{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:26px solid #fbbf24;z-index:10;filter:drop-shadow(0 3px 6px rgba(0,0,0,.5))}
+.spin-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1e1b4b,#312e81);border:3px solid rgba(255,255,255,.2);color:#fff;font-weight:900;font-size:15px;letter-spacing:.05em;cursor:pointer;z-index:5;font-family:inherit;box-shadow:0 0 28px rgba(124,58,237,.45);transition:.22s}
+.spin-btn:hover:not(:disabled){transform:translate(-50%,-50%) scale(1.08);box-shadow:0 0 50px rgba(124,58,237,.65)}
+.spin-btn:disabled{opacity:.5;cursor:not-allowed}
+.spin-btn.sp{animation:glow 1s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 60px rgba(124,58,237,.9)}}
+.wheel-legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.li{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);background:var(--glass2);border:1px solid var(--bd2);padding:5px 10px;border-radius:16px}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.streak{text-align:center;font-size:13px;color:var(--amber);margin:8px 0 6px;font-weight:500}
 
-/* ─── RESULTS ─── */
-.results{display:none;}
-.results.show{display:block;}
-.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px;}
-.result-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
-.result-label{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
-.result-value{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.02em;}
-.result-value.green{color:#059669;}
-.result-value.red{color:var(--danger);}
-.result-sub{font-size:11px;color:var(--text-light);margin-top:2px;}
-.donut-wrap{display:flex;align-items:center;gap:20px;padding:8px 0;}
-.donut-legend{flex:1;}
-.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);}
-.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.advice-box{background:var(--accent-light);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--accent2);line-height:1.7;}
+/* MODAL */
+.mo{position:fixed;inset:0;background:rgba(4,2,14,.84);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;z-index:200;padding:14px}
+.mo.show{display:flex;animation:fadeIn .28s}
+@keyframes fadeIn{from{opacity:0}}
+.modal{background:linear-gradient(160deg,#1a1342,#0f0c24);border:1px solid rgba(167,139,250,.28);border-radius:18px;padding:26px;max-width:530px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:pop .36s cubic-bezier(.18,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.72);opacity:0}}
+.mc{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;transition:.15s}
+.mc:hover{color:var(--text)}
+.mbadge{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:16px;font-weight:700;font-size:13px;margin-bottom:11px}
+.modal h3{font-size:20px;font-weight:700;margin-bottom:3px}
+.modal .cl{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}
+.pb{background:rgba(0,0,0,.38);border:1px solid var(--bd);border-radius:11px;padding:15px;font-size:13px;line-height:1.75;color:#dde4f0;white-space:pre-wrap;margin-bottom:15px;max-height:250px;overflow-y:auto}
+.mact{display:flex;gap:8px;flex-wrap:wrap}
+.mbtn{border:none;padding:10px 18px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.18s;flex:1;min-width:100px;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.mbtn.p{background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff}
+.mbtn.s{background:rgba(255,255,255,.07);border:1px solid var(--bd);color:var(--text)}
+.mbtn:hover{transform:translateY(-1px);filter:brightness(1.12)}
+.cb{font-size:11px;color:var(--muted);text-align:center;margin-top:11px}
 
-/* ─── ABOUT SECTION ─── */
-.about-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);}
-.about-section h2{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;}
-.about-section p{font-size:13px;color:var(--text-muted);line-height:1.8;}
+/* BUDGET */
+.bg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.flabel{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.06em}
+.fi{background:rgba(255,255,255,.07);border:1px solid var(--bd);border-radius:9px;padding:10px 13px;color:var(--text);font-size:14px;font-family:inherit;width:100%;outline:none;transition:.18s}
+.fi:focus{border-color:var(--accent)}
+.fsel{background:rgba(255,255,255,.07);border:1px solid var(--bd);border-radius:9px;padding:10px 12px;color:var(--text);font-size:13px;font-family:inherit;outline:none;cursor:pointer;width:100%}
+.fsel option{background:#1a1040}
+.exp-row{display:flex;gap:7px;align-items:center;margin-bottom:7px}
+.rmv{background:rgba(239,68,68,.13);border:1px solid rgba(239,68,68,.28);color:#ef4444;border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.add-exp{background:rgba(52,211,153,.07);border:1px dashed rgba(52,211,153,.32);color:var(--green);padding:9px 18px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:500;width:100%;margin-top:4px;font-family:inherit;transition:.18s}
+.add-exp:hover{background:rgba(52,211,153,.13)}
+.calc-btn{background:linear-gradient(135deg,var(--green),#059669);color:#fff;border:none;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;width:100%;font-family:inherit;margin-top:8px;transition:.18s}
+.calc-btn:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(52,211,153,.3)}
+.sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.sum-item{background:var(--glass2);border:1px solid var(--bd2);border-radius:10px;padding:14px;text-align:center}
+.sum-label{font-size:11px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
+.sum-val{font-size:20px;font-weight:700}
+.inc{color:var(--green)}.exp-c{color:#f87171}.sav{color:var(--accent)}.rt{color:var(--amber)}
+.prog-wrap{margin-top:12px}
+.prog-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+.prog-outer{background:rgba(255,255,255,.07);border-radius:6px;height:9px;overflow:hidden}
+.prog-inner{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--green),var(--accent));transition:.6s}
 
-/* ─── AD SLOTS (ready for AdSense) ─── */
-.ad-slot-sidebar{background:var(--bg2);border:1px dashed var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-light);margin-top:16px;}
-.ad-slot-banner{background:var(--bg2);border:1px dashed var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-light);width:100%;height:90px;margin:16px 0;}
+/* QUIZ */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px}
+.cat-card{cursor:pointer;transition:.18s;border-radius:var(--r);padding:15px;background:var(--glass2);border:1px solid var(--bd2);border-left:3px solid var(--accent)}
+.cat-card:hover{background:var(--glass);transform:translateY(-2px)}
+.qprog{display:flex;gap:4px;margin-bottom:16px}
+.qprog div{flex:1;height:4px;border-radius:2px;transition:.3s}
+.opt{background:var(--glass2);border:1px solid var(--bd);border-radius:10px;padding:12px 15px;cursor:pointer;width:100%;text-align:left;color:var(--text);font-size:14px;font-family:inherit;transition:.18s;margin-bottom:8px;display:block}
+.opt:hover:not(.ans){background:rgba(167,139,250,.09);border-color:rgba(167,139,250,.32)}
+.oc{background:rgba(52,211,153,.11)!important;border-color:#34d399!important}
+.ow{background:rgba(239,68,68,.11)!important;border-color:#ef4444!important}
+.expl{margin-top:12px;padding:13px;background:rgba(167,139,250,.07);border-radius:9px;border:1px solid rgba(167,139,250,.18);font-size:13px;line-height:1.68;color:var(--muted)}
+.name-inp{background:rgba(255,255,255,.07);border:1px solid var(--bd);border-radius:9px;padding:11px 15px;color:var(--text);font-size:15px;font-family:inherit;outline:none;width:100%;max-width:270px;transition:.18s}
+.name-inp:focus{border-color:var(--accent)}
 
-/* ─── FOOTER ─── */
-footer{text-align:center;padding:24px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:0;}
-footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
-footer a:hover{color:var(--accent);}
-.footer-copy{margin-top:8px;font-size:11px;color:var(--text-light);}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:11px;border:1px solid var(--bd2)}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:640px}
+thead tr{background:rgba(167,139,250,.09)}
+th{padding:12px 11px;text-align:left;font-weight:600;color:var(--accent);border-bottom:1px solid var(--bd2);white-space:nowrap}
+th:first-child{position:sticky;left:0;background:#120e2a;z-index:2}
+td{padding:10px 11px;color:var(--muted);border-bottom:1px solid var(--bd2)}
+td:first-child{font-weight:500;color:var(--text);position:sticky;left:0;z-index:1;white-space:nowrap;background:#0e0b22}
+tr:nth-child(even) td{background:rgba(255,255,255,.014)}
+tr:nth-child(even) td:first-child{background:#120f25}
+.best{color:var(--green)!important;font-weight:600}.na{opacity:.38}
 
-/* ─── HIDDEN TOOL PANELS ─── */
-.tool-panel{display:none;}
-.tool-panel.active{display:block;}
-.coming-soon-panel{text-align:center;padding:60px 24px;}
-.coming-soon-panel h2{font-size:20px;font-weight:700;color:var(--text);margin-bottom:10px;}
-.coming-soon-panel p{font-size:13.5px;color:var(--text-muted);margin-bottom:20px;}
-.coming-soon-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;border:1px solid var(--border);}
+/* LEADERBOARD */
+.lb-row{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--bd2)}
 
-/* ─── RESPONSIVE ─── */
+/* BUTTONS */
+.btn-p{background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;border:none;padding:11px 22px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;transition:.18s}
+.btn-p:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(167,139,250,.35)}
+.btn-o{background:transparent;border:1px solid rgba(167,139,250,.33);color:var(--accent);padding:9px 18px;border-radius:9px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;transition:.18s}
+.btn-o:hover{background:rgba(167,139,250,.08)}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:#1c1640;border:1px solid rgba(167,139,250,.38);color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:500;transition:.3s;z-index:400;opacity:0;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+#cc{position:fixed;inset:0;pointer-events:none;z-index:500}
+
+/* MOBILE */
+.sb-toggle{display:none;position:fixed;top:11px;left:11px;z-index:60;background:var(--bg2);border:1px solid var(--bd);border-radius:9px;color:var(--text);padding:7px 10px;cursor:pointer;font-size:18px;line-height:1}
+.sb-ovl{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:45}
 @media(max-width:768px){
-  .page-layout{grid-template-columns:1fr;}
-  .tools-sidebar{display:none;}
-  .tool-content{padding:16px 0;}
-  .hero{padding:32px 16px 24px;}
+  :root{--sidebar:0px}
+  .sidebar{transform:translateX(-230px);width:230px}
+  .sidebar.open{transform:translateX(0)}
+  .sb-ovl.open{display:block}
+  .main{margin-left:0}
+  .sb-toggle{display:block}
+  .topbar{padding:11px 14px 11px 50px}
+  .page{padding:0 12px 50px}
+  .bg-grid{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+  .sum-grid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:520px){
-  .topnav{padding:14px 16px;}
-  .result-grid{grid-template-columns:1fr;}
-  .currency-row{grid-template-columns:1fr auto;}
-}
+@media(max-width:440px){.mact{flex-direction:column}}
 </style>
 </head>
 <body>
+<canvas id="cc"></canvas>
+<div class="toast" id="toast"></div>
+<button class="sb-toggle" onclick="toggleSb()">☰</button>
+<div class="sb-ovl" id="sb-ovl" onclick="toggleSb()"></div>
 
-<!-- NAV -->
-<nav class="topnav">
-  <a href="index.html" class="logo">✦ AI Budget Tool</a>
-  <div class="nav-links">
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
+<div class="layout">
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-logo">
+    <a href="#" onclick="go('home')" style="text-decoration:none">
+      <span style="font-size:15px;font-weight:800;background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">✦ AI Budget Tool</span>
+    </a>
+    <span style="font-size:10px;color:#475569;display:block;margin-top:2px">Free · No signup · Worldwide</span>
   </div>
-</nav>
+  <nav class="sb-nav">
+    <div class="sb-sec">
+      <div class="sb-sec-label">Main</div>
+      <div class="sb-link on" id="sl-home" onclick="go('home')"><span class="ico">🏠</span>Home</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-sec-label">AI Tools</div>
+      <div class="sb-link" id="sl-wheel" onclick="go('wheel')"><span class="ico">🎡</span>AI Prompt Wheel<span class="badge">Daily</span></div>
+      <div class="sb-link" id="sl-compare" onclick="go('compare')"><span class="ico">📊</span>AI Comparison</div>
+      <div class="sb-link" id="sl-quiz" onclick="go('quiz')"><span class="ico">🎮</span>AI Quiz<span class="badge">100Q</span></div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-sec-label">Finance</div>
+      <div class="sb-link" id="sl-budget" onclick="go('budget')"><span class="ico">💰</span>Budget Calculator</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-sec-label">Blog</div>
+      <div class="sb-link" id="sl-blog" onclick="go('blog')"><span class="ico">📝</span>All Articles</div>
+      <a class="sb-link" href="best-ai-model-2026.html"><span class="ico">🏆</span>Best AI 2026</a>
+      <a class="sb-link" href="chatgpt-vs-claude-comparison.html"><span class="ico">⚡</span>GPT vs Claude</a>
+      <a class="sb-link" href="what-is-agentic-ai.html"><span class="ico">🤖</span>Agentic AI Guide</a>
+      <a class="sb-link" href="generative-ai-beginners.html"><span class="ico">📚</span>GenAI Beginners</a>
+      <a class="sb-link" href="ai-quiz-test-knowledge.html"><span class="ico">🧠</span>Quiz Guide</a>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-sec-label">Site</div>
+      <div class="sb-link" id="sl-lb" onclick="go('lb')"><span class="ico">🏅</span>Leaderboard</div>
+      <a class="sb-link" href="about.html"><span class="ico">ℹ️</span>About</a>
+      <a class="sb-link" href="privacy.html"><span class="ico">🔒</span>Privacy</a>
+      <a class="sb-link" href="contact.html"><span class="ico">✉️</span>Contact</a>
+    </div>
+  </nav>
+  <div class="sb-foot">© 2026 AI Budget Tool</div>
+</aside>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge"><span></span> Free · 50+ Global Currencies · No Sign-up</div>
-  <h1>Take Control of Your Finances</h1>
-  <p>Track income, manage expenses, and discover how much you can save — in your currency, instantly.</p>
+<!-- MAIN -->
+<main class="main">
+<div class="topbar">
+  <span class="tb-brand">✦ AI Budget Tool</span>
+  <div class="tb-links">
+    <span class="tb-link on" id="tl-wheel" onclick="go('wheel')">🎡 Spin Wheel</span>
+    <span class="tb-link" id="tl-compare" onclick="go('compare')">📊 Compare AI</span>
+    <span class="tb-link" id="tl-quiz" onclick="go('quiz')">🎮 Quiz</span>
+    <span class="tb-link" id="tl-budget" onclick="go('budget')">💰 Budget</span>
+    <span class="tb-link" id="tl-blog" onclick="go('blog')">📝 Blog</span>
+  </div>
 </div>
 
-<!-- MAIN LAYOUT -->
-<div class="page-layout">
-
-  <!-- LEFT SIDEBAR — TOOLS -->
-  <aside class="tools-sidebar">
-    <div class="sidebar-label">Tools</div>
-
-    <button class="tool-btn active" onclick="switchTool('budget', this)">
-      <span class="tool-icon">💰</span> Budget Calculator
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">🕐</span> World Clock
-      <span class="soon-chip">Soon</span>
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">🎂</span> Age Calculator
-      <span class="soon-chip">Soon</span>
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">💱</span> Currency Converter
-      <span class="soon-chip">Soon</span>
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">🖼️</span> JPG → PNG
-      <span class="soon-chip">Soon</span>
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">📄</span> JPG → PDF
-      <span class="soon-chip">Soon</span>
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">📏</span> Unit Converter
-      <span class="soon-chip">Soon</span>
-    </button>
-    <button class="tool-btn soon" disabled>
-      <span class="tool-icon">🌐</span> IP Address
-      <span class="soon-chip">Soon</span>
-    </button>
-
-    <!-- Ad slot — replace with AdSense code after approval -->
-    <div class="ad-slot-sidebar" style="min-height:250px;margin:16px 12px 0;">
-      <!-- Ad: 160x250 sidebar -->
+<!-- HOME -->
+<div class="page on" id="p-home">
+  <div class="hero">
+    <h1>Your AI Hub &amp; Finance Tool</h1>
+    <p>Spin for daily AI prompts · Compare models · Take the quiz · Calculate your budget</p>
+  </div>
+  <div class="feat-grid">
+    <div class="feat" style="border-top-color:#a78bfa" onclick="go('wheel')"><div class="fi">🎡</div><h3>AI Prompt Wheel</h3><p>Spin daily to unlock one expert prompt for ChatGPT, Claude, Gemini or Perplexity.</p></div>
+    <div class="feat" style="border-top-color:#60a5fa" onclick="go('compare')"><div class="fi">📊</div><h3>AI Comparison 2026</h3><p>GPT-5.5 vs Claude Opus 4.8 vs Gemini 3.1 Pro — every feature compared.</p></div>
+    <div class="feat" style="border-top-color:#34d399" onclick="go('quiz')"><div class="fi">🎮</div><h3>AI Knowledge Quiz</h3><p>100 questions, 5 categories, live leaderboard. Test yourself now.</p></div>
+    <div class="feat" style="border-top-color:#f59e0b" onclick="go('budget')"><div class="fi">💰</div><h3>Budget Calculator</h3><p>Track income and expenses across 50+ global currencies. Free forever.</p></div>
+  </div>
+  <div class="ad">Advertisement · Google AdSense</div>
+  <div class="card">
+    <div class="card-t">Latest Blog Articles</div>
+    <div class="blog-grid">
+      <a class="bc" href="best-ai-model-2026.html"><div class="bt" style="color:#f59e0b">🏆 AI Rankings</div><h3>Best AI Model in 2026</h3><p>Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro compared by real benchmarks.</p><span class="rm">Read article →</span></a>
+      <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude 2026</h3><p>Coding, writing, pricing — which AI wins where?</p><span class="rm">Read article →</span></a>
+      <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#a78bfa"><div class="bt" style="color:#a78bfa">🤖 Guide</div><h3>What is Agentic AI?</h3><p>The fastest-growing AI trend explained simply with real examples.</p><span class="rm">Read article →</span></a>
+      <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#34d399"><div class="bt" style="color:#34d399">📚 Beginner</div><h3>Generative AI for Beginners</h3><p>LLMs, tokens, prompts — all explained without jargon.</p><span class="rm">Read article →</span></a>
     </div>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main class="tool-content">
-
-    <!-- ── BUDGET TOOL PANEL ── -->
-    <div id="panel-budget" class="tool-panel active">
-
-      <div class="card">
-        <div class="section-label">Currency &amp; Income</div>
-        <div class="currency-row">
-          <select id="currencySelect" onchange="updateCurrency()">
-            <option value="USD" data-symbol="$" data-flag="🇺🇸">🇺🇸 USD — US Dollar ($)</option>
-            <option value="INR" data-symbol="₹" data-flag="🇮🇳">🇮🇳 INR — Indian Rupee (₹)</option>
-            <option value="EUR" data-symbol="€" data-flag="🇪🇺">🇪🇺 EUR — Euro (€)</option>
-            <option value="GBP" data-symbol="£" data-flag="🇬🇧">🇬🇧 GBP — Pound (£)</option>
-            <option value="JPY" data-symbol="¥" data-flag="🇯🇵">🇯🇵 JPY — Yen (¥)</option>
-            <option value="AUD" data-symbol="A$" data-flag="🇦🇺">🇦🇺 AUD — AUD (A$)</option>
-            <option value="CAD" data-symbol="C$" data-flag="🇨🇦">🇨🇦 CAD — CAD (C$)</option>
-            <option value="SGD" data-symbol="S$" data-flag="🇸🇬">🇸🇬 SGD — SGD (S$)</option>
-            <option value="AED" data-symbol="د.إ" data-flag="🇦🇪">🇦🇪 AED — Dirham (د.إ)</option>
-            <option value="SAR" data-symbol="﷼" data-flag="🇸🇦">🇸🇦 SAR — Riyal (﷼)</option>
-            <option value="CNY" data-symbol="¥" data-flag="🇨🇳">🇨🇳 CNY — Yuan (¥)</option>
-            <option value="KRW" data-symbol="₩" data-flag="🇰🇷">🇰🇷 KRW — Won (₩)</option>
-            <option value="IDR" data-symbol="Rp" data-flag="🇮🇩">🇮🇩 IDR — Rupiah (Rp)</option>
-            <option value="MYR" data-symbol="RM" data-flag="🇲🇾">🇲🇾 MYR — Ringgit (RM)</option>
-            <option value="THB" data-symbol="฿" data-flag="🇹🇭">🇹🇭 THB — Baht (฿)</option>
-            <option value="PHP" data-symbol="₱" data-flag="🇵🇭">🇵🇭 PHP — Peso (₱)</option>
-            <option value="VND" data-symbol="₫" data-flag="🇻🇳">🇻🇳 VND — Dong (₫)</option>
-            <option value="PKR" data-symbol="₨" data-flag="🇵🇰">🇵🇰 PKR — Rupee (₨)</option>
-            <option value="BDT" data-symbol="৳" data-flag="🇧🇩">🇧🇩 BDT — Taka (৳)</option>
-            <option value="NZD" data-symbol="NZ$" data-flag="🇳🇿">🇳🇿 NZD — NZD (NZ$)</option>
-            <option value="HKD" data-symbol="HK$" data-flag="🇭🇰">🇭🇰 HKD — HKD (HK$)</option>
-            <option value="CHF" data-symbol="Fr" data-flag="🇨🇭">🇨🇭 CHF — Franc (Fr)</option>
-            <option value="SEK" data-symbol="kr" data-flag="🇸🇪">🇸🇪 SEK — Krona (kr)</option>
-            <option value="NOK" data-symbol="kr" data-flag="🇳🇴">🇳🇴 NOK — Krone (kr)</option>
-            <option value="DKK" data-symbol="kr" data-flag="🇩🇰">🇩🇰 DKK — Krone (kr)</option>
-            <option value="PLN" data-symbol="zł" data-flag="🇵🇱">🇵🇱 PLN — Zloty (zł)</option>
-            <option value="TRY" data-symbol="₺" data-flag="🇹🇷">🇹🇷 TRY — Lira (₺)</option>
-            <option value="RUB" data-symbol="₽" data-flag="🇷🇺">🇷🇺 RUB — Ruble (₽)</option>
-            <option value="BRL" data-symbol="R$" data-flag="🇧🇷">🇧🇷 BRL — Real (R$)</option>
-            <option value="MXN" data-symbol="$" data-flag="🇲🇽">🇲🇽 MXN — Peso ($)</option>
-            <option value="ARS" data-symbol="$" data-flag="🇦🇷">🇦🇷 ARS — Peso ($)</option>
-            <option value="CLP" data-symbol="$" data-flag="🇨🇱">🇨🇱 CLP — Peso ($)</option>
-            <option value="COP" data-symbol="$" data-flag="🇨🇴">🇨🇴 COP — Peso ($)</option>
-            <option value="ZAR" data-symbol="R" data-flag="🇿🇦">🇿🇦 ZAR — Rand (R)</option>
-            <option value="NGN" data-symbol="₦" data-flag="🇳🇬">🇳🇬 NGN — Naira (₦)</option>
-            <option value="KES" data-symbol="KSh" data-flag="🇰🇪">🇰🇪 KES — Shilling (KSh)</option>
-            <option value="GHS" data-symbol="₵" data-flag="🇬🇭">🇬🇭 GHS — Cedi (₵)</option>
-            <option value="EGP" data-symbol="£" data-flag="🇪🇬">🇪🇬 EGP — Pound (£)</option>
-            <option value="KWD" data-symbol="د.ك" data-flag="🇰🇼">🇰🇼 KWD — Dinar (د.ك)</option>
-          </select>
-          <div class="currency-badge" id="currencyBadge">$ USD</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <label style="font-size:13px;color:var(--text-muted);white-space:nowrap;font-weight:500;">Monthly income</label>
-          <div class="income-row" style="flex:1;">
-            <span class="income-prefix" id="incomePrefix">$</span>
-            <input type="number" id="incomeInput" placeholder="e.g. 5000" min="0" onwheel="this.blur()">
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="section-label">Monthly Expenses</div>
-        <div class="expense-rows" id="expenseRows">
-          <!-- rows added by JS -->
-        </div>
-        <button class="btn-add" onclick="addExpense()">＋ Add expense category</button>
-      </div>
-
-      <button class="btn-calc" onclick="calculate()">Calculate My Budget</button>
-
-      <!-- RESULTS -->
-      <div class="results" id="results">
-        <div class="card" style="margin-top:14px;">
-          <div class="section-label">Budget Summary</div>
-          <div class="result-grid">
-            <div class="result-item">
-              <div class="result-label">Income</div>
-              <div class="result-value" id="resIncome">—</div>
-              <div class="result-sub">per month</div>
-            </div>
-            <div class="result-item">
-              <div class="result-label">Expenses</div>
-              <div class="result-value red" id="resExpenses">—</div>
-              <div class="result-sub">per month</div>
-            </div>
-            <div class="result-item">
-              <div class="result-label">Savings</div>
-              <div class="result-value green" id="resSavings">—</div>
-              <div class="result-sub">per month</div>
-            </div>
-            <div class="result-item">
-              <div class="result-label">Savings Rate</div>
-              <div class="result-value" id="resRate">—</div>
-              <div class="result-sub">of income</div>
-            </div>
-          </div>
-          <div class="donut-wrap">
-            <canvas id="donutChart" width="120" height="120" style="flex-shrink:0;"></canvas>
-            <div class="donut-legend">
-              <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span><span id="legendExp">Expenses</span></div>
-              <div class="legend-item"><span class="legend-dot" style="background:#7c3aed;"></span><span id="legendSav">Savings</span></div>
-            </div>
-          </div>
-          <div class="advice-box" id="adviceBox"></div>
-        </div>
-      </div>
-
-      <!-- Ad slot bottom banner — replace content with AdSense code after approval -->
-      <div class="ad-slot-banner">
-        <!-- Ad: 728x90 leaderboard -->
-      </div>
-
-      <div class="about-section">
-        <h2>About AI Budget Tool</h2>
-        <p>AI Budget Tool is a free, no-login budget calculator that helps you track monthly income and expenses across 50+ global currencies. Enter your numbers, get instant savings analysis, and take control of your personal finances — whether you're in India, the US, Europe, or anywhere in the world.</p>
-      </div>
-    </div>
-
-    <!-- ── COMING SOON PANELS ── -->
-    <div id="panel-worldclock" class="tool-panel">
-      <div class="coming-soon-panel">
-        <div style="font-size:48px;margin-bottom:16px;">🕐</div>
-        <h2>World Clock</h2>
-        <p>Check the time in any city worldwide, instantly. Coming very soon.</p>
-        <span class="coming-soon-badge">Coming Soon</span>
-      </div>
-    </div>
-    <div id="panel-age" class="tool-panel">
-      <div class="coming-soon-panel">
-        <div style="font-size:48px;margin-bottom:16px;">🎂</div>
-        <h2>Age Calculator</h2>
-        <p>Calculate your exact age in years, months, and days. Coming soon.</p>
-        <span class="coming-soon-badge">Coming Soon</span>
-      </div>
-    </div>
-    <div id="panel-currency" class="tool-panel">
-      <div class="coming-soon-panel">
-        <div style="font-size:48px;margin-bottom:16px;">💱</div>
-        <h2>Currency Converter</h2>
-        <p>Convert between 50+ world currencies with live rates. Coming soon.</p>
-        <span class="coming-soon-badge">Coming Soon</span>
-      </div>
-    </div>
-
-  </main>
+  </div>
+  <div class="ad" style="min-height:250px">Advertisement · Google AdSense</div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div>
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
+<!-- WHEEL -->
+<div class="page" id="p-wheel">
+  <div class="hero"><h1>🎡 AI Prompt Wheel</h1><p>Spin once a day · Land on an AI · Unlock one expert prompt</p></div>
+  <div class="ad">Advertisement</div>
+  <div class="card">
+    <div class="streak" id="streak-bar">✨ Spin to unlock your first AI prompt!</div>
+    <div class="wheel-wrap">
+      <div class="ptr"></div>
+      <canvas id="wc" width="720" height="720"></canvas>
+      <button class="spin-btn" id="spin-btn" onclick="spin()">SPIN</button>
+    </div>
+    <div class="wheel-legend">
+      <div class="li"><span class="dot" style="background:#10a37f"></span>ChatGPT</div>
+      <div class="li"><span class="dot" style="background:#d97757"></span>Claude</div>
+      <div class="li"><span class="dot" style="background:#4285f4"></span>Gemini</div>
+      <div class="li"><span class="dot" style="background:#20b8cd"></span>Perplexity</div>
+    </div>
   </div>
-  <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
-</footer>
+  <div class="card">
+    <div class="card-t">About the Prompt Wheel</div>
+    <p style="font-size:13px;color:var(--muted);line-height:1.8">One expert-crafted prompt per day matched to the AI you land on. <strong style="color:var(--text)">50 prompts</strong> across ChatGPT, Claude, Gemini and Perplexity — covering productivity, coding, research, writing and more. Each prompt teaches you a prompting pattern while delivering instant value.</p>
+  </div>
+  <div class="ad" style="min-height:250px">Advertisement</div>
+</div>
+
+<!-- COMPARE -->
+<div class="page" id="p-compare">
+  <div class="hero" style="padding:28px 0 18px"><h1 style="font-size:clamp(22px,4vw,36px)">AI Tools Comparison 2026</h1><p>5 models · 20 features · Updated June 2026</p></div>
+  <div class="ad">Advertisement</div>
+  <div class="card"><div class="tbl-wrap" id="cmp-tbl"></div></div>
+  <div style="text-align:center;margin-top:14px"><button class="btn-p" onclick="go('quiz')">🎮 Test Your Knowledge →</button></div>
+  <div class="ad" style="min-height:250px">Advertisement</div>
+</div>
+
+<!-- QUIZ HUB -->
+<div class="page" id="p-quiz">
+  <div class="hero" style="padding:28px 0 18px"><h1 style="font-size:clamp(22px,4vw,36px)">AI Knowledge Quiz</h1><p>10 random questions · 10 pts each · Max 100 per round</p></div>
+  <div class="ad">Advertisement</div>
+  <div class="card">
+    <div class="card-t">Your Name</div>
+    <input id="pname" class="name-inp" placeholder="Name for leaderboard..." maxlength="20">
+    <div id="nerr" style="color:#ef4444;font-size:12px;margin-top:5px;display:none">↑ Enter your name first</div>
+  </div>
+  <div class="card">
+    <div class="card-t">Choose Category</div>
+    <div class="cat-grid" id="cat-grid"></div>
+  </div>
+  <div class="ad" style="min-height:250px">Advertisement</div>
+</div>
+
+<!-- QUIZ ACTIVE -->
+<div class="page" id="p-qactive">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 10px">
+    <span id="q-cat" style="color:var(--muted);font-size:13px"></span>
+    <span id="q-score" style="color:var(--accent);font-weight:700;font-size:16px"></span>
+  </div>
+  <div class="qprog" id="qprog"></div>
+  <div class="card" id="q-card"></div>
+  <div id="q-next" style="text-align:center;margin-top:13px;display:none"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="page" id="p-results">
+  <div class="card" style="text-align:center;margin-top:18px" id="res-card"></div>
+  <div id="res-act" style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:13px 0"></div>
+  <div id="flash-area"></div>
+  <div class="ad" style="min-height:250px">Advertisement</div>
+</div>
+
+<!-- BUDGET -->
+<div class="page" id="p-budget">
+  <div class="hero" style="padding:28px 0 18px"><h1 style="font-size:clamp(22px,4vw,36px)">💰 Budget Calculator</h1><p>Track income and expenses · 50+ currencies · Free forever</p></div>
+  <div class="ad">Advertisement</div>
+  <div class="card">
+    <div class="card-t">Currency &amp; Income</div>
+    <div class="bg-grid">
+      <div>
+        <label class="flabel">Currency</label>
+        <select class="fsel" id="currency" onchange="updCur()">
+          <option value="$">🇺🇸 USD ($)</option>
+          <option value="₹" selected>🇮🇳 INR (₹)</option>
+          <option value="€">🇪🇺 EUR (€)</option>
+          <option value="£">🇬🇧 GBP (£)</option>
+          <option value="¥">🇯🇵 JPY (¥)</option>
+          <option value="A$">🇦🇺 AUD (A$)</option>
+          <option value="C$">🇨🇦 CAD (C$)</option>
+          <option value="S$">🇸🇬 SGD (S$)</option>
+          <option value="AED">🇦🇪 AED</option>
+          <option value="SAR">🇸🇦 SAR (﷼)</option>
+          <option value="R$">🇧🇷 BRL (R$)</option>
+          <option value="R">🇿🇦 ZAR (R)</option>
+          <option value="₩">🇰🇷 KRW (₩)</option>
+        </select>
+      </div>
+      <div>
+        <label class="flabel">Monthly Income</label>
+        <div style="display:flex;align-items:center;gap:7px">
+          <span id="cur-sym" style="color:var(--amber);font-weight:700;font-size:17px">₹</span>
+          <input class="fi" type="number" id="income" placeholder="e.g. 50000" min="0">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-t">Monthly Expenses</div>
+    <div id="exp-list">
+      <div class="exp-row"><input class="fi" type="text" placeholder="Category" value="Rent" style="flex:1"><input class="fi" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="rmExp(this)">×</button></div>
+      <div class="exp-row"><input class="fi" type="text" placeholder="Category" value="Food" style="flex:1"><input class="fi" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="rmExp(this)">×</button></div>
+      <div class="exp-row"><input class="fi" type="text" placeholder="Category" value="Transport" style="flex:1"><input class="fi" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="rmExp(this)">×</button></div>
+    </div>
+    <button class="add-exp" onclick="addExp()">＋ Add expense category</button>
+    <button class="calc-btn" onclick="calcBudget()">Calculate My Budget</button>
+  </div>
+  <div class="card" id="bud-res" style="display:none">
+    <div class="card-t">Your Budget Summary</div>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="sum-label">Income</div><div class="sum-val inc" id="r-in">—</div></div>
+      <div class="sum-item"><div class="sum-label">Expenses</div><div class="sum-val exp-c" id="r-ex">—</div></div>
+      <div class="sum-item"><div class="sum-label">Savings</div><div class="sum-val sav" id="r-sv">—</div></div>
+      <div class="sum-item"><div class="sum-label">Savings Rate</div><div class="sum-val rt" id="r-rt">—</div></div>
+    </div>
+    <div class="prog-wrap">
+      <div class="prog-labels"><span>Expense ratio</span><span id="r-pct">0%</span></div>
+      <div class="prog-outer"><div class="prog-inner" id="r-bar" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div class="ad" style="min-height:250px">Advertisement</div>
+</div>
+
+<!-- BLOG -->
+<div class="page" id="p-blog">
+  <div class="hero" style="padding:28px 0 18px"><h1 style="font-size:clamp(22px,4vw,36px)">Blog &amp; Guides</h1><p>AI tutorials, comparisons and guides — updated regularly</p></div>
+  <div class="ad">Advertisement</div>
+  <div class="blog-grid">
+    <a class="bc" href="best-ai-model-2026.html" style="border-left-color:#f59e0b"><div class="bt" style="color:#f59e0b">🏆 AI Rankings</div><h3>Best AI Model in 2026: Complete Ranking</h3><p>Claude Opus 4.8 vs GPT-5.5 vs Gemini 3.1 Pro — benchmarks, pricing, real-world use.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude: Honest 2026 Comparison</h3><p>Coding, writing, ecosystem and pricing — full head-to-head breakdown.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#a78bfa"><div class="bt" style="color:#a78bfa">🤖 Guide</div><h3>What is Agentic AI? Complete Guide</h3><p>Claude Code, Gemini Spark, Devin explained — why agentic AI matters in 2026.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#34d399"><div class="bt" style="color:#34d399">📚 Beginner</div><h3>Generative AI for Beginners (2026)</h3><p>LLMs, tokens, hallucination, RAG — every key term explained without jargon.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="ai-quiz-test-knowledge.html" style="border-left-color:#20b8cd"><div class="bt" style="color:#20b8cd">🎮 Quiz</div><h3>Test Your AI Knowledge — Free Quiz</h3><p>100 questions across OpenAI, Claude, Gemini, GenAI and Agentic AI.</p><span class="rm">Read article →</span></a>
+  </div>
+  <div class="ad" style="min-height:250px;margin-top:14px">Advertisement</div>
+</div>
+
+<!-- LEADERBOARD -->
+<div class="page" id="p-lb">
+  <div class="hero" style="padding:28px 0 18px"><h1 style="font-size:clamp(22px,4vw,36px)">🏅 Leaderboard</h1><p>Top quiz scorers</p></div>
+  <div class="card" id="lb-cont"></div>
+  <div class="ad" style="min-height:250px;margin-top:14px">Advertisement</div>
+</div>
+
+</main>
+</div>
+
+<!-- WHEEL MODAL -->
+<div class="mo" id="mo"><div class="modal"><button class="mc" onclick="closeMo()">✕</button><div id="mo-body"></div></div></div>
 
 <script>
-// ─── SCROLL FIX: prevents mouse wheel from changing number input values ───
-document.addEventListener('wheel', function(e) {
-  if (document.activeElement && document.activeElement.type === 'number') {
-    document.activeElement.blur();
+// ─── NAVIGATION ───
+var pages=['home','wheel','compare','quiz','qactive','results','budget','blog','lb'];
+function go(id){
+  pages.forEach(function(p){var el=document.getElementById('p-'+p);if(el)el.classList.remove('on')});
+  var el=document.getElementById('p-'+id);if(el)el.classList.add('on');
+  // sidebar highlights
+  document.querySelectorAll('.sb-link').forEach(function(l){l.classList.remove('on')});
+  var sl=document.getElementById('sl-'+id);if(sl)sl.classList.add('on');
+  if(id==='quiz')document.getElementById('sl-quiz').classList.add('on');
+  // topbar highlights
+  document.querySelectorAll('.tb-link').forEach(function(l){l.classList.remove('on')});
+  var tl=document.getElementById('tl-'+id);if(tl)tl.classList.add('on');
+  // page inits
+  if(id==='compare')buildTable();
+  if(id==='quiz'){buildCats();document.getElementById('sl-quiz').classList.add('on');}
+  if(id==='wheel')drawWheel(curAngle);
+  if(id==='lb')buildLB();
+  window.scrollTo(0,0);
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sb-ovl').classList.remove('open');
+}
+function toggleSb(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sb-ovl').classList.toggle('open');
+}
+
+// ─── PROMPTS ───
+var P={
+chatgpt:{name:"ChatGPT",color:"#10a37f",icon:"🤖",url:"https://chat.openai.com",items:[
+{cat:"Productivity",title:"The Weekly Reset",text:"Act as my personal productivity strategist. Analyze my upcoming week and: 1) Identify my 3 highest-leverage tasks, 2) Flag anything to delegate or delete, 3) Design a time-blocked schedule, 4) Predict my biggest distraction risk and give a countermeasure. Ask me 3 questions first.\n\nMy week: [DESCRIBE YOUR WEEK]"},
+{cat:"Learning",title:"The Feynman Tutor",text:"You are a tutor using the Feynman Technique. I want to learn: [TOPIC]. Step 1: Explain simply as if I'm 12. Step 2: Ask me to explain it back. Step 3: Identify gaps and re-teach only those. Step 4: Give me one real-world problem to apply it. Don't move to the next step until I respond."},
+{cat:"Writing",title:"Email Surgeon",text:"Rewrite this email in 3 versions: 1) DIRECT — 50% shorter, leads with the ask, 2) DIPLOMATIC — softened for senior stakeholder, 3) PERSUASIVE — using problem-agitate-solve. Explain what changed and why for each.\n\nEmail: [PASTE EMAIL]"},
+{cat:"Career",title:"Interview Pressure Test",text:"You are a tough hiring manager for: [JOB TITLE]. Ask me one challenging question at a time. After each answer: score 1-10, tell me what a 10/10 answer looks like, then ask the next. Increase difficulty as we go. Start now."},
+{cat:"Business",title:"Devil's Advocate Board",text:"I'm sharing a business decision. Respond as 3 advisors: THE SKEPTIC (finds every flaw), THE OPERATOR (execution reality), THE INVESTOR (ROI focus). Each gives honest verdict, then votes: proceed, modify, or kill.\n\nDecision: [DESCRIBE]"},
+{cat:"Creativity",title:"Idea Multiplier",text:"Take my idea through 5 lenses: 1) INVERT — opposite approach, 2) COMBINE — merge with unrelated industry, 3) EXTREME — 10x or 1/10th budget, 4) USER FLIP — different audience, 5) SUBTRACT — remove the 'essential' feature. One concrete variation per lens.\n\nIdea: [YOUR IDEA]"},
+{cat:"Finance",title:"Money Leak Detector",text:"Act as a personal finance auditor. For each expense: classify as ESSENTIAL, VALUE, or LEAK. Estimate yearly cost of every leak. Design a plan to redirect 80% of leak money toward [GOAL] without ruining lifestyle.\n\nExpenses: [LIST THEM]"},
+{cat:"Decision",title:"The Regret Minimizer",text:"Help me decide: [DECISION]. Use 4 frameworks one at a time: 1) 10/10/10 rule, 2) Regret test at age 80, 3) Fear vs growth check, 4) One-way or two-way door? After all 4, tell me what my answers reveal."},
+{cat:"Planning",title:"5PM Review",text:"Act as my end-of-day coach. Ask one at a time: 1) What did I complete? 2) What did I avoid and why? 3) What wasted my time? Then summarize my day in 2 sentences, give ONE behavioral change for tomorrow, and write my top-3 list for morning."},
+{cat:"Negotiation",title:"Negotiation Simulator",text:"Roleplay a negotiation. You are [OTHER PARTY]. Be realistic and moderately difficult. After every exchange add a [COACH NOTE] rating my message and suggesting stronger phrasing. Begin with your opening position.\n\nContext: [DESCRIBE]"},
+{cat:"Communication",title:"Difficult Conversation Script",text:"I need to have a difficult conversation: [SITUATION]. Build me a script: 1) Opening that avoids defensiveness, 2) Observation without judgment, 3) My feelings stated clearly, 4) A specific request, 5) Three likely responses and how to handle each."},
+{cat:"Self-Improvement",title:"Blind Spot Finder",text:"I'll describe a recurring problem. Ask me 5 probing questions one at a time about when it happens, who's involved, what I do right before, hidden payoff, and what I'm avoiding. Then give your hypothesis about root cause and one experiment.\n\nProblem: [DESCRIBE]"}
+]},
+claude:{name:"Claude",color:"#d97757",icon:"🧠",url:"https://claude.ai",items:[
+{cat:"Coding",title:"Senior Code Reviewer",text:"Review this code as a senior engineer: 1) BUGS — actual defects with line references, 2) SECURITY — vulnerabilities, 3) PERFORMANCE — bottlenecks, 4) MAINTAINABILITY — structure and naming, 5) VERDICT — approve/request changes/block. Show corrected version of worst problem.\n\n[PASTE CODE]"},
+{cat:"Debugging",title:"Debugging Partner",text:"I have a bug. Act as rubber-duck debugging that talks back: 1) Describe the bug, 2) Ask clarifying questions ONE at a time (max 4), 3) List 3 most likely root causes by probability, 4) Give a test for each, 5) Explain WHY it happened.\n\nBug: [DESCRIBE + PASTE CODE]"},
+{cat:"Documentation",title:"README Generator",text:"Write a professional README.md: hook description, features, installation steps, quick-start code, config table, API docs, troubleshooting (3 issues), contribution guide. Ask me 3 questions about the project first.\n\nProject: [DESCRIBE]"},
+{cat:"Architecture",title:"System Design Consultant",text:"I'm designing: [SYSTEM]. Walk through it as a staff engineer: 1) Clarify requirements with 4 sharp questions, 2) Simplest working architecture, 3) 2 components most likely to fail at scale, 4) How it evolves at 10x and 100x load, 5) What NOT to build yet."},
+{cat:"Analysis",title:"Document Interrogator",text:"Analyze this document: 1) Summarize in 3 sentences, 2) Claims without supporting evidence, 3) What the author omits, 4) Internal contradictions, 5) Questions I should ask before acting on it.\n\nDocument: [PASTE TEXT]"},
+{cat:"SQL",title:"Query Optimizer",text:"Analyze this SQL: 1) What it does in plain English, 2) Performance problems — missing indexes, full scans, bad joins, 3) Rewrite optimized with comments, 4) Indexes to create, 5) How to verify with execution plan.\n\n[PASTE QUERY]"},
+{cat:"Refactoring",title:"Refactor Strategist",text:"Create a refactoring plan: 1) Identify code smells by name, 2) Rank by impact-to-risk ratio, 3) Before/after for top 2 refactors, 4) What needs tests BEFORE refactoring, 5) What could break. Surgical changes only.\n\n[PASTE CODE]"},
+{cat:"Career",title:"Technical Resume Surgeon",text:"Rewrite my resume bullets: strong verbs, quantify impact, formula 'Did X using Y resulting in Z', cut buzzwords. For each: original → rewritten → what interview question it triggers.\n\nBullets: [PASTE THEM]"},
+{cat:"DevOps",title:"Incident Postmortem Writer",text:"Write a blameless postmortem: 1) Clean timeline from notes, 2) Root cause vs triggers (5 Whys), 3) Detection gap, 4) Specific assignable action items — no 'be more careful', 5) 3-sentence executive summary.\n\nNotes: [PASTE]"},
+{cat:"Communication",title:"Tech to Executive Translator",text:"Translate my technical update: 1) Lead with business impact, 2) Convert jargon to outcomes, 3) Problems with solutions attached, 4) Max 5 sentences + 3 bullets, 5) ONE decision I need from leadership.\n\nUpdate: [PASTE]"},
+{cat:"Writing",title:"Article Architect",text:"Help me write an article on: [TOPIC]. Phase 1: 3 unique angles others aren't covering. Phase 2: Outline with hook, tension, insight, payoff. Phase 3: Write section by section, pause for feedback. No filler phrases."},
+{cat:"Testing",title:"Test Suite Designer",text:"Design tests for this code: 1) Cases by category — happy path, edge cases, errors, 2) 3 most dangerous untested scenarios, 3) Write test code for top 5 using [FRAMEWORK], 4) Identify what's hard to test and how to fix.\n\n[PASTE CODE]"}
+]},
+gemini:{name:"Gemini",color:"#4285f4",icon:"💎",url:"https://gemini.google.com",items:[
+{cat:"Research",title:"Research Synthesizer",text:"I'm researching: [TOPIC]. Build a brief: 1) 5 sub-questions that matter most, 2) Consensus and main disagreement per question, 3) What data would settle each debate, 4) 3 most credible source types, 5) One-page synthesis I could present tomorrow."},
+{cat:"Data",title:"Spreadsheet Strategist",text:"I have Google Sheets data about: [DESCRIBE]. Help me: 1) Design 5 insightful analyses, 2) Write exact formulas for each, 3) Best chart type per analysis and why, 4) What data I'm NOT collecting that would unlock better insights, 5) Simple dashboard layout."},
+{cat:"Productivity",title:"Workspace Automator",text:"Find automation opportunities in Google Workspace for my tasks. For each: 1) Automation potential (easy/medium/hard), 2) Exact tool — Apps Script, Gmail filters, Calendar rules, Forms, 3) Setup steps, 4) Hours saved per month.\n\nMy tasks: [LIST]"},
+{cat:"Comparison",title:"Decision Matrix Builder",text:"I'm choosing between: [OPTIONS]. 1) Ask 4 questions to discover my real priorities, 2) Build a weighted decision matrix, 3) Score each option with justification, 4) Sensitivity check — does the winner change if top priority shifts? 5) Recommendation with confidence level."},
+{cat:"Business",title:"Market Snapshot",text:"Market snapshot for: [INDUSTRY/PRODUCT]. 1) Size and growth direction, 2) Top 3-5 players with positioning, 3) What changed in 12 months, 4) Underserved segments, 5) 3 biggest risks for a new entrant. Label facts vs inference."},
+{cat:"Presentation",title:"Slide Deck Builder",text:"Build a presentation: [TOPIC] for [AUDIENCE]. 1) 10-slide structure with narrative arc, 2) Title + 3 bullets per slide, 3) Data point or visual per slide, 4) Speaker notes for 2 hardest slides, 5) Single takeaway the audience must remember."},
+{cat:"Planning",title:"Project Kickoff Pack",text:"I'm starting: [PROJECT]. Generate: 1) One-paragraph charter with success criteria, 2) Work breakdown into phases, 3) RACI-style role clarity, 4) Top 5 risks with early warning signs, 5) First 3 actions this week. Concrete, not corporate."},
+{cat:"Learning",title:"Learning Roadmap",text:"Roadmap for: [SKILL]. 1) 4-6 major sub-domains mapped, 2) Ordered by dependency, 3) Core concept + best free resource + mini-project per section, 4) Realistic timeline at 5 hrs/week, 5) Most common way beginners fail."},
+{cat:"Content",title:"Multi-Format Repurposer",text:"Repurpose my content into 5 formats: 1) LinkedIn post with scroll-stopping first line, 2) Twitter/X thread (6 tweets), 3) Email newsletter with subject line, 4) 60-second video script, 5) Quotable graphic text.\n\nContent: [PASTE]"},
+{cat:"Travel",title:"Trip Optimizer",text:"Plan my trip: [DESTINATION], [DAYS] days, [BUDGET], interests [INTERESTS]. 1) Day-by-day itinerary, 2) Real travel times between spots, 3) Budget — splurge vs save, 4) One non-obvious local experience per day, 5) Backup plan for a rainy day."},
+{cat:"Analysis",title:"Trend Decoder",text:"Analyze this trend: [TREND]. 1) Signal vs hype — what's actually new? 2) Who profits if this continues and who loses? 3) Leading indicators to watch over 6 months, 4) Historical parallel, 5) Your probability estimate: durable vs fad."},
+{cat:"Email",title:"Inbox Zero Architect",text:"Design my email management system: 1) Ask about my email volume and types, 2) Label/folder taxonomy (max 7), 3) Exact Gmail filter rules to auto-sort 80% of mail, 4) 2-touch processing rule for the rest, 5) End-of-day email shutdown ritual."}
+]},
+perplexity:{name:"Perplexity",color:"#20b8cd",icon:"🔍",url:"https://perplexity.ai",items:[
+{cat:"Research",title:"Deep Dive Protocol",text:"Research [TOPIC] with academic rigor: 1) Current established consensus, 2) 3 most significant recent developments with dates and sources, 3) Where credible experts disagree and each side's strongest argument, 4) Most cited primary source, 5) What questions remain unanswered. Cite everything."},
+{cat:"Fact-Check",title:"Claim Verifier",text:"Fact-check this claim: \"[CLAIM]\". 1) Trace it to original source, 2) Evidence supporting AND contradicting, 3) Rate it: TRUE / MOSTLY TRUE / MISLEADING / FALSE / UNVERIFIABLE, 4) What nuance is usually lost when shared, 5) The one-sentence accurate version."},
+{cat:"Market Research",title:"Competitor Intelligence",text:"Competitive intelligence report on: [COMPANY/PRODUCT]. 1) Current positioning and recent strategic moves (last 6 months), 2) Pricing structure and recent changes, 3) What customers praise and complain about most, 4) Recent hiring patterns that signal direction, 5) Their most vulnerable point. Sources for everything."},
+{cat:"Buying",title:"Purchase Researcher",text:"I'm buying: [PRODUCT, BUDGET]. 1) Top 3 options at my budget with current prices, 2) What professional reviewers consistently say, 3) What long-term owners actually complain about (stuff reviews miss), 4) Is a new model launching soon? 5) Best verdict for MY use case: [DESCRIBE]. Recent sources only."},
+{cat:"News",title:"Story Behind the Story",text:"Regarding this news: [EVENT]. 1) What actually happened in sequence, 2) Context most coverage skips, 3) How different outlets frame it differently and what that reveals, 4) Who benefits from each framing, 5) What to watch for next to see how this really ends."},
+{cat:"Career",title:"Industry Pulse Check",text:"Current job market for: [ROLE/FIELD]. 1) Demand trend — growing, stable, or shrinking with data, 2) Salary ranges by experience and region, 3) Skills in most recent job postings, 4) What's being automated in this role, 5) Adjacent skill that most increases market value right now. Recent data only."},
+{cat:"Health",title:"Evidence-Based Health Check",text:"Research evidence on: [HEALTH TOPIC]. Evidence-based only: 1) What systematic reviews and meta-analyses conclude, 2) Effect size — meaningful or just statistically significant? 3) Known risks, 4) What mainstream medical bodies recommend, 5) Rate evidence quality: strong/moderate/weak/insufficient. I'll verify with my doctor."},
+{cat:"Tech",title:"Tool Comparison Researcher",text:"Compare [TOOL A] vs [TOOL B] for [USE CASE]: 1) Feature-by-feature on what matters for my use case, 2) Real user sentiment from recent reviews — not marketing, 3) Pricing including hidden costs users discover later, 4) Migration difficulty if I switch later, 5) Which is gaining vs losing momentum."},
+{cat:"Finance",title:"Investment Context Builder",text:"Context on: [STOCK/SECTOR/ASSET]. NOT advice — just facts: 1) Recent performance and events that drove it, 2) Bulls vs bears — strongest case each side, 3) Upcoming events that could move it, 4) How analyst views shifted recently, 5) What a skeptical investor would investigate. Sources throughout."},
+{cat:"Learning",title:"Source Quality Ranker",text:"Best sources to learn [TOPIC]: 1) 5 most respected resources — courses, books, channels, docs, 2) Who's behind each and why they're credible, 3) Best for beginners vs advanced, 4) What learners say after finishing — did it actually work? 5) Optimal sequence to consume them."},
+{cat:"Science",title:"Study Decoder",text:"A study is making headlines: [STUDY/HEADLINE]. Decode it: 1) What the study ACTUALLY found vs headlines, 2) Methodology check — sample size, duration, controls, conflicts of interest, 3) What other researchers say, 4) Does it confirm or contradict prior research? 5) Accurate one-sentence takeaway."},
+{cat:"Local",title:"Local Deep Search",text:"Best [SERVICE/BUSINESS TYPE] in [LOCATION]: 1) Top 5 options with what makes each distinct, 2) Review pattern analysis — consistent praise and complaints, 3) Price comparison, 4) Red flags to check before choosing, 5) 3 questions I should ask before committing."}
+]};
+
+// ─── WHEEL ───
+var SEGS=[
+{ai:"chatgpt",label:"ChatGPT",c1:"#10a37f",c2:"#0d8a6a"},
+{ai:"claude",label:"Claude",c1:"#d97757",c2:"#c0633f"},
+{ai:"gemini",label:"Gemini",c1:"#4285f4",c2:"#2f6fd6"},
+{ai:"perplexity",label:"Perplexity",c1:"#20b8cd",c2:"#189fb2"},
+{ai:"chatgpt",label:"ChatGPT",c1:"#0d8a6a",c2:"#0a7058"},
+{ai:"claude",label:"Claude",c1:"#c0633f",c2:"#a85535"},
+{ai:"gemini",label:"Gemini",c1:"#2f6fd6",c2:"#2558b0"},
+{ai:"perplexity",label:"Perplexity",c1:"#189fb2",c2:"#14889a"}
+];
+var N=SEGS.length,ARC=2*Math.PI/N,curAngle=0,spinning=false;
+
+function drawWheel(rot){
+  var cv=document.getElementById('wc');if(!cv)return;
+  var cx=cv.getContext('2d'),CX=360,CY=360,R=350;
+  cx.clearRect(0,0,720,720);
+  for(var i=0;i<N;i++){
+    var s=rot+i*ARC,e=s+ARC;
+    cx.beginPath();cx.moveTo(CX,CY);cx.arc(CX,CY,R,s,e);cx.closePath();
+    var g=cx.createRadialGradient(CX,CY,60,CX,CY,R);
+    g.addColorStop(0,SEGS[i].c1);g.addColorStop(1,SEGS[i].c2);
+    cx.fillStyle=g;cx.fill();
+    cx.strokeStyle="rgba(255,255,255,0.18)";cx.lineWidth=2;cx.stroke();
+    cx.save();cx.translate(CX,CY);cx.rotate(s+ARC/2);
+    cx.textAlign="right";cx.fillStyle="#fff";cx.font="700 28px Inter,sans-serif";
+    cx.shadowColor="rgba(0,0,0,0.5)";cx.shadowBlur=5;
+    cx.fillText(SEGS[i].label,R-26,10);cx.restore();
   }
-}, { passive: true });
-
-// ─── TOOLS SIDEBAR SWITCHING ───
-var toolMap = {
-  'budget': 'panel-budget',
-  'worldclock': 'panel-worldclock',
-  'age': 'panel-age',
-  'currency': 'panel-currency'
-};
-function switchTool(id, btn) {
-  // only switch if not "soon"
-  if (btn && btn.classList.contains('soon')) return;
-  Object.values(toolMap).forEach(function(pid) {
-    var el = document.getElementById(pid);
-    if (el) el.classList.remove('active');
-  });
-  var target = document.getElementById('panel-' + id);
-  if (target) target.classList.add('active');
-  document.querySelectorAll('.tool-btn').forEach(function(b) { b.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
-}
-
-// ─── CURRENCY HANDLING ───
-var currentSymbol = '$';
-function updateCurrency() {
-  var sel = document.getElementById('currencySelect');
-  var opt = sel.options[sel.selectedIndex];
-  currentSymbol = opt.getAttribute('data-symbol') || '$';
-  var code = sel.value;
-  document.getElementById('currencyBadge').textContent = currentSymbol + ' ' + code;
-  document.getElementById('incomePrefix').textContent = currentSymbol;
-  document.querySelectorAll('.expense-prefix').forEach(function(el) {
-    el.textContent = currentSymbol;
-  });
-}
-
-// ─── EXPENSE ROWS ───
-var defaultExpenses = ['Rent / Housing','Food & Groceries','Transport','Utilities','Entertainment'];
-function addExpense(name) {
-  var container = document.getElementById('expenseRows');
-  var row = document.createElement('div');
-  row.className = 'expense-row';
-  row.innerHTML =
-    '<input type="text" class="expense-name" placeholder="Expense name" value="' + (name || '') + '">' +
-    '<div class="expense-amount-wrap">' +
-      '<span class="expense-prefix">' + currentSymbol + '</span>' +
-      '<input type="number" class="expense-amount" placeholder="Amount" min="0" onwheel="this.blur()">' +
-    '</div>' +
-    '<button class="btn-remove" onclick="this.parentNode.remove()" title="Remove">×</button>';
-  container.appendChild(row);
-}
-defaultExpenses.forEach(function(n) { addExpense(n); });
-
-// ─── CALCULATE ───
-function fmt(n) {
-  return currentSymbol + Number(n).toLocaleString('en-IN', {maximumFractionDigits: 0});
-}
-function calculate() {
-  var income = parseFloat(document.getElementById('incomeInput').value) || 0;
-  var amounts = document.querySelectorAll('.expense-amount');
-  var total = 0;
-  amounts.forEach(function(a) { total += parseFloat(a.value) || 0; });
-  var savings = income - total;
-  var rate = income > 0 ? (savings / income * 100) : 0;
-
-  document.getElementById('resIncome').textContent = fmt(income);
-  document.getElementById('resExpenses').textContent = fmt(total);
-  document.getElementById('resSavings').textContent = fmt(savings);
-  document.getElementById('resSavings').className = 'result-value ' + (savings >= 0 ? 'green' : 'red');
-  document.getElementById('resRate').textContent = rate.toFixed(1) + '%';
-  document.getElementById('resRate').className = 'result-value ' + (rate >= 20 ? 'green' : rate >= 10 ? '' : 'red');
-
-  // Legend
-  document.getElementById('legendExp').textContent = 'Expenses: ' + fmt(total);
-  document.getElementById('legendSav').textContent = 'Savings: ' + fmt(Math.max(0, savings));
-
-  // Advice
-  var advice;
-  if (income === 0) {
-    advice = 'Enter your monthly income above to see your personalised savings analysis.';
-  } else if (savings < 0) {
-    advice = '⚠️ Your expenses exceed your income by ' + fmt(Math.abs(savings)) + '. Consider reducing discretionary spending to avoid debt.';
-  } else if (rate >= 30) {
-    advice = '🌟 Excellent! A ' + rate.toFixed(0) + '% savings rate is outstanding. You\'re well on track for financial independence. Consider investing the surplus in index funds or SIPs.';
-  } else if (rate >= 20) {
-    advice = '✅ Great work! Saving ' + rate.toFixed(0) + '% meets the recommended 20% target. Keep it up and look for ways to grow that surplus through investing.';
-  } else if (rate >= 10) {
-    advice = '📊 You\'re saving ' + rate.toFixed(0) + '% of your income — a solid start. Try to reach 20% by gradually trimming non-essential expenses.';
-  } else {
-    advice = '💡 Your current savings rate of ' + rate.toFixed(0) + '% is below the recommended 20%. Review your largest expense categories to find room to save more.';
+  cx.beginPath();cx.arc(CX,CY,R,0,2*Math.PI);
+  cx.strokeStyle="rgba(255,255,255,0.25)";cx.lineWidth=4;cx.stroke();
+  for(var j=0;j<16;j++){
+    var a=rot+j*(Math.PI/8);
+    cx.beginPath();cx.arc(CX+Math.cos(a)*R,CY+Math.sin(a)*R,4,0,2*Math.PI);
+    cx.fillStyle="#fbbf24";cx.fill();
   }
-  document.getElementById('adviceBox').textContent = advice;
-
-  // Donut chart
-  drawDonut(Math.max(0, total), Math.max(0, savings), income);
-
-  document.getElementById('results').classList.add('show');
-  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
-// ─── DONUT CHART ───
-function drawDonut(expenses, savings, income) {
-  var canvas = document.getElementById('donutChart');
-  var ctx = canvas.getContext('2d');
-  var W = canvas.width, H = canvas.height;
-  ctx.clearRect(0, 0, W, H);
-  var cx = W / 2, cy = H / 2, r = 48, thick = 16;
-  var total = expenses + savings;
-  if (total <= 0) return;
-  var expAngle = (expenses / total) * Math.PI * 2;
-  var savAngle = (savings / total) * Math.PI * 2;
-  var start = -Math.PI / 2;
-  // Expenses arc
-  ctx.beginPath();
-  ctx.arc(cx, cy, r, start, start + expAngle);
-  ctx.lineWidth = thick;
-  ctx.strokeStyle = '#ef4444';
-  ctx.lineCap = 'round';
-  ctx.stroke();
-  // Savings arc
-  ctx.beginPath();
-  ctx.arc(cx, cy, r, start + expAngle, start + expAngle + savAngle);
-  ctx.lineWidth = thick;
-  ctx.strokeStyle = '#7c3aed';
-  ctx.lineCap = 'round';
-  ctx.stroke();
-  // Center text
-  var rate = income > 0 ? (savings / income * 100).toFixed(0) : '0';
-  ctx.fillStyle = '#1e1b2e';
-  ctx.font = 'bold 16px Inter, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(rate + '%', cx, cy - 6);
-  ctx.font = '10px Inter, sans-serif';
-  ctx.fillStyle = '#6b6882';
-  ctx.fillText('saved', cx, cy + 10);
+function todayKey(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
+function getWS(){try{return JSON.parse(localStorage.getItem("aiw-v3")||"{}")}catch(e){return{}}}
+function setWS(s){try{localStorage.setItem("aiw-v3",JSON.stringify(s))}catch(e){}}
+
+function updStreak(){
+  var s=getWS(),streak=s.streak||0,el=document.getElementById('streak-bar');
+  if(!el)return;
+  if(s.lastSpin===todayKey()){
+    el.textContent="🔥 Streak: "+streak+" day"+(streak!==1?"s":"")+" · Come back tomorrow!";
+    var b=document.getElementById('spin-btn');if(b){b.disabled=true;b.textContent="✓ DONE";}
+  }else{
+    el.textContent=streak>0?"🔥 Streak: "+streak+" day"+(streak!==1?"s":"")+" · Spin now to keep it alive!":"✨ Spin to unlock your first AI prompt!";
+  }
 }
+
+function spin(){
+  if(spinning)return;
+  var s=getWS();if(s.lastSpin===todayKey()){showToast("⏳ One spin per day — come back tomorrow!");return;}
+  spinning=true;
+  var btn=document.getElementById('spin-btn');btn.disabled=true;btn.classList.add('sp');btn.textContent="···";
+  var totalSpin=(6+Math.random()*3)*2*Math.PI+Math.random()*2*Math.PI;
+  var finalAngle=curAngle+totalSpin,dur=5400,t0=performance.now(),a0=curAngle;
+  function ease(t){return 1-Math.pow(1-t,5);}
+  function frame(now){
+    var t=Math.min(1,(now-t0)/dur);
+    curAngle=a0+(finalAngle-a0)*ease(t);
+    drawWheel(curAngle);
+    if(t<1){requestAnimationFrame(frame);}
+    else{
+      spinning=false;btn.classList.remove('sp');
+      // ★ CORRECT segment detection: which segment is under the pointer (top = -PI/2)
+      var ptr=-Math.PI/2;
+      var rel=((ptr-curAngle)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);
+      var idx=Math.floor(rel/ARC)%N;
+      onWin(SEGS[idx].ai);
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+var curPr=null,curAI=null;
+function onWin(aiKey){
+  var ai=P[aiKey],pr=ai.items[Math.floor(Math.random()*ai.items.length)];
+  curPr=pr;curAI=ai;
+  var s=getWS(),yesterday=(function(){var d=new Date();d.setDate(d.getDate()-1);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}());
+  s.streak=(s.lastSpin===yesterday)?(s.streak||0)+1:1;
+  s.lastSpin=todayKey();s.total=(s.total||0)+1;
+  setWS(s);updStreak();fireConfetti();
+  document.getElementById('mo-body').innerHTML=
+    '<div class="mbadge" style="background:'+ai.color+'22;color:'+ai.color+'">'+ai.icon+' '+ai.name+' &bull; Today\'s Prompt 🎉</div>'+
+    '<h3>'+pr.title+'</h3><div class="cl">'+pr.cat+' prompt</div>'+
+    '<div class="pb">'+pr.text.replace(/\n/g,'<br>')+'</div>'+
+    '<div class="mact">'+
+    '<button class="mbtn p" onclick="copyPr()">📋 Copy Prompt</button>'+
+    '<button class="mbtn s" onclick="dlPr()">⬇ Download .txt</button>'+
+    '<a class="mbtn s" href="'+ai.url+'">↗ Open '+ai.name+'</a>'+
+    '</div><div class="cb">🎡 Streak: '+s.streak+' day'+(s.streak!==1?'s':'')+'! Spin again tomorrow.</div>';
+  document.getElementById('mo').classList.add('show');
+}
+function closeMo(){document.getElementById('mo').classList.remove('show');}
+document.getElementById('mo').addEventListener('click',function(e){if(e.target.id==='mo')closeMo();});
+
+function copyPr(){
+  if(!curPr)return;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(curPr.text).then(function(){showToast("📋 Copied!")}).catch(function(){fbCopy(curPr.text)});}
+  else fbCopy(curPr.text);
+}
+function fbCopy(t){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast("📋 Copied!");}catch(e){}document.body.removeChild(ta);}
+function dlPr(){
+  if(!curPr||!curAI)return;
+  var b=new Blob(["=== "+curAI.name.toUpperCase()+" PROMPT ===\n"+curPr.title+" ("+curPr.cat+")\n\n"+curPr.text+"\n\n-- aibudgettool.com/ai-wheel.html"],{type:"text/plain"});
+  var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=curAI.name.toLowerCase()+"-prompt-"+todayKey()+".txt";a.click();URL.revokeObjectURL(a.href);showToast("⬇ Downloaded!");
+}
+
+// ─── COMPARE TABLE ───
+var CDATA=[
+["Feature","OpenAI","Google Gemini","Claude (Anthropic)","Llama (Meta)","DeepSeek"],
+["Latest Model","GPT-5.5","Gemini 3.1 Pro","Claude Opus 4.8","Llama 4 Maverick","DeepSeek V4 Pro"],
+["Release","Apr 2026","Feb 2026","May 2026","Apr 2025","2026"],
+["Intelligence Index","60","57","61.4 (#1)","—","—"],
+["Best For","Daily chat, broad tasks","Reasoning, accuracy","Coding, writing, agents","Self-hosting","Budget AI at scale"],
+["Context Window","1M tokens","1M tokens","1M tokens","10M (Scout)","128K"],
+["Max Output","128K","~64K","~64K","~32K","~64K"],
+["Coding Rank","Top 3","Top 5","#1 SWE-bench","Strong","Top 5"],
+["Writing Quality","Excellent","Good","Best (Sonnet 4.6)","Good","Good"],
+["API Input Price","$5/M tokens","$1.25/M","$15/M (Opus)","Free","$0.14/M (Flash)"],
+["API Output Price","$30/M","$5/M","$75/M (Opus)","Free","$0.28/M"],
+["Budget Model","GPT-5 Nano","Gemini 3.5 Flash","Claude Haiku 4.5","Llama 4 Scout","V4 Flash"],
+["Image Generation","DALL·E 3 / Sora","Imagen 3","No","No","No"],
+["Video Generation","Sora","Veo 3.1","No","No","No"],
+["Voice/Audio","Whisper, Voice Mode","Gemini Live","No","No","No"],
+["Agentic Tools","Codex, Operator","Gemini Spark","Claude Code, MCP","Via frameworks","Basic"],
+["Open Source?","No","No","No","Yes","Yes"],
+["On-Device","No","Gemini Nano","No","Yes","Yes"],
+["Safety Approach","RLHF + Moderation","Responsible AI","Constitutional AI","Community","Basic"],
+["Free Tier","ChatGPT Free","Gemini Free","Claude.ai Free","Fully free","Generous free API"]
+];
+function buildTable(){
+  var el=document.getElementById('cmp-tbl');if(!el||el.innerHTML)return;
+  var h='<table><thead><tr>';
+  CDATA[0].forEach(function(c){h+='<th>'+c+'</th>';});
+  h+='</tr></thead><tbody>';
+  for(var r=1;r<CDATA.length;r++){
+    h+='<tr>';
+    CDATA[r].forEach(function(c){
+      var cls=c.includes('#1')||c.includes('Best')?'class="best"':c==='No'?'class="na"':'';
+      h+='<td '+cls+'>'+c+'</td>';
+    });
+    h+='</tr>';
+  }
+  h+='</tbody></table>';
+  el.innerHTML=h;
+}
+
+// ─── QUIZ ───
+var CATS=[
+{id:"chatgpt",name:"OpenAI",icon:"🤖",color:"#10a37f"},
+{id:"claude",name:"Claude AI",icon:"🧠",color:"#d97757"},
+{id:"gemini",name:"Google Gemini",icon:"💎",color:"#4285f4"},
+{id:"generative_ai",name:"Generative AI",icon:"⚡",color:"#f59e0b"},
+{id:"agentic_ai",name:"Agentic AI",icon:"🚀",color:"#a78bfa"}
+];
+var QDB={
+chatgpt:[
+{q:"What is the latest flagship model from OpenAI as of mid-2026?",o:["GPT-4o","GPT-5.5","GPT-4 Turbo","GPT-3.5"],a:1,e:"GPT-5.5 launched April 2026 with a fully retrained base architecture, leading the Intelligence Index at ~60."},
+{q:"What does the 'o' in GPT-4o stand for?",o:["Omni","Open","Optimized","Original"],a:0,e:"GPT-4o stands for 'omni' — it natively handles text, audio, image, and video inputs and outputs."},
+{q:"Which OpenAI model handles speech-to-text?",o:["Jukebox","DALL·E","Whisper","Sora"],a:2,e:"Whisper is OpenAI's automatic speech recognition model supporting 99+ languages."},
+{q:"What is Sora used for?",o:["Code generation","Video generation","Speech recognition","Data analysis"],a:1,e:"Sora is OpenAI's AI video generation model that creates realistic videos from text."},
+{q:"What does GPT stand for?",o:["General Purpose Technology","Generative Pre-trained Transformer","Global Processing Tool","Generated Predictive Text"],a:1,e:"GPT = Generative Pre-trained Transformer. Pre-trained on massive text, then fine-tuned."},
+{q:"What is the ChatGPT Plus price?",o:["$10/month","$20/month","$50/month","Free"],a:1,e:"ChatGPT Plus costs $20/month giving priority access to the latest models."},
+{q:"Which OpenAI reasoning model series introduced in 2024?",o:["GPT-5 series","o1/o3 series","DALL·E series","Whisper series"],a:1,e:"The o1 and o3 series are OpenAI's reasoning models that think step-by-step before answering."},
+{q:"What is the context window of GPT-5.5?",o:["32K","128K","1M tokens","256K"],a:2,e:"GPT-5.5 has a ~1M token context window, matching other frontier models."},
+{q:"Which feature lets ChatGPT browse the internet?",o:["Plugins","Web Browsing","Code Interpreter","Memory"],a:1,e:"Web Browsing allows ChatGPT to search the internet in real-time."},
+{q:"Which company created ChatGPT?",o:["Google","Meta","Anthropic","OpenAI"],a:3,e:"ChatGPT was created by OpenAI, launched November 2022."},
+{q:"What is the max output of GPT-5.5?",o:["8K","32K","128K tokens","16K"],a:2,e:"GPT-5.5 supports up to 128K output tokens — highest among frontier models."},
+{q:"What is OpenAI's image generation model?",o:["Sora","Whisper","DALL·E 3","Codex"],a:2,e:"DALL·E 3 is OpenAI's image generation model."},
+{q:"What feature lets GPT execute Python code?",o:["Advanced Data Analysis","Web Browsing","DALL·E","Whisper"],a:0,e:"Advanced Data Analysis (formerly Code Interpreter) lets ChatGPT run Python in a sandbox."},
+{q:"What was GPT-1's parameter count?",o:["117 million","1.5 billion","175 billion","6 billion"],a:0,e:"GPT-1 had 117M parameters. GPT-2: 1.5B, GPT-3: 175B."},
+{q:"What ChatGPT product launched May 15, 2026?",o:["ChatGPT Money","ChatGPT Personal Finance","GPT Wallet","OpenAI Budget"],a:1,e:"ChatGPT Personal Finance was launched May 15, 2026."},
+{q:"What does ChatGPT Memory do?",o:["Clears history","Remembers preferences across conversations","Saves files","Caches web pages"],a:1,e:"Memory stores user preferences and context across separate conversations."},
+{q:"What is OpenAI's code agent called?",o:["GitHub Copilot","Codex","Cursor","Devin"],a:1,e:"Codex is OpenAI's code generation and autonomous coding agent."},
+{q:"What is OpenAI's enterprise API?",o:["Azure only","Both Azure OpenAI and ChatGPT Enterprise","ChatGPT Pro","OpenAI Cloud"],a:1,e:"OpenAI offers both Azure OpenAI Service (Microsoft) and ChatGPT Enterprise."},
+{q:"GPT-4 reportedly uses what architecture?",o:["Dense 175B","Mixture of Experts ~1.8T","Sparse 500B","LSTM-based"],a:1,e:"GPT-4 uses a Mixture of Experts architecture with ~1.8 trillion total parameters."},
+{q:"What is OpenAI's web browsing agent called?",o:["Codex","Operator","Navigator","Browsify"],a:1,e:"Operator is OpenAI's agent for autonomous web browsing tasks."}
+],
+claude:[
+{q:"Which company created Claude AI?",o:["OpenAI","Google","Anthropic","Meta"],a:2,e:"Anthropic, founded by former OpenAI researchers Dario and Daniela Amodei, created Claude."},
+{q:"What is Anthropic's top model as of June 2026?",o:["Claude 3.5 Sonnet","Claude Opus 4.8","Claude Haiku 4","Claude 3 Opus"],a:1,e:"Claude Opus 4.8 (May 28, 2026) is #1 on the Intelligence Index at 61.4."},
+{q:"What safety technique is Anthropic known for?",o:["RLHF","Constitutional AI","Prompt Engineering","Fine-tuning"],a:1,e:"Constitutional AI trains AI to follow principles to self-improve safety behavior."},
+{q:"Which Claude model is best value for coding?",o:["Claude Opus 4.8","Claude Sonnet 4.6","Claude Haiku 4.5","Claude 3 Opus"],a:1,e:"Claude Sonnet 4.6 at $3/$15 per million tokens is the best value for production coding."},
+{q:"What is Claude's autonomous coding tool?",o:["GitHub Copilot","Cursor","Claude Code","Devin"],a:2,e:"Claude Code is Anthropic's command-line tool for autonomous coding."},
+{q:"Which coding benchmark does Claude Opus lead?",o:["HumanEval","SWE-bench Pro","LeetCode","CodeForces"],a:1,e:"Claude Opus leads SWE-bench Pro for real-world software engineering tasks."},
+{q:"What is Claude Opus 4.8's context window?",o:["100K","200K","1M tokens","500K"],a:2,e:"Claude Opus 4.8 has a ~1M token context window."},
+{q:"What does MCP stand for in Claude?",o:["Multi-Cloud Protocol","Model Context Protocol","Machine Computing Pipeline","Managed Control Plane"],a:1,e:"Model Context Protocol is Anthropic's open standard for connecting AI to external tools."},
+{q:"Which feature lets Claude create interactive outputs?",o:["Canvas","Artifacts","Workbench","Studio"],a:1,e:"Artifacts let Claude create interactive code and visualizations in the conversation."},
+{q:"What is Anthropic's most advanced unreleased model?",o:["Claude 5","Claude Ultra","Claude Mythos Preview","Claude Max"],a:2,e:"Claude Mythos Preview is available only to trusted organizations via Project Glasswing."},
+{q:"Who founded Anthropic?",o:["Sam Altman & Greg Brockman","Dario & Daniela Amodei","Sundar Pichai","Yann LeCun"],a:1,e:"Dario Amodei (CEO) and Daniela Amodei (President) co-founded Anthropic in 2021."},
+{q:"What writing benchmark does Sonnet 4.6 lead?",o:["MMLU","SWE-bench","GDPval-AA writing index","HellaSwag"],a:2,e:"Claude Sonnet 4.6 scores 1,643 Elo on GDPval-AA — best for writing style and voice."},
+{q:"Where is Claude Sonnet positioned?",o:["Budget","Mid-tier balanced","Maximum capability","Research-only"],a:1,e:"Sonnet is mid-tier: balanced between Haiku (fast/cheap) and Opus (max capability)."},
+{q:"What is Claude API's pricing model?",o:["Monthly subscription","Per-token (input/output separate)","Free unlimited","Per-request fee"],a:1,e:"Claude API charges per-token: Sonnet 4.6 is $3/M input, $15/M output."},
+{q:"What does Extended Thinking do in Claude?",o:["Searches the web","Shows step-by-step reasoning","Generates images","Runs code"],a:1,e:"Extended Thinking shows Claude's reasoning process — useful for complex analysis."},
+{q:"What year was Anthropic founded?",o:["2019","2020","2021","2022"],a:2,e:"Anthropic was founded in 2021 by former OpenAI researchers."},
+{q:"Where is Claude available besides direct API?",o:["Azure only","Amazon Bedrock","Google Cloud only","AWS and Bedrock"],a:1,e:"Claude is available via the Claude Platform (direct API) and Amazon Bedrock (AWS)."},
+{q:"What is Claude Haiku designed for?",o:["Maximum intelligence","Fast, cheap lightweight tasks","Image generation","Video"],a:1,e:"Haiku is the fastest and cheapest Claude — for high-volume, cost-sensitive work."},
+{q:"What is Anthropic's open standard for tool connections?",o:["OpenAPI","MCP","REST hooks","LangChain"],a:1,e:"Model Context Protocol (MCP) is Anthropic's universal standard for AI-to-tool connections."},
+{q:"What is Claude's feature for cross-session memory?",o:["Sessions","Memory","Context","History"],a:1,e:"Claude's Memory feature stores preferences and context across separate conversations."}
+],
+gemini:[
+{q:"What is Google's latest AI model as of mid-2026?",o:["Gemini 2.0","Gemini 3.1 Pro","PaLM 3","Bard Pro"],a:1,e:"Gemini 3.1 Pro (February 2026) is Google's flagship, scoring 57 on the Intelligence Index."},
+{q:"What was Google's chatbot called before Gemini?",o:["LaMDA","Bard","PaLM","Meena"],a:1,e:"Google's chatbot launched as 'Bard' in 2023, rebranded to 'Gemini' February 2024."},
+{q:"Which Gemini model is optimized for speed?",o:["Ultra","Pro","Flash","Nano"],a:2,e:"Gemini Flash models are designed for fast, cheap inference."},
+{q:"What is Gemini Nano designed for?",o:["Cloud servers","On-device AI (phones)","Video generation","Databases"],a:1,e:"Gemini Nano runs on-device on Pixel phones for offline AI features."},
+{q:"What is Google's AI developer tool?",o:["Google Colab","AI Studio","Firebase","TensorFlow Hub"],a:1,e:"Google AI Studio is a free web tool for prototyping with Gemini models."},
+{q:"What did Google announce at I/O 2026?",o:["Gemini Live","Gemini Spark","Google Assistant 3","Project Astra"],a:1,e:"Gemini Spark (May 19, 2026) is a 24/7 persistent autonomous agent."},
+{q:"What makes Gemini natively multimodal?",o:["Separate models per type","Trained on text, images, audio, video from start","Text only","Requires plugins"],a:1,e:"Gemini was trained natively on multimodal data from the ground up."},
+{q:"What is Gemini 3.1 Pro's context window?",o:["128K","256K","1M tokens","2M"],a:2,e:"Gemini 3.1 Pro supports ~1M token context."},
+{q:"What is Google's custom AI chip?",o:["GPU","TPU","NPU","APU"],a:1,e:"TPU (Tensor Processing Unit) is Google's custom chip for AI workloads, now 6th generation."},
+{q:"What model did Google use before Gemini?",o:["BERT","PaLM / PaLM 2","T5","AlphaFold"],a:1,e:"PaLM and PaLM 2 powered Google's AI before Gemini replaced them."},
+{q:"How does Gemini work with Google Workspace?",o:["It doesn't","Separate app","Built into Gmail, Docs, Sheets, Slides","API only"],a:2,e:"Gemini is built directly into Workspace apps."},
+{q:"What is Google's image generation model?",o:["Midjourney","Imagen","DALL·E","Stable Diffusion"],a:1,e:"Imagen is Google's text-to-image model integrated into Gemini."},
+{q:"What is Google's video generation model?",o:["Sora","Veo","Runway","Pika"],a:1,e:"Veo (now 3.1) is Google's premier video generation model."},
+{q:"What is Gemini Advanced?",o:["The API","Premium subscription with best models","Developer tool","Android feature"],a:1,e:"Gemini Advanced is the $20/month subscription for the most capable models."},
+{q:"What is AlphaFold known for?",o:["Image generation","Protein structure prediction and Nobel Prize","Code generation","Translation"],a:1,e:"AlphaFold predicts protein structures and won the Nobel Prize in Chemistry 2024."},
+{q:"What mobile OS has Gemini Nano built in?",o:["iOS","Android (Pixel/Samsung)","Windows Phone","HarmonyOS"],a:1,e:"Gemini Nano runs on Android, especially Pixel 8+ and Samsung Galaxy S24+."},
+{q:"What is Google's AI safety framework?",o:["Constitutional AI","RLHF only","Responsible AI Principles","Alignment Research"],a:2,e:"Google follows 'Responsible AI Principles' for developing safe and beneficial AI."},
+{q:"What benchmark does Gemini 3.1 Pro lead?",o:["SWE-bench","Creative writing","Hardest reasoning and accuracy","Image generation"],a:2,e:"Gemini 3.1 Pro leads on the hardest reasoning and accuracy benchmarks."},
+{q:"What framework does Google use for AI training?",o:["PyTorch","JAX/TPU","TensorFlow only","Caffe"],a:1,e:"Google primarily uses JAX on TPUs for training Gemini models."},
+{q:"What is Google's subscription price for Gemini Advanced?",o:["$10/month","$15/month","$20/month","$30/month"],a:2,e:"Gemini Advanced costs $20/month as part of Google One AI Premium."}
+],
+generative_ai:[
+{q:"What is a Transformer in AI?",o:["A robot","A neural network using self-attention","A data converter","A GPU type"],a:1,e:"Transformers (2017, Google) use self-attention to process sequences in parallel — foundation of all LLMs."},
+{q:"What does LLM stand for?",o:["Large Language Model","Linear Learning Machine","Logical Language Module","Low Latency Model"],a:0,e:"Large Language Model — AI trained on massive text to understand and generate language."},
+{q:"What is hallucination in AI?",o:["AI sees images","AI confidently generates false info","AI crashes","AI refuses to answer"],a:1,e:"Hallucination is when AI generates plausible-sounding but factually incorrect information."},
+{q:"What is fine-tuning?",o:["Making model smaller","Training pre-trained model on specific data","Deleting outputs","Adjusting hardware"],a:1,e:"Fine-tuning trains a pre-trained model further on task-specific data."},
+{q:"What is RAG?",o:["Random Access Generation","Retrieval-Augmented Generation","Rapid AI Growth","Reinforced Agent Guidance"],a:1,e:"RAG searches a knowledge base before generating, reducing hallucinations."},
+{q:"What is a token in language models?",o:["A physical coin","A piece of text (word/subword/character)","A security key","A GPU unit"],a:1,e:"Tokens are how models process text — roughly 1 token ≈ 3/4 of a word."},
+{q:"What is temperature in AI generation?",o:["GPU heat","Parameter controlling randomness/creativity","Processing speed","Training duration"],a:1,e:"Temperature: low = deterministic/focused, high = creative/random (range 0-2)."},
+{q:"What is the attention mechanism?",o:["A focus timer","Weighs importance of different input parts","Error correction","Memory optimization"],a:1,e:"Attention lets each token look at all others to understand context — key Transformer innovation."},
+{q:"What is zero-shot learning?",o:["Training from scratch","Performing a task without any examples","A failed run","Training with zero data"],a:1,e:"Zero-shot = performing tasks never explicitly trained for, using only general knowledge."},
+{q:"What is a diffusion model?",o:["Text generator","Generates images by removing noise","Network routing","Database model"],a:1,e:"Diffusion models (Stable Diffusion, DALL·E) generate images by reversing a noise-adding process."},
+{q:"What does RLHF stand for?",o:["Real-time Learning with Human Feedback","Reinforcement Learning from Human Feedback","Recursive Language Handling","Rapid Learning Framework"],a:1,e:"RLHF trains models using human preferences — humans rank outputs and the model learns."},
+{q:"What is few-shot prompting?",o:["Using a camera","Giving examples in the prompt to guide output","Training on minimal data","Running briefly"],a:1,e:"Few-shot includes examples in your prompt so the model understands the pattern."},
+{q:"What is context window in LLMs?",o:["Display screen","Max text the model processes at once","Debugging tool","Training dataset size"],a:1,e:"Context window = total tokens (input + output) a model handles in one conversation."},
+{q:"What is embedding in AI?",o:["Inserting hardware","Converting text/images to numerical vectors","A database","A visualization"],a:1,e:"Embeddings convert data into dense vectors that capture semantic meaning."},
+{q:"AI vs AGI difference?",o:["Same thing","AI=specific tasks; AGI=human-level general intelligence","AGI is slower","AI is newer"],a:1,e:"AI today is 'narrow.' AGI would match human-level reasoning across all domains."},
+{q:"What open-source LLM did Meta release?",o:["PaLM","Llama","Falcon","Mistral"],a:1,e:"Meta's Llama series (now Llama 4) is the most influential open-source LLM family."},
+{q:"What is quantization?",o:["Measuring quality","Reducing precision to shrink model size","Increasing parameters","A training technique"],a:1,e:"Quantization reduces numerical precision, making models smaller and faster."},
+{q:"What is a multimodal AI?",o:["Text only","Processes text, images, audio, video","Multi-language","Multiple versions"],a:1,e:"Multimodal models understand and generate across different data types in one system."},
+{q:"What is model collapse?",o:["GPU failure","AI trains on own outputs and degrades","Too many users","Training loss = zero"],a:1,e:"Model collapse happens when models train on AI-generated data, losing diversity."},
+{q:"What is prompt engineering?",o:["Building hardware","Crafting effective instructions for AI","Writing source code","Engineering training data"],a:1,e:"Prompt engineering is designing inputs that get the best possible outputs from AI models."}
+],
+agentic_ai:[
+{q:"What is Agentic AI?",o:["AI that creates agents","AI that autonomously plans and executes tasks","AI for secret agents","A programming language"],a:1,e:"Agentic AI operates autonomously — breaks down goals, uses tools, makes decisions, executes."},
+{q:"Key difference between chatbot and AI agent?",o:["Agents are faster","Agents autonomously take actions and use tools","Chatbots are smarter","No difference"],a:1,e:"Chatbots respond to prompts; agents plan, use tools, browse web, and execute multi-step workflows."},
+{q:"What does MCP enable?",o:["Faster training","Standardized AI-to-tools connection","Better images","Cheaper API calls"],a:1,e:"MCP is an open standard letting AI connect to databases, APIs, and tools universally."},
+{q:"What is tool use / function calling?",o:["Physical tools","AI invoking external APIs to take actions","Building hardware","Debugging"],a:1,e:"Tool use lets AI call external functions — searching web, running code, querying databases."},
+{q:"What is the ReAct pattern?",o:["Frontend framework","Reasoning + Acting alternation","Chemical simulation","Reflex-based AI"],a:1,e:"ReAct agents alternate between thinking about what to do and taking actions."},
+{q:"What is multi-agent AI?",o:["One agent multiple personalities","Multiple AI agents collaborating","Running model twice","Backup system"],a:1,e:"Multiple specialized agents working together — one researches, one writes, one reviews."},
+{q:"What is an AI orchestrator?",o:["Music AI","Coordinates multiple agents and workflows","Training scheduler","Data pipeline"],a:1,e:"An orchestrator manages flow between agents, deciding which handles which subtask."},
+{q:"What is chain-of-thought prompting?",o:["Linking prompts","Asking AI to show reasoning steps","Blockchain technique","Sequential training"],a:1,e:"Chain-of-thought dramatically improves accuracy on math, logic, and complex reasoning."},
+{q:"What is a guardrail in AI agents?",o:["Physical barrier","Safety constraints preventing harmful actions","GPU cooling","API limit type"],a:1,e:"Guardrails limit what agents can do — preventing data deletion, unauthorized access, etc."},
+{q:"What is human-in-the-loop?",o:["Human in VR","Human approval for critical agent decisions","Manual labeling","Training technique"],a:1,e:"The agent pauses at critical decisions to get human confirmation before proceeding."},
+{q:"AI workflow vs AI agent?",o:["Identical","Workflows=fixed steps; Agents=dynamic decisions","Agents simpler","Workflows=more compute"],a:1,e:"Workflows = predetermined sequences. Agents = autonomous dynamic planners."},
+{q:"What is Devin?",o:["A chatbot","Autonomous AI software engineer","Hardware product","Training framework"],a:1,e:"Devin (by Cognition) is one of the first autonomous AI software engineering agents."},
+{q:"What does grounding mean for AI?",o:["Connecting to earth","Connecting responses to real data sources","Reducing size","Training on truth"],a:1,e:"Grounding connects AI outputs to real data to reduce hallucination."},
+{q:"What is autonomous coding?",o:["AI writing training code","AI agents independently writing and debugging software","Auto formatting","Self-modifying AI"],a:1,e:"Autonomous coding agents (Claude Code, Codex) handle software engineering end-to-end."},
+{q:"What is Computer Use in AI?",o:["Using a laptop","AI controlling screens like a human","Cloud computing","Hardware diagnostics"],a:1,e:"Computer Use lets AI see screens, click, type, and navigate apps like humans do."},
+{q:"What is planning in AI agents?",o:["Project management","Breaking goals into actionable steps","Memory management","GPU allocation"],a:1,e:"Planning is how agents decompose high-level goals into ordered subtasks."},
+{q:"What is agent memory?",o:["RAM","Storing info across steps/sessions","Training data","Cache"],a:1,e:"Agent memory stores history, task state, and learned info for coherent multi-step execution."},
+{q:"Risk of agent autonomy?",o:["Higher cost only","Unintended actions and cascading errors without oversight","Slower processing","No risks"],a:1,e:"Autonomous agents can make compounding mistakes without human oversight."},
+{q:"Fastest-growing AI use case in 2026?",o:["Image generation","Chatbots","Agentic AI / autonomous workflows","Summarization"],a:2,e:"Agentic AI — autonomous, multi-step workflows with tool use — is the fastest-growing use case."},
+{q:"What is tool selection in AI agents?",o:["Choosing hardware","Agent deciding which tool for each subtask","Selecting data","IDE choice"],a:1,e:"Tool selection is the agent's ability to pick the right tool for each step of a task."}
+]};
+
+var qState={qs:[],qi:0,score:0,sel:null,ans:false,results:[],cat:null};
+function buildCats(){
+  var g=document.getElementById('cat-grid');if(!g)return;g.innerHTML='';
+  CATS.forEach(function(c){
+    var d=document.createElement('div');d.className='cat-card';d.style.borderLeftColor=c.color;
+    d.innerHTML='<div style="display:flex;align-items:center;gap:9px;margin-bottom:8px"><span style="font-size:24px">'+c.icon+'</span><div><div style="font-weight:600;font-size:14px">'+c.name+'</div><div style="color:var(--muted);font-size:11px">20 questions available</div></div></div><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;background:'+c.color+'22;color:'+c.color+'">10 per round</span><span style="color:var(--muted);font-size:11px">10 pts each</span></div>';
+    d.onclick=function(){startQuiz(c.id);};
+    g.appendChild(d);
+  });
+}
+function startQuiz(catId){
+  var n=document.getElementById('pname').value.trim();
+  if(!n){document.getElementById('nerr').style.display='block';document.getElementById('pname').focus();return;}
+  document.getElementById('nerr').style.display='none';
+  var pool=[...QDB[catId]].sort(function(){return Math.random()-.5}).slice(0,10);
+  qState={qs:pool,qi:0,score:0,sel:null,ans:false,results:[],cat:catId,name:n};
+  go('qactive');renderQ();
+}
+function renderQ(){
+  var q=qState.qs[qState.qi],cat=CATS.find(function(c){return c.id===qState.cat;});
+  document.getElementById('q-cat').innerHTML=cat.icon+' '+cat.name;
+  document.getElementById('q-score').textContent='Score: '+qState.score;
+  var pb='';for(var i=0;i<10;i++){var bg=i<qState.qi?'var(--accent)':i===qState.qi?'var(--accent2)':'rgba(255,255,255,0.1)';pb+='<div style="background:'+bg+'"></div>';}
+  document.getElementById('qprog').innerHTML=pb;
+  var h='<div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="color:var(--muted);font-size:12px">Question '+(qState.qi+1)+' of 10</span><span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;background:'+cat.color+'22;color:'+cat.color+'">'+cat.name+'</span></div>';
+  h+='<div style="font-size:16px;font-weight:600;line-height:1.6;margin-bottom:18px">'+q.q+'</div>';
+  q.o.forEach(function(opt,i){
+    h+='<button class="opt" id="opt-'+i+'" onclick="pickAns('+i+')" style="'+(qState.ans&&i===q.a?'background:rgba(52,211,153,.11);border-color:#34d399':qState.ans&&i===qState.sel&&i!==q.a?'background:rgba(239,68,68,.11);border-color:#ef4444':'')+'"><span style="font-weight:700;margin-right:8px;color:var(--accent)">'+String.fromCharCode(65+i)+'.</span>'+opt+(qState.ans&&i===q.a?' <span style="float:right;color:#34d399">✓</span>':'')+(qState.ans&&i===qState.sel&&i!==q.a?' <span style="float:right;color:#ef4444">✗</span>':'')+'</button>';
+  });
+  if(qState.ans)h+='<div class="expl"><span style="font-weight:600;color:var(--accent)">💡 Explanation:</span> '+q.e+'</div>';
+  document.getElementById('q-card').innerHTML=h;
+  var nb=document.getElementById('q-next');
+  if(qState.ans){nb.style.display='block';nb.innerHTML=qState.qi<9?'<button class="btn-p" onclick="nextQ()">Next Question →</button>':'<button class="btn-p" onclick="showResults()">See Results 🏅</button>';}
+  else nb.style.display='none';
+}
+function pickAns(idx){
+  if(qState.ans)return;
+  qState.ans=true;qState.sel=idx;
+  var q=qState.qs[qState.qi],correct=idx===q.a;
+  if(correct){qState.score+=10;fireConfetti();}
+  qState.results.push({q:q.q,o:q.o,a:q.a,e:q.e,ua:idx,correct:correct});
+  renderQ();
+}
+function nextQ(){qState.qi++;qState.sel=null;qState.ans=false;renderQ();}
+function showResults(){
+  try{var lb=JSON.parse(localStorage.getItem("aiqz-lb")||"[]");lb.push({name:qState.name,score:qState.score,cat:qState.cat,date:new Date().toLocaleDateString()});lb.sort(function(a,b){return b.score-a.score});lb=lb.slice(0,50);localStorage.setItem("aiqz-lb",JSON.stringify(lb));}catch(e){}
+  var pct=qState.score,grade=pct>=80?"🏆 Expert":pct>=60?"⭐ Advanced":pct>=40?"💪 Intermediate":"📖 Beginner";
+  var cat=CATS.find(function(c){return c.id===qState.cat;});
+  if(pct>=80)fireConfetti();
+  document.getElementById('res-card').innerHTML='<div style="font-size:44px;margin-bottom:8px">'+(pct>=80?"🎉":pct>=60?"👏":pct>=40?"💪":"📖")+'</div><div style="font-size:60px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">'+pct+'/100</div><div style="font-size:19px;font-weight:600;margin-top:4px">'+grade+'</div><div style="color:var(--muted);margin-top:7px">'+qState.name+' &bull; '+cat.name+'</div><div style="color:var(--muted);font-size:12px;margin-top:4px">'+qState.results.filter(function(r){return r.correct;}).length+'/10 correct</div>';
+  document.getElementById('res-act').innerHTML='<button class="btn-p" onclick="showFlash(0)">📖 Review Answers</button><button class="btn-o" onclick="startQuiz(\''+qState.cat+'\')">🔄 Retry</button><button class="btn-o" onclick="go(\'quiz\')">📂 Other Category</button><button class="btn-o" onclick="go(\'lb\')">🏅 Leaderboard</button>';
+  document.getElementById('flash-area').innerHTML='';
+  go('results');
+}
+var flashI=0;
+function showFlash(i){flashI=i;renderFlash();}
+function renderFlash(){
+  var r=qState.results[flashI];
+  document.getElementById('flash-area').innerHTML='<div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span style="font-weight:600;color:'+(r.correct?"#34d399":"#ef4444")+'">'+(r.correct?"✓ Correct":"✗ Incorrect")+' &bull; Card '+(flashI+1)+'/'+qState.results.length+'</span></div><div style="font-weight:600;font-size:15px;margin-bottom:10px">'+r.q+'</div><div style="margin-bottom:8px;font-size:13px"><span style="color:#34d399">Answer: '+r.o[r.a]+'</span>'+(r.correct?'':'<span style="color:#ef4444;margin-left:14px">You picked: '+r.o[r.ua]+'</span>')+'</div><div style="padding:12px;background:rgba(167,139,250,.07);border-radius:8px;color:var(--muted);font-size:13px;line-height:1.7">'+r.e+'</div><div style="display:flex;gap:8px;margin-top:12px;justify-content:center"><button class="btn-o" onclick="showFlash('+Math.max(0,flashI-1)+')" '+(flashI===0?'disabled':'')+'">← Prev</button><button class="btn-o" onclick="showFlash('+Math.min(qState.results.length-1,flashI+1)+')" '+(flashI===qState.results.length-1?'disabled':'')+'">Next →</button></div></div>';
+}
+
+// ─── LEADERBOARD ───
+function buildLB(){
+  var cont=document.getElementById('lb-cont');if(!cont)return;
+  var lb=[];try{lb=JSON.parse(localStorage.getItem("aiqz-lb")||"[]");}catch(e){}
+  if(!lb.length){cont.innerHTML='<div style="text-align:center;color:var(--muted);padding:40px"><div style="font-size:40px;margin-bottom:12px">🎮</div><div>No scores yet — be the first!</div><button class="btn-p" style="margin-top:14px" onclick="go(\'quiz\')">Start Quiz</button></div>';return;}
+  var h='';
+  lb.slice(0,20).forEach(function(e,i){
+    var cat=CATS.find(function(c){return c.id===e.cat;})||{name:e.cat,icon:"🎮"};
+    var m=i<3?["🥇","🥈","🥉"][i]:(i+1);
+    var sc=e.score>=80?"#34d399":e.score>=60?"var(--accent)":"var(--muted)";
+    h+='<div class="lb-row"><div style="width:30px;text-align:center;font-size:'+(i<3?'19px':'13px')+';color:'+(i===0?"#fbbf24":i===1?"#9ca3af":i===2?"#b45309":"var(--dim)")+'">'+m+'</div><div style="flex:1"><div style="font-weight:500;font-size:13px">'+e.name+'</div><div style="color:var(--muted);font-size:11px">'+cat.icon+' '+cat.name+' &bull; '+e.date+'</div></div><div style="font-weight:700;font-size:17px;color:'+sc+'">'+e.score+'</div></div>';
+  });
+  cont.innerHTML=h;
+}
+
+// ─── BUDGET ───
+function updCur(){document.getElementById('cur-sym').textContent=document.getElementById('currency').value;}
+function addExp(){
+  var r=document.createElement('div');r.className='exp-row';
+  r.innerHTML='<input class="fi" type="text" placeholder="Category" style="flex:1"><input class="fi" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="rmExp(this)">×</button>';
+  document.getElementById('exp-list').appendChild(r);
+}
+function rmExp(btn){var r=btn.parentNode;if(document.querySelectorAll('.exp-row').length>1)r.remove();}
+function calcBudget(){
+  var sym=document.getElementById('currency').value;
+  var inc=parseFloat(document.getElementById('income').value)||0;
+  var total=0;
+  document.querySelectorAll('.exp-row').forEach(function(r){var v=parseFloat(r.querySelectorAll('input')[1].value)||0;total+=v;});
+  var sav=inc-total,pct=inc>0?Math.round(total/inc*100):0;
+  document.getElementById('r-in').textContent=sym+(inc.toLocaleString());
+  document.getElementById('r-ex').textContent=sym+(total.toLocaleString());
+  document.getElementById('r-sv').textContent=sym+(sav.toLocaleString());
+  document.getElementById('r-rt').textContent=(inc>0?Math.round(sav/inc*100):0)+'%';
+  document.getElementById('r-pct').textContent=pct+'%';
+  document.getElementById('r-bar').style.width=Math.min(pct,100)+'%';
+  document.getElementById('r-bar').style.background=pct>80?'linear-gradient(90deg,#ef4444,#f87171)':pct>60?'linear-gradient(90deg,#f59e0b,#fbbf24)':'linear-gradient(90deg,#34d399,#60a5fa)';
+  document.getElementById('bud-res').style.display='block';
+  document.getElementById('bud-res').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ─── TOAST ───
+var tt;function showToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2500);}
+
+// ─── CONFETTI ───
+function fireConfetti(){
+  var c=document.getElementById('cc');c.width=window.innerWidth;c.height=window.innerHeight;
+  var cx=c.getContext('2d');
+  var cols=["#a78bfa","#60a5fa","#34d399","#f59e0b","#ef4444","#ec4899","#fbbf24","#10a37f","#4285f4","#d97757","#20b8cd"];
+  var ps=[];for(var i=0;i<150;i++)ps.push({x:c.width/2+(Math.random()-.5)*180,y:c.height*.4,w:Math.random()*8+3,h:Math.random()*5+2,col:cols[Math.floor(Math.random()*cols.length)],vy:-(Math.random()*8+5),vx:(Math.random()-.5)*11,rot:Math.random()*360,rv:Math.random()*9-4.5,g:.24});
+  var af;
+  function draw(){cx.clearRect(0,0,c.width,c.height);var alive=false;ps.forEach(function(p){if(p.y>c.height+20)return;alive=true;p.vy+=p.g;p.y+=p.vy;p.x+=p.vx;p.rot+=p.rv;cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot*Math.PI/180);cx.fillStyle=p.col;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();});if(alive)af=requestAnimationFrame(draw);else cx.clearRect(0,0,c.width,c.height);}
+  draw();setTimeout(function(){cancelAnimationFrame(af);cx.clearRect(0,0,c.width,c.height);},5000);
+}
+
+// ─── INIT ───
+updStreak();
+drawWheel(0);
+// Default landing = spin wheel (users see it first)
+go('wheel');
 </script>
 </body>
 </html>
