@@ -1,0 +1,74 @@
+<script>
+// ═══ WORD → PDF: real one-click download for English/Latin text ═══
+// Falls back to the existing Print→Save as PDF flow for Hindi/Arabic/
+// Chinese/Tamil, since jsPDF's built-in fonts can't draw those glyphs
+// without embedding extra font files (a future upgrade if you want it).
+function hasNonLatinScript(t){
+  return /[\u0900-\u097F\u0600-\u06FF\u0B80-\u0BFF\u4E00-\u9FFF\u3040-\u30FF\uAC00-\uD7AF]/.test(t);
+}
+function convertWord(){
+  var f=document.getElementById('wf').files[0];
+  if(!f)return;
+  var prog=document.getElementById('wprog'),prev=document.getElementById('wprev'),
+      wdlb=document.getElementById('wdlb'),hint=document.getElementById('wordHint');
+  prog.style.display='block';prog.textContent='Reading document…';
+  prev.style.display='none';wdlb.style.display='none';hint.style.display='none';
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var buf=e.target.result;
+    Promise.all([
+      mammoth.extractRawText({arrayBuffer:buf}),
+      mammoth.convertToHtml({arrayBuffer:buf})
+    ]).then(function(results){
+      var text=results[0].value||'';
+      var html=results[1].value||'';
+      // Always populate the print mirror, in case the fallback is needed
+      document.getElementById('wordPrintBody').innerHTML=html;
+      prev.style.display='block';
+      prev.textContent=text.slice(0,2000)+(text.length>2000?'\n\n…':'');
+
+      if(hasNonLatinScript(text)){
+        prog.style.display='none';
+        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
+        wdlb.style.display='inline-block';
+        wdlb.onclick=openWordPrint;
+        hint.style.display='block';
+        hint.textContent='This document contains Hindi/Arabic/Chinese/Tamil text, which needs your browser\'s real fonts to render correctly — use Print → Save as PDF below.';
+        return;
+      }
+
+      try{
+        var jsPDFCtor=window.jspdf.jsPDF;
+        var doc=new jsPDFCtor({unit:'pt',format:'a4'});
+        var margin=48,maxWidth=595-margin*2,lineHeight=16;
+        doc.setFont('helvetica','normal');doc.setFontSize(11);
+        var lines=doc.splitTextToSize(text,maxWidth);
+        var y=margin;
+        lines.forEach(function(line){
+          if(y>842-margin){doc.addPage();y=margin;}
+          doc.text(line,margin,y);
+          y+=lineHeight;
+        });
+        var outName=f.name.replace(/\.docx$/i,'')+'.pdf';
+        doc.save(outName);
+        prog.style.display='none';
+        wdlb.style.display='inline-block';
+        wdlb.textContent='⬇ Download PDF Again';
+        wdlb.onclick=function(){doc.save(outName);};
+        hint.style.display='block';
+        hint.textContent='Downloaded as '+outName+'. Only text is preserved — no bold, images or layout. For Hindi, Arabic, Chinese or Tamil text, use the Print option instead.';
+      }catch(err){
+        prog.style.display='block';
+        prog.textContent='Direct PDF generation failed — use Print → Save as PDF instead.';
+        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
+        wdlb.style.display='inline-block';
+        wdlb.onclick=openWordPrint;
+      }
+    }).catch(function(){
+      prog.style.display='block';
+      prog.textContent='Could not read this .docx file. Please try another file.';
+    });
+  };
+  reader.readAsArrayBuffer(f);
+}
+</script>

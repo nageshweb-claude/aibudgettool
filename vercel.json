@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/blog.html", "destination": "/index.html", "permanent": true },
+    { "source": "/ai-tools.html", "destination": "/index.html", "permanent": true },
+    { "source": "/ai-wheel.html", "destination": "/index.html", "permanent": true }
+  ]
+}
