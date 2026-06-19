@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="google-site-verification" content="eLlpTrkbJcYYqXwNdK_PlCwG8vKrRyUyXfi_a5NqGt4" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Budget Tool — Free AI Learning Hub, Prompt Wheel, Quiz &amp; Budget Calculator</title>
@@ -64,6 +65,14 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
 #cc{position:fixed;inset:0;pointer-events:none;z-index:500}
 .sbt{display:none;position:fixed;top:11px;left:11px;z-index:60;background:var(--card);border:1px solid var(--bd);border-radius:9px;color:var(--b1);padding:7px 10px;cursor:pointer;font-size:18px;line-height:1;box-shadow:var(--shd)}.sov{display:none;position:fixed;inset:0;background:rgba(45,18,0,.55);z-index:45}
 @media(max-width:768px){:root{--sw:0px}.sidebar{transform:translateX(-235px);width:235px}.sidebar.open{transform:translateX(0)}.sov.open{display:block}.main{margin-left:0}.sbt{display:block}.topbar{padding:11px 14px 11px 50px}.pg{padding:0 14px 50px}.bg2g{grid-template-columns:1fr}.hero h1{font-size:26px}}
+
+.tbtn{background:linear-gradient(135deg,var(--acc),#A0522D);color:#fff;border:none;padding:10px 20px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.18s}.tbtn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 14px rgba(192,106,42,.35)}.tbtn:disabled{opacity:.45;cursor:not-allowed}
+.word-print-root{display:none}
+@media print{
+  body > *:not(#wordPrintHost){display:none!important}
+  #wordPrintHost{display:block!important;position:static!important}
+  #wordPrintHost *{visibility:visible}
+}
 </style>
 </head><body>
 <canvas id="cc"></canvas><div class="toast" id="toast"></div>
@@ -124,9 +133,9 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <div class="fc" style="border-top-color:#00838f" onclick="go('pe')"><div style="font-size:30px;margin-bottom:8px">✍️</div><h3>Prompt Engineering</h3><p>Master AI prompting, save tokens, learn pro techniques with templates.</p></div>
     <div class="fc" style="border-top-color:#2E7D32" onclick="go('quiz')"><div style="font-size:30px;margin-bottom:8px">🎮</div><h3>AI Knowledge Quiz</h3><p>175 questions · 7 categories · leaderboard · flashcard review.</p></div>
     <div class="fc" style="border-top-color:#f59e0b" onclick="go('budget')"><div style="font-size:30px;margin-bottom:8px">💰</div><h3>Budget Calculator</h3><p>Track income and expenses across 50+ global currencies. Free forever.</p></div>
-    <div class="fc" style="border-top-color:#8b5cf6" onclick="go('pdf')"><div style="font-size:30px;margin-bottom:8px">📄</div><h3>PDF ↔ Word Tools</h3><p>Convert PDF to Word and Word to PDF. Free, browser-based, all languages.</p></div>
+    <div class="fc" style="border-top-color:#A0522D" onclick="go('pdf')"><div style="font-size:30px;margin-bottom:8px">📄</div><h3>PDF ↔ Word Tools</h3><p>Convert PDF to Word and Word to PDF. Free, browser-based, all languages.</p></div>
   </div>
-  <div class="ad">Advertisement · Google AdSense</div>
+  <div class="ad"></div>
   <div class="card"><div class="ct">Latest Articles</div>
     <div class="bg">
       <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 Rankings</div><h3>Best AI Model in 2026</h3><p>Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro compared by benchmarks.</p><span class="rm">Read →</span></a>
@@ -135,13 +144,13 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
       <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI Basics</h3><p>LLMs, tokens, prompts — without jargon.</p><span class="rm">Read →</span></a>
     </div>
   </div>
-  <div class="ad" style="min-height:250px">Advertisement · Google AdSense</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
 <!-- WHEEL -->
 <div class="pg" id="p-wheel">
   <div class="hero"><h1>🎡 AI Prompt Wheel</h1><p>Spin once a day · Land on an AI · Unlock one expert prompt · Build your streak</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="card">
     <div class="str" id="sbar">✨ Spin the wheel to unlock your first AI prompt!</div>
     <div class="ww"><div class="ptr"></div><canvas id="wc" width="760" height="760"></canvas><button class="sbtn" id="sbtn" onclick="doSpin()">SPIN</button></div>
@@ -153,33 +162,33 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     </div>
   </div>
   <div class="card"><div class="ct">50 Expert Prompts</div><p>Each spin unlocks one expert-crafted prompt matched to the AI you land on. <strong>50 prompts</strong> across ChatGPT, Claude, Gemini and Perplexity — productivity, coding, research, writing, career and more.</p></div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
 <!-- COMPARE -->
 <div class="pg" id="p-compare">
   <div class="hero" style="padding:28px 0 18px"><h1>AI Tools Comparison 2026</h1><p>5 models · 18 features · Updated June 2026</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="card"><div class="tw" id="ctbl"></div></div>
   <div style="text-align:center;margin:14px 0"><button class="bp" onclick="go('quiz')">🎮 Test Your Knowledge →</button></div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
 <!-- QUIZ -->
 <div class="pg" id="p-quiz">
   <div class="hero" style="padding:28px 0 18px"><h1>AI Knowledge Quiz</h1><p>175 questions · 7 categories · Max 100 per round</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="card"><div class="ct">Enter Name</div><input id="pn" class="ni" placeholder="Your name for leaderboard..." maxlength="22"><div id="nerr" style="color:var(--red);font-size:12px;margin-top:5px;display:none">↑ Enter your name first</div></div>
   <div class="card"><div class="ct">Choose Category</div><div class="ccg" id="cg"></div></div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 <div class="pg" id="p-qa"><div style="display:flex;justify-content:space-between;margin:16px 0 10px"><span id="qcat" style="color:var(--b2);font-size:14px"></span><span id="qsc" style="color:var(--acc);font-weight:700;font-size:17px"></span></div><div class="qp" id="qpb"></div><div class="card" id="qcard"></div><div id="qnxt" style="text-align:center;margin-top:13px;display:none"></div></div>
-<div class="pg" id="p-res"><div class="card" style="text-align:center;margin-top:18px" id="rcard"></div><div id="ract" style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:13px 0"></div><div id="farea"></div><div class="ad" style="min-height:250px">Advertisement</div></div>
+<div class="pg" id="p-res"><div class="card" style="text-align:center;margin-top:18px" id="rcard"></div><div id="ract" style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:13px 0"></div><div id="farea"></div><div class="ad" style="min-height:250px"></div></div>
 
 <!-- LEARN -->
 <div class="pg" id="p-learn">
   <div class="hero" style="padding:28px 0 18px"><h1>🎓 AI Learning Hub</h1><p>Structured AI course for students · 5 weeks · Free · No signup</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="card"><div class="ct">Your 5-Week Learning Path</div>
     <div class="lg">
       <div class="lc" style="border-top-color:#10a37f"><div class="wk">Week 1</div><h4>What is AI? The Basics</h4><p>AI vs Machine Learning vs Deep Learning. How neural networks work through analogies.<br><br><strong>Concepts:</strong> Training data, parameters, inference, bias in AI models.</p></div>
@@ -188,6 +197,74 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
       <div class="lc" style="border-top-color:#00838f"><div class="wk">Week 4</div><h4>AI Tools Guide</h4><p>Which AI for which task. ChatGPT for broad tasks, Claude for coding, Gemini for research, Perplexity for sourced answers.<br><br><strong>Concepts:</strong> Model selection, API vs chat UI, cost per token, multimodal AI.</p></div>
       <div class="lc" style="border-top-color:#2E7D32"><div class="wk">Week 5</div><h4>AI Careers 2026</h4><p>Prompt engineer, ML engineer, AI PM, data scientist, AI ethicist. Skills, salary ranges, portfolio projects.<br><br><strong>Concepts:</strong> Required skills, learning roadmaps, entry-level paths.</p></div>
     </div>
+  </div>
+
+  <!-- WEEK 1 DEEP DIVE -->
+  <div class="card"><div class="ct">Week 1 — What is Artificial Intelligence?</div>
+    <h2>The Three Layers of AI</h2>
+    <p><strong>Artificial Intelligence (AI)</strong> is any computer system that performs tasks requiring human-like intelligence — recognizing speech, translating languages, making decisions, creating art. It is the broadest category.</p>
+    <p><strong>Machine Learning (ML)</strong> is a specific approach within AI. Instead of programming exact rules ("if email contains 'win a prize', mark as spam"), you show the computer thousands of examples and it <strong>learns the rules itself</strong>. This is how Netflix recommends shows and Gmail filters spam.</p>
+    <p><strong>Deep Learning (DL)</strong> is a subset of ML that uses neural networks with many layers. Each layer detects increasingly complex patterns — from edges to shapes to objects to meaning. ChatGPT, image recognition, and self-driving cars all use deep learning.</p>
+    <p><strong>Analogy:</strong> Think of AI as "vehicles." ML is "cars" (one type of vehicle). DL is "electric cars" (one type of car). All electric cars are cars, all cars are vehicles — but not all vehicles are electric cars.</p>
+
+    <h2>How Neural Networks Learn</h2>
+    <p>A neural network is loosely inspired by the human brain. It has layers of connected nodes (neurons). When you train it:</p>
+    <p><strong>Step 1:</strong> Show it a picture of a cat labeled "cat." It makes a random prediction (probably wrong).</p>
+    <p><strong>Step 2:</strong> Calculate how wrong it was (the "loss").</p>
+    <p><strong>Step 3:</strong> Adjust millions of tiny numerical weights to be slightly less wrong next time.</p>
+    <p><strong>Step 4:</strong> Repeat with millions of pictures. Each repetition makes tiny improvements. After billions of adjustments, it becomes excellent at recognizing cats — and dogs, cars, faces, cancer cells, etc.</p>
+    <p><strong>Key insight:</strong> The network was never told "cats have whiskers and pointy ears." It discovered these patterns itself from the data. This is the magic of machine learning.</p>
+
+    <h2>Supervised vs Unsupervised vs Reinforcement Learning</h2>
+    <p><strong>Supervised learning:</strong> You provide labeled examples. "This email = spam. This email = not spam." The model learns to predict labels for new data. Used in: medical diagnosis, price prediction, spam filtering.</p>
+    <p><strong>Unsupervised learning:</strong> You provide data without labels. The model discovers hidden patterns. "These customers behave similarly — they might be a distinct segment." Used in: customer segmentation, anomaly detection, recommendation systems.</p>
+    <p><strong>Reinforcement learning:</strong> The model learns by trial and error, receiving rewards for correct actions. This is how AlphaGo learned to beat the world champion at Go — by playing millions of games against itself. Used in: game AI, robotics, self-driving cars.</p>
+
+    <h2>What is a Parameter?</h2>
+    <p>Parameters are the learnable numbers inside an AI model. Think of them as tiny dials — each one controls how the model processes information. GPT-1 had 117 million parameters. GPT-3 had 175 billion. GPT-4 has roughly 1.8 trillion. More parameters generally means more capability, but also requires more computing power and energy to run.</p>
+
+    <h2>What is Training Data?</h2>
+    <p>Training data is the information used to teach the model. For ChatGPT, this included a significant portion of the internet — books, articles, websites, code repositories, and more. The quality and diversity of training data directly determines the quality of the AI. Biased training data produces biased AI. This is one of the biggest challenges in the field.</p>
+  </div>
+
+  <!-- WEEK 2 DEEP DIVE -->
+  <div class="card"><div class="ct">Week 2 — How Large Language Models Work</div>
+    <h2>What is a Transformer?</h2>
+    <p>The Transformer is the architecture (blueprint) behind all modern AI language models. Introduced by Google in 2017 in a paper called "Attention Is All You Need," it revolutionized AI by solving a fundamental problem: how to process text efficiently.</p>
+    <p><strong>Before Transformers:</strong> AI read text one word at a time, left to right (like a human reading slowly). This was painfully slow and the model would "forget" the beginning of long texts by the time it reached the end.</p>
+    <p><strong>After Transformers:</strong> AI processes all words simultaneously, with each word "looking at" every other word to understand context. This is massively parallel and dramatically faster.</p>
+
+    <h2>The Attention Mechanism — The Key Innovation</h2>
+    <p>Consider the sentence: "The cat sat on the mat because <strong>it</strong> was tired." What does "it" refer to? The cat or the mat? Humans know instantly — "it" means the cat. But how does AI know?</p>
+    <p><strong>Attention</strong> solves this. Each word calculates a relevance score with every other word. "It" gives high attention to "cat" and low attention to "mat." This lets the model understand relationships, references, and meaning across the entire text.</p>
+    <p><strong>Self-attention formula:</strong> For each word, compute three things: a Query (what am I looking for?), a Key (what do I contain?), and a Value (what information do I carry?). Compare each Query with all Keys. The highest-scoring Keys get the most attention. This is computed for every word simultaneously.</p>
+
+    <h2>How ChatGPT Actually Generates Text</h2>
+    <p>ChatGPT generates text <strong>one token at a time</strong>. Given all the tokens so far, it predicts the probability of every possible next token, then picks one (influenced by the temperature setting). Then it adds that token to the input and predicts the next one. And so on, token by token, until it reaches a stopping point.</p>
+    <p><strong>Critical insight:</strong> ChatGPT does not "think" or "understand." It predicts statistically likely continuations. It has no internal model of truth or reality. This is why it can write a convincing essay about a topic it is completely wrong about — the text <em>sounds</em> right even when the facts are wrong. This is hallucination.</p>
+
+    <h2>What is a Token?</h2>
+    <p>AI models do not read words — they read <strong>tokens</strong>. A token is a piece of text: sometimes a whole word, sometimes part of a word, sometimes a character. "Hello" = 1 token. "ChatGPT" = about 2 tokens. "Artificial Intelligence" = about 2-3 tokens.</p>
+    <p><strong>Why tokens matter:</strong> API pricing is per-token ($5/M for GPT-5.5 input). Context window limits are in tokens (1M for GPT-5.5). Non-English languages (Hindi, Arabic, Chinese) typically require MORE tokens per word, making them more expensive.</p>
+    <p><strong>Quick math:</strong> 1,000 words ≈ 1,333 tokens. A typical email (200 words) ≈ 267 tokens.</p>
+
+    <h2>Context Window</h2>
+    <p>The context window is the total amount of text (in tokens) that a model can "see" at once. It includes everything: system prompt, your messages, the AI's responses, and any documents you paste.</p>
+    <p>In 2023, context windows were 4K-32K tokens. In 2026, frontier models have 1M+ token windows — enough to process entire codebases or books. Llama 4 Scout has a 10M token window.</p>
+    <p><strong>Limitation:</strong> Research shows models can struggle with information in the middle of very long contexts (the "lost in the middle" problem). Information at the beginning and end gets more attention than information buried in the middle.</p>
+
+    <h2>Temperature</h2>
+    <p>Temperature controls randomness. At <strong>temperature 0</strong>, the model always picks the single most likely next token — giving deterministic, focused output. At <strong>temperature 1.5</strong>, it considers less likely tokens too, producing creative, varied, sometimes surprising output.</p>
+    <p><strong>Use low (0.1-0.3)</strong> for: factual questions, code, data extraction, anything where accuracy matters.</p>
+    <p><strong>Use high (0.8-1.2)</strong> for: creative writing, brainstorming, poetry, marketing copy.</p>
+    <p><strong>Default (0.7)</strong> is good for most tasks.</p>
+
+    <h2>What is Hallucination?</h2>
+    <p>Hallucination is when AI generates plausible-sounding but <strong>factually incorrect</strong> information with full confidence. It invents studies that do not exist, cites cases that were never filed, and generates quotes nobody ever said. This happens because the model predicts likely text, not truthful text.</p>
+    <p><strong>How to protect yourself:</strong> Always verify critical facts. Use Perplexity for research (it cites sources). Ask the AI "are you confident about this?" Use RAG (retrieval-augmented generation) to ground AI in real data.</p>
+
+    <h2>What is RAG?</h2>
+    <p><strong>Retrieval-Augmented Generation</strong> is a technique where the AI searches a knowledge base before generating an answer. Instead of relying only on training data (which can be outdated or wrong), it retrieves relevant real documents and uses them as context. This dramatically reduces hallucination and enables current, accurate answers about your specific data.</p>
   </div>
   <div class="card"><div class="ct">Core AI Concepts Explained</div>
     <div class="tg">
@@ -215,13 +292,13 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
       <div class="tc"><h5><span class="tn">10</span>Teach someone</h5><p>Explaining AI to others is the fastest way to truly understand it. Start a study group or write a blog.</p></div>
     </div>
   </div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
 <!-- PROMPT ENGINEERING -->
 <div class="pg" id="p-pe">
   <div class="hero" style="padding:28px 0 18px"><h1>✍️ Prompt Engineering</h1><p>Write better AI prompts · Save tokens · Get professional results every time</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="card"><div class="ct">8 Core Prompting Techniques</div>
     <div class="pti"><span class="tn">1</span><p><strong>Role Assignment:</strong> Start with "Act as a [expert role]". Example: "Act as a senior Python developer with 10 years experience." Sets knowledge, tone and perspective.</p></div>
     <div class="pti"><span class="tn">2</span><p><strong>Chain of Thought:</strong> Add "Think step by step." Dramatically improves accuracy on maths, logic and complex analysis by making AI show its working.</p></div>
@@ -232,7 +309,55 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <div class="pti"><span class="tn">7</span><p><strong>Iterative Refinement:</strong> Never accept first output. Follow up: "Make it more concise", "Add examples", "What are counterarguments?" Build on responses.</p></div>
     <div class="pti"><span class="tn">8</span><p><strong>Decompose Complex Tasks:</strong> Break big asks into steps. Instead of "Write a business plan", ask: "What are the key sections?" Then build each one separately.</p></div>
   </div>
-  <div class="card"><div class="ct">Token Saving Strategies</div>
+
+  <!-- DEEP DIVE: How to Write Effective Prompts -->
+  <div class="card"><div class="ct">How to Write Effective Prompts — A Complete Lesson</div>
+    <h2>The Prompt Structure Framework</h2>
+    <p>Every great prompt has up to 6 parts. You do not need all 6 every time, but knowing them lets you craft the right prompt for any situation:</p>
+    <p><strong>1. Role:</strong> Who should the AI pretend to be? "Act as a senior data scientist specializing in time-series forecasting with 10 years at Fortune 500 companies."</p>
+    <p><strong>2. Context:</strong> What background does the AI need? "I run a small e-commerce store selling handmade candles. My monthly revenue is ₹2 lakh. I have 3 employees."</p>
+    <p><strong>3. Task:</strong> What specifically should it do? "Analyze my last 6 months of sales data and identify the 3 most actionable trends."</p>
+    <p><strong>4. Format:</strong> How should the output look? "Present as a numbered list with each trend as a heading, 2-3 sentences of explanation, and one recommended action."</p>
+    <p><strong>5. Constraints:</strong> What should it avoid? "Do not use technical jargon. Keep total response under 400 words. Do not suggest hiring more staff."</p>
+    <p><strong>6. Examples:</strong> What does good output look like? Show 1-2 examples of the format and quality you expect.</p>
+
+    <h2>Before and After: Real Prompt Improvements</h2>
+    <div class="txb">
+      <p style="font-weight:600;color:var(--red);margin-bottom:6px">❌ Weak prompt:</p>
+      <p style="font-size:14px">"Help me with my resume."</p>
+    </div>
+    <div class="txb" style="margin-top:8px">
+      <p style="font-weight:600;color:var(--grn);margin-bottom:6px">✅ Strong prompt:</p>
+      <p style="font-size:14px">"Act as a senior tech recruiter who has reviewed 10,000+ resumes. I am applying for a Senior Python Developer role at a fintech startup. Rewrite these 5 resume bullet points using the formula 'Did [action] using [technology] resulting in [measurable impact]'. Cut all buzzwords. Each bullet must be under 2 lines. After rewriting, tell me which bullet will trigger the best interview question and why."</p>
+    </div>
+    <p style="margin-top:12px">The weak prompt gives the AI no context, no format, no constraints. It will produce generic advice. The strong prompt gives a role, context, specific task, format, constraints, and a follow-up instruction. The output will be dramatically more useful.</p>
+
+    <div class="txb" style="margin-top:14px">
+      <p style="font-weight:600;color:var(--red);margin-bottom:6px">❌ Weak prompt:</p>
+      <p style="font-size:14px">"Explain quantum computing."</p>
+    </div>
+    <div class="txb" style="margin-top:8px">
+      <p style="font-weight:600;color:var(--grn);margin-bottom:6px">✅ Strong prompt:</p>
+      <p style="font-size:14px">"Explain quantum computing to me as if I am a smart 15-year-old who understands basic physics but has never studied quantum mechanics. Use exactly 3 analogies from everyday life. Start with what problem quantum computing solves that regular computers cannot. End with one surprising fact. Keep it under 300 words."</p>
+    </div>
+
+    <h2>The Iteration Loop — How Professionals Prompt</h2>
+    <p>Professional prompt engineers never expect the first output to be perfect. They use a feedback loop:</p>
+    <p><strong>Round 1:</strong> Send your initial prompt. Read the output carefully.</p>
+    <p><strong>Round 2:</strong> "Good start, but make the tone more casual and add a specific example for point #3."</p>
+    <p><strong>Round 3:</strong> "The example is too technical. Replace it with something a small business owner would relate to."</p>
+    <p><strong>Round 4:</strong> "Perfect. Now condense the whole thing to half the length without losing any key points."</p>
+    <p>Each round refines the output. This iterative approach produces dramatically better results than trying to craft one perfect prompt. Think of it as sculpting — you rough out the shape first, then refine the details.</p>
+
+    <h2>Common Mistakes That Kill Prompt Quality</h2>
+    <p><strong>Mistake 1: Being vague.</strong> "Write something about marketing" → The AI has to guess everything. Be specific about topic, audience, format, length, and tone.</p>
+    <p><strong>Mistake 2: Asking for too much at once.</strong> "Write a complete business plan with financial projections, marketing strategy, and operational plan" → Break this into 4-5 separate prompts, each building on the previous output.</p>
+    <p><strong>Mistake 3: Not providing examples.</strong> If you want a specific format or style, showing one example is worth more than 100 words of description.</p>
+    <p><strong>Mistake 4: Ignoring negative constraints.</strong> Telling AI what NOT to do ("do not use bullet points", "avoid jargon", "no more than 200 words") is often more powerful than positive instructions.</p>
+    <p><strong>Mistake 5: Not iterating.</strong> Accepting the first output as final. Always refine.</p>
+  </div>
+
+  <div class="card"><div class="ct">Token Saving Strategies — Save Money on AI APIs</div>
     <p>Tokens = money and speed. Every word in your prompt costs tokens. Here's how to get more for less:</p>
     <div class="txb"><p style="font-weight:600;color:var(--red);margin-bottom:8px">❌ Wasteful (54 tokens):</p><p style="font-size:13px">"Could you please be so kind as to help me write a professional email to my colleague thanking them for their assistance with the project we worked on last week? I would appreciate it if you could keep it brief and formal."</p></div>
     <div class="txb" style="margin-top:8px"><p style="font-weight:600;color:var(--grn);margin-bottom:8px">✅ Efficient (18 tokens):</p><p style="font-size:13px">"Write a brief formal thank-you email to a colleague for project help. Professional tone."</p></div>
@@ -251,13 +376,13 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">✉️ Email Writer:</strong><br><span style="font-size:13px">Write professional email. Purpose: [PURPOSE]. Recipient: [ROLE]. Tone: [FORMAL/CASUAL]. Key points: [LIST]. Under 150 words. Include subject line.</span></div>
     <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">📚 Study Assistant:</strong><br><span style="font-size:13px">Teach me [TOPIC] using Feynman technique. Step 1: Simple explanation (no jargon). Step 2: Real-world analogy. Step 3: Common misconceptions. Step 4: Test question for me.</span></div>
   </div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
 <!-- BUDGET -->
 <div class="pg" id="p-budget">
   <div class="hero" style="padding:28px 0 18px"><h1>💰 Budget Calculator</h1><p>Track income and expenses · 50+ currencies · Free forever</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="card"><div class="ct">Currency &amp; Income</div>
     <div class="bg2g">
       <div><label class="lbl">Currency</label><select class="sel" id="cur" onchange="document.getElementById('csym').textContent=this.value"><option value="$">🇺🇸 USD ($)</option><option value="₹" selected>🇮🇳 INR (₹)</option><option value="€">🇪🇺 EUR (€)</option><option value="£">🇬🇧 GBP (£)</option><option value="¥">🇯🇵 JPY (¥)</option><option value="A$">🇦🇺 AUD</option><option value="C$">🇨🇦 CAD</option><option value="AED">🇦🇪 AED</option><option value="SAR">🇸🇦 SAR</option><option value="R$">🇧🇷 BRL</option><option value="R">🇿🇦 ZAR</option><option value="₩">🇰🇷 KRW</option></select></div>
@@ -283,44 +408,59 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <div class="po"><div class="pi" id="rbar" style="width:0%"></div></div>
     <p style="font-size:12px;color:var(--b3);margin-top:6px;text-align:center" id="rpl"></p>
   </div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
 <!-- PDF TOOLS -->
 <div class="pg" id="p-pdf">
   <div class="hero" style="padding:28px 0 18px"><h1>📄 PDF ↔ Word Converter</h1><p>Convert PDF to Word and Word to PDF · All languages preserved · 100% browser-based · Free</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
+
   <div class="card"><div class="ct">PDF → Word</div>
-    <p>Upload a PDF and download it as a Word document. All languages (Hindi, Arabic, Chinese, Tamil, etc.) preserved. Your file never leaves your device.</p>
-    <div class="tz" onclick="document.getElementById('pf').click()"><div style="font-size:40px;margin-bottom:10px">📄</div><p style="font-weight:600;color:var(--b1);margin:0">Click to select a PDF file</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
-    <input type="file" id="pf" accept=".pdf" style="display:none" onchange="handlePDF(this)">
+    <p>Choose a PDF file, then press <strong>Convert</strong>. All languages (Hindi, Arabic, Chinese, Tamil, etc.) are preserved. Your file never leaves your device.</p>
+    <div class="tz" id="pdfZone" onclick="document.getElementById('pf').click()"><div style="font-size:40px;margin-bottom:10px">📄</div><p id="pdfZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a PDF file</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
+    <input type="file" id="pf" accept=".pdf" style="display:none" onchange="onPdfPicked(this)">
+    <div id="pdfPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
+      <span id="pdfPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
+      <button class="tbtn" id="pdfConvertBtn" onclick="convertPdf()" disabled>Convert to Word →</button>
+    </div>
     <div id="pprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
     <div id="pprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;white-space:pre-wrap;line-height:1.75"></div>
     <button class="bp" id="pdlb" onclick="dlWord()" style="display:none;margin-top:10px">⬇ Download as Word (.doc)</button>
+    <button class="bo" id="pdfResetBtn" onclick="resetPdfTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another PDF</button>
   </div>
+
   <div class="card" style="margin-top:0"><div class="ct">Word → PDF</div>
-    <p>Upload a .docx Word document and convert it to PDF. Formatting and all language characters preserved.</p>
-    <div class="tz" onclick="document.getElementById('wf').click()"><div style="font-size:40px;margin-bottom:10px">📝</div><p style="font-weight:600;color:var(--b1);margin:0">Click to select a Word document (.docx)</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
-    <input type="file" id="wf" accept=".docx,.doc" style="display:none" onchange="handleWord(this)">
+    <p>Choose a .docx file, then press <strong>Convert</strong>. Hindi, Arabic, Chinese, Tamil and every other language render using your browser's real fonts — nothing is approximated or skipped.</p>
+    <div class="tz" id="wordZone" onclick="document.getElementById('wf').click()"><div style="font-size:40px;margin-bottom:10px">📝</div><p id="wordZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a Word document (.docx)</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
+    <input type="file" id="wf" accept=".docx" style="display:none" onchange="onWordPicked(this)">
+    <div id="wordPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
+      <span id="wordPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
+      <button class="tbtn" id="wordConvertBtn" onclick="convertWord()" disabled>Convert to PDF →</button>
+    </div>
     <div id="wprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
-    <div id="wprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;white-space:pre-wrap;line-height:1.75"></div>
-    <button class="bp" id="wdlb" onclick="dlPDF()" style="display:none;margin-top:10px">⬇ Download as PDF</button>
+    <div id="wprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;line-height:1.75"></div>
+    <button class="bp" id="wdlb" onclick="openWordPrint()" style="display:none;margin-top:10px">🖨 Print — then choose "Save as PDF"</button>
+    <button class="bo" id="wordResetBtn" onclick="resetWordTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another file</button>
+    <p id="wordHint" style="display:none;font-size:12px;color:var(--b3);margin-top:8px">In the print dialog set Destination to “Save as PDF”, then Save. Real Hindi / Arabic / Chinese / Tamil glyphs are kept because your browser draws them, not a built-in PDF font.</p>
   </div>
+
   <div class="card"><div class="ct">How It Works</div>
     <div class="tg">
-      <div class="tc"><h5>🔒 100% Private</h5><p>Files processed in your browser. Nothing uploaded to any server. Your documents stay on your device.</p></div>
-      <div class="tc"><h5>🌍 All Languages</h5><p>Hindi, Arabic, Chinese, Tamil, French — all Unicode text preserved exactly as-is.</p></div>
-      <div class="tc"><h5>⚡ Instant & Free</h5><p>No account, no watermark, no limit. Free forever. Works on any modern browser.</p></div>
-      <div class="tc"><h5>📖 Universal Output</h5><p>.doc opens in Word, Google Docs, LibreOffice. PDF opens in all viewers and browsers.</p></div>
+      <div class="tc"><h5>🔒 100% Private</h5><p>Files are read in your browser. Nothing is uploaded to a server. Your documents stay on your device.</p></div>
+      <div class="tc"><h5>🌍 All Languages</h5><p>PDF→Word keeps the original Unicode text. Word→PDF uses your browser's real font rendering, so Hindi, Arabic, Chinese and Tamil all display correctly.</p></div>
+      <div class="tc"><h5>⚡ Instant &amp; Free</h5><p>No account, no watermark, no limit. Free forever. Works on any modern browser.</p></div>
+      <div class="tc"><h5>📖 Choose When Ready</h5><p>Nothing converts until you press Convert. Pick your file first, check the name, then convert.</p></div>
     </div>
   </div>
-  <div class="ad" style="min-height:250px">Advertisement</div>
+  <div class="ad" style="min-height:250px"></div>
 </div>
 
-<!-- BLOG -->
+<!-- Hidden mirror used only by the browser print engine for Word→PDF -->
+<div id="wordPrintHost" class="word-print-root"><div id="wordPrintBody"></div></div>
 <div class="pg" id="p-blog">
   <div class="hero" style="padding:28px 0 18px"><h1>Blog &amp; Guides</h1><p>AI tutorials, comparisons and guides — updated regularly</p></div>
-  <div class="ad">Advertisement</div>
+  <div class="ad"></div>
   <div class="bg">
     <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 AI Rankings</div><h3>Best AI Model in 2026: Complete Ranking</h3><p>Claude Opus 4.8 vs GPT-5.5 vs Gemini 3.1 Pro — benchmarks, pricing, real-world use.</p><span class="rm">Read article →</span></a>
     <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude: Honest 2026 Comparison</h3><p>Coding, writing, ecosystem and pricing — full head-to-head breakdown.</p><span class="rm">Read article →</span></a>
@@ -328,14 +468,14 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI for Beginners (2026)</h3><p>LLMs, tokens, hallucination, RAG — every key term without jargon.</p><span class="rm">Read article →</span></a>
     <a class="bc" href="ai-quiz-test-knowledge.html" style="border-left-color:#00838f"><div class="bt" style="color:#00838f">🎮 Quiz</div><h3>Test Your AI Knowledge — Free Quiz</h3><p>175 questions across 7 categories. Play now free.</p><span class="rm">Read article →</span></a>
   </div>
-  <div class="ad" style="min-height:250px;margin-top:14px">Advertisement</div>
+  <div class="ad" style="min-height:250px;margin-top:14px"></div>
 </div>
 
 <!-- LEADERBOARD -->
 <div class="pg" id="p-lb">
   <div class="hero" style="padding:28px 0 18px"><h1>🏅 Leaderboard</h1><p>Top quiz scorers</p></div>
   <div class="card" id="lbc"></div>
-  <div class="ad" style="min-height:250px;margin-top:14px">Advertisement</div>
+  <div class="ad" style="min-height:250px;margin-top:14px"></div>
 </div>
 
 </main></div>
@@ -506,7 +646,7 @@ var CATS=[
 {id:"claude",n:"Claude & Anthropic",i:"🧠",c:"#C06A2A"},
 {id:"gemini",n:"Google Gemini",i:"💎",c:"#1a73e8"},
 {id:"genai",n:"Generative AI",i:"⚡",c:"#f59e0b"},
-{id:"agentic",n:"Agentic AI",i:"🚀",c:"#8b5cf6"}
+{id:"agentic",n:"Agentic AI",i:"🚀",c:"#A0522D"}
 ];
 var LVLS=["Beginner","Elementary","Intermediate","Advanced","Expert"];
 // Q format: [question, [4 options], correct_index, explanation]
@@ -891,66 +1031,144 @@ function calcB(){
   document.getElementById('bres').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-// ═══ PDF TO WORD ═══
-var pdfTxt='';
-function handlePDF(inp){
-  var f=inp.files[0];if(!f)return;
-  var pr=document.getElementById('pprog');pr.style.display='block';pr.textContent='⏳ Reading PDF...';
+// ═══ PDF → WORD ═══
+var pdfFile=null, pdfTxt='';
+function onPdfPicked(inp){
+  pdfFile=(inp.files&&inp.files[0])?inp.files[0]:null;
+  var row=document.getElementById('pdfPicked');
+  var nm=document.getElementById('pdfPickedName');
+  var btn=document.getElementById('pdfConvertBtn');
+  if(pdfFile){row.style.display='flex'; nm.textContent=pdfFile.name+' • '+(pdfFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
+  else{row.style.display='none';}
+  document.getElementById('pdlb').style.display='none';
+  document.getElementById('pdfResetBtn').style.display='none';
+}
+function resetPdfTool(){
+  pdfFile=null; pdfTxt='';
+  document.getElementById('pf').value='';
+  document.getElementById('pdfPicked').style.display='none';
+  document.getElementById('pdlb').style.display='none';
+  document.getElementById('pdfResetBtn').style.display='none';
+}
+function convertPdf(){
+  if(!pdfFile){return;}
+  var btn=document.getElementById('pdfConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
   var reader=new FileReader();
   reader.onload=function(e){
-    if(typeof pdfjsLib==='undefined'){pr.textContent='❌ PDF library loading... refresh and try again.';return;}
+    if(typeof pdfjsLib==='undefined'){ btn.textContent='Convert to Word \u2192'; btn.disabled=false; showT('PDF library not loaded yet \u2014 try again in a moment.'); return; }
     pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     pdfjsLib.getDocument({data:e.target.result}).promise.then(function(pdf){
-      var pages=[],promises=[];
-      for(var i=1;i<=pdf.numPages;i++){(function(pn){promises.push(pdf.getPage(pn).then(function(page){return page.getTextContent().then(function(tc){pages[pn-1]=tc.items.map(function(it){return it.str}).join(' ')})}))})(i)}
+      var pages=[], promises=[];
+      for(var i=1;i<=pdf.numPages;i++){
+        (function(pn){
+          promises.push(pdf.getPage(pn).then(function(page){
+            return page.getTextContent().then(function(tc){
+              pages[pn-1]=tc.items.map(function(it){return it.str}).join(' ');
+            });
+          }));
+        })(i);
+      }
       Promise.all(promises).then(function(){
-        pdfTxt=pages.map(function(p,i){return'--- Page '+(i+1)+' ---\n'+p}).join('\n\n');
-        pr.style.display='none';
-        var pv=document.getElementById('pprev');pv.style.display='block';
-        pv.textContent=pdfTxt.substring(0,500)+'...\n\n['+pdf.numPages+' page(s) extracted]';
+        pdfTxt=pages.map(function(p,i){return '— Page '+(i+1)+' —\n'+p;}).join('\n\n');
+        btn.disabled=false; btn.textContent='Convert to Word \u2192';
         document.getElementById('pdlb').style.display='inline-block';
-        showT('✅ PDF read! Click Download.');
+        document.getElementById('pdfResetBtn').style.display='inline-block';
+        showT(pdf.numPages+' page(s) ready — click Download.');
       });
-    }).catch(function(){pr.textContent='❌ Could not read PDF. Ensure it has text (not scanned image).'});
-  };reader.readAsArrayBuffer(f);
+    }).catch(function(err){
+      btn.disabled=false; btn.textContent='Convert to Word \u2192';
+      showT('Could not read this PDF — make sure it has selectable text.');
+    });
+  };
+  reader.onerror=function(){
+    btn.disabled=false; btn.textContent='Convert to Word \u2192';
+    showT('Could not read the file.');
+  };
+  reader.readAsArrayBuffer(pdfFile);
 }
 function dlWord(){
   if(!pdfTxt)return;
-  var h='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial,sans-serif;font-size:12pt;line-height:1.5;margin:1in}</style></head><body>';
+  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial,sans-serif;font-size:12pt;line-height:1.5;margin:1in}</style></head><body>';
   pdfTxt.split('\n').forEach(function(line){
-    if(line.startsWith('--- Page'))h+='<hr><h2 style="color:#333">'+line+'</h2>';
-    else if(line.trim())h+='<p>'+line.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</p>';
+    if(!line.trim())return;
+    html+='<p>'+line.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</p>';
   });
-  h+='</body></html>';
-  var blob=new Blob([h],{type:'application/msword'});
-  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='converted.doc';a.click();
-  showT('⬇ Word document downloaded!');
+  html+='</body></html>';
+  var blob=new Blob([html],{type:'application/msword'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='converted.doc'; a.click();
+  showT('Word document downloaded.');
 }
 
-// ═══ WORD TO PDF ═══
-var wordTxt='';
-function handleWord(inp){
-  var f=inp.files[0];if(!f)return;
-  var pr=document.getElementById('wprog');pr.style.display='block';pr.textContent='⏳ Reading Word document...';
+// ═══ WORD → PDF (real Unicode — uses your browser's own print engine, never window.open) ═══
+var wordFile=null, wordHtml='';
+function onWordPicked(inp){
+  wordFile=(inp.files&&inp.files[0])?inp.files[0]:null;
+  var row=document.getElementById('wordPicked');
+  var nm=document.getElementById('wordPickedName');
+  var btn=document.getElementById('wordConvertBtn');
+  if(wordFile){row.style.display='flex'; nm.textContent=wordFile.name+' • '+(wordFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
+  else{row.style.display='none';}
+  document.getElementById('wdlb').style.display='none';
+  document.getElementById('wordResetBtn').style.display='none';
+  document.getElementById('wordHint').style.display='none';
+}
+function resetWordTool(){
+  wordFile=null; wordHtml='';
+  document.getElementById('wf').value='';
+  document.getElementById('wordPicked').style.display='none';
+  document.getElementById('wdlb').style.display='none';
+  document.getElementById('wordResetBtn').style.display='none';
+  document.getElementById('wordHint').style.display='none';
+}
+function convertWord(){
+  if(!wordFile){return;}
+  var btn=document.getElementById('wordConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
   var reader=new FileReader();
   reader.onload=function(e){
-    if(typeof mammoth==='undefined'){pr.textContent='❌ Word library loading... refresh and try.';return;}
-    mammoth.extractRawText({arrayBuffer:e.target.result}).then(function(result){
-      wordTxt=result.value;pr.style.display='none';
-      var pv=document.getElementById('wprev');pv.style.display='block';
-      pv.textContent=wordTxt.substring(0,500)+(wordTxt.length>500?'...\n\n[Document read successfully]':'');
+    if(typeof mammoth==='undefined'){ btn.textContent='Convert to PDF \u2192'; btn.disabled=false; showT('Word library not loaded yet \u2014 try again in a moment.'); return; }
+    mammoth.convertToHtml({arrayBuffer:e.target.result}).then(function(result){
+      wordHtml=result.value;
+      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
       document.getElementById('wdlb').style.display='inline-block';
-      showT('✅ Word doc read! Click Download as PDF.');
-    }).catch(function(){pr.textContent='❌ Could not read. Try saving as .docx first.'});
-  };reader.readAsArrayBuffer(f);
+      document.getElementById('wordResetBtn').style.display='inline-block';
+      document.getElementById('wordHint').style.display='block';
+      showT('Document ready — click "Open Print Dialog".');
+    }).catch(function(err){
+      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
+      showT('Could not read this file — confirm it is a .docx file.');
+    });
+  };
+  reader.onerror=function(){
+    btn.disabled=false; btn.textContent='Convert to PDF \u2192';
+    showT('Could not read the file.');
+  };
+  reader.readAsArrayBuffer(wordFile);
 }
-function dlPDF(){
-  if(!wordTxt)return;
-  var win=window.open('','_self');
-  win.document.write('<html><head><title>Convert to PDF</title><style>body{font-family:Calibri,Arial;font-size:12pt;line-height:1.6;margin:1in;color:#000}@media print{body{margin:0.5in}}</style></head><body><pre style="white-space:pre-wrap;font-family:Calibri,Arial;font-size:12pt">'+wordTxt.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</pre><script>setTimeout(function(){window.print()},500)<\/script></body></html>');
-  win.document.close();
-  showT('Use "Save as PDF" in print dialog');
+var wordPrintHostHome=null, wordPrintHostMark=null;
+function wordPrintMoveOut(){
+  var host=document.getElementById('wordPrintHost');
+  if(!host) return;
+  wordPrintHostHome=host.parentNode;
+  wordPrintHostMark=host.nextSibling;
+  document.body.appendChild(host);
 }
+function wordPrintMoveBack(){
+  var host=document.getElementById('wordPrintHost');
+  if(!host||!wordPrintHostHome) return;
+  wordPrintHostHome.insertBefore(host, wordPrintHostMark);
+}
+function openWordPrint(){
+  if(!wordHtml) return;
+  document.getElementById('wordPrintBody').innerHTML=wordHtml;
+  wordPrintMoveOut();
+  document.body.classList.add('printingWord');
+  window.print();
+}
+window.addEventListener('afterprint',function(){
+  document.body.classList.remove('printingWord');
+  wordPrintMoveBack();
+});
+
 
 // ═══ TOAST ═══
 var tT;function showT(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){t.classList.remove('show')},2600);}
@@ -959,7 +1177,7 @@ var tT;function showT(m){var t=document.getElementById('toast');t.textContent=m;
 function fireC(){
   var c=document.getElementById('cc');c.width=window.innerWidth;c.height=window.innerHeight;
   var cx=c.getContext('2d');
-  var cols=['#C06A2A','#E8874A','#2E7D32','#1a73e8','#10a37f','#f59e0b','#8b5cf6','#00838f','#A0522D','#388E3C'];
+  var cols=['#C06A2A','#E8874A','#2E7D32','#1a73e8','#10a37f','#f59e0b','#A0522D','#00838f','#A0522D','#388E3C'];
   var ps=[];for(var i=0;i<140;i++)ps.push({x:c.width/2+(Math.random()-.5)*160,y:c.height*.4,w:Math.random()*8+3,h:Math.random()*5+2,co:cols[Math.floor(Math.random()*cols.length)],vy:-(Math.random()*8+5),vx:(Math.random()-.5)*10,r:Math.random()*360,rv:Math.random()*9-4.5,g:.24});
   var af;function draw(){cx.clearRect(0,0,c.width,c.height);var alive=false;ps.forEach(function(p){if(p.y>c.height+20)return;alive=true;p.vy+=p.g;p.y+=p.vy;p.x+=p.vx;p.r+=p.rv;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r*Math.PI/180);cx.fillStyle=p.co;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore()});if(alive)af=requestAnimationFrame(draw);else cx.clearRect(0,0,c.width,c.height);}
   draw();setTimeout(function(){cancelAnimationFrame(af);cx.clearRect(0,0,c.width,c.height)},5000);
