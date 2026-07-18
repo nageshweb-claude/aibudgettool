@@ -1,12 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta name="google-site-verification" content="eLlpTrkbJcYYqXwNdK_PlCwG8vKrRyUyXfi_a5NqGt4" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Budget Tool — Free AI Learning Hub, Prompt Wheel, Quiz &amp; Budget Calculator</title>
-<meta name="description" content="Learn AI free: daily prompt wheel, prompt engineering tips, 175-question quiz, AI model comparison, PDF/Word converter, budget calculator. Perfect for students.">
+<title>AI Budget Tool - Prompt Wheel &amp; Free AI Budget Calculator</title>
+<meta name="description" content="Spin the free AI Prompt Wheel for daily ChatGPT, Claude, Gemini and Perplexity prompts, then plan income, expenses and savings with the AI Budget Calculator.">
 <link rel="canonical" href="https://www.aibudgettool.com/">
+<meta property="og:title" content="AI Budget Tool - Prompt Wheel &amp; Free AI Budget Calculator">
+<meta property="og:description" content="Spin the free AI Prompt Wheel for daily ChatGPT, Claude, Gemini and Perplexity prompts, then plan income, expenses and savings with the AI Budget Calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.aibudgettool.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Budget Tool - Prompt Wheel &amp; Free AI Budget Calculator">
+<meta name="twitter:description" content="Spin the free AI Prompt Wheel for daily ChatGPT, Claude, Gemini and Perplexity prompts, then plan income, expenses and savings with the AI Budget Calculator.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -32,6 +39,7 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
 .ct{font-family:"Playfair Display",serif;font-size:13px;font-weight:700;color:var(--acc);letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}.ct::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(192,106,42,.3),transparent)}
 .ad{background:rgba(192,106,42,.04);border:1px dashed rgba(192,106,42,.18);border-radius:10px;padding:10px;text-align:center;color:var(--b3);font-size:11px;margin:14px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
 .fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px;margin:18px 0}
+.home-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:960px;margin:18px auto 20px}.home-tool{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:22px;box-shadow:var(--shd);cursor:pointer;transition:.18s;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}.home-tool:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,69,19,.14)}.home-tool h2{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:var(--b1);margin:8px 0}.home-tool p{font-size:14px;line-height:1.65;margin-bottom:14px}.tool-kicker{font-size:11px;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.08em}.tool-actions{display:flex;gap:8px;flex-wrap:wrap}.tool-chip{font-size:11px;color:var(--b2);background:rgba(192,106,42,.08);border:1px solid var(--bd);border-radius:999px;padding:5px 9px}.wheel-card{border-top:4px solid var(--acc)}.budget-card{border-top:4px solid var(--grn)}
 .fc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;cursor:pointer;transition:.18s;border-top:3px solid var(--acc);box-shadow:var(--shd)}.fc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,69,19,.14)}
 .fc h3{font-family:"Playfair Display",serif;font-size:15px;font-weight:600;margin:8px 0 5px}.fc p{font-size:13px;color:var(--b2);line-height:1.55;margin:0}
 .bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px}
@@ -64,16 +72,13 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 #cc{position:fixed;inset:0;pointer-events:none;z-index:500}
 .sbt{display:none;position:fixed;top:11px;left:11px;z-index:60;background:var(--card);border:1px solid var(--bd);border-radius:9px;color:var(--b1);padding:7px 10px;cursor:pointer;font-size:18px;line-height:1;box-shadow:var(--shd)}.sov{display:none;position:fixed;inset:0;background:rgba(45,18,0,.55);z-index:45}
-@media(max-width:768px){:root{--sw:0px}.sidebar{transform:translateX(-235px);width:235px}.sidebar.open{transform:translateX(0)}.sov.open{display:block}.main{margin-left:0}.sbt{display:block}.topbar{padding:11px 14px 11px 50px}.pg{padding:0 14px 50px}.bg2g{grid-template-columns:1fr}.hero h1{font-size:26px}}
+@media(max-width:768px){:root{--sw:0px}.sidebar{transform:translateX(-235px);width:235px}.sidebar.open{transform:translateX(0)}.sov.open{display:block}.main{margin-left:0}.sbt{display:block}.topbar{padding:11px 14px 11px 50px}.pg{padding:0 14px 50px}.bg2g,.home-tools{grid-template-columns:1fr}.hero h1{font-size:26px}}
 
 .tbtn{background:linear-gradient(135deg,var(--acc),#A0522D);color:#fff;border:none;padding:10px 20px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.18s}.tbtn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 14px rgba(192,106,42,.35)}.tbtn:disabled{opacity:.45;cursor:not-allowed}
-.word-print-root{display:none}
-@media print{
-  body > *:not(#wordPrintHost){display:none!important}
-  #wordPrintHost{display:block!important;position:static!important}
-  #wordPrintHost *{visibility:visible}
-}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AI Budget Tool","url":"https://www.aibudgettool.com/","description":"Free AI Prompt Wheel, AI Budget Calculator, AI quiz and beginner AI learning guides."}
+</script>
 </head><body>
 <canvas id="cc"></canvas><div class="toast" id="toast"></div>
 <button class="sbt" onclick="tsb()">☰</button><div class="sov" id="sov" onclick="tsb()"></div>
@@ -93,7 +98,6 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     </div>
     <div class="ssec"><div class="slbl">Tools</div>
       <div class="sl" id="sl-budget" onclick="go('budget')"><span class="ico">💰</span>Budget Calculator</div>
-      <div class="sl" id="sl-pdf" onclick="go('pdf')"><span class="ico">📄</span>PDF ↔ Word</div>
     </div>
     <div class="ssec"><div class="slbl">Blog</div>
       <div class="sl" id="sl-blog" onclick="go('blog')"><span class="ico">📰</span>All Articles</div>
@@ -120,28 +124,37 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <span class="tl" id="tl-pe" onclick="go('pe')">✍️ Prompts</span>
     <span class="tl" id="tl-quiz" onclick="go('quiz')">🎮 Quiz</span>
     <span class="tl" id="tl-budget" onclick="go('budget')">💰 Budget</span>
-    <span class="tl" id="tl-pdf" onclick="go('pdf')">📄 PDF↔Word</span>
   </div>
 </div>
 
 <!-- HOME -->
 <div class="pg on" id="p-home">
-  <div class="hero"><h1>Your Free AI Hub &amp; Learning Centre</h1><p>Spin for daily prompts · Learn AI from scratch · Quiz yourself · Convert files · Track your budget</p></div>
-  <div class="fg">
-    <div class="fc" onclick="go('wheel')"><div style="font-size:30px;margin-bottom:8px">🎡</div><h3>AI Prompt Wheel</h3><p>Spin daily for one expert prompt — ChatGPT, Claude, Gemini or Perplexity.</p></div>
-    <div class="fc" style="border-top-color:#1a73e8" onclick="go('learn')"><div style="font-size:30px;margin-bottom:8px">🎓</div><h3>AI Learning Hub</h3><p>5-week structured course for students. Basics to agentic AI — all free.</p></div>
-    <div class="fc" style="border-top-color:#00838f" onclick="go('pe')"><div style="font-size:30px;margin-bottom:8px">✍️</div><h3>Prompt Engineering</h3><p>Master AI prompting, save tokens, learn pro techniques with templates.</p></div>
-    <div class="fc" style="border-top-color:#2E7D32" onclick="go('quiz')"><div style="font-size:30px;margin-bottom:8px">🎮</div><h3>AI Knowledge Quiz</h3><p>175 questions · 7 categories · leaderboard · flashcard review.</p></div>
-    <div class="fc" style="border-top-color:#f59e0b" onclick="go('budget')"><div style="font-size:30px;margin-bottom:8px">💰</div><h3>Budget Calculator</h3><p>Track income and expenses across 50+ global currencies. Free forever.</p></div>
-    <div class="fc" style="border-top-color:#A0522D" onclick="go('pdf')"><div style="font-size:30px;margin-bottom:8px">📄</div><h3>PDF ↔ Word Tools</h3><p>Convert PDF to Word and Word to PDF. Free, browser-based, all languages.</p></div>
+  <div class="hero home-hero"><h1>AI Prompt Wheel &amp; Budget Calculator</h1><p>Spin daily for expert AI prompts, then plan your income, expenses and savings rate with one free calculator.</p></div>
+  <div class="home-tools">
+    <div class="home-tool wheel-card" onclick="go('wheel')">
+      <div><div class="tool-kicker">Daily AI prompt</div><h2>AI Prompt Wheel</h2><p>Spin once a day to unlock a practical prompt for ChatGPT, Claude, Gemini or Perplexity. Build better prompting habits with quick, ready-to-use ideas.</p></div>
+      <div class="tool-actions"><span class="bp">Spin the Wheel</span><span class="tool-chip">50 expert prompts</span><span class="tool-chip">No signup</span></div>
+    </div>
+    <div class="home-tool budget-card" onclick="go('budget')">
+      <div><div class="tool-kicker">Personal finance</div><h2>AI Budget Calculator</h2><p>Enter monthly income and expenses, choose your currency, and instantly see spending, savings and savings-rate feedback.</p></div>
+      <div class="tool-actions"><span class="bp" style="background:linear-gradient(135deg,#2E7D32,#388E3C)">Open Calculator</span><span class="tool-chip">50+ currencies</span><span class="tool-chip">Private</span></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">More Free AI Learning Tools</div>
+    <div class="fg">
+      <div class="fc" style="border-top-color:#1a73e8" onclick="go('learn')"><div style="font-size:30px;margin-bottom:8px">AI</div><h3>AI Learning Hub</h3><p>5-week structured course for students. Basics to agentic AI, all free.</p></div>
+      <div class="fc" style="border-top-color:#00838f" onclick="go('pe')"><div style="font-size:30px;margin-bottom:8px">PE</div><h3>Prompt Engineering</h3><p>Master AI prompting, save tokens, learn pro techniques with templates.</p></div>
+      <div class="fc" style="border-top-color:#2E7D32" onclick="go('quiz')"><div style="font-size:30px;margin-bottom:8px">Q</div><h3>AI Knowledge Quiz</h3><p>175 questions, 7 categories, leaderboard and flashcard review.</p></div>
+      <div class="fc" style="border-top-color:#f59e0b" onclick="go('compare')"><div style="font-size:30px;margin-bottom:8px">VS</div><h3>AI Tools Comparison</h3><p>Compare leading AI assistants by tasks, strengths, free tiers and pricing.</p></div>
+    </div>
   </div>
   <div class="ad"></div>
   <div class="card"><div class="ct">Latest Articles</div>
     <div class="bg">
-      <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 Rankings</div><h3>Best AI Model in 2026</h3><p>Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro compared by benchmarks.</p><span class="rm">Read →</span></a>
-      <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude 2026</h3><p>Coding, writing, pricing — full head-to-head.</p><span class="rm">Read →</span></a>
-      <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#1a73e8"><div class="bt" style="color:#1a73e8">🤖 Guide</div><h3>What is Agentic AI?</h3><p>The fastest-growing AI trend explained simply.</p><span class="rm">Read →</span></a>
-      <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI Basics</h3><p>LLMs, tokens, prompts — without jargon.</p><span class="rm">Read →</span></a>
+      <a class="bc" href="best-ai-model-2026.html"><div class="bt">Rankings</div><h3>Best AI Model in 2026</h3><p>Compare leading AI models by strengths, pricing and practical use cases.</p><span class="rm">Read</span></a>
+      <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">Comparison</div><h3>ChatGPT vs Claude 2026</h3><p>Coding, writing, pricing, full head-to-head.</p><span class="rm">Read</span></a>
+      <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#1a73e8"><div class="bt" style="color:#1a73e8">Guide</div><h3>What is Agentic AI?</h3><p>The fastest-growing AI trend explained simply.</p><span class="rm">Read</span></a>
+      <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">Beginner</div><h3>Generative AI Basics</h3><p>LLMs, tokens and prompts without jargon.</p><span class="rm">Read</span></a>
     </div>
   </div>
   <div class="ad" style="min-height:250px"></div>
@@ -411,53 +424,6 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
   <div class="ad" style="min-height:250px"></div>
 </div>
 
-<!-- PDF TOOLS -->
-<div class="pg" id="p-pdf">
-  <div class="hero" style="padding:28px 0 18px"><h1>📄 PDF ↔ Word Converter</h1><p>Convert PDF to Word and Word to PDF · All languages preserved · 100% browser-based · Free</p></div>
-  <div class="ad"></div>
-
-  <div class="card"><div class="ct">PDF → Word</div>
-    <p>Choose a PDF file, then press <strong>Convert</strong>. All languages (Hindi, Arabic, Chinese, Tamil, etc.) are preserved. Your file never leaves your device.</p>
-    <div class="tz" id="pdfZone" onclick="document.getElementById('pf').click()"><div style="font-size:40px;margin-bottom:10px">📄</div><p id="pdfZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a PDF file</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
-    <input type="file" id="pf" accept=".pdf" style="display:none" onchange="onPdfPicked(this)">
-    <div id="pdfPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
-      <span id="pdfPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
-      <button class="tbtn" id="pdfConvertBtn" onclick="convertPdf()" disabled>Convert to Word →</button>
-    </div>
-    <div id="pprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
-    <div id="pprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;white-space:pre-wrap;line-height:1.75"></div>
-    <button class="bp" id="pdlb" onclick="dlWord()" style="display:none;margin-top:10px">⬇ Download as Word (.doc)</button>
-    <button class="bo" id="pdfResetBtn" onclick="resetPdfTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another PDF</button>
-  </div>
-
-  <div class="card" style="margin-top:0"><div class="ct">Word → PDF</div>
-    <p>Choose a .docx file, then press <strong>Convert</strong>. Hindi, Arabic, Chinese, Tamil and every other language render using your browser's real fonts — nothing is approximated or skipped.</p>
-    <div class="tz" id="wordZone" onclick="document.getElementById('wf').click()"><div style="font-size:40px;margin-bottom:10px">📝</div><p id="wordZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a Word document (.docx)</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
-    <input type="file" id="wf" accept=".docx" style="display:none" onchange="onWordPicked(this)">
-    <div id="wordPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
-      <span id="wordPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
-      <button class="tbtn" id="wordConvertBtn" onclick="convertWord()" disabled>Convert to PDF →</button>
-    </div>
-    <div id="wprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
-    <div id="wprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;line-height:1.75"></div>
-    <button class="bp" id="wdlb" onclick="openWordPrint()" style="display:none;margin-top:10px">🖨 Print — then choose "Save as PDF"</button>
-    <button class="bo" id="wordResetBtn" onclick="resetWordTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another file</button>
-    <p id="wordHint" style="display:none;font-size:12px;color:var(--b3);margin-top:8px">In the print dialog set Destination to “Save as PDF”, then Save. Real Hindi / Arabic / Chinese / Tamil glyphs are kept because your browser draws them, not a built-in PDF font.</p>
-  </div>
-
-  <div class="card"><div class="ct">How It Works</div>
-    <div class="tg">
-      <div class="tc"><h5>🔒 100% Private</h5><p>Files are read in your browser. Nothing is uploaded to a server. Your documents stay on your device.</p></div>
-      <div class="tc"><h5>🌍 All Languages</h5><p>PDF→Word keeps the original Unicode text. Word→PDF uses your browser's real font rendering, so Hindi, Arabic, Chinese and Tamil all display correctly.</p></div>
-      <div class="tc"><h5>⚡ Instant &amp; Free</h5><p>No account, no watermark, no limit. Free forever. Works on any modern browser.</p></div>
-      <div class="tc"><h5>📖 Choose When Ready</h5><p>Nothing converts until you press Convert. Pick your file first, check the name, then convert.</p></div>
-    </div>
-  </div>
-  <div class="ad" style="min-height:250px"></div>
-</div>
-
-<!-- Hidden mirror used only by the browser print engine for Word→PDF -->
-<div id="wordPrintHost" class="word-print-root"><div id="wordPrintBody"></div></div>
 <div class="pg" id="p-blog">
   <div class="hero" style="padding:28px 0 18px"><h1>Blog &amp; Guides</h1><p>AI tutorials, comparisons and guides — updated regularly</p></div>
   <div class="ad"></div>
@@ -484,11 +450,9 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
 <div class="mo" id="mo"><div class="modal"><button class="mc" onclick="closeMo()">✕</button><div id="mob"></div></div></div>
 
 <!-- LIBS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 <script>
 // ═══ NAVIGATION ═══
-var PGS=['home','wheel','compare','quiz','qa','res','learn','pe','budget','pdf','blog','lb'];
+var PGS=['home','wheel','compare','quiz','qa','res','learn','pe','budget','blog','lb'];
 function go(id){
   PGS.forEach(function(p){var e=document.getElementById('p-'+p);if(e)e.classList.remove('on')});
   var el=document.getElementById('p-'+id);if(el)el.classList.add('on');
@@ -635,6 +599,7 @@ var CD=[["Feature","OpenAI GPT-5.5","Gemini 3.1 Pro","Claude Opus 4.8","Llama 4 
 ["API Input $/M","$5","$1.25","$15 (Opus)","Free","$0.14"],
 ["API Output $/M","$30","$5","$75 (Opus)","Free","$0.28"],
 ["Free Tier","ChatGPT Free","Gemini Free","Claude.ai Free","Fully free","Generous"],
+["Subscription","$20/mo (Plus)","$19.99/mo (Advanced)","$20/mo (Pro)","Free (self-host)","Free (web/app)"],
 ["Safety","RLHF + Moderation","Responsible AI","Constitutional AI","Community","Basic"],
 ["Release","April 2026","Feb 2026","May 28 2026","Apr 2025","2026"]];
 var tblDone=false;
@@ -1031,246 +996,6 @@ function calcB(){
   document.getElementById('bres').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-// ═══ PDF → WORD ═══
-var pdfFile=null, pdfTxt='';
-function onPdfPicked(inp){
-  pdfFile=(inp.files&&inp.files[0])?inp.files[0]:null;
-  var row=document.getElementById('pdfPicked');
-  var nm=document.getElementById('pdfPickedName');
-  var btn=document.getElementById('pdfConvertBtn');
-  if(pdfFile){row.style.display='flex'; nm.textContent=pdfFile.name+' • '+(pdfFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
-  else{row.style.display='none';}
-  document.getElementById('pdlb').style.display='none';
-  document.getElementById('pdfResetBtn').style.display='none';
-}
-function resetPdfTool(){
-  pdfFile=null; pdfTxt='';
-  document.getElementById('pf').value='';
-  document.getElementById('pdfPicked').style.display='none';
-  document.getElementById('pdlb').style.display='none';
-  document.getElementById('pdfResetBtn').style.display='none';
-}
-function convertPdf(){
-  if(!pdfFile){return;}
-  var btn=document.getElementById('pdfConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    if(typeof pdfjsLib==='undefined'){ btn.textContent='Convert to Word \u2192'; btn.disabled=false; showT('PDF library not loaded yet \u2014 try again in a moment.'); return; }
-    pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    pdfjsLib.getDocument({data:e.target.result}).promise.then(function(pdf){
-      var pages=[], promises=[];
-      for(var i=1;i<=pdf.numPages;i++){
-        (function(pn){
-          promises.push(pdf.getPage(pn).then(function(page){
-            return page.getTextContent().then(function(tc){
-              pages[pn-1]=tc.items.map(function(it){return it.str}).join(' ');
-            });
-          }));
-        })(i);
-      }
-      Promise.all(promises).then(function(){
-        pdfTxt=pages.map(function(p,i){return '— Page '+(i+1)+' —\n'+p;}).join('\n\n');
-        btn.disabled=false; btn.textContent='Convert to Word \u2192';
-        document.getElementById('pdlb').style.display='inline-block';
-        document.getElementById('pdfResetBtn').style.display='inline-block';
-        showT(pdf.numPages+' page(s) ready — click Download.');
-      });
-    }).catch(function(err){
-      btn.disabled=false; btn.textContent='Convert to Word \u2192';
-      showT('Could not read this PDF — make sure it has selectable text.');
-    });
-  };
-  reader.onerror=function(){
-    btn.disabled=false; btn.textContent='Convert to Word \u2192';
-    showT('Could not read the file.');
-  };
-  reader.readAsArrayBuffer(pdfFile);
-}
-function dlWord(){
-  if(!pdfTxt)return;
-  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial,sans-serif;font-size:12pt;line-height:1.5;margin:1in}</style></head><body>';
-  pdfTxt.split('\n').forEach(function(line){
-    if(!line.trim())return;
-    html+='<p>'+line.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</p>';
-  });
-  html+='<!-- ════════════════════════════════════════════════════════════
-     PASTE THIS WHOLE BLOCK IMMEDIATELY BEFORE </body> IN index.html
-     Fixes: (1) missing Subscription row in comparison table
-            (2) font size too small
-            (3) Word→PDF real download instead of print-dialog-only
-     ════════════════════════════════════════════════════════════ -->
-
-<!-- jsPDF library, needed for fix #3 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<!-- Fix #2: font size override -->
-<style>
-body{font-size:16px!important}
-p{font-size:16px!important}
-</style>
-
-<script>
-// ═══ FIX #1: add missing Subscription Price row to comparison table ═══
-(function(){
-  if(typeof CD==='undefined')return; // safety: do nothing if structure changed
-  var already=CD.some(function(r){return r[0]==='Subscription'});
-  if(already)return;
-  var idx=CD.findIndex(function(r){return r[0]==='Free Tier'});
-  var row=["Subscription","$20/mo (Plus)","$19.99/mo (Advanced)","$20/mo (Pro)","Free (self-host)","Free (web/app)"];
-  if(idx>-1)CD.splice(idx+1,0,row); else CD.push(row);
-  if(typeof tblDone!=='undefined')tblDone=false; // forces rebuild next time Compare tab opens
-})();
-
-// ═══ FIX #3: WORD → PDF real one-click download (English/Latin text) ═══
-// Falls back to the existing Print→Save as PDF flow for Hindi/Arabic/
-// Chinese/Tamil text, since jsPDF's built-in fonts can't draw those
-// glyphs without embedding extra font files.
-function hasNonLatinScript(t){
-  return /[\u0900-\u097F\u0600-\u06FF\u0B80-\u0BFF\u4E00-\u9FFF\u3040-\u30FF\uAC00-\uD7AF]/.test(t);
-}
-function convertWord(){
-  var f=document.getElementById('wf').files[0];
-  if(!f)return;
-  var prog=document.getElementById('wprog'),prev=document.getElementById('wprev'),
-      wdlb=document.getElementById('wdlb'),hint=document.getElementById('wordHint');
-  prog.style.display='block';prog.textContent='Reading document…';
-  prev.style.display='none';wdlb.style.display='none';hint.style.display='none';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    var buf=e.target.result;
-    Promise.all([
-      mammoth.extractRawText({arrayBuffer:buf}),
-      mammoth.convertToHtml({arrayBuffer:buf})
-    ]).then(function(results){
-      var text=results[0].value||'';
-      var html=results[1].value||'';
-      document.getElementById('wordPrintBody').innerHTML=html;
-      prev.style.display='block';
-      prev.textContent=text.slice(0,2000)+(text.length>2000?'\n\n…':'');
-
-      if(hasNonLatinScript(text)){
-        prog.style.display='none';
-        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
-        wdlb.style.display='inline-block';
-        wdlb.onclick=openWordPrint;
-        hint.style.display='block';
-        hint.textContent='This document contains Hindi/Arabic/Chinese/Tamil text, which needs your browser\'s real fonts to render correctly — use Print → Save as PDF below.';
-        return;
-      }
-
-      try{
-        var jsPDFCtor=window.jspdf.jsPDF;
-        var doc=new jsPDFCtor({unit:'pt',format:'a4'});
-        var margin=48,maxWidth=595-margin*2,lineHeight=16;
-        doc.setFont('helvetica','normal');doc.setFontSize(11);
-        var lines=doc.splitTextToSize(text,maxWidth);
-        var y=margin;
-        lines.forEach(function(line){
-          if(y>842-margin){doc.addPage();y=margin;}
-          doc.text(line,margin,y);
-          y+=lineHeight;
-        });
-        var outName=f.name.replace(/\.docx$/i,'')+'.pdf';
-        doc.save(outName);
-        prog.style.display='none';
-        wdlb.style.display='inline-block';
-        wdlb.textContent='⬇ Download PDF Again';
-        wdlb.onclick=function(){doc.save(outName);};
-        hint.style.display='block';
-        hint.textContent='Downloaded as '+outName+'. Only text is preserved — no bold, images or layout. For Hindi, Arabic, Chinese or Tamil text, use the Print option instead.';
-      }catch(err){
-        prog.style.display='block';
-        prog.textContent='Direct PDF generation failed — use Print → Save as PDF instead.';
-        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
-        wdlb.style.display='inline-block';
-        wdlb.onclick=openWordPrint;
-      }
-    }).catch(function(){
-      prog.style.display='block';
-      prog.textContent='Could not read this .docx file. Please try another file.';
-    });
-  };
-  reader.readAsArrayBuffer(f);
-}
-</script>
-
-</body></html>';
-  var blob=new Blob([html],{type:'application/msword'});
-  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='converted.doc'; a.click();
-  showT('Word document downloaded.');
-}
-
-// ═══ WORD → PDF (real Unicode — uses your browser's own print engine, never window.open) ═══
-var wordFile=null, wordHtml='';
-function onWordPicked(inp){
-  wordFile=(inp.files&&inp.files[0])?inp.files[0]:null;
-  var row=document.getElementById('wordPicked');
-  var nm=document.getElementById('wordPickedName');
-  var btn=document.getElementById('wordConvertBtn');
-  if(wordFile){row.style.display='flex'; nm.textContent=wordFile.name+' • '+(wordFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
-  else{row.style.display='none';}
-  document.getElementById('wdlb').style.display='none';
-  document.getElementById('wordResetBtn').style.display='none';
-  document.getElementById('wordHint').style.display='none';
-}
-function resetWordTool(){
-  wordFile=null; wordHtml='';
-  document.getElementById('wf').value='';
-  document.getElementById('wordPicked').style.display='none';
-  document.getElementById('wdlb').style.display='none';
-  document.getElementById('wordResetBtn').style.display='none';
-  document.getElementById('wordHint').style.display='none';
-}
-function convertWord(){
-  if(!wordFile){return;}
-  var btn=document.getElementById('wordConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    if(typeof mammoth==='undefined'){ btn.textContent='Convert to PDF \u2192'; btn.disabled=false; showT('Word library not loaded yet \u2014 try again in a moment.'); return; }
-    mammoth.convertToHtml({arrayBuffer:e.target.result}).then(function(result){
-      wordHtml=result.value;
-      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
-      document.getElementById('wdlb').style.display='inline-block';
-      document.getElementById('wordResetBtn').style.display='inline-block';
-      document.getElementById('wordHint').style.display='block';
-      showT('Document ready — click "Open Print Dialog".');
-    }).catch(function(err){
-      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
-      showT('Could not read this file — confirm it is a .docx file.');
-    });
-  };
-  reader.onerror=function(){
-    btn.disabled=false; btn.textContent='Convert to PDF \u2192';
-    showT('Could not read the file.');
-  };
-  reader.readAsArrayBuffer(wordFile);
-}
-var wordPrintHostHome=null, wordPrintHostMark=null;
-function wordPrintMoveOut(){
-  var host=document.getElementById('wordPrintHost');
-  if(!host) return;
-  wordPrintHostHome=host.parentNode;
-  wordPrintHostMark=host.nextSibling;
-  document.body.appendChild(host);
-}
-function wordPrintMoveBack(){
-  var host=document.getElementById('wordPrintHost');
-  if(!host||!wordPrintHostHome) return;
-  wordPrintHostHome.insertBefore(host, wordPrintHostMark);
-}
-function openWordPrint(){
-  if(!wordHtml) return;
-  document.getElementById('wordPrintBody').innerHTML=wordHtml;
-  wordPrintMoveOut();
-  document.body.classList.add('printingWord');
-  window.print();
-}
-window.addEventListener('afterprint',function(){
-  document.body.classList.remove('printingWord');
-  wordPrintMoveBack();
-});
-
-
 // ═══ TOAST ═══
 var tT;function showT(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){t.classList.remove('show')},2600);}
 
@@ -1288,106 +1013,6 @@ function fireC(){
 window.addEventListener('load',function(){
   dw(0);uStr();go('home');
 });
-</script>
-<!-- ════════════════════════════════════════════════════════════
-     PASTE THIS WHOLE BLOCK IMMEDIATELY BEFORE </body> IN index.html
-     Fixes: (1) missing Subscription row in comparison table
-            (2) font size too small
-            (3) Word→PDF real download instead of print-dialog-only
-     ════════════════════════════════════════════════════════════ -->
-
-<!-- jsPDF library, needed for fix #3 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<!-- Fix #2: font size override -->
-<style>
-body{font-size:16px!important}
-p{font-size:16px!important}
-</style>
-
-<script>
-// ═══ FIX #1: add missing Subscription Price row to comparison table ═══
-(function(){
-  if(typeof CD==='undefined')return; // safety: do nothing if structure changed
-  var already=CD.some(function(r){return r[0]==='Subscription'});
-  if(already)return;
-  var idx=CD.findIndex(function(r){return r[0]==='Free Tier'});
-  var row=["Subscription","$20/mo (Plus)","$19.99/mo (Advanced)","$20/mo (Pro)","Free (self-host)","Free (web/app)"];
-  if(idx>-1)CD.splice(idx+1,0,row); else CD.push(row);
-  if(typeof tblDone!=='undefined')tblDone=false; // forces rebuild next time Compare tab opens
-})();
-
-// ═══ FIX #3: WORD → PDF real one-click download (English/Latin text) ═══
-// Falls back to the existing Print→Save as PDF flow for Hindi/Arabic/
-// Chinese/Tamil text, since jsPDF's built-in fonts can't draw those
-// glyphs without embedding extra font files.
-function hasNonLatinScript(t){
-  return /[\u0900-\u097F\u0600-\u06FF\u0B80-\u0BFF\u4E00-\u9FFF\u3040-\u30FF\uAC00-\uD7AF]/.test(t);
-}
-function convertWord(){
-  var f=document.getElementById('wf').files[0];
-  if(!f)return;
-  var prog=document.getElementById('wprog'),prev=document.getElementById('wprev'),
-      wdlb=document.getElementById('wdlb'),hint=document.getElementById('wordHint');
-  prog.style.display='block';prog.textContent='Reading document…';
-  prev.style.display='none';wdlb.style.display='none';hint.style.display='none';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    var buf=e.target.result;
-    Promise.all([
-      mammoth.extractRawText({arrayBuffer:buf}),
-      mammoth.convertToHtml({arrayBuffer:buf})
-    ]).then(function(results){
-      var text=results[0].value||'';
-      var html=results[1].value||'';
-      document.getElementById('wordPrintBody').innerHTML=html;
-      prev.style.display='block';
-      prev.textContent=text.slice(0,2000)+(text.length>2000?'\n\n…':'');
-
-      if(hasNonLatinScript(text)){
-        prog.style.display='none';
-        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
-        wdlb.style.display='inline-block';
-        wdlb.onclick=openWordPrint;
-        hint.style.display='block';
-        hint.textContent='This document contains Hindi/Arabic/Chinese/Tamil text, which needs your browser\'s real fonts to render correctly — use Print → Save as PDF below.';
-        return;
-      }
-
-      try{
-        var jsPDFCtor=window.jspdf.jsPDF;
-        var doc=new jsPDFCtor({unit:'pt',format:'a4'});
-        var margin=48,maxWidth=595-margin*2,lineHeight=16;
-        doc.setFont('helvetica','normal');doc.setFontSize(11);
-        var lines=doc.splitTextToSize(text,maxWidth);
-        var y=margin;
-        lines.forEach(function(line){
-          if(y>842-margin){doc.addPage();y=margin;}
-          doc.text(line,margin,y);
-          y+=lineHeight;
-        });
-        var outName=f.name.replace(/\.docx$/i,'')+'.pdf';
-        doc.save(outName);
-        prog.style.display='none';
-        wdlb.style.display='inline-block';
-        wdlb.textContent='⬇ Download PDF Again';
-        wdlb.onclick=function(){doc.save(outName);};
-        hint.style.display='block';
-        hint.textContent='Downloaded as '+outName+'. Only text is preserved — no bold, images or layout. For Hindi, Arabic, Chinese or Tamil text, use the Print option instead.';
-      }catch(err){
-        prog.style.display='block';
-        prog.textContent='Direct PDF generation failed — use Print → Save as PDF instead.';
-        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
-        wdlb.style.display='inline-block';
-        wdlb.onclick=openWordPrint;
-      }
-    }).catch(function(){
-      prog.style.display='block';
-      prog.textContent='Could not read this .docx file. Please try another file.';
-    });
-  };
-  reader.readAsArrayBuffer(f);
-}
 </script>
 
 </body>
