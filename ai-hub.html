@@ -1,169 +1,61 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free AI Hub: Daily Prompt Wheel, AI Quiz & 5-Week Course</title>
-<meta name="description" content="Spin the daily AI prompt wheel, take a 250-question AI quiz, follow a free 5-week AI course, learn prompting, plan a budget and convert PDF and Word files.">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn AI Free: Daily AI Prompt, AI Quiz &amp; 5-Week AI Course</title>
+<meta name="description" content="Learn AI free: spin a daily AI prompt, take a 250-question AI quiz, follow a 5-week AI course, learn prompt engineering and compare AI models.">
 <link rel="canonical" href="https://www.aibudgettool.com/ai-hub.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Learn AI Free: Daily AI Prompt, AI Quiz &amp; 5-Week AI Course">
+<meta property="og:description" content="Learn AI free: spin a daily AI prompt, take a 250-question AI quiz, follow a 5-week AI course, learn prompt engineering and compare AI models.">
+<meta property="og:url" content="https://www.aibudgettool.com/ai-hub.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-hub.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#F3F6F2;--bg2:#FDEBD8;--card:#FFFAF5;--b1:#2D1200;--b2:#5C2E00;--b3:#8B5E3C;--acc:#C06A2A;--acc2:#E8874A;--grn:#2E7D32;--red:#C62828;--bd:rgba(14,124,102,.18);--bd2:rgba(14,124,102,.10);--shd:0 2px 12px rgba(27,36,48,.10);--sw:235px;--r:14px}
-html{scroll-behavior:smooth}body{font-family:"Instrument Sans",system-ui,sans-serif;background:var(--bg);min-height:100vh;color:var(--b1);overflow-x:hidden;font-size:15px;line-height:1.6}
-h2{font-family:"Bricolage Grotesque",sans-serif;font-size:20px;font-weight:700;margin:20px 0 10px}
-p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{color:var(--b1)}
-.layout{display:flex;min-height:100vh}
-.sidebar{width:var(--sw);min-height:100vh;background:rgba(255,248,236,.97);border-right:1px solid var(--bd);position:fixed;top:0;left:0;z-index:50;display:flex;flex-direction:column;transition:.28s;box-shadow:2px 0 12px rgba(27,36,48,.07)}
-.slogo{padding:18px 16px 14px;border-bottom:1px solid var(--bd)}.slogo a{font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:700;color:var(--acc);text-decoration:none;display:block}.slogo span{font-size:10px;color:var(--b3);display:block;margin-top:2px}
-.snav{flex:1;padding:10px 8px;overflow-y:auto}.ssec{margin-bottom:16px}.slbl{font-size:10px;font-weight:700;color:var(--b3);text-transform:uppercase;letter-spacing:.1em;padding:0 8px;margin-bottom:5px}
-.sl{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--b2);font-size:13px;font-weight:500;transition:.15s;border:1px solid transparent;cursor:pointer;white-space:nowrap;overflow:hidden}
-.sl:hover{color:var(--b1);background:rgba(14,124,102,.08)}.sl.on{color:var(--acc);background:rgba(14,124,102,.12);border-color:rgba(14,124,102,.25)}
-.ico{font-size:15px;flex-shrink:0;width:20px;text-align:center}.badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(14,124,102,.15);color:var(--acc)}
-.sfoot{padding:10px 14px;border-top:1px solid var(--bd);font-size:10px;color:var(--b3)}
-.main{margin-left:var(--sw);flex:1;min-width:0}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--bd);background:rgba(255,248,236,.95);position:sticky;top:0;z-index:40;gap:10px;flex-wrap:wrap}
-.tbr{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:700;color:var(--acc)}.tlinks{display:flex;gap:6px;flex-wrap:wrap}
-.tl{color:var(--b2);font-size:12px;font-weight:500;padding:5px 11px;border-radius:8px;border:1px solid var(--bd);cursor:pointer;white-space:nowrap;transition:.15s}.tl:hover{background:rgba(14,124,102,.07)}.tl.on{color:var(--acc);border-color:rgba(14,124,102,.35);background:rgba(14,124,102,.10)}
-.pg{display:none;padding:0 24px 60px}.pg.on{display:block}
-.hero{text-align:center;padding:36px 0 24px;max-width:720px;margin:0 auto}.hero h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;color:var(--acc);line-height:1.15;margin-bottom:10px}.hero p{font-size:16px;color:var(--b2)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:22px;margin-bottom:14px;box-shadow:var(--shd)}
-.ct{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:700;color:var(--acc);letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}.ct::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(14,124,102,.3),transparent)}
-.ad{background:rgba(14,124,102,.04);border:1px dashed rgba(14,124,102,.18);border-radius:10px;padding:10px;text-align:center;color:var(--b3);font-size:11px;margin:14px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
-.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px;margin:18px 0}
-.fc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;cursor:pointer;transition:.18s;border-top:3px solid var(--acc);box-shadow:var(--shd)}.fc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,36,48,.14)}
-.fc h3{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:600;margin:8px 0 5px}.fc p{font-size:13px;color:var(--b2);line-height:1.55;margin:0}
-.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px}
-.bc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;text-decoration:none;color:inherit;transition:.18s;display:block;border-left:4px solid var(--acc2);box-shadow:var(--shd)}.bc:hover{transform:translateY(-2px)}.bc h3{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:600;color:var(--b1);margin:5px 0;line-height:1.4}.bc p{font-size:13px;color:var(--b2);line-height:1.55;margin:0}.bc .rm{font-size:12px;color:var(--acc);margin-top:8px;display:block;font-weight:500}.bc .bt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--acc)}
-.ww{position:relative;width:min(380px,85vw);height:min(380px,85vw);margin:0 auto 18px}#wc{width:100%;height:100%;filter:drop-shadow(0 6px 24px rgba(27,36,48,.25))}.ptr{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:28px solid var(--acc);z-index:10;filter:drop-shadow(0 3px 4px rgba(0,0,0,.3))}
-.sbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--acc),#0A5E4D);border:3px solid rgba(255,255,255,.4);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;cursor:pointer;z-index:5;box-shadow:0 4px 16px rgba(14,124,102,.5);transition:.22s}.sbtn:hover:not(:disabled){transform:translate(-50%,-50%) scale(1.08)}.sbtn:disabled{opacity:.55;cursor:not-allowed}.sbtn.sp{animation:wg 1s ease-in-out infinite}@keyframes wg{50%{box-shadow:0 0 36px rgba(14,124,102,.9)}}
-.wleg{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:6px}.wli{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--b2);background:var(--card);border:1px solid var(--bd);padding:5px 10px;border-radius:16px}.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.str{text-align:center;font-size:14px;color:var(--acc);margin:8px 0 6px;font-weight:600}
-.mo{position:fixed;inset:0;background:rgba(27,36,48,.72);display:none;align-items:center;justify-content:center;z-index:200;padding:14px}.mo.show{display:flex}.modal{background:var(--card);border:2px solid rgba(14,124,102,.28);border-radius:20px;padding:28px;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mpop .36s cubic-bezier(.18,1.4,.4,1);box-shadow:0 20px 60px rgba(27,36,48,.2)}@keyframes mpop{from{transform:scale(.72);opacity:0}}.mc{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--b3);font-size:22px;cursor:pointer}.modal h3{font-family:"Bricolage Grotesque",sans-serif;font-size:20px;font-weight:700;margin-bottom:3px}.modal .cl{color:var(--b3);font-size:11px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}.pb{background:var(--bg2);border:1px solid var(--bd);border-radius:11px;padding:15px;font-size:14px;line-height:1.8;color:var(--b1);white-space:pre-wrap;margin-bottom:15px;max-height:260px;overflow-y:auto}
-.mact{display:flex;gap:8px;flex-wrap:wrap}.mbtn{border:none;padding:11px 20px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;flex:1;min-width:110px;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px}.mbtn.p{background:linear-gradient(135deg,var(--acc),#0A5E4D);color:#fff}.mbtn.s{background:rgba(14,124,102,.08);border:1px solid var(--bd);color:var(--b1)}
-.bg2g{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lbl{font-size:12px;font-weight:600;color:var(--b2);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.06em}.inp{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:10px 13px;color:var(--b1);font-size:14px;font-family:inherit;width:100%;outline:none}.inp:focus{border-color:var(--acc)}.sel{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:10px;color:var(--b1);font-size:13px;font-family:inherit;width:100%;cursor:pointer}
-.er{display:flex;gap:7px;align-items:center;margin-bottom:7px}.rmv{background:rgba(198,40,40,.08);border:1px solid rgba(198,40,40,.25);color:var(--red);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.aeb{background:rgba(46,125,50,.07);border:1px dashed rgba(46,125,50,.35);color:var(--grn);padding:9px;border-radius:9px;cursor:pointer;font-size:13px;width:100%;margin-top:4px;font-family:inherit}.calcb{background:linear-gradient(135deg,#2E7D32,#388E3C);color:#fff;border:none;padding:13px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;width:100%;font-family:inherit;margin-top:8px}
-.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.si{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;text-align:center}.svl{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;font-weight:700}.inc{color:#2E7D32}.exc{color:var(--red)}.sav{color:var(--acc)}.rt{color:var(--acc2)}
-.po{background:rgba(14,124,102,.12);border-radius:6px;height:10px;overflow:hidden;margin-top:8px}.pi{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--grn),var(--acc));transition:.6s}
-.ccg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}.cc{cursor:pointer;border-radius:var(--r);padding:16px;background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--acc);box-shadow:var(--shd);transition:.18s}.cc:hover{transform:translateY(-2px)}
-.qp{display:flex;gap:4px;margin-bottom:16px}.qp div{flex:1;height:5px;border-radius:3px}
-.opt{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:13px 16px;cursor:pointer;width:100%;text-align:left;color:var(--b1);font-size:14px;font-family:inherit;margin-bottom:8px;display:block}.opt:hover:not(.ax){background:rgba(14,124,102,.06)}.oc{background:rgba(46,125,50,.09)!important;border-color:#2E7D32!important}.ow{background:rgba(198,40,40,.09)!important;border-color:#C62828!important}.expl{margin-top:12px;padding:13px;background:rgba(14,124,102,.07);border-radius:9px;font-size:14px;line-height:1.68;color:var(--b2)}
-.ni{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:11px 15px;color:var(--b1);font-size:15px;font-family:inherit;width:100%;max-width:280px;outline:none}.ni:focus{border-color:var(--acc)}
-.tw{overflow-x:auto;border-radius:11px;border:1px solid var(--bd)}table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}thead tr{background:rgba(14,124,102,.09)}th{padding:13px 12px;text-align:left;font-weight:600;color:var(--acc);border-bottom:1px solid var(--bd);white-space:nowrap;font-family:"Bricolage Grotesque",sans-serif}th:first-child{position:sticky;left:0;background:#F3F6F2;z-index:2}td{padding:11px 12px;color:var(--b2);border-bottom:1px solid var(--bd2)}td:first-child{font-weight:600;color:var(--b1);position:sticky;left:0;z-index:1;white-space:nowrap;background:var(--bg)}tr:nth-child(even) td{background:rgba(14,124,102,.03)}tr:nth-child(even) td:first-child{background:#F7F9F6}.best{color:var(--grn)!important;font-weight:700}.na{opacity:.4}
-.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px;margin-top:12px}.lc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;box-shadow:var(--shd);border-top:3px solid var(--acc2)}.lc h4{font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}.lc p{font-size:13px;color:var(--b2);line-height:1.65;margin:0}.wk{font-size:10px;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
-.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px;margin-top:10px}.tc{background:rgba(14,124,102,.05);border:1px solid var(--bd);border-radius:10px;padding:14px}.tc h5{font-size:13px;font-weight:700;margin-bottom:5px}.tc p{font-size:12px;color:var(--b2);line-height:1.6;margin:0}.tn{display:inline-block;width:22px;height:22px;background:var(--acc);color:#fff;border-radius:50%;font-size:11px;font-weight:700;line-height:22px;text-align:center;margin-right:6px}
-.pti{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;background:rgba(14,124,102,.05);border-radius:9px;margin-bottom:8px;border-left:3px solid var(--acc2)}.pti p{font-size:14px;color:var(--b1);line-height:1.65;margin:0}
-.txb{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-top:10px}
-.tz{background:#fff;border:2px dashed var(--bd);border-radius:var(--r);padding:30px;text-align:center;cursor:pointer;margin:14px 0}.tz:hover{background:rgba(14,124,102,.04);border-color:var(--acc)}
-.lbr{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--bd2)}
-.bp{background:linear-gradient(135deg,var(--acc),#0A5E4D);color:#fff;border:none;padding:11px 22px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block}.bp:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(14,124,102,.35)}
-.bo{background:transparent;border:1px solid rgba(14,124,102,.33);color:var(--acc);padding:9px 18px;border-radius:9px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block}
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--b1);color:#fff;padding:10px 22px;border-radius:10px;font-size:13px;font-weight:500;transition:.3s;z-index:400;opacity:0;pointer-events:none}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-#cc{position:fixed;inset:0;pointer-events:none;z-index:500}
-.sbt{display:none;position:fixed;top:11px;left:11px;z-index:60;background:var(--card);border:1px solid var(--bd);border-radius:9px;color:var(--b1);padding:7px 10px;cursor:pointer;font-size:18px;line-height:1;box-shadow:var(--shd)}.sov{display:none;position:fixed;inset:0;background:rgba(27,36,48,.55);z-index:45}
-@media(max-width:768px){:root{--sw:0px}.sidebar{transform:translateX(-235px);width:235px}.sidebar.open{transform:translateX(0)}.sov.open{display:block}.main{margin-left:0}.sbt{display:block}.topbar{padding:11px 14px 11px 50px}.pg{padding:0 14px 50px}.bg2g{grid-template-columns:1fr}.hero h1{font-size:26px}}
-
-.tbtn{background:linear-gradient(135deg,var(--acc),#0A5E4D);color:#fff;border:none;padding:10px 20px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.18s}.tbtn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 14px rgba(14,124,102,.35)}.tbtn:disabled{opacity:.45;cursor:not-allowed}
-.word-print-root{display:none}
-@media print{
-  body > *:not(#wordPrintHost){display:none!important}
-  #wordPrintHost{display:block!important;position:static!important}
-  #wordPrintHost *{visibility:visible}
-}
-</style>
-<style id="theme-v2">
-:root{--bg:#F3F6F2;--bg2:#E7ECE5;--card:#FFFFFF;--b1:#1B2430;--b2:#4A5563;--b3:#5F6977;--acc:#0E7C66;--acc2:#0A5E4D;--bd:#D8DFD6;--bd2:#E7ECE5;--shd:0 1px 0 rgba(27,36,48,.04),0 8px 24px -12px rgba(27,36,48,.18)}
-.ad{display:none!important}
-.hero h1,.hero h2.hh{color:var(--b1);letter-spacing:-.02em}
-.hero h2.hh{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.15;margin:0 0 10px}
-.sidebar{background:#FFFFFF}.topbar{background:rgba(243,246,242,.94)}
-.slogo a,.tbr{color:var(--b1)}
-:focus-visible{outline:3px solid #F6C945;outline-offset:2px}
-</style>
-<meta property="og:type" content="website"><meta property="og:site_name" content="AI Budget Tool"><meta property="og:title" content="Free AI Hub: Daily Prompt Wheel, AI Quiz & 5-Week Course"><meta property="og:description" content="Spin the daily AI prompt wheel, take a 250-question AI quiz, follow a free 5-week AI course, learn prompting, plan a budget and convert PDF and Word files."><meta property="og:url" content="https://www.aibudgettool.com/ai-hub.html"><meta property="og:image" content="https://www.aibudgettool.com/og-home.png"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#F3F6F2"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "AI Budget Tool AI hub", "url": "https://www.aibudgettool.com/ai-hub.html", "description": "Spin the daily AI prompt wheel, take a 250-question AI quiz, follow a free 5-week AI course, learn prompting, plan a budget and convert PDF and Word files.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-</head><body>
-<canvas id="cc"></canvas><div class="toast" id="toast"></div>
-<button class="sbt" onclick="tsb()">☰</button><div class="sov" id="sov" onclick="tsb()"></div>
-<div class="layout">
-<aside class="sidebar" id="sidebar">
-  <div class="slogo"><a href="/">✦ AI Budget Tool</a><span>Free · No signup · Worldwide</span></div>
-  <nav class="snav">
-    <div class="ssec"><div class="slbl">Main</div><a class="sl" href="/"><span class="ico">🧮</span>Calculators home</a><div class="sl on" id="sl-home" onclick="go('home')"><span class="ico">🏠</span>AI hub home</div></div>
-    <div class="ssec"><div class="slbl">Calculators</div><a class="sl" href="/emi-calculator.html"><span class="ico">•</span>EMI calculator</a><a class="sl" href="/salary-calculator.html"><span class="ico">•</span>Salary calculator</a><a class="sl" href="/time-zone-converter.html"><span class="ico">•</span>Time zone converter</a><a class="sl" href="/age-calculator.html"><span class="ico">•</span>Age calculator</a><a class="sl" href="/data-transfer-calculator.html"><span class="ico">•</span>Data transfer calculator</a><a class="sl" href="/unit-converter.html"><span class="ico">•</span>Unit converter</a></div><div class="ssec"><div class="slbl">AI Tools</div>
-      <div class="sl" id="sl-wheel" onclick="go('wheel')"><span class="ico">🎡</span>Prompt Wheel<span class="badge">Daily</span></div>
-      <div class="sl" id="sl-compare" onclick="go('compare')"><span class="ico">📊</span>AI Comparison</div>
-      <div class="sl" id="sl-quiz" onclick="go('quiz')"><span class="ico">🎮</span>AI Quiz<span class="badge">250Q</span></div>
-    </div>
-    <div class="ssec"><div class="slbl">Learn AI</div>
-      <div class="sl" id="sl-learn" onclick="go('learn')"><span class="ico">🎓</span>Learning Hub</div>
-      <div class="sl" id="sl-pe" onclick="go('pe')"><span class="ico">✍️</span>Prompt Engineering</div>
-    </div>
-    <div class="ssec"><div class="slbl">Tools</div>
-      <div class="sl" id="sl-budget" onclick="go('budget')"><span class="ico">💰</span>Budget Calculator</div>
-      <div class="sl" id="sl-pdf" onclick="go('pdf')"><span class="ico">📄</span>PDF ↔ Word</div>
-    </div>
-    <div class="ssec"><div class="slbl">Blog</div>
-      <a class="sl" href="/blog.html"><span class="ico">📰</span>All 70+ guides</a>
-      <a class="sl" href="best-ai-model-2026.html"><span class="ico">🏆</span>Best AI 2026</a>
-      <a class="sl" href="chatgpt-vs-claude-comparison.html"><span class="ico">⚡</span>GPT vs Claude</a>
-      <a class="sl" href="what-is-agentic-ai.html"><span class="ico">🤖</span>Agentic AI</a>
-      <a class="sl" href="generative-ai-beginners.html"><span class="ico">📚</span>GenAI Basics</a>
-    </div>
-    <div class="ssec"><div class="slbl">Site</div>
-      <div class="sl" id="sl-lb" onclick="go('lb')"><span class="ico">🏅</span>Leaderboard</div>
-      <a class="sl" href="about.html"><span class="ico">ℹ️</span>About</a>
-      <a class="sl" href="privacy.html"><span class="ico">🔒</span>Privacy</a>
-      <a class="sl" href="contact.html"><span class="ico">✉️</span>Contact</a>
-    </div>
-  </nav>
-  <div class="sfoot">© 2026 AI Budget Tool</div>
-</aside>
-<main class="main">
-<div class="topbar">
-  <a class="tbr" href="/" style="text-decoration:none">✦ AI Budget Tool</a>
-  <div class="tlinks">
-    <span class="tl on" id="tl-wheel" onclick="go('wheel')">🎡 Spin</span>
-    <span class="tl" id="tl-learn" onclick="go('learn')">🎓 Learn</span>
-    <span class="tl" id="tl-pe" onclick="go('pe')">✍️ Prompts</span>
-    <span class="tl" id="tl-quiz" onclick="go('quiz')">🎮 Quiz</span>
-    <span class="tl" id="tl-budget" onclick="go('budget')">💰 Budget</span>
-    <span class="tl" id="tl-pdf" onclick="go('pdf')">📄 PDF↔Word</span>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<link rel="stylesheet" href="/hub.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI hub: daily prompt, AI quiz and free AI course","url":"https://www.aibudgettool.com/ai-hub.html","description":"Learn AI free: spin a daily AI prompt, take a 250-question AI quiz, follow a 5-week AI course, learn prompt engineering and compare AI models.","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"AI hub","item":"https://www.aibudgettool.com/ai-hub.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators">Calculators</a>
+      <a href="/ai-hub.html" aria-current="page">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
   </div>
+</header>
+<main id="main" class="hub">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">AI hub</li></ol></nav>
+<div class="wrap hub-intro">
+  <h1>Learn AI, one small step a day</h1>
+  <p>Try one expert prompt a day, test yourself with a quiz that gets harder as you improve, and follow a free course written for students and working professionals.</p>
 </div>
-
-<!-- HOME -->
-<div class="pg on" id="p-home">
-  <div class="hero"><h1>Your Free AI Hub &amp; Learning Centre</h1><p>Spin for daily prompts · Learn AI from scratch · Quiz yourself · Convert files · Track your budget</p></div>
-  <div class="fg">
-    <div class="fc" onclick="go('wheel')"><div style="font-size:30px;margin-bottom:8px">🎡</div><h3>AI Prompt Wheel</h3><p>Spin daily for one expert prompt — ChatGPT, Claude, Gemini or Perplexity.</p></div>
-    <div class="fc" style="border-top-color:#1a73e8" onclick="go('learn')"><div style="font-size:30px;margin-bottom:8px">🎓</div><h3>AI Learning Hub</h3><p>5-week structured course for students. Basics to agentic AI — all free.</p></div>
-    <div class="fc" style="border-top-color:#00838f" onclick="go('pe')"><div style="font-size:30px;margin-bottom:8px">✍️</div><h3>Prompt Engineering</h3><p>Master AI prompting, save tokens, learn pro techniques with templates.</p></div>
-    <div class="fc" style="border-top-color:#2E7D32" onclick="go('quiz')"><div style="font-size:30px;margin-bottom:8px">🎮</div><h3>AI Knowledge Quiz</h3><p>250 questions · 5 topics · 5 levels · leaderboard.</p></div>
-    <div class="fc" style="border-top-color:#f59e0b" onclick="go('budget')"><div style="font-size:30px;margin-bottom:8px">💰</div><h3>Budget Calculator</h3><p>Track income and expenses in 12 currencies. Free forever.</p></div>
-    <div class="fc" style="border-top-color:#0A5E4D" onclick="go('pdf')"><div style="font-size:30px;margin-bottom:8px">📄</div><h3>PDF ↔ Word Tools</h3><p>Convert PDF to Word and Word to PDF. Free, browser-based, all languages.</p></div>
-  </div>
-  <div class="ad"></div>
-  <div class="card"><div class="ct">Latest Articles</div>
-    <div class="bg">
-      <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 Rankings</div><h3>Best AI Model in 2026</h3><p>GPT-6, Claude Opus 5.5 and Gemini 4 Argon compared by task and price.</p><span class="rm">Read →</span></a>
-      <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude 2026</h3><p>Coding, writing, features and price, updated November 2026.</p><span class="rm">Read →</span></a>
-      <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#1a73e8"><div class="bt" style="color:#1a73e8">🤖 Guide</div><h3>What is Agentic AI?</h3><p>The fastest-growing AI trend explained simply.</p><span class="rm">Read →</span></a>
-      <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI Basics</h3><p>LLMs, tokens, prompts — without jargon.</p><span class="rm">Read →</span></a>
-    </div>
-  </div>
-  <div class="ad" style="min-height:250px"></div>
-</div>
-
+<div class="hub-tabs" id="hubTabs"><nav class="wrap" aria-label="AI hub sections"><a class="tl" id="tl-wheel" href="#wheel" onclick="go('wheel');return false;">Prompt wheel</a><a class="tl" id="tl-quiz" href="#quiz" onclick="go('quiz');return false;">AI quiz</a><a class="tl" id="tl-learn" href="#learn" onclick="go('learn');return false;">5-week course</a><a class="tl" id="tl-pe" href="#pe" onclick="go('pe');return false;">Prompt engineering</a><a class="tl" id="tl-compare" href="#compare" onclick="go('compare');return false;">Compare models</a><a class="tl" id="tl-budget" href="#budget" onclick="go('budget');return false;">Budget planner</a><a class="tl" id="tl-lb" href="#lb" onclick="go('lb');return false;">Leaderboard</a></nav></div>
+<div class="wrap hub-body">
 <!-- WHEEL -->
 <div class="pg" id="p-wheel">
-  <div class="hero"><h2 class="hh">🎡 AI Prompt Wheel</h2><p>Spin once a day · Land on an AI · Unlock one expert prompt · Build your streak</p></div>
-  <div class="ad"></div>
+  <div class="hero"><h2 class="hh">Daily prompt wheel</h2><p>Spin once a day to unlock one expert prompt for ChatGPT, Claude, Gemini or Perplexity, and keep your streak going.</p></div>
+  
   <div class="card">
     <div class="str" id="sbar">✨ Spin the wheel to unlock your first AI prompt!</div>
-    <div class="ww"><div class="ptr"></div><canvas id="wc" width="760" height="760"></canvas><button class="sbtn" id="sbtn" onclick="doSpin()">SPIN</button></div>
+    <div class="ww"><div class="ptr"></div><canvas id="wc" width="760" height="760" role="img" aria-label="Prompt wheel with ChatGPT, Claude, Gemini and Perplexity segments"></canvas><button class="sbtn" id="sbtn" onclick="doSpin()">SPIN</button></div>
     <div class="wleg">
       <div class="wli"><span class="dot" style="background:#10a37f"></span>ChatGPT</div>
       <div class="wli"><span class="dot" style="background:#C06A2A"></span>Claude</div>
@@ -171,35 +63,35 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
       <div class="wli"><span class="dot" style="background:#00838f"></span>Perplexity</div>
     </div>
   </div>
-  <div class="card"><div class="ct">48 Expert Prompts</div><p>Each spin unlocks one expert-crafted prompt matched to the AI you land on. <strong>48 prompts</strong> across ChatGPT, Claude, Gemini and Perplexity — productivity, coding, research, writing, career and more.</p></div>
-  <div class="ad" style="min-height:250px"></div>
+  <div class="card"><div class="ct">48 expert prompts</div><p>Each spin unlocks one expert-crafted prompt matched to the AI you land on. <strong>48 prompts</strong> across ChatGPT, Claude, Gemini and Perplexity — productivity, coding, research, writing, career and more.</p></div>
+  
 </div>
 
 <!-- COMPARE -->
 <div class="pg" id="p-compare">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">AI Tools Comparison 2026</h2><p>5 AI families · 9 features · Checked 21 November 2026</p></div>
-  <div class="ad"></div>
+  <div class="hero"><h2 class="hh">Compare AI models</h2><p>Five AI families side by side. Checked 21 November 2026.</p></div>
+  
   <div class="card"><div class="tw" id="ctbl"></div><p style="font-size:13px;margin:12px 0 0">Sources, checked 21 November 2026: <a href="https://developers.openai.com/api/docs/changelog" rel="nofollow noopener">OpenAI</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" rel="nofollow noopener">Google</a>, <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="nofollow noopener">Anthropic</a>, <a href="https://www.deepseek.com/en/platform/" rel="nofollow noopener">DeepSeek</a>. Models change fast, so check each vendor's page before you buy.</p></div>
-  <div style="text-align:center;margin:14px 0"><button class="bp" onclick="go('quiz')">🎮 Test Your Knowledge →</button></div>
-  <div class="ad" style="min-height:250px"></div>
+  <div style="text-align:center;margin:14px 0"><button class="bp" onclick="go('quiz')">Test your knowledge</button></div>
+  
 </div>
 
 <!-- QUIZ -->
 <div class="pg" id="p-quiz">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">AI Knowledge Quiz</h2><p>250 questions · 5 topics · 5 levels · 10 per round</p></div>
-  <div class="ad"></div>
-  <div class="card"><div class="ct">Enter Name</div><input id="pn" class="ni" placeholder="Your name for leaderboard..." maxlength="22"><div id="nerr" style="color:var(--red);font-size:12px;margin-top:5px;display:none">↑ Enter your name first</div></div>
-  <div class="card"><div class="ct">Choose Category</div><div class="ccg" id="cg"></div></div>
-  <div class="ad" style="min-height:250px"></div>
+  <div class="hero"><h2 class="hh">AI knowledge quiz</h2><p>250 questions across 5 topics. Score 70 or more to unlock the next level.</p></div>
+  
+  <div class="card"><div class="ct">Your name</div><input id="pn" class="ni" placeholder="Your name for the leaderboard" aria-label="Your name" maxlength="22"><div id="nerr" style="color:var(--red);font-size:12px;margin-top:5px;display:none">↑ Enter your name first</div></div>
+  <div class="card"><div class="ct">Choose a topic</div><div class="ccg" id="cg"></div></div>
+  
 </div>
 <div class="pg" id="p-qa"><div style="display:flex;justify-content:space-between;margin:16px 0 10px"><span id="qcat" style="color:var(--b2);font-size:14px"></span><span id="qsc" style="color:var(--acc);font-weight:700;font-size:17px"></span></div><div class="qp" id="qpb"></div><div class="card" id="qcard"></div><div id="qnxt" style="text-align:center;margin-top:13px;display:none"></div></div>
-<div class="pg" id="p-res"><div class="card" style="text-align:center;margin-top:18px" id="rcard"></div><div id="ract" style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:13px 0"></div><div id="farea"></div><div class="ad" style="min-height:250px"></div></div>
+<div class="pg" id="p-res"><div class="card" style="text-align:center;margin-top:18px" id="rcard"></div><div id="ract" style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:13px 0"></div><div id="farea"></div></div>
 
 <!-- LEARN -->
 <div class="pg" id="p-learn">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">🎓 AI Learning Hub</h2><p>Structured AI course for students · 5 weeks · Free · No signup</p></div>
-  <div class="ad"></div>
-  <div class="card"><div class="ct">Your 5-Week Learning Path</div>
+  <div class="hero"><h2 class="hh">5-week AI course</h2><p>A free 5-week course that takes you from "what is AI?" to using it well at work.</p></div>
+  
+  <div class="card"><div class="ct">Your 5-week learning path</div>
     <div class="lg">
       <div class="lc" style="border-top-color:#10a37f"><div class="wk">Week 1</div><h4>What is AI? The Basics</h4><p>AI vs Machine Learning vs Deep Learning. How neural networks work through analogies.<br><br><strong>Concepts:</strong> Training data, parameters, inference, bias in AI models.</p></div>
       <div class="lc" style="border-top-color:#1a73e8"><div class="wk">Week 2</div><h4>How LLMs Work</h4><p>How ChatGPT, Claude and Gemini generate text. Transformers, attention mechanisms, why AI sometimes hallucinates.<br><br><strong>Concepts:</strong> Tokens, context window, temperature, hallucination, RAG.</p></div>
@@ -210,7 +102,7 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
   </div>
 
   <!-- WEEK 1 DEEP DIVE -->
-  <div class="card"><div class="ct">Week 1 — What is Artificial Intelligence?</div>
+  <div class="card"><div class="ct">Week 1 — what is artificial intelligence?</div>
     <h2>The Three Layers of AI</h2>
     <p><strong>Artificial Intelligence (AI)</strong> is any computer system that performs tasks requiring human-like intelligence — recognizing speech, translating languages, making decisions, creating art. It is the broadest category.</p>
     <p><strong>Machine Learning (ML)</strong> is a specific approach within AI. Instead of programming exact rules ("if email contains 'win a prize', mark as spam"), you show the computer thousands of examples and it <strong>learns the rules itself</strong>. This is how Netflix recommends shows and Gmail filters spam.</p>
@@ -238,7 +130,7 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
   </div>
 
   <!-- WEEK 2 DEEP DIVE -->
-  <div class="card"><div class="ct">Week 2 — How Large Language Models Work</div>
+  <div class="card"><div class="ct">Week 2 — how large language models work</div>
     <h2>What is a Transformer?</h2>
     <p>The Transformer is the architecture (blueprint) behind all modern AI language models. Introduced by Google in 2017 in a paper called "Attention Is All You Need," it revolutionized AI by solving a fundamental problem: how to process text efficiently.</p>
     <p><strong>Before Transformers:</strong> AI read text one word at a time, left to right (like a human reading slowly). This was painfully slow and the model would "forget" the beginning of long texts by the time it reached the end.</p>
@@ -276,19 +168,19 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <h2>What is RAG?</h2>
     <p><strong>Retrieval-Augmented Generation</strong> is a technique where the AI searches a knowledge base before generating an answer. Instead of relying only on training data (which can be outdated or wrong), it retrieves relevant real documents and uses them as context. This dramatically reduces hallucination and enables current, accurate answers about your specific data.</p>
   </div>
-  <div class="card"><div class="ct">Core AI Concepts Explained</div>
+  <div class="card"><div class="ct">Core AI concepts explained</div>
     <div class="tg">
-      <div class="tc"><h5>🧠 Neural Network</h5><p>Layers of filters. Each detects more complex patterns — edges → shapes → faces → meaning. Billions of connections trained on data.</p></div>
-      <div class="tc"><h5>🪙 Token</h5><p>AI reads tokens, not words. "ChatGPT" ≈ 2 tokens. 1,000 tokens ≈ 750 words. Tokens affect price and speed of AI responses.</p></div>
-      <div class="tc"><h5>🌡️ Temperature</h5><p>Controls creativity. At 0: most likely word always. At 1.5: picks randomly. Factual = 0.2. Creative = 0.8–1.2.</p></div>
-      <div class="tc"><h5>🔍 RAG</h5><p>Retrieval-Augmented Generation. AI searches a database first, uses results to generate accurate, current answers. Cuts hallucination.</p></div>
-      <div class="tc"><h5>👻 Hallucination</h5><p>AI confidently says something false. It predicts likely text, not factual truth. Always verify important AI outputs.</p></div>
-      <div class="tc"><h5>📐 Fine-Tuning</h5><p>Training a general model on specific data for one task. Like a general doctor becoming a heart specialist. Costs money but gives expert results.</p></div>
-      <div class="tc"><h5>🔧 Agentic AI</h5><p>AI that takes actions — browses web, writes code, runs tests, sends emails. Multi-step tasks without constant human input.</p></div>
-      <div class="tc"><h5>🔗 MCP</h5><p>Model Context Protocol. Anthropic's open standard for AI to connect to databases, APIs and apps. Like USB for AI tools.</p></div>
+      <div class="tc"><h5>Neural Network</h5><p>Layers of filters. Each detects more complex patterns — edges → shapes → faces → meaning. Billions of connections trained on data.</p></div>
+      <div class="tc"><h5>Token</h5><p>AI reads tokens, not words. "ChatGPT" ≈ 2 tokens. 1,000 tokens ≈ 750 words. Tokens affect price and speed of AI responses.</p></div>
+      <div class="tc"><h5>Temperature</h5><p>Controls creativity. At 0: most likely word always. At 1.5: picks randomly. Factual = 0.2. Creative = 0.8–1.2.</p></div>
+      <div class="tc"><h5>RAG</h5><p>Retrieval-Augmented Generation. AI searches a database first, uses results to generate accurate, current answers. Cuts hallucination.</p></div>
+      <div class="tc"><h5>Hallucination</h5><p>AI confidently says something false. It predicts likely text, not factual truth. Always verify important AI outputs.</p></div>
+      <div class="tc"><h5>Fine-Tuning</h5><p>Training a general model on specific data for one task. Like a general doctor becoming a heart specialist. Costs money but gives expert results.</p></div>
+      <div class="tc"><h5>Agentic AI</h5><p>AI that takes actions — browses web, writes code, runs tests, sends emails. Multi-step tasks without constant human input.</p></div>
+      <div class="tc"><h5>MCP</h5><p>Model Context Protocol. Anthropic's open standard for AI to connect to databases, APIs and apps. Like USB for AI tools.</p></div>
     </div>
   </div>
-  <div class="card"><div class="ct">10 Tips to Improve Your AI Skills</div>
+  <div class="card"><div class="ct">10 tips to improve your AI skills</div>
     <div class="tg">
       <div class="tc"><h5><span class="tn">1</span>Use AI daily</h5><p>One real task per day — emails, summaries, code reviews. Daily practice is fastest.</p></div>
       <div class="tc"><h5><span class="tn">2</span>Iterate prompts</h5><p>Never accept first output. Add "be more specific", "give examples". Small changes = big improvements.</p></div>
@@ -302,14 +194,14 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
       <div class="tc"><h5><span class="tn">10</span>Teach someone</h5><p>Explaining AI to others is the fastest way to truly understand it. Start a study group or write a blog.</p></div>
     </div>
   </div>
-  <div class="ad" style="min-height:250px"></div>
+  
 </div>
 
 <!-- PROMPT ENGINEERING -->
 <div class="pg" id="p-pe">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">✍️ Prompt Engineering</h2><p>Write better AI prompts · Save tokens · Get professional results every time</p></div>
-  <div class="ad"></div>
-  <div class="card"><div class="ct">8 Core Prompting Techniques</div>
+  <div class="hero"><h2 class="hh">Prompt engineering</h2><p>Eight techniques, before-and-after examples and templates you can copy.</p></div>
+  
+  <div class="card"><div class="ct">8 core prompting techniques</div>
     <div class="pti"><span class="tn">1</span><p><strong>Role Assignment:</strong> Start with "Act as a [expert role]". Example: "Act as a senior Python developer with 10 years experience." Sets knowledge, tone and perspective.</p></div>
     <div class="pti"><span class="tn">2</span><p><strong>Chain of Thought:</strong> Add "Think step by step." Dramatically improves accuracy on maths, logic and complex analysis by making AI show its working.</p></div>
     <div class="pti"><span class="tn">3</span><p><strong>Few-Shot Examples:</strong> Show 1–3 examples. "Like this: Input: [X] → Output: [Y]. Now do: Input: [Z]." AI learns the pattern from examples instantly.</p></div>
@@ -321,7 +213,7 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
   </div>
 
   <!-- DEEP DIVE: How to Write Effective Prompts -->
-  <div class="card"><div class="ct">How to Write Effective Prompts — A Complete Lesson</div>
+  <div class="card"><div class="ct">How to write effective prompts — a complete lesson</div>
     <h2>The Prompt Structure Framework</h2>
     <p>Every great prompt has up to 6 parts. You do not need all 6 every time, but knowing them lets you craft the right prompt for any situation:</p>
     <p><strong>1. Role:</strong> Who should the AI pretend to be? "Act as a senior data scientist specializing in time-series forecasting with 10 years at Fortune 500 companies."</p>
@@ -367,48 +259,48 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <p><strong>Mistake 5: Not iterating.</strong> Accepting the first output as final. Always refine.</p>
   </div>
 
-  <div class="card"><div class="ct">Token Saving Strategies — Save Money on AI APIs</div>
+  <div class="card"><div class="ct">Token saving strategies — save money on AI APIs</div>
     <p>Tokens = money and speed. Every word in your prompt costs tokens. Here's how to get more for less:</p>
     <div class="txb"><p style="font-weight:600;color:var(--red);margin-bottom:8px">❌ Wasteful (54 tokens):</p><p style="font-size:13px">"Could you please be so kind as to help me write a professional email to my colleague thanking them for their assistance with the project we worked on last week? I would appreciate it if you could keep it brief and formal."</p></div>
     <div class="txb" style="margin-top:8px"><p style="font-weight:600;color:var(--grn);margin-bottom:8px">✅ Efficient (18 tokens):</p><p style="font-size:13px">"Write a brief formal thank-you email to a colleague for project help. Professional tone."</p></div>
     <div class="tg" style="margin-top:14px">
-      <div class="tc"><h5>💡 Remove politeness</h5><p>"Please", "Could you", "I would appreciate" — AI doesn't need them. Saves 5–15 tokens per prompt.</p></div>
-      <div class="tc"><h5>💡 Use bullets not sentences</h5><p>Instructions as bullet lists instead of full sentences = 30–40% fewer tokens with same clarity.</p></div>
-      <div class="tc"><h5>💡 Reference don't repeat</h5><p>After giving context once, say "using the above context" rather than pasting it again. Saves massively in long chats.</p></div>
-      <div class="tc"><h5>💡 Shorter examples</h5><p>2 short few-shot examples often beat 5 long ones — and cost 60% fewer tokens.</p></div>
-      <div class="tc"><h5>💡 System prompt once</h5><p>In API: put repeated context in system prompt, not user message. System tokens are cached at lower cost by most providers.</p></div>
-      <div class="tc"><h5>💡 1000 words ≈ 1333 tokens</h5><p>Use this to estimate API costs. Shorter prompts = faster responses + cheaper bills. Compound savings at scale.</p></div>
+      <div class="tc"><h5>Remove politeness</h5><p>"Please", "Could you", "I would appreciate" — AI doesn't need them. Saves 5–15 tokens per prompt.</p></div>
+      <div class="tc"><h5>Use bullets not sentences</h5><p>Instructions as bullet lists instead of full sentences = 30–40% fewer tokens with same clarity.</p></div>
+      <div class="tc"><h5>Reference don't repeat</h5><p>After giving context once, say "using the above context" rather than pasting it again. Saves massively in long chats.</p></div>
+      <div class="tc"><h5>Shorter examples</h5><p>2 short few-shot examples often beat 5 long ones — and cost 60% fewer tokens.</p></div>
+      <div class="tc"><h5>System prompt once</h5><p>In API: put repeated context in system prompt, not user message. System tokens are cached at lower cost by most providers.</p></div>
+      <div class="tc"><h5>1000 words ≈ 1333 tokens</h5><p>Use this to estimate API costs. Shorter prompts = faster responses + cheaper bills. Compound savings at scale.</p></div>
     </div>
   </div>
-  <div class="card"><div class="ct">Ready-to-Use Prompt Templates</div>
+  <div class="card"><div class="ct">Ready-to-use prompt templates</div>
     <div class="txb"><strong style="color:var(--acc)">📊 Data Analysis:</strong><br><span style="font-size:13px">Act as a data analyst. Analyse [DATA/TOPIC]. Identify: 1) Key trends, 2) Anomalies, 3) Root causes, 4) Actionable recommendations. Structured format. 300 words max.</span></div>
     <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">💻 Code Review:</strong><br><span style="font-size:13px">Senior engineer code review. Check: bugs, security, performance, readability. Rate severity HIGH/MEDIUM/LOW. Show corrected version for each issue. [PASTE CODE]</span></div>
     <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">✉️ Email Writer:</strong><br><span style="font-size:13px">Write professional email. Purpose: [PURPOSE]. Recipient: [ROLE]. Tone: [FORMAL/CASUAL]. Key points: [LIST]. Under 150 words. Include subject line.</span></div>
     <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">📚 Study Assistant:</strong><br><span style="font-size:13px">Teach me [TOPIC] using Feynman technique. Step 1: Simple explanation (no jargon). Step 2: Real-world analogy. Step 3: Common misconceptions. Step 4: Test question for me.</span></div>
   </div>
-  <div class="ad" style="min-height:250px"></div>
+  
 </div>
 
 <!-- BUDGET -->
 <div class="pg" id="p-budget">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">💰 Budget Calculator</h2><p>Track income and expenses · 12 currencies · Free forever</p></div>
-  <div class="ad"></div>
-  <div class="card"><div class="ct">Currency &amp; Income</div>
+  <div class="hero"><h2 class="hh">Monthly budget planner</h2><p>Add your monthly income and expenses to see what you save. Works in 12 currencies.</p></div>
+  
+  <div class="card"><div class="ct">Currency &amp; income</div>
     <div class="bg2g">
       <div><label class="lbl">Currency</label><select class="sel" id="cur" onchange="document.getElementById('csym').textContent=this.value"><option value="$">🇺🇸 USD ($)</option><option value="₹" selected>🇮🇳 INR (₹)</option><option value="€">🇪🇺 EUR (€)</option><option value="£">🇬🇧 GBP (£)</option><option value="¥">🇯🇵 JPY (¥)</option><option value="A$">🇦🇺 AUD</option><option value="C$">🇨🇦 CAD</option><option value="AED">🇦🇪 AED</option><option value="SAR">🇸🇦 SAR</option><option value="R$">🇧🇷 BRL</option><option value="R">🇿🇦 ZAR</option><option value="₩">🇰🇷 KRW</option></select></div>
       <div><label class="lbl">Monthly Income</label><div style="display:flex;align-items:center;gap:7px"><span id="csym" style="color:var(--acc);font-weight:700;font-size:18px">₹</span><input class="inp" type="number" id="income" placeholder="e.g. 50000" min="0"></div></div>
     </div>
   </div>
-  <div class="card"><div class="ct">Monthly Expenses</div>
+  <div class="card"><div class="ct">Monthly expenses</div>
     <div id="elist">
       <div class="er"><input class="inp" type="text" placeholder="Category" value="Rent" style="flex:1"><input class="inp" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="this.parentNode.remove()">×</button></div>
       <div class="er"><input class="inp" type="text" placeholder="Category" value="Food" style="flex:1"><input class="inp" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="this.parentNode.remove()">×</button></div>
       <div class="er"><input class="inp" type="text" placeholder="Category" value="Transport" style="flex:1"><input class="inp" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="this.parentNode.remove()">×</button></div>
     </div>
-    <button class="aeb" onclick="var r=document.createElement('div');r.className='er';r.innerHTML='<input class=inp type=text placeholder=Category style=flex:1><input class=inp type=number placeholder=Amount style=flex:1><button class=rmv onclick=this.parentNode.remove()>×</button>';document.getElementById('elist').appendChild(r)">＋ Add expense</button>
-    <button class="calcb" onclick="calcB()">Calculate My Budget</button>
+    <button class="aeb" onclick="var r=document.createElement('div');r.className='er';r.innerHTML='<input class=inp type=text placeholder=Category style=flex:1><input class=inp type=number placeholder=Amount style=flex:1><button class=rmv onclick=this.parentNode.remove()>×</button>';document.getElementById('elist').appendChild(r)">+ Add an expense</button>
+    <button class="calcb" onclick="calcB()">Calculate my budget</button>
   </div>
-  <div class="card" id="bres" style="display:none"><div class="ct">Your Budget Summary</div>
+  <div class="card" id="bres" style="display:none"><div class="ct">Your budget summary</div>
     <div class="sg">
       <div class="si"><div style="font-size:11px;color:var(--b2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Income</div><div class="svl inc" id="ri">—</div></div>
       <div class="si"><div style="font-size:11px;color:var(--b2);text-transform:uppercase;margin-bottom:4px">Expenses</div><div class="svl exc" id="re">—</div></div>
@@ -418,99 +310,68 @@ p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{colo
     <div class="po"><div class="pi" id="rbar" style="width:0%"></div></div>
     <p style="font-size:12px;color:var(--b3);margin-top:6px;text-align:center" id="rpl"></p>
   </div>
-  <div class="ad" style="min-height:250px"></div>
-</div>
-
-<!-- PDF TOOLS -->
-<div class="pg" id="p-pdf">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">📄 PDF ↔ Word Converter</h2><p>Convert PDF to Word and Word to PDF · Runs in your browser · Free</p></div>
-  <div class="ad"></div>
-
-  <div class="card"><div class="ct">PDF → Word</div>
-    <p>Choose a PDF file, then press <strong>Convert</strong>. The text is extracted without layout, images or tables. Scanned PDFs (photos of pages) contain no text to extract. Your file never leaves your device.</p>
-    <div class="tz" id="pdfZone" onclick="document.getElementById('pf').click()"><div style="font-size:40px;margin-bottom:10px">📄</div><p id="pdfZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a PDF file</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
-    <input type="file" id="pf" accept=".pdf" style="display:none" onchange="onPdfPicked(this)">
-    <div id="pdfPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
-      <span id="pdfPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
-      <button class="tbtn" id="pdfConvertBtn" onclick="convertPdf()" disabled>Convert to Word →</button>
-    </div>
-    <div id="pprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
-    <div id="pprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;white-space:pre-wrap;line-height:1.75"></div>
-    <button class="bp" id="pdlb" onclick="dlWord()" style="display:none;margin-top:10px">⬇ Download as Word (.doc)</button>
-    <button class="bo" id="pdfResetBtn" onclick="resetPdfTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another PDF</button>
-  </div>
-
-  <div class="card" style="margin-top:0"><div class="ct">Word → PDF</div>
-    <p>Choose a .docx file, then press <strong>Convert</strong>. Hindi, Arabic, Chinese, Tamil and every other language render using your browser's real fonts — nothing is approximated or skipped.</p>
-    <div class="tz" id="wordZone" onclick="document.getElementById('wf').click()"><div style="font-size:40px;margin-bottom:10px">📝</div><p id="wordZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a Word document (.docx)</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
-    <input type="file" id="wf" accept=".docx" style="display:none" onchange="onWordPicked(this)">
-    <div id="wordPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
-      <span id="wordPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
-      <button class="tbtn" id="wordConvertBtn" onclick="convertWord()" disabled>Convert to PDF →</button>
-    </div>
-    <div id="wprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
-    <div id="wprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;line-height:1.75"></div>
-    <button class="bp" id="wdlb" onclick="openWordPrint()" style="display:none;margin-top:10px">🖨 Print — then choose "Save as PDF"</button>
-    <button class="bo" id="wordResetBtn" onclick="resetWordTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another file</button>
-    <p id="wordHint" style="display:none;font-size:12px;color:var(--b3);margin-top:8px">In the print dialog set Destination to “Save as PDF”, then Save. Real Hindi / Arabic / Chinese / Tamil glyphs are kept because your browser draws them, not a built-in PDF font.</p>
-  </div>
-
-  <div class="card"><div class="ct">How It Works</div>
-    <div class="tg">
-      <div class="tc"><h5>🔒 100% Private</h5><p>Files are read in your browser. Nothing is uploaded to a server. Your documents stay on your device.</p></div>
-      <div class="tc"><h5>🌍 All Languages</h5><p>PDF→Word keeps the original characters in most text-based PDFs, though some Indian-language PDFs use fonts that extract poorly. Word→PDF prints with your browser's own fonts, so Hindi, Arabic, Chinese and Tamil display correctly.</p></div>
-      <div class="tc"><h5>⚡ Instant &amp; Free</h5><p>No account, no watermark, no limit. Free forever. Works on any modern browser.</p></div>
-      <div class="tc"><h5>📖 Choose When Ready</h5><p>Nothing converts until you press Convert. Pick your file first, check the name, then convert.</p></div>
-    </div>
-  </div>
-  <div class="ad" style="min-height:250px"></div>
-</div>
-
-<!-- Hidden mirror used only by the browser print engine for Word→PDF -->
-<div id="wordPrintHost" class="word-print-root"><div id="wordPrintBody"></div></div>
-<div class="pg" id="p-blog">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">Blog &amp; Guides</h2><p>AI tutorials, comparisons and guides — updated regularly</p></div>
-  <div class="ad"></div>
-  <div class="bg">
-    <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 AI Rankings</div><h3>Best AI Model in 2026: Complete Ranking</h3><p>GPT-6, Claude Opus 5.5 and Gemini 4 Argon compared by task and price.</p><span class="rm">Read article →</span></a>
-    <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude: Honest 2026 Comparison</h3><p>Coding, writing, features and price, updated November 2026.</p><span class="rm">Read article →</span></a>
-    <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#1a73e8"><div class="bt" style="color:#1a73e8">🤖 Guide</div><h3>What is Agentic AI? Complete Guide</h3><p>Claude Code, Gemini Spark, Devin — why agentic AI matters in 2026.</p><span class="rm">Read article →</span></a>
-    <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI for Beginners (2026)</h3><p>LLMs, tokens, hallucination, RAG — every key term without jargon.</p><span class="rm">Read article →</span></a>
-    <a class="bc" href="ai-quiz-test-knowledge.html" style="border-left-color:#00838f"><div class="bt" style="color:#00838f">🎮 Quiz</div><h3>Test Your AI Knowledge — Free Quiz</h3><p>250 questions across 5 topics and 5 levels. Play now free.</p><span class="rm">Read article →</span></a>
-  </div>
-  <div class="ad" style="min-height:250px;margin-top:14px"></div>
+  
 </div>
 
 <!-- LEADERBOARD -->
 <div class="pg" id="p-lb">
-  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">🏅 Leaderboard</h2><p>Your best scores, saved on this device only</p></div>
+  <div class="hero"><h2 class="hh">Your leaderboard</h2><p>Your best scores, saved on this device only</p></div>
   <div class="card" id="lbc"></div>
-  <div class="ad" style="min-height:250px;margin-top:14px"></div>
+  
 </div>
 
-</main></div>
 
+
+
+</div>
+</main>
+<canvas id="cc" aria-hidden="true"></canvas>
 <!-- MODAL -->
 <div class="mo" id="mo"><div class="modal"><button class="mc" onclick="closeMo()">✕</button><div id="mob"></div></div></div>
 
-<!-- LIBS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
+      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary converter</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Download time calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#compare">Compare AI models</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
 <script>
 // ═══ NAVIGATION ═══
-var PGS=['home','wheel','compare','quiz','qa','res','learn','pe','budget','pdf','blog','lb'];
+var PGS=['wheel','compare','quiz','qa','res','learn','pe','budget','lb'];
 function go(id){
   PGS.forEach(function(p){var e=document.getElementById('p-'+p);if(e)e.classList.remove('on')});
   var el=document.getElementById('p-'+id);if(el)el.classList.add('on');
   document.querySelectorAll('.sl,.tl').forEach(function(l){l.classList.remove('on')});
   var s=document.getElementById('sl-'+id);if(s)s.classList.add('on');
-  var t=document.getElementById('tl-'+id);if(t)t.classList.add('on');
+  var t=document.getElementById('tl-'+(id==='qa'||id==='res'?'quiz':id));if(t){t.classList.add('on');t.setAttribute('aria-current','page');}
+  document.querySelectorAll('.tl').forEach(function(x){if(x!==t)x.removeAttribute('aria-current');});
   if(id==='compare')bldTbl();if(id==='quiz')bldCats();if(id==='wheel'){setTimeout(function(){dw(cA);uStr()},50);}if(id==='lb')bldLB();
-  window.scrollTo(0,0);
-  try{if(['qa','res'].indexOf(id)<0)history.replaceState(null,'',id==='home'?location.pathname:'#'+id);}catch(e){}
-  document.getElementById('sidebar').classList.remove('open');document.getElementById('sov').classList.remove('open');
+  var hb=document.getElementById('hubTabs');if(hb&&window.scrollY>hb.offsetTop)window.scrollTo(0,hb.offsetTop-70);
+  try{if(['qa','res'].indexOf(id)<0)history.replaceState(null,'',id==='wheel'?location.pathname:'#'+id);}catch(e){}
 }
-function tsb(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sov').classList.toggle('open');}
 
 // ═══ PROMPTS (compact — 12 per AI) ═══
 var PR={
@@ -591,7 +452,7 @@ function dw(r){
     cx.fillStyle=g;cx.fill();
     cx.strokeStyle="rgba(255,255,255,.22)";cx.lineWidth=2.5;cx.stroke();
     cx.save();cx.translate(C,C);cx.rotate(s+WA/2);
-    cx.textAlign="right";cx.fillStyle="#fff";cx.font='700 28px "Playfair Display",serif';
+    cx.textAlign="right";cx.fillStyle="#fff";cx.font='700 28px "Bricolage Grotesque",sans-serif';
     cx.shadowColor="rgba(0,0,0,.4)";cx.shadowBlur=5;
     cx.fillText(SG[i].l,R-30,10);cx.restore();
   }
@@ -639,11 +500,11 @@ function bldTbl(){if(tblDone)return;tblDone=true;var el=document.getElementById(
 
 // ═══ QUIZ WITH 5 LEVELS (250 questions) ═══
 var CATS=[
-{id:"openai",n:"OpenAI & ChatGPT",i:"🤖",c:"#10a37f"},
-{id:"claude",n:"Claude & Anthropic",i:"🧠",c:"#C06A2A"},
-{id:"gemini",n:"Google Gemini",i:"💎",c:"#1a73e8"},
-{id:"genai",n:"Generative AI",i:"⚡",c:"#f59e0b"},
-{id:"agentic",n:"Agentic AI",i:"🚀",c:"#A0522D"}
+{id:"openai",n:"OpenAI & ChatGPT",i:"",c:"#10a37f"},
+{id:"claude",n:"Claude & Anthropic",i:"",c:"#C06A2A"},
+{id:"gemini",n:"Google Gemini",i:"",c:"#1a73e8"},
+{id:"genai",n:"Generative AI",i:"",c:"#f59e0b"},
+{id:"agentic",n:"Agentic AI",i:"",c:"#A0522D"}
 ];
 var LVLS=["Beginner","Elementary","Intermediate","Advanced","Expert"];
 // Q format: [question, [4 options], correct_index, explanation]
@@ -923,17 +784,14 @@ function bldCats(){
   var g=document.getElementById('cg');if(!g)return;g.innerHTML='';
   var unlocked=getUL();
   CATS.forEach(function(c){
-    var html='<div style="display:flex;align-items:center;gap:9px;margin-bottom:10px"><span style="font-size:24px">'+c.i+'</span><div><div style="font-weight:700;font-size:14px">'+c.n+'</div><div style="color:var(--b3);font-size:11px">5 levels · 10 questions each</div></div></div>';
-    html+='<div style="display:flex;gap:5px;flex-wrap:wrap">';
+    var html='<div style="display:flex;align-items:center;gap:9px;margin-bottom:10px"><span class="qc-dot" style="background:'+c.c+'"></span><div><div style="font-weight:700;font-size:14px">'+c.n+'</div><div class="qc-sub">5 levels, 10 questions each</div></div></div>';
+    html+='<div class="lvs">';
     for(var lv=1;lv<=5;lv++){
       var isUL=lv===1||unlocked[c.id+'_'+lv];
-      var bg=isUL?'var(--acc)':'var(--b3)';
-      var cur=isUL?'pointer':'not-allowed';
-      var op=isUL?'1':'0.4';
-      html+='<button style="background:'+bg+';color:#fff;border:none;padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:'+cur+';opacity:'+op+';font-family:inherit" '+(isUL?'onclick="startQ(\''+c.id+'\','+lv+')"':'disabled')+'>L'+lv+' '+LVLS[lv-1]+'</button>';
+      html+='<button class="lv'+(isUL?'':' locked')+'" '+(isUL?'onclick="startQ(\''+c.id+'\','+lv+')"':'disabled title="Score 70 or more on the level before to unlock"')+'>'+(isUL?'':'<span aria-hidden="true">&#128274; </span>')+'Level '+lv+' · '+LVLS[lv-1]+'</button>';
     }
     html+='</div>';
-    var d=document.createElement('div');d.className='cc';d.style.borderLeftColor=c.c;d.innerHTML=html;
+    var d=document.createElement('div');d.className='cc';d.innerHTML=html;
     g.appendChild(d);
   });
 }
@@ -1029,147 +887,8 @@ function calcB(){
   document.getElementById('bres').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-// ═══ PDF → WORD ═══
-var pdfFile=null, pdfTxt='';
-function onPdfPicked(inp){
-  pdfFile=(inp.files&&inp.files[0])?inp.files[0]:null;
-  var row=document.getElementById('pdfPicked');
-  var nm=document.getElementById('pdfPickedName');
-  var btn=document.getElementById('pdfConvertBtn');
-  if(pdfFile){row.style.display='flex'; nm.textContent=pdfFile.name+' • '+(pdfFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
-  else{row.style.display='none';}
-  document.getElementById('pdlb').style.display='none';
-  document.getElementById('pdfResetBtn').style.display='none';
-}
-function resetPdfTool(){
-  pdfFile=null; pdfTxt='';
-  document.getElementById('pf').value='';
-  document.getElementById('pdfPicked').style.display='none';
-  document.getElementById('pdlb').style.display='none';
-  document.getElementById('pdfResetBtn').style.display='none';
-}
-function convertPdf(){
-  if(!pdfFile){return;}
-  var btn=document.getElementById('pdfConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    if(typeof pdfjsLib==='undefined'){ btn.textContent='Convert to Word \u2192'; btn.disabled=false; showT('PDF library not loaded yet \u2014 try again in a moment.'); return; }
-    pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    pdfjsLib.getDocument({data:e.target.result}).promise.then(function(pdf){
-      var pages=[], promises=[];
-      for(var i=1;i<=pdf.numPages;i++){
-        (function(pn){
-          promises.push(pdf.getPage(pn).then(function(page){
-            return page.getTextContent().then(function(tc){
-              pages[pn-1]=tc.items.map(function(it){return it.str}).join(' ');
-            });
-          }));
-        })(i);
-      }
-      Promise.all(promises).then(function(){
-        pdfTxt=pages.map(function(p,i){return '— Page '+(i+1)+' —\n'+p;}).join('\n\n');
-        btn.disabled=false; btn.textContent='Convert to Word \u2192';
-        document.getElementById('pdlb').style.display='inline-block';
-        document.getElementById('pdfResetBtn').style.display='inline-block';
-        showT(pdf.numPages+' page(s) ready — click Download.');
-      });
-    }).catch(function(err){
-      btn.disabled=false; btn.textContent='Convert to Word \u2192';
-      showT('Could not read this PDF — make sure it has selectable text.');
-    });
-  };
-  reader.onerror=function(){
-    btn.disabled=false; btn.textContent='Convert to Word \u2192';
-    showT('Could not read the file.');
-  };
-  reader.readAsArrayBuffer(pdfFile);
-}
-function dlWord(){
-  if(!pdfTxt)return;
-  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial,sans-serif;font-size:12pt;line-height:1.5;margin:1in}</style></head><body>';
-  pdfTxt.split('\n').forEach(function(line){
-    if(!line.trim())return;
-    html+='<p>'+line.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</p>';
-  });
-  html+='</body></html>';
-  var blob=new Blob([html],{type:'application/msword'});
-  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='converted.doc'; a.click();
-  showT('Word document downloaded.');
-}
-
-// ═══ WORD → PDF (real Unicode — uses your browser's own print engine, never window.open) ═══
-var wordFile=null, wordHtml='';
-function onWordPicked(inp){
-  wordFile=(inp.files&&inp.files[0])?inp.files[0]:null;
-  var row=document.getElementById('wordPicked');
-  var nm=document.getElementById('wordPickedName');
-  var btn=document.getElementById('wordConvertBtn');
-  if(wordFile){row.style.display='flex'; nm.textContent=wordFile.name+' • '+(wordFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
-  else{row.style.display='none';}
-  document.getElementById('wdlb').style.display='none';
-  document.getElementById('wordResetBtn').style.display='none';
-  document.getElementById('wordHint').style.display='none';
-}
-function resetWordTool(){
-  wordFile=null; wordHtml='';
-  document.getElementById('wf').value='';
-  document.getElementById('wordPicked').style.display='none';
-  document.getElementById('wdlb').style.display='none';
-  document.getElementById('wordResetBtn').style.display='none';
-  document.getElementById('wordHint').style.display='none';
-}
-function convertWord(){
-  if(!wordFile){return;}
-  var btn=document.getElementById('wordConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    if(typeof mammoth==='undefined'){ btn.textContent='Convert to PDF \u2192'; btn.disabled=false; showT('Word library not loaded yet \u2014 try again in a moment.'); return; }
-    mammoth.convertToHtml({arrayBuffer:e.target.result}).then(function(result){
-      wordHtml=result.value;
-      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
-      document.getElementById('wdlb').style.display='inline-block';
-      document.getElementById('wordResetBtn').style.display='inline-block';
-      document.getElementById('wordHint').style.display='block';
-      showT('Document ready — click "Open Print Dialog".');
-    }).catch(function(err){
-      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
-      showT('Could not read this file — confirm it is a .docx file.');
-    });
-  };
-  reader.onerror=function(){
-    btn.disabled=false; btn.textContent='Convert to PDF \u2192';
-    showT('Could not read the file.');
-  };
-  reader.readAsArrayBuffer(wordFile);
-}
-var wordPrintHostHome=null, wordPrintHostMark=null;
-function wordPrintMoveOut(){
-  var host=document.getElementById('wordPrintHost');
-  if(!host) return;
-  wordPrintHostHome=host.parentNode;
-  wordPrintHostMark=host.nextSibling;
-  document.body.appendChild(host);
-}
-function wordPrintMoveBack(){
-  var host=document.getElementById('wordPrintHost');
-  if(!host||!wordPrintHostHome) return;
-  wordPrintHostHome.insertBefore(host, wordPrintHostMark);
-}
-function openWordPrint(){
-  if(!wordHtml) return;
-  document.getElementById('wordPrintBody').innerHTML=wordHtml;
-  wordPrintMoveOut();
-  document.body.classList.add('printingWord');
-  window.print();
-}
-window.addEventListener('afterprint',function(){
-  document.body.classList.remove('printingWord');
-  wordPrintMoveBack();
-});
-
-
 // ═══ TOAST ═══
-var tT;function showT(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){t.classList.remove('show')},2600);}
+function showT(m){ABT.toast(m);}
 
 // ═══ CONFETTI ═══
 function fireC(){
@@ -1185,103 +904,9 @@ function fireC(){
 window.addEventListener('load',function(){
   dw(0);uStr();
   var h=(location.hash||'').slice(1);
-  go(['wheel','compare','quiz','learn','pe','budget','pdf','blog','lb'].indexOf(h)>-1?h:'home');
+  go(['wheel','compare','quiz','learn','pe','budget','lb'].indexOf(h)>-1?h:'wheel');
 });
 window.addEventListener('hashchange',function(){var h=location.hash.slice(1);if(PGS.indexOf(h)>-1){closeMo();go(h);}});
 </script>
-<!-- ════════════════════════════════════════════════════════════
-     PASTE THIS WHOLE BLOCK IMMEDIATELY BEFORE </body> IN index.html
-     Fixes: (1) missing Subscription row in comparison table
-            (2) font size too small
-            (3) Word→PDF real download instead of print-dialog-only
-     ════════════════════════════════════════════════════════════ -->
-
-<!-- jsPDF library, needed for fix #3 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<!-- Fix #2: font size override -->
-<style>
-body{font-size:16px!important}
-p{font-size:16px!important}
-</style>
-
-<script>
-// ═══ FIX #1: add missing Subscription Price row to comparison table ═══
-
-// ═══ FIX #3: WORD → PDF real one-click download (English/Latin text) ═══
-// Falls back to the existing Print→Save as PDF flow for Hindi/Arabic/
-// Chinese/Tamil text, since jsPDF's built-in fonts can't draw those
-// glyphs without embedding extra font files.
-function hasNonLatinScript(t){
-  return /[\u0900-\u097F\u0600-\u06FF\u0B80-\u0BFF\u4E00-\u9FFF\u3040-\u30FF\uAC00-\uD7AF]/.test(t);
-}
-function convertWord(){
-  var f=document.getElementById('wf').files[0];
-  if(!f)return;
-  var prog=document.getElementById('wprog'),prev=document.getElementById('wprev'),
-      wdlb=document.getElementById('wdlb'),hint=document.getElementById('wordHint');
-  prog.style.display='block';prog.textContent='Reading document…';
-  prev.style.display='none';wdlb.style.display='none';hint.style.display='none';
-  var reader=new FileReader();
-  reader.onload=function(e){
-    var buf=e.target.result;
-    Promise.all([
-      mammoth.extractRawText({arrayBuffer:buf}),
-      mammoth.convertToHtml({arrayBuffer:buf})
-    ]).then(function(results){
-      var text=results[0].value||'';
-      var html=results[1].value||'';
-      wordHtml=html;
-      document.getElementById('wordResetBtn').style.display='inline-block';
-      document.getElementById('wordPrintBody').innerHTML=html;
-      prev.style.display='block';
-      prev.textContent=text.slice(0,2000)+(text.length>2000?'\n\n…':'');
-
-      if(hasNonLatinScript(text)){
-        prog.style.display='none';
-        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
-        wdlb.style.display='inline-block';
-        wdlb.onclick=openWordPrint;
-        hint.style.display='block';
-        hint.textContent='This document contains Hindi/Arabic/Chinese/Tamil text, which needs your browser\'s real fonts to render correctly — use Print → Save as PDF below.';
-        return;
-      }
-
-      try{
-        var jsPDFCtor=window.jspdf.jsPDF;
-        var doc=new jsPDFCtor({unit:'pt',format:'a4'});
-        var margin=48,maxWidth=595-margin*2,lineHeight=16;
-        doc.setFont('helvetica','normal');doc.setFontSize(11);
-        var lines=doc.splitTextToSize(text,maxWidth);
-        var y=margin;
-        lines.forEach(function(line){
-          if(y>842-margin){doc.addPage();y=margin;}
-          doc.text(line,margin,y);
-          y+=lineHeight;
-        });
-        var outName=f.name.replace(/\.docx$/i,'')+'.pdf';
-        doc.save(outName);
-        prog.style.display='none';
-        wdlb.style.display='inline-block';
-        wdlb.textContent='⬇ Download PDF Again';
-        wdlb.onclick=function(){doc.save(outName);};
-        hint.style.display='block';
-        hint.textContent='Downloaded as '+outName+'. Only text is preserved — no bold, images or layout. For Hindi, Arabic, Chinese or Tamil text, use the Print option instead.';
-      }catch(err){
-        prog.style.display='block';
-        prog.textContent='Direct PDF generation failed — use Print → Save as PDF instead.';
-        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
-        wdlb.style.display='inline-block';
-        wdlb.onclick=openWordPrint;
-      }
-    }).catch(function(){
-      prog.style.display='block';
-      prog.textContent='Could not read this .docx file. Please try another file.';
-    });
-  };
-  reader.readAsArrayBuffer(f);
-}
-</script>
-
 </body>
 </html>

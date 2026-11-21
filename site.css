@@ -87,7 +87,7 @@ p{margin:0 0 1em}
 .hint{font-size:.85rem;color:var(--ink-3)}
 .inline{display:flex;gap:8px;align-items:stretch}
 .inline>*{min-width:0}
-input[type=number],input[type=text],input[type=email],input[type=search],input[type=date],input[type=time],select{
+input:not([type]),input[type=number],input[type=text],input[type=email],input[type=search],input[type=date],input[type=time],select{
   font:inherit;font-size:1rem;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r-sm);padding:10px 12px;width:100%;min-height:44px}
 input[type=number]{font-variant-numeric:tabular-nums}
 input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-t)}
