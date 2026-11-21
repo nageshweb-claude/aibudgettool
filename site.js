@@ -5,6 +5,8 @@
 
   /* nav */
   document.addEventListener('click', function(e){
+    var l = e.target.closest('#site-nav a');
+    if(l){ var nn=document.getElementById('site-nav'); nn.classList.remove('open'); var nb=document.querySelector('.nav-btn'); if(nb) nb.setAttribute('aria-expanded','false'); }
     var b = e.target.closest('.nav-btn');
     if(!b) return;
     var n = document.getElementById('site-nav');
@@ -23,15 +25,20 @@
 
   /* numbers */
   A.CURRENCIES = [
-    ['INR','₹','en-IN'],['USD','$','en-US'],['EUR','€','de-DE'],['GBP','£','en-GB'],['AED','AED ','en-AE'],
-    ['SAR','SAR ','en-SA'],['CAD','C$','en-CA'],['AUD','A$','en-AU'],['SGD','S$','en-SG'],['JPY','¥','ja-JP'],
+    ['USD','$','en-US'],['CAD','C$','en-CA'],['GBP','£','en-GB'],['EUR','€','de-DE'],['AUD','A$','en-AU'],
+    ['INR','₹','en-IN'],['AED','AED ','en-AE'],
+    ['SAR','SAR ','en-SA'],['SGD','S$','en-SG'],['JPY','¥','ja-JP'],
     ['CNY','¥','zh-CN'],['CHF','CHF ','de-CH'],['NZD','NZ$','en-NZ'],['ZAR','R','en-ZA'],['BRL','R$','pt-BR'],
     ['MXN','MX$','es-MX'],['KRW','₩','ko-KR'],['PKR','Rs ','en-PK'],['BDT','৳','en-BD'],['LKR','Rs ','en-LK'],
     ['NPR','Rs ','en-NP'],['MYR','RM ','en-MY']
   ];
   A.cur = function(code){ for(var i=0;i<A.CURRENCIES.length;i++){ if(A.CURRENCIES[i][0]===code) return A.CURRENCIES[i]; } return A.CURRENCIES[0]; };
+  /* default is US dollars; a currency the visitor picks is remembered on this device */
+  A.prefCur = function(){ var v=null; try{ v=localStorage.getItem('abt-cur'); }catch(e){} return (v && A.cur(v)[0]===v) ? v : 'USD'; };
   A.fillCurrencySelect = function(sel, def){
+    def = def || A.prefCur();
     A.CURRENCIES.forEach(function(c){ var o=document.createElement('option'); o.value=c[0]; o.textContent=c[0]+' ('+c[1].trim()+')'; if(c[0]===def) o.selected=true; sel.appendChild(o); });
+    sel.addEventListener('change', function(){ try{ localStorage.setItem('abt-cur', sel.value); }catch(e){} });
   };
   /* group digits: Indian style for INR, international otherwise */
   A.fmt = function(n, digits, code){
@@ -50,7 +57,7 @@
     } else {
       if(n>=1e9) v=t(n/1e9)+' billion'; else if(n>=1e6) v=t(n/1e6)+' million'; else if(n>=1e3) v=t(n/1e3)+' thousand'; else return '';
     }
-    return c+' '+v;
+    return A.cur(code)[1]+v;
   };
   A.num = function(el){ var v=parseFloat(String(el.value).replace(/,/g,'')); return isFinite(v)?v:0; };
   A.clamp = function(v,a,b){ return Math.min(b,Math.max(a,v)); };
@@ -84,6 +91,18 @@
 
   /* debounce */
   A.debounce = function(fn, ms){ var t; return function(){ var a=arguments,s=this; clearTimeout(t); t=setTimeout(function(){fn.apply(s,a);}, ms||200); }; };
+
+  /* faster page changes: fetch a page when the pointer rests on its link (browsers without speculation rules) */
+  var pre={};
+  function prefetch(e){
+    if(HTMLScriptElement.supports && HTMLScriptElement.supports('speculationrules')) return;
+    var a=e.target.closest && e.target.closest('a[href]'); if(!a) return;
+    var u; try{ u=new URL(a.href); }catch(x){ return; }
+    if(u.origin!==location.origin || u.pathname===location.pathname || pre[u.pathname]) return;
+    pre[u.pathname]=1; var l=document.createElement('link'); l.rel='prefetch'; l.href=u.pathname; document.head.appendChild(l);
+  }
+  document.addEventListener('pointerover', prefetch, {passive:true});
+  document.addEventListener('touchstart', prefetch, {passive:true});
 
   document.addEventListener('DOMContentLoaded', function(){
     var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();

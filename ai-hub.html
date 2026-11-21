@@ -22,8 +22,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261121">
-<link rel="stylesheet" href="/hub.css?v=20261121">
+<link rel="stylesheet" href="/site.css?v=20261121b">
+<link rel="stylesheet" href="/hub.css?v=20261121b">
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":"/*"},"eagerness":"moderate"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI hub: daily prompt, AI quiz and free AI course","url":"https://www.aibudgettool.com/ai-hub.html","description":"Learn AI free: spin a daily AI prompt, take a 250-question AI quiz, follow a 5-week AI course, learn prompt engineering and compare AI models.","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"AI hub","item":"https://www.aibudgettool.com/ai-hub.html"}]}</script>
 </head>
@@ -217,7 +218,7 @@
     <h2>The Prompt Structure Framework</h2>
     <p>Every great prompt has up to 6 parts. You do not need all 6 every time, but knowing them lets you craft the right prompt for any situation:</p>
     <p><strong>1. Role:</strong> Who should the AI pretend to be? "Act as a senior data scientist specializing in time-series forecasting with 10 years at Fortune 500 companies."</p>
-    <p><strong>2. Context:</strong> What background does the AI need? "I run a small e-commerce store selling handmade candles. My monthly revenue is ₹2 lakh. I have 3 employees."</p>
+    <p><strong>2. Context:</strong> What background does the AI need? "I run a small e-commerce store selling handmade candles. My monthly revenue is $20,000. I have 3 employees."</p>
     <p><strong>3. Task:</strong> What specifically should it do? "Analyze my last 6 months of sales data and identify the 3 most actionable trends."</p>
     <p><strong>4. Format:</strong> How should the output look? "Present as a numbered list with each trend as a heading, 2-3 sentences of explanation, and one recommended action."</p>
     <p><strong>5. Constraints:</strong> What should it avoid? "Do not use technical jargon. Keep total response under 400 words. Do not suggest hiring more staff."</p>
@@ -287,8 +288,8 @@
   
   <div class="card"><div class="ct">Currency &amp; income</div>
     <div class="bg2g">
-      <div><label class="lbl">Currency</label><select class="sel" id="cur" onchange="document.getElementById('csym').textContent=this.value"><option value="$">🇺🇸 USD ($)</option><option value="₹" selected>🇮🇳 INR (₹)</option><option value="€">🇪🇺 EUR (€)</option><option value="£">🇬🇧 GBP (£)</option><option value="¥">🇯🇵 JPY (¥)</option><option value="A$">🇦🇺 AUD</option><option value="C$">🇨🇦 CAD</option><option value="AED">🇦🇪 AED</option><option value="SAR">🇸🇦 SAR</option><option value="R$">🇧🇷 BRL</option><option value="R">🇿🇦 ZAR</option><option value="₩">🇰🇷 KRW</option></select></div>
-      <div><label class="lbl">Monthly Income</label><div style="display:flex;align-items:center;gap:7px"><span id="csym" style="color:var(--acc);font-weight:700;font-size:18px">₹</span><input class="inp" type="number" id="income" placeholder="e.g. 50000" min="0"></div></div>
+      <div><label class="lbl">Currency</label><select class="sel" id="cur" onchange="document.getElementById('csym').textContent=this.value"><option value="$" selected>🇺🇸 USD ($)</option><option value="₹">🇮🇳 INR (₹)</option><option value="€">🇪🇺 EUR (€)</option><option value="£">🇬🇧 GBP (£)</option><option value="¥">🇯🇵 JPY (¥)</option><option value="A$">🇦🇺 AUD</option><option value="C$">🇨🇦 CAD</option><option value="AED">🇦🇪 AED</option><option value="SAR">🇸🇦 SAR</option><option value="R$">🇧🇷 BRL</option><option value="R">🇿🇦 ZAR</option><option value="₩">🇰🇷 KRW</option></select></div>
+      <div><label class="lbl" for="income">Monthly income</label><div style="display:flex;align-items:center;gap:7px"><span id="csym" style="color:var(--acc);font-weight:700;font-size:18px">$</span><input class="inp" type="number" id="income" placeholder="e.g. 4500" min="0"></div></div>
     </div>
   </div>
   <div class="card"><div class="ct">Monthly expenses</div>
@@ -337,7 +338,7 @@
         <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
         <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
       </div>
-      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary converter</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Download time calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">Loan calculator</a></li><li><a href="/salary-calculator.html">Salary converter</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Download time calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
       <div><h2>AI hub</h2><ul>
         <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
         <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
@@ -357,7 +358,7 @@
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="/site.js?v=20261121"></script>
+<script src="/site.js?v=20261121b"></script>
 <script>
 // ═══ NAVIGATION ═══
 var PGS=['wheel','compare','quiz','qa','res','learn','pe','budget','lb'];
