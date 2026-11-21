@@ -9,16 +9,11 @@
       "source": "/ai-wheel.html",
       "destination": "/ai-hub.html#wheel",
       "permanent": true
-    },
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
     }
   ],
   "headers": [
     {
-      "source": "/(site\\.css|site\\.js|favicon\\.svg|og-(.*)\\.png)",
+      "source": "/site.css",
       "headers": [
         {
           "key": "Cache-Control",
@@ -27,7 +22,34 @@
       ]
     },
     {
-      "source": "/(.*)",
+      "source": "/site.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/favicon.svg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/og-:name.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
       "headers": [
         {
           "key": "X-Content-Type-Options",
