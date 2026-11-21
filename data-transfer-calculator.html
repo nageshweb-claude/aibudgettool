@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Transfer Time Calculator: Download &amp; Upload Time</title>
+<meta name="description" content="How long will a file take to download or upload? Enter size in KB, MB, GB or TB and speed in Mbps or MB/s to get the time, plus a real-world estimate.">
+<link rel="canonical" href="https://www.aibudgettool.com/data-transfer-calculator.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Data Transfer Time Calculator: Download &amp; Upload Time">
+<meta property="og:description" content="How long will a file take to download or upload? Enter size in KB, MB, GB or TB and speed in Mbps or MB/s to get the time, plus a real-world estimate.">
+<meta property="og:url" content="https://www.aibudgettool.com/data-transfer-calculator.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-transfer.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Data transfer calculator","url":"https://www.aibudgettool.com/data-transfer-calculator.html","description":"How long will a file take to download or upload? Enter size in KB, MB, GB or TB and speed in Mbps or MB/s to get the time, plus a real-world estimate.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"AI Budget Tool","url":"https://www.aibudgettool.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.aibudgettool.com/#calculators"},{"@type":"ListItem","position":3,"name":"Data transfer calculator","item":"https://www.aibudgettool.com/data-transfer-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between Mbps and MB/s?","acceptedAnswer":{"@type":"Answer","text":"Mbps is megabits per second, and MB/s is megabytes per second. There are 8 bits in a byte, so 100 Mbps equals 12.5 MB/s. Internet plans use Mbps, while browsers and download apps usually show MB/s."}},{"@type":"Question","name":"How long does it take to download 1 GB?","acceptedAnswer":{"@type":"Answer","text":"At 100 Mbps, 1 GB takes 80 seconds at full speed. At 25 Mbps it takes about 5 minutes 20 seconds, and at 1 Gbps about 8 seconds."}},{"@type":"Question","name":"Why is my download slower than the calculator says?","acceptedAnswer":{"@type":"Answer","text":"Plan speeds are a maximum. Wi-Fi distance, other devices on the network, the website's server and protocol overhead all reduce real speed. The real-world figure shows a more realistic estimate."}},{"@type":"Question","name":"Does this use 1000 or 1024 for KB, MB and GB?","acceptedAnswer":{"@type":"Answer","text":"It uses 1000 (decimal units), the same as disk makers and internet providers. Some operating systems show sizes in 1024-based units, which makes a file look a few percent smaller. Use the unit converter to switch between GB and GiB."}},{"@type":"Question","name":"Does it work for uploads?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter your upload speed instead. Many home plans have much slower upload than download speeds."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators" aria-current="page">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li aria-current="page">Data transfer calculator</li></ol></nav><div class="wrap"><div class="intro"><h1>Data transfer time calculator</h1><p>How long will a download, upload or backup take? Enter the file size and your connection speed.</p></div>
+
+<section class="instrument" aria-label="Data transfer time calculator">
+  <div class="controls">
+    <div class="field"><label for="size">File size</label>
+      <div class="inline"><input id="size" type="number" inputmode="decimal" min="0" step="any" value="4" style="flex:2">
+      <select id="sizeU" aria-label="Size unit" style="flex:1"><option>KB</option><option>MB</option><option selected>GB</option><option>TB</option></select></div></div>
+    <div class="field"><label for="spd">Connection speed</label>
+      <div class="inline"><input id="spd" type="number" inputmode="decimal" min="0" step="any" value="100" style="flex:2">
+      <select id="spdU" aria-label="Speed unit" style="flex:1"><option value="kbps">Kbps</option><option value="mbps" selected>Mbps</option><option value="gbps">Gbps</option><option value="KBs">KB/s</option><option value="MBs">MB/s</option><option value="GBs">GB/s</option></select></div>
+      <span class="hint">Internet plans are sold in Mbps (megabits). Download apps often show MB/s (megabytes). 1 MB/s = 8 Mbps.</span></div>
+    <div class="field"><span class="lbl">Quick sizes</span>
+      <div class="chips"><button class="chip" type="button" data-s="5,MB">Song (5 MB)</button><button class="chip" type="button" data-s="1.5,GB">HD movie (1.5 GB)</button><button class="chip" type="button" data-s="8,GB">4K movie (8 GB)</button><button class="chip" type="button" data-s="100,GB">Big game (100 GB)</button><button class="chip" type="button" data-s="1,TB">Backup (1 TB)</button></div></div>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div>
+      <div class="answer-label">Time needed at full speed</div>
+      <div class="answer num"><span class="hl" id="out">–</span></div>
+      <div class="answer-sub" id="sub"></div>
+    </div>
+    <dl class="stats">
+      <div class="stat key"><dt>Real world (about 85% of speed)</dt><dd id="real">–</dd></div>
+      <div class="stat"><dt>In seconds</dt><dd id="secs">–</dd></div>
+      <div class="stat"><dt>Speed in MB/s</dt><dd id="mbs">–</dd></div>
+    </dl>
+    <div>
+      <span class="lbl">The same file at other speeds</span>
+      <div class="table-wrap" style="margin-top:8px"><table><thead><tr><th>Connection (example speed)</th><th class="r">Time</th></tr></thead><tbody id="cmp"></tbody></table></div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" id="shareBtn">Share this result</button>
+      <button class="btn btn-wa" type="button" id="waBtn">Send on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="two-col">
+    <div class="prose">
+      <h2>How transfer time is calculated</h2>
+      <div class="formula"><code>Time (seconds) = file size in bits ÷ speed in bits per second</code></div>
+      <ol class="steps" style="margin-top:20px">
+        <li>Convert the file size to bits. 1 byte is 8 bits, and 1 GB is 1,000,000,000 bytes.</li>
+        <li>Convert the speed to bits per second. 100 Mbps is 100,000,000 bits per second.</li>
+        <li>Divide the first number by the second.</li>
+      </ol>
+      <p>Real transfers are slower than the plan speed because of Wi-Fi signal, network protocol overhead and the other end's server. The real-world line assumes you get about 85% of the advertised speed.</p>
+    </div>
+    <div class="example">
+      <h3>Example</h3>
+      <p>Downloading a <strong>4 GB</strong> file on a <strong>100 Mbps</strong> connection.</p>
+      <p>4 GB = 4 × 1,000,000,000 × 8 = 32,000,000,000 bits.</p>
+      <p>32,000,000,000 ÷ 100,000,000 = 320 seconds = <span class="hl"><strong>5 min 20 s</strong></span>.</p>
+      <p>At 85% efficiency, plan for about 6 min 16 s.</p>
+    </div>
+  </div>
+</section><section class="section" id="faq"><h2>Questions people ask</h2><div class="faq-list"><details class="faq"><summary>What is the difference between Mbps and MB/s?</summary><p>Mbps is megabits per second, and MB/s is megabytes per second. There are 8 bits in a byte, so 100 Mbps equals 12.5 MB/s. Internet plans use Mbps, while browsers and download apps usually show MB/s.</p></details><details class="faq"><summary>How long does it take to download 1 GB?</summary><p>At 100 Mbps, 1 GB takes 80 seconds at full speed. At 25 Mbps it takes about 5 minutes 20 seconds, and at 1 Gbps about 8 seconds.</p></details><details class="faq"><summary>Why is my download slower than the calculator says?</summary><p>Plan speeds are a maximum. Wi-Fi distance, other devices on the network, the website's server and protocol overhead all reduce real speed. The real-world figure shows a more realistic estimate.</p></details><details class="faq"><summary>Does this use 1000 or 1024 for KB, MB and GB?</summary><p>It uses 1000 (decimal units), the same as disk makers and internet providers. Some operating systems show sizes in 1024-based units, which makes a file look a few percent smaller. Use the unit converter to switch between GB and GiB.</p></details><details class="faq"><summary>Does it work for uploads?</summary><p>Yes. Enter your upload speed instead. Many home plans have much slower upload than download speeds.</p></details></div></section><section class="section"><h2>More free tools</h2><div class="related"><a href="/emi-calculator.html"><strong>EMI calculator</strong><span>What will my monthly loan payment be?</span></a><a href="/salary-calculator.html"><strong>Salary calculator</strong><span>What does my pay work out to per hour, month or year?</span></a><a href="/time-zone-converter.html"><strong>Time zone converter</strong><span>What time is it there when it's 7 PM here?</span></a><a href="/age-calculator.html"><strong>Age calculator</strong><span>How old am I exactly, and when is my next birthday?</span></a><a href="/unit-converter.html"><strong>Unit converter</strong><span>How many inches, pounds, MB or mph is that?</span></a></div></section></div></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
+      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
+<script>
+
+(function(){
+var A=ABT,$=function(i){return document.getElementById(i)};
+var size=$('size'),sizeU=$('sizeU'),spd=$('spd'),spdU=$('spdU');
+var BYTES={KB:1e3,MB:1e6,GB:1e9,TB:1e12};
+var BPS={kbps:1e3,mbps:1e6,gbps:1e9,KBs:8e3,MBs:8e6,GBs:8e9};
+var REF=[['Slow mobile data (5 Mbps)',5e6],['4G mobile (25 Mbps)',25e6],['Home broadband (100 Mbps)',100e6],['Fast fibre (300 Mbps)',300e6],['Gigabit fibre (1 Gbps)',1e9],['USB 3.0 drive (about 100 MB/s)',800e6]];
+function human(s){
+  if(!isFinite(s)) return '–';
+  if(s<0.001) return 'under 1 ms';
+  if(s<1) return (Math.round(s*1000))+' ms';
+  if(s>=31557600*2) return A.fmt(s/31557600,0)+' years';
+  if(s>=86400*90) return A.fmt(s/86400,0)+' days';
+  if(s<60) return (s<10?Math.round(s*10)/10:Math.round(s))+' s';
+  var d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), sec=Math.round(s%60), out=[];
+  if(sec===60){sec=0;m++;}
+  if(d) out.push(d+' d'); if(h) out.push(h+' h'); if(m&&!d) out.push(m+' min'); if(sec&&!d&&!h) out.push(sec+' s');
+  return out.join(' ')||'0 s';
+}
+function calc(){
+  var bits=A.num(size)*BYTES[sizeU.value]*8, bps=A.num(spd)*BPS[spdU.value];
+  if(bits<=0||bps<=0){ $('out').textContent='–'; $('sub').textContent='Enter a file size and a speed.'; return; }
+  var t=bits/bps;
+  $('out').textContent=human(t);
+  $('sub').textContent='to move '+size.value+' '+sizeU.value+' at '+spd.value+' '+spdU.options[spdU.selectedIndex].text;
+  $('real').textContent=human(t/0.85); $('secs').textContent=A.fmt(t, t<100?1:0); $('mbs').textContent=A.fmt(bps/8e6, bps<8e7?2:1)+' MB/s';
+  $('cmp').innerHTML=REF.map(function(r){ return '<tr><td>'+r[0]+'</td><td class="r">'+human(bits/r[1])+'</td></tr>'; }).join('');
+  save();
+}
+var save=A.debounce(function(){ A.setParams({s:size.value,su:sizeU.value,v:spd.value,vu:spdU.value}); },300);
+[size,spd].forEach(function(e){e.addEventListener('input',calc);}); [sizeU,spdU].forEach(function(e){e.addEventListener('change',calc);});
+document.querySelectorAll('[data-s]').forEach(function(b){ b.addEventListener('click',function(){ var p=b.dataset.s.split(','); size.value=p[0]; sizeU.value=p[1]; calc(); }); });
+function summary(){ return 'Moving '+size.value+' '+sizeU.value+' at '+spd.value+' '+spdU.options[spdU.selectedIndex].text+' takes about '+$('out').textContent+' ('+$('real').textContent+' in real-world conditions).'; }
+$('shareBtn').addEventListener('click',function(){A.share(summary());});
+$('waBtn').addEventListener('click',function(){A.whatsapp(summary());});
+var q=A.params();
+if(q.s) size.value=q.s; if(q.su&&BYTES[q.su]) sizeU.value=q.su; if(q.v) spd.value=q.v; if(q.vu&&BPS[q.vu]) spdU.value=q.vu;
+calc();
+})();
+
+</script>
+</body>
+</html>

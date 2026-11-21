@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit Converter: cm to Inches, kg to lbs, MB to GB &amp; More</title>
+<meta name="description" content="Free instant unit converter for cm to inches, kg to lbs, MB to GB, km/h to mph, Celsius to Fahrenheit and more. Shows your value in every unit at once.">
+<link rel="canonical" href="https://www.aibudgettool.com/unit-converter.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Unit Converter: cm to Inches, kg to lbs, MB to GB &amp; More">
+<meta property="og:description" content="Free instant unit converter for cm to inches, kg to lbs, MB to GB, km/h to mph, Celsius to Fahrenheit and more. Shows your value in every unit at once.">
+<meta property="og:url" content="https://www.aibudgettool.com/unit-converter.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-units.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Unit converter","url":"https://www.aibudgettool.com/unit-converter.html","description":"Free instant unit converter for cm to inches, kg to lbs, MB to GB, km/h to mph, Celsius to Fahrenheit and more. Shows your value in every unit at once.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"AI Budget Tool","url":"https://www.aibudgettool.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.aibudgettool.com/#calculators"},{"@type":"ListItem","position":3,"name":"Unit converter","item":"https://www.aibudgettool.com/unit-converter.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many centimetres are in an inch?","acceptedAnswer":{"@type":"Answer","text":"Exactly 2.54 centimetres. To convert inches to cm, multiply by 2.54. To convert cm to inches, divide by 2.54."}},{"@type":"Question","name":"How do I convert kg to pounds?","acceptedAnswer":{"@type":"Answer","text":"Multiply kilograms by 2.20462. For example, 70 kg is about 154.3 lb."}},{"@type":"Question","name":"How many MB are in a GB?","acceptedAnswer":{"@type":"Answer","text":"1,000 MB in decimal units, which disk makers and internet providers use. In binary units, 1 GiB is 1,024 MiB."}},{"@type":"Question","name":"How do I convert Celsius to Fahrenheit?","acceptedAnswer":{"@type":"Answer","text":"Multiply by 9/5, then add 32. So 25 °C is 77 °F, and 37 °C is 98.6 °F."}},{"@type":"Question","name":"What is a knot?","acceptedAnswer":{"@type":"Answer","text":"A knot is one nautical mile per hour, about 1.852 km/h or 1.151 mph. It is used for ships and aircraft."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators" aria-current="page">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li aria-current="page">Unit converter</li></ol></nav><div class="wrap"><div class="intro"><h1>Unit converter</h1><p>Convert length, weight, data size, speed and temperature, and see your value in every unit at once.</p></div>
+
+<section class="instrument" aria-label="Unit converter">
+  <div class="controls">
+    <div class="field"><span class="lbl" id="catL">What are you converting?</span>
+      <div class="seg" role="group" aria-labelledby="catL">
+        <button type="button" data-c="length" aria-pressed="true">Length</button><button type="button" data-c="weight" aria-pressed="false">Weight</button><button type="button" data-c="data" aria-pressed="false">Data</button><button type="button" data-c="speed" aria-pressed="false">Speed</button><button type="button" data-c="temp" aria-pressed="false">Temperature</button>
+      </div></div>
+    <div class="field"><label for="val">Value</label><input id="val" type="number" inputmode="decimal" step="any" value="1"></div>
+    <div class="field"><label for="from">From</label><select id="from"></select></div>
+    <div style="display:flex;justify-content:center;margin:-10px 0">
+      <button class="btn btn-ghost" type="button" id="swap" aria-label="Swap units" style="min-height:38px;padding:6px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5"/></svg>Swap</button></div>
+    <div class="field"><label for="to">To</label><select id="to"></select></div>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div>
+      <div class="answer-label" id="lab">Result</div>
+      <div class="answer num"><span class="hl" id="out">–</span></div>
+      <div class="answer-sub" id="sub"></div>
+    </div>
+    <div><span class="lbl">The same value in every unit</span>
+      <div class="table-wrap" style="margin-top:8px"><table><tbody id="all"></tbody></table></div></div>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" id="shareBtn">Share this result</button>
+      <button class="btn btn-ghost" type="button" id="copyBtn">Copy result</button>
+    </div>
+  </div>
+</section>
+<div style="margin-top:18px"><span class="lbl" style="font-weight:600;margin-right:8px">Popular:</span><div class="chips" style="display:inline-flex;margin-top:8px"><a class="chip" href="?c=length&amp;f=cm&amp;t=in&amp;v=30">cm to inches</a><a class="chip" href="?c=length&amp;f=ft&amp;t=cm&amp;v=5.5">feet to cm</a><a class="chip" href="?c=length&amp;f=km&amp;t=mi&amp;v=10">km to miles</a><a class="chip" href="?c=weight&amp;f=kg&amp;t=lb&amp;v=70">kg to pounds</a><a class="chip" href="?c=weight&amp;f=lb&amp;t=kg&amp;v=150">pounds to kg</a><a class="chip" href="?c=data&amp;f=MB&amp;t=GB&amp;v=500">MB to GB</a><a class="chip" href="?c=data&amp;f=GB&amp;t=GiB&amp;v=256">GB to GiB</a><a class="chip" href="?c=speed&amp;f=km%2Fh&amp;t=mph&amp;v=100">km/h to mph</a><a class="chip" href="?c=temp&amp;f=C&amp;t=F&amp;v=37">Celsius to Fahrenheit</a></div></div>
+
+<section class="section" id="how-it-works">
+  <div class="two-col">
+    <div class="prose">
+      <h2>How the converter works</h2>
+      <p class="lede">Each value is first converted to one base unit (metres, kilograms, bytes or metres per second), then from the base unit to the unit you want. That keeps every pair exact and consistent.</p>
+      <ol class="steps">
+        <li>Your value × the "from" unit's size in the base unit.</li>
+        <li>That result ÷ the "to" unit's size in the base unit.</li>
+        <li>Temperature uses formulas instead, because 0 °C is not 0 °F.</li>
+      </ol>
+      <p>Data has two families of units. KB, MB and GB step up by 1000; KiB, MiB and GiB step up by 1024. That is why a "256 GB" phone shows about 238 GiB of space.</p>
+    </div>
+    <div class="example">
+      <h3>Handy conversions</h3>
+      <p>1 inch = <strong>2.54 cm</strong> exactly.</p>
+      <p>1 kg = <strong>2.2046 lb</strong>.</p>
+      <p>1 mile = <strong>1.609 km</strong>.</p>
+      <p>100 km/h = <strong>62.14 mph</strong>.</p>
+      <p>37 °C = <span class="hl"><strong>98.6 °F</strong></span>.</p>
+    </div>
+  </div>
+</section><section class="section" id="faq"><h2>Questions people ask</h2><div class="faq-list"><details class="faq"><summary>How many centimetres are in an inch?</summary><p>Exactly 2.54 centimetres. To convert inches to cm, multiply by 2.54. To convert cm to inches, divide by 2.54.</p></details><details class="faq"><summary>How do I convert kg to pounds?</summary><p>Multiply kilograms by 2.20462. For example, 70 kg is about 154.3 lb.</p></details><details class="faq"><summary>How many MB are in a GB?</summary><p>1,000 MB in decimal units, which disk makers and internet providers use. In binary units, 1 GiB is 1,024 MiB.</p></details><details class="faq"><summary>How do I convert Celsius to Fahrenheit?</summary><p>Multiply by 9/5, then add 32. So 25 °C is 77 °F, and 37 °C is 98.6 °F.</p></details><details class="faq"><summary>What is a knot?</summary><p>A knot is one nautical mile per hour, about 1.852 km/h or 1.151 mph. It is used for ships and aircraft.</p></details></div></section><section class="section"><h2>More free tools</h2><div class="related"><a href="/emi-calculator.html"><strong>EMI calculator</strong><span>What will my monthly loan payment be?</span></a><a href="/salary-calculator.html"><strong>Salary calculator</strong><span>What does my pay work out to per hour, month or year?</span></a><a href="/time-zone-converter.html"><strong>Time zone converter</strong><span>What time is it there when it's 7 PM here?</span></a><a href="/age-calculator.html"><strong>Age calculator</strong><span>How old am I exactly, and when is my next birthday?</span></a><a href="/data-transfer-calculator.html"><strong>Data transfer calculator</strong><span>How long will this file take to download or upload?</span></a></div></section></div></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
+      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
+<script>
+
+(function(){
+var A=ABT,$=function(i){return document.getElementById(i)};
+var U={"length": [["mm", "Millimetres", 0.001], ["cm", "Centimetres", 0.01], ["m", "Metres", 1], ["km", "Kilometres", 1000], ["in", "Inches", 0.0254], ["ft", "Feet", 0.3048], ["yd", "Yards", 0.9144], ["mi", "Miles", 1609.344], ["nmi", "Nautical miles", 1852]], "weight": [["mg", "Milligrams", 1e-06], ["g", "Grams", 0.001], ["kg", "Kilograms", 1], ["t", "Tonnes", 1000], ["oz", "Ounces", 0.028349523125], ["lb", "Pounds", 0.45359237], ["st", "Stone", 6.35029318]], "data": [["bit", "Bits", 0.125], ["B", "Bytes", 1], ["KB", "Kilobytes", 1000.0], ["MB", "Megabytes", 1000000.0], ["GB", "Gigabytes", 1000000000.0], ["TB", "Terabytes", 1000000000000.0], ["KiB", "Kibibytes", 1024], ["MiB", "Mebibytes", 1048576], ["GiB", "Gibibytes", 1073741824], ["TiB", "Tebibytes", 1099511627776]], "speed": [["m/s", "Metres per second", 1], ["km/h", "Kilometres per hour", 0.2777777777777778], ["mph", "Miles per hour", 0.44704], ["kn", "Knots", 0.5144444444444445], ["ft/s", "Feet per second", 0.3048]], "temp": [["C", "Celsius", null], ["F", "Fahrenheit", null], ["K", "Kelvin", null]]}, cat='length', val=$('val'), fromS=$('from'), toS=$('to');
+var DEF={length:['cm','in'],weight:['kg','lb'],data:['MB','GB'],speed:['km/h','mph'],temp:['C','F']};
+function fill(c){ cat=c; [fromS,toS].forEach(function(s){ s.innerHTML=''; U[c].forEach(function(u){ var o=document.createElement('option'); o.value=u[0]; o.textContent=u[1]+' ('+(c==='temp'?'°'+u[0]:u[0])+')'; s.appendChild(o); }); });
+  fromS.value=DEF[c][0]; toS.value=DEF[c][1];
+  document.querySelectorAll('[data-c]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===c?'true':'false');}); }
+function unit(k){ for(var i=0;i<U[cat].length;i++) if(U[cat][i][0]===k) return U[cat][i]; }
+function toBase(v,k){ if(cat!=='temp') return v*unit(k)[2]; if(k==='C') return v; if(k==='F') return (v-32)*5/9; return v-273.15; }
+function fromBase(v,k){ if(cat!=='temp') return v/unit(k)[2]; if(k==='C') return v; if(k==='F') return v*9/5+32; return v+273.15; }
+function nice(x){
+  if(!isFinite(x)) return '–'; if(x===0) return '0';
+  var a=Math.abs(x);
+  if(a>=1e15||a<1e-6) return x.toExponential(4).replace(/\.?0+e/,'e');
+  var s=a>=1000?x.toFixed(2):Number(x.toPrecision(7)).toString();
+  var p=s.split('.'); p[0]=Number(p[0]).toLocaleString('en-US'); if(p[1]){ p[1]=p[1].replace(/0+$/,''); }
+  return p[1]?p.join('.'):p[0];
+}
+function sym(k){ return cat==='temp'?'°'+k:k; }
+function calc(){
+  var v=parseFloat(val.value), f=fromS.value, t=toS.value;
+  if(!isFinite(v)){ $('out').textContent='–'; $('sub').textContent='Type a number to convert.'; return; }
+  var r=fromBase(toBase(v,f),t);
+  $('lab').textContent=nice(v)+' '+unit(f)[1].toLowerCase()+' equals';
+  $('out').textContent=nice(r)+' '+sym(t);
+  if(cat==='temp'){ $('sub').textContent = f==='C'&&t==='F'?'°F = °C × 9/5 + 32': f==='F'&&t==='C'?'°C = (°F − 32) × 5/9':'K = °C + 273.15';
+    if(toBase(v,f)< -273.15){ $('sub').textContent='That is colder than absolute zero (−273.15 °C, 0 K), which is physically impossible. Check the value.'; } }
+  else $('sub').textContent='1 '+sym(f)+' = '+nice(fromBase(toBase(1,f),t))+' '+sym(t);
+  $('all').innerHTML=U[cat].map(function(u){ return '<tr'+(u[0]===t?' style="background:var(--mark-t)"':'')+'><td>'+u[1]+'</td><td class="r">'+nice(fromBase(toBase(v,f),u[0]))+' '+sym(u[0])+'</td></tr>'; }).join('');
+  save();
+}
+var save=A.debounce(function(){ A.setParams({c:cat,f:fromS.value,t:toS.value,v:val.value}); },300);
+val.addEventListener('input',calc); [fromS,toS].forEach(function(s){s.addEventListener('change',calc);});
+document.querySelectorAll('[data-c]').forEach(function(b){ b.addEventListener('click',function(){ fill(b.dataset.c); calc(); }); });
+$('swap').addEventListener('click',function(){ var a=fromS.value; fromS.value=toS.value; toS.value=a; calc(); });
+function summary(){ return $('lab').textContent+' '+$('out').textContent; }
+$('shareBtn').addEventListener('click',function(){A.share(summary());});
+$('copyBtn').addEventListener('click',function(){ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(summary()).then(function(){A.toast('Result copied');});} else A.copy(summary()); });
+var q=A.params();
+fill(U[q.c]?q.c:'length');
+if(q.f&&unit(q.f)) fromS.value=q.f; if(q.t&&unit(q.t)) toS.value=q.t; if(q.v) val.value=q.v;
+calc();
+})();
+
+</script>
+</body>
+</html>

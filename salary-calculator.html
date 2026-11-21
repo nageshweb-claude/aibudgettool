@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salary Calculator: Hourly, Monthly, Yearly &amp; LPA</title>
+<meta name="description" content="Convert any salary between hourly, daily, weekly, monthly and yearly pay. Shows LPA for Indian salaries. 22 currencies, free and instant.">
+<link rel="canonical" href="https://www.aibudgettool.com/salary-calculator.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Salary Calculator: Hourly, Monthly, Yearly &amp; LPA">
+<meta property="og:description" content="Convert any salary between hourly, daily, weekly, monthly and yearly pay. Shows LPA for Indian salaries. 22 currencies, free and instant.">
+<meta property="og:url" content="https://www.aibudgettool.com/salary-calculator.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-salary.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Salary calculator","url":"https://www.aibudgettool.com/salary-calculator.html","description":"Convert any salary between hourly, daily, weekly, monthly and yearly pay. Shows LPA for Indian salaries. 22 currencies, free and instant.","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"AI Budget Tool","url":"https://www.aibudgettool.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.aibudgettool.com/#calculators"},{"@type":"ListItem","position":3,"name":"Salary calculator","item":"https://www.aibudgettool.com/salary-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert my monthly salary to yearly?","acceptedAnswer":{"@type":"Answer","text":"Multiply your monthly salary by 12. For example, ₹50,000 a month is ₹6,00,000 a year, which is 6 LPA."}},{"@type":"Question","name":"What does LPA mean?","acceptedAnswer":{"@type":"Answer","text":"LPA means lakh per annum: your yearly pay in lakhs of rupees. 1 lakh is 1,00,000, so 10 LPA is ₹10,00,000 a year before tax."}},{"@type":"Question","name":"How do I work out my hourly rate from a salary?","acceptedAnswer":{"@type":"Answer","text":"Divide your yearly salary by the hours you work in a year. For a 40-hour week that is yearly salary ÷ 2,080."}},{"@type":"Question","name":"Is this before or after tax?","acceptedAnswer":{"@type":"Answer","text":"Before tax. The calculator converts gross pay between time periods. Your take-home pay depends on income tax, provident fund and other deductions where you live."}},{"@type":"Question","name":"What if I work part-time or six days a week?","acceptedAnswer":{"@type":"Answer","text":"Move the hours and days sliders to match your schedule. The hourly and daily figures update instantly."}},{"@type":"Question","name":"Does the currency change the result?","acceptedAnswer":{"@type":"Answer","text":"No. The currency menu only changes the symbol and digit grouping. No exchange rate is applied."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators" aria-current="page">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li aria-current="page">Salary calculator</li></ol></nav><div class="wrap"><div class="intro"><h1>Salary calculator</h1><p>Turn an hourly, monthly or yearly figure into every other pay period, including LPA for salaries in India.</p></div>
+
+<section class="instrument" aria-label="Salary calculator">
+  <div class="controls">
+    <div class="field">
+      <div class="field-row"><label for="amt">Your pay</label>
+        <select id="cur" aria-label="Currency" style="width:auto;min-height:36px;padding:4px 30px 4px 10px;font-size:.9rem"></select></div>
+      <div class="amount-box"><span id="sym">₹</span><input id="amt" type="number" inputmode="decimal" min="0" step="any" value="60000"></div>
+      <div class="words" id="amtW"></div>
+    </div>
+    <div class="field"><span class="lbl" id="freqL">This amount is paid</span>
+      <div class="seg" role="group" aria-labelledby="freqL">
+        <button type="button" data-f="hour" aria-pressed="false">Per hour</button>
+        <button type="button" data-f="day" aria-pressed="false">Per day</button>
+        <button type="button" data-f="week" aria-pressed="false">Per week</button>
+        <button type="button" data-f="month" aria-pressed="true">Per month</button>
+        <button type="button" data-f="year" aria-pressed="false">Per year</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-row"><label for="hrs">Hours you work a week</label><span class="hint" id="hrsV"></span></div>
+      <input id="hrs" type="range" min="1" max="80" step="1" value="40">
+    </div>
+    <div class="field">
+      <div class="field-row"><label for="days">Days you work a week</label><span class="hint" id="daysV"></span></div>
+      <input id="days" type="range" min="1" max="7" step="0.5" value="5">
+    </div>
+    <p class="hint" style="margin:0">Figures are before tax and assume 52 paid weeks a year.</p>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div>
+      <div class="answer-label">Yearly income</div>
+      <div class="answer num"><span class="hl" id="yOut">–</span></div>
+      <div class="answer-sub" id="ySub"></div>
+    </div>
+    <dl class="stats">
+      <div class="stat"><dt>Per hour</dt><dd id="oH">–</dd></div>
+      <div class="stat"><dt>Per day</dt><dd id="oD">–</dd></div>
+      <div class="stat"><dt>Per week</dt><dd id="oW">–</dd></div>
+      <div class="stat key"><dt>Per month</dt><dd id="oM">–</dd></div>
+    </dl>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" id="shareBtn">Share this result</button>
+      <button class="btn btn-wa" type="button" id="waBtn">Send on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="how-it-works">
+  <div class="two-col">
+    <div class="prose">
+      <h2>How the conversion works</h2>
+      <p class="lede">Everything is first turned into a yearly figure, then divided back down. A year is counted as 52 working weeks.</p>
+      <ol class="steps">
+        <li><strong>Hourly to yearly:</strong> hourly rate × hours a week × 52.</li>
+        <li><strong>Monthly to yearly:</strong> monthly pay × 12.</li>
+        <li><strong>Yearly to daily:</strong> yearly pay ÷ (days a week × 52).</li>
+        <li><strong>Yearly to hourly:</strong> yearly pay ÷ (hours a week × 52).</li>
+      </ol>
+      <p>In India, salaries are often quoted as <strong>LPA</strong>, lakh per annum. ₹12 LPA means ₹12,00,000 a year before tax, or ₹1,00,000 a month.</p>
+    </div>
+    <div class="example">
+      <h3>Example</h3>
+      <p>You earn <strong>₹60,000 a month</strong> and work 40 hours over 5 days a week.</p>
+      <p>Yearly: ₹60,000 × 12 = <span class="hl"><strong>₹7,20,000</strong></span>, which is 7.2 LPA.</p>
+      <p>Hourly: ₹7,20,000 ÷ (40 × 52) = <strong>₹346</strong> an hour.</p>
+      <p><a href="?v=60000&amp;f=month&amp;h=40&amp;d=5&amp;c=INR">Load this example</a></p>
+    </div>
+  </div>
+</section>
+<section class="section" id="india-table">
+  <h2>Monthly salary to LPA and hourly pay</h2>
+  <p class="lede">Gross figures for a 5-day, 40-hour week.</p>
+  <div class="table-wrap"><table><thead><tr><th>Monthly salary</th><th class="r">Yearly</th><th class="r">LPA</th><th class="r">Per day</th><th class="r">Per hour</th></tr></thead><tbody><tr><td>₹20,000</td><td class="r">₹2,40,000</td><td class="r">2.4 LPA</td><td class="r">₹923</td><td class="r">₹115</td></tr><tr><td>₹30,000</td><td class="r">₹3,60,000</td><td class="r">3.6 LPA</td><td class="r">₹1,385</td><td class="r">₹173</td></tr><tr><td>₹50,000</td><td class="r">₹6,00,000</td><td class="r">6 LPA</td><td class="r">₹2,308</td><td class="r">₹288</td></tr><tr><td>₹75,000</td><td class="r">₹9,00,000</td><td class="r">9 LPA</td><td class="r">₹3,462</td><td class="r">₹433</td></tr><tr><td>₹1,00,000</td><td class="r">₹12,00,000</td><td class="r">12 LPA</td><td class="r">₹4,615</td><td class="r">₹577</td></tr><tr><td>₹1,50,000</td><td class="r">₹18,00,000</td><td class="r">18 LPA</td><td class="r">₹6,923</td><td class="r">₹865</td></tr><tr><td>₹2,00,000</td><td class="r">₹24,00,000</td><td class="r">24 LPA</td><td class="r">₹9,231</td><td class="r">₹1,154</td></tr></tbody></table></div>
+</section>
+<section class="section" id="hourly-table">
+  <h2>Hourly wage to yearly salary</h2>
+  <p class="lede">For a full-time 40-hour week, 52 weeks a year.</p>
+  <div class="table-wrap"><table><thead><tr><th>Hourly wage</th><th class="r">Yearly</th><th class="r">Monthly</th><th class="r">Weekly</th></tr></thead><tbody><tr><td>$15</td><td class="r">$31,200</td><td class="r">$2,600</td><td class="r">$600</td></tr><tr><td>$20</td><td class="r">$41,600</td><td class="r">$3,467</td><td class="r">$800</td></tr><tr><td>$25</td><td class="r">$52,000</td><td class="r">$4,333</td><td class="r">$1,000</td></tr><tr><td>$35</td><td class="r">$72,800</td><td class="r">$6,067</td><td class="r">$1,400</td></tr><tr><td>$50</td><td class="r">$104,000</td><td class="r">$8,667</td><td class="r">$2,000</td></tr><tr><td>$75</td><td class="r">$156,000</td><td class="r">$13,000</td><td class="r">$3,000</td></tr></tbody></table></div>
+</section>
+<section class="section" id="faq"><h2>Questions people ask</h2><div class="faq-list"><details class="faq"><summary>How do I convert my monthly salary to yearly?</summary><p>Multiply your monthly salary by 12. For example, ₹50,000 a month is ₹6,00,000 a year, which is 6 LPA.</p></details><details class="faq"><summary>What does LPA mean?</summary><p>LPA means lakh per annum: your yearly pay in lakhs of rupees. 1 lakh is 1,00,000, so 10 LPA is ₹10,00,000 a year before tax.</p></details><details class="faq"><summary>How do I work out my hourly rate from a salary?</summary><p>Divide your yearly salary by the hours you work in a year. For a 40-hour week that is yearly salary ÷ 2,080.</p></details><details class="faq"><summary>Is this before or after tax?</summary><p>Before tax. The calculator converts gross pay between time periods. Your take-home pay depends on income tax, provident fund and other deductions where you live.</p></details><details class="faq"><summary>What if I work part-time or six days a week?</summary><p>Move the hours and days sliders to match your schedule. The hourly and daily figures update instantly.</p></details><details class="faq"><summary>Does the currency change the result?</summary><p>No. The currency menu only changes the symbol and digit grouping. No exchange rate is applied.</p></details></div></section><section class="section"><h2>More free tools</h2><div class="related"><a href="/emi-calculator.html"><strong>EMI calculator</strong><span>What will my monthly loan payment be?</span></a><a href="/time-zone-converter.html"><strong>Time zone converter</strong><span>What time is it there when it's 7 PM here?</span></a><a href="/age-calculator.html"><strong>Age calculator</strong><span>How old am I exactly, and when is my next birthday?</span></a><a href="/data-transfer-calculator.html"><strong>Data transfer calculator</strong><span>How long will this file take to download or upload?</span></a><a href="/unit-converter.html"><strong>Unit converter</strong><span>How many inches, pounds, MB or mph is that?</span></a></div></section></div></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
+      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
+<script>
+
+(function(){
+var A=ABT,$=function(i){return document.getElementById(i)};
+var cur=$('cur'),amt=$('amt'),hrs=$('hrs'),days=$('days'),freq='month';
+A.fillCurrencySelect(cur,'INR');
+function setF(f){ freq=f; document.querySelectorAll('[data-f]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===f?'true':'false');}); }
+function calc(){
+  var c=cur.value,v=A.num(amt),h=+hrs.value,d=+days.value;
+  $('sym').textContent=A.cur(c)[1].trim(); $('hrsV').textContent=h+' hours'; $('daysV').textContent=d+' days';
+  var year;
+  if(freq==='hour') year=v*h*52; else if(freq==='day') year=v*d*52; else if(freq==='week') year=v*52; else if(freq==='month') year=v*12; else year=v;
+  $('amtW').textContent=A.words(v,c);
+  if(v<=0){ $('yOut').textContent='–'; $('ySub').textContent='Enter your pay to see every breakdown.'; return; }
+  var dig=function(x){return x<100?2:0;};
+  $('yOut').textContent=A.money(year,c);
+  $('ySub').textContent = c==='INR' ? 'That is '+(Math.round(year/1e5*100)/100)+' LPA (lakh per annum), before tax.' : 'Before tax, over 52 paid weeks.';
+  var hr=year/52/h, dy=year/52/d, wk=year/52, mo=year/12;
+  $('oH').textContent=A.money(hr,c,dig(hr)); $('oD').textContent=A.money(dy,c,dig(dy)); $('oW').textContent=A.money(wk,c); $('oM').textContent=A.money(mo,c);
+  save();
+}
+var save=A.debounce(function(){ A.setParams({v:A.num(amt),f:freq,h:hrs.value,d:days.value,c:cur.value}); },300);
+[amt,hrs,days].forEach(function(e){e.addEventListener('input',calc);});
+cur.addEventListener('change',calc);
+document.querySelectorAll('[data-f]').forEach(function(b){b.addEventListener('click',function(){setF(b.dataset.f);calc();});});
+function summary(){ return 'My pay works out to '+$('yOut').textContent+' a year, '+$('oM').textContent+' a month and '+$('oH').textContent+' an hour.'; }
+$('shareBtn').addEventListener('click',function(){A.share(summary());});
+$('waBtn').addEventListener('click',function(){A.whatsapp(summary());});
+var q=A.params();
+if(q.c&&A.cur(q.c)[0]===q.c) cur.value=q.c;
+if(q.v) amt.value=q.v; if(q.f&&/^(hour|day|week|month|year)$/.test(q.f)) setF(q.f);
+if(q.h) hrs.value=q.h; if(q.d) days.value=q.d;
+[hrs,days].forEach(A.paintRange);
+calc();
+})();
+
+</script>
+</body>
+</html>

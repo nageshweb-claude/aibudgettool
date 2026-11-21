@@ -1,141 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — AI Budget Tool</title>
-<meta name="description" content="AI Budget Tool is a free, no-login budget calculator supporting 50+ global currencies. No sign-up, no ads, just instant financial clarity.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#faf9ff;--bg2:#f3f1ff;--card:#ffffff;--border:#e8e4f7;
-  --accent:#7c3aed;--accent2:#4f46e5;--accent-light:#ede9fe;
-  --text:#1e1b2e;--text-muted:#6b6882;--text-light:#9994b0;
-  --radius:14px;--shadow:0 1px 3px rgba(124,58,237,0.06),0 4px 16px rgba(124,58,237,0.06);
-}
-body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:var(--text);overflow-x:hidden;}
-.container{max-width:780px;margin:0 auto;padding:0 16px 60px;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;border-bottom:1px solid var(--border);}
-.logo{font-size:15px;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.01em;}
-.nav-links{display:flex;gap:20px;}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--accent);}
-.page-hero{text-align:center;padding:40px 0 28px;}
-.page-hero h1{font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:-.02em;}
-.page-hero p{font-size:14px;color:var(--text-muted);max-width:520px;margin:0 auto;}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:16px;box-shadow:var(--shadow);}
-.section-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
-p{font-size:13.5px;color:var(--text-muted);line-height:1.8;margin-bottom:12px;}
-p:last-child{margin-bottom:0;}
-strong{color:var(--text);font-weight:600;}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:4px;}
-.feature-item{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
-.feature-icon{font-size:22px;margin-bottom:8px;}
-.feature-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
-.feature-desc{font-size:12px;color:var(--text-muted);line-height:1.6;}
-.tools-ticker{background:var(--accent-light);border:1px solid var(--border);border-radius:10px;padding:12px 16px;overflow:hidden;margin:8px 0;}
-.tools-ticker-inner{display:flex;gap:32px;animation:tickerScroll 18s linear infinite;white-space:nowrap;font-size:12px;color:var(--accent2);font-weight:500;}
-@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-item{display:flex;align-items:center;gap:6px;}
-.ticker-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;flex-shrink:0;}
-footer{text-align:center;padding:24px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:12px;}
-footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
-footer a:hover{color:var(--accent);}
-.footer-copy{margin-top:8px;font-size:11px;color:var(--text-light);}
-@media(max-width:600px){.card{padding:16px 18px;}.features-grid{grid-template-columns:1fr 1fr;}}
-</style>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About AI Budget Tool: Free Calculators and AI Guides</title>
+<meta name="description" content="Who runs AI Budget Tool, what the free calculators and AI guides offer, and how we keep results and AI facts accurate.">
+<link rel="canonical" href="https://www.aibudgettool.com/about.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="About AI Budget Tool: Free Calculators and AI Guides">
+<meta property="og:description" content="Who runs AI Budget Tool, what the free calculators and AI guides offer, and how we keep results and AI facts accurate.">
+<meta property="og:url" content="https://www.aibudgettool.com/about.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About AI Budget Tool","url":"https://www.aibudgettool.com/about.html","description":"Who runs AI Budget Tool, what the free calculators and AI guides offer, and how we keep results and AI facts accurate."}</script>
 </head>
 <body>
-<div class="container">
-  <nav>
-    <a href="index.html" class="logo">✦ AI Budget Tool</a>
-    <div class="nav-links">
-      <a href="index.html">Calculator</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <h1>About AI Budget Tool</h1>
-    <p>A free, fast, and private budget calculator built for everyone — no sign-up, no tracking, just clarity.</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html" aria-current="page">About</a>
+    </nav>
   </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">About AI Budget Tool</li></ol></nav>
+<article class="wrap article">
+  <h1>About AI Budget Tool</h1>
+  <p class="a-meta">Free calculators and AI guides, built in India.</p>
+  
+<div class="lead">AI Budget Tool is a free site with everyday calculators and plain-English guides to AI. Everything runs in your browser, with no sign-up.</div>
+<h2>Why this site exists</h2>
+<p>Most people search for the same small answers again and again: a loan EMI, what a salary works out to per month, what time it is for a colleague abroad. Many sites that answer them are slow, cluttered or ask for an account. This site answers them instantly and lets you share the result with one link.</p>
+<p>The AI side exists for the same reason. Students and working professionals are told to "learn AI" but rarely given a simple starting point. The guides, daily prompt wheel and quiz are that starting point.</p>
+<h2>What you can use here</h2>
+<ul><li><a href="/emi-calculator.html">EMI calculator</a>: what will my monthly loan payment be?</li><li><a href="/salary-calculator.html">Salary calculator</a>: what does my pay work out to per hour, month or year?</li><li><a href="/time-zone-converter.html">Time zone converter</a>: what time is it there when it's 7 PM here?</li><li><a href="/age-calculator.html">Age calculator</a>: how old am I exactly, and when is my next birthday?</li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a>: how long will this file take to download or upload?</li><li><a href="/unit-converter.html">Unit converter</a>: how many inches, pounds, MB or mph is that?</li>
+<li><a href="/ai-hub.html">AI hub</a>: a daily prompt wheel, a 250-question AI quiz, a 5-week beginner course, prompt engineering lessons, a monthly budget planner and a PDF and Word converter</li>
+<li><a href="/blog.html">AI guides</a>: short explainers on how AI works and which tools to use</li>
+</ul>
+<h2>How we keep things accurate</h2>
+<p>Calculator formulas are standard and shown on each page, with a worked example you can check. AI tools change quickly, so comparison pages show the date they were last checked and link to the official sources. If you spot a mistake, please <a href="/contact.html">tell us</a> and we will fix it.</p>
+<h2>Who runs it</h2>
+<p>AI Budget Tool is built and run by an independent developer based in India.</p>
+<h2>Privacy in one line</h2>
+<p>The numbers you type into a calculator stay on your device. The <a href="/privacy.html">privacy policy</a> explains exactly what is and isn't stored.</p>
 
-  <div class="card">
-    <div class="section-label">Our Mission</div>
-    <p><strong>AI Budget Tool</strong> was built with one simple goal — to give everyone, anywhere in the world, a fast and free way to understand their personal finances. Whether you're a student in India, a freelancer in Europe, or a professional in the US, managing your money should be simple and free.</p>
-    <p>Most budgeting apps require you to sign up, connect your bank account, or pay a subscription. We believe that's unnecessary for the basics. Enter your income, add your expenses, get your numbers — instantly, privately, without giving away your data.</p>
-    <p>We support <strong>50+ global currencies</strong> so this tool works for everyone, not just users in one country. Our savings analysis gives you smart, actionable feedback based on globally recognised personal finance benchmarks.</p>
-  </div>
-
-  <div class="card">
-    <div class="section-label">What We Offer</div>
-    <div class="features-grid">
-      <div class="feature-item">
-        <div class="feature-icon">💰</div>
-        <div class="feature-title">Budget Calculator</div>
-        <div class="feature-desc">Track income vs expenses and see your savings rate instantly.</div>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
       </div>
-      <div class="feature-item">
-        <div class="feature-icon">🌍</div>
-        <div class="feature-title">50+ Currencies</div>
-        <div class="feature-desc">Works in INR, USD, EUR, GBP, AED and 45+ more currencies.</div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">📱</div>
-        <div class="feature-title">Mobile Friendly</div>
-        <div class="feature-desc">Fully responsive — works perfectly on any phone or tablet.</div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🔒</div>
-        <div class="feature-title">100% Private</div>
-        <div class="feature-desc">No data stored, no sign-up. Your numbers stay on your device.</div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Instant Results</div>
-        <div class="feature-desc">Smart savings analysis with financial advice in real time.</div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🆓</div>
-        <div class="feature-title">Always Free</div>
-        <div class="feature-desc">No subscriptions, no hidden fees. Free forever.</div>
-      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
     </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
   </div>
-
-  <div class="card">
-    <div class="section-label">Coming Soon — More Tools</div>
-    <div class="tools-ticker">
-      <div class="tools-ticker-inner">
-        <span class="ticker-item"><span class="ticker-dot"></span>World Clock</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Age Calculator</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Currency Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>JPG → PNG Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>JPG → PDF Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Unit Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>IP Address Finder</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>World Clock</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Age Calculator</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Currency Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>JPG → PNG Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>JPG → PDF Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Unit Converter</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>IP Address Finder</span>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div>
-      <a href="index.html">Calculator</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
-  </footer>
-</div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
 </body>
 </html>

@@ -1,7 +1,43 @@
 {
   "redirects": [
-    { "source": "/blog.html", "destination": "/index.html", "permanent": true },
-    { "source": "/ai-tools.html", "destination": "/index.html", "permanent": true },
-    { "source": "/ai-wheel.html", "destination": "/index.html", "permanent": true }
+    {
+      "source": "/ai-tools.html",
+      "destination": "/ai-hub.html#compare",
+      "permanent": true
+    },
+    {
+      "source": "/ai-wheel.html",
+      "destination": "/ai-hub.html#wheel",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(site\\.css|site\\.js|favicon\\.svg|og-(.*)\\.png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
   ]
 }

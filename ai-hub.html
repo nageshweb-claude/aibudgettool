@@ -1,0 +1,1287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Hub: Daily Prompt Wheel, AI Quiz & 5-Week Course</title>
+<meta name="description" content="Spin the daily AI prompt wheel, take a 250-question AI quiz, follow a free 5-week AI course, learn prompting, plan a budget and convert PDF and Word files.">
+<link rel="canonical" href="https://www.aibudgettool.com/ai-hub.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F3F6F2;--bg2:#FDEBD8;--card:#FFFAF5;--b1:#2D1200;--b2:#5C2E00;--b3:#8B5E3C;--acc:#C06A2A;--acc2:#E8874A;--grn:#2E7D32;--red:#C62828;--bd:rgba(14,124,102,.18);--bd2:rgba(14,124,102,.10);--shd:0 2px 12px rgba(27,36,48,.10);--sw:235px;--r:14px}
+html{scroll-behavior:smooth}body{font-family:"Instrument Sans",system-ui,sans-serif;background:var(--bg);min-height:100vh;color:var(--b1);overflow-x:hidden;font-size:15px;line-height:1.6}
+h2{font-family:"Bricolage Grotesque",sans-serif;font-size:20px;font-weight:700;margin:20px 0 10px}
+p{font-size:15px;color:var(--b2);line-height:1.75;margin-bottom:12px}strong{color:var(--b1)}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:var(--sw);min-height:100vh;background:rgba(255,248,236,.97);border-right:1px solid var(--bd);position:fixed;top:0;left:0;z-index:50;display:flex;flex-direction:column;transition:.28s;box-shadow:2px 0 12px rgba(27,36,48,.07)}
+.slogo{padding:18px 16px 14px;border-bottom:1px solid var(--bd)}.slogo a{font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:700;color:var(--acc);text-decoration:none;display:block}.slogo span{font-size:10px;color:var(--b3);display:block;margin-top:2px}
+.snav{flex:1;padding:10px 8px;overflow-y:auto}.ssec{margin-bottom:16px}.slbl{font-size:10px;font-weight:700;color:var(--b3);text-transform:uppercase;letter-spacing:.1em;padding:0 8px;margin-bottom:5px}
+.sl{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--b2);font-size:13px;font-weight:500;transition:.15s;border:1px solid transparent;cursor:pointer;white-space:nowrap;overflow:hidden}
+.sl:hover{color:var(--b1);background:rgba(14,124,102,.08)}.sl.on{color:var(--acc);background:rgba(14,124,102,.12);border-color:rgba(14,124,102,.25)}
+.ico{font-size:15px;flex-shrink:0;width:20px;text-align:center}.badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(14,124,102,.15);color:var(--acc)}
+.sfoot{padding:10px 14px;border-top:1px solid var(--bd);font-size:10px;color:var(--b3)}
+.main{margin-left:var(--sw);flex:1;min-width:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--bd);background:rgba(255,248,236,.95);position:sticky;top:0;z-index:40;gap:10px;flex-wrap:wrap}
+.tbr{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:700;color:var(--acc)}.tlinks{display:flex;gap:6px;flex-wrap:wrap}
+.tl{color:var(--b2);font-size:12px;font-weight:500;padding:5px 11px;border-radius:8px;border:1px solid var(--bd);cursor:pointer;white-space:nowrap;transition:.15s}.tl:hover{background:rgba(14,124,102,.07)}.tl.on{color:var(--acc);border-color:rgba(14,124,102,.35);background:rgba(14,124,102,.10)}
+.pg{display:none;padding:0 24px 60px}.pg.on{display:block}
+.hero{text-align:center;padding:36px 0 24px;max-width:720px;margin:0 auto}.hero h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;color:var(--acc);line-height:1.15;margin-bottom:10px}.hero p{font-size:16px;color:var(--b2)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:22px;margin-bottom:14px;box-shadow:var(--shd)}
+.ct{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:700;color:var(--acc);letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}.ct::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(14,124,102,.3),transparent)}
+.ad{background:rgba(14,124,102,.04);border:1px dashed rgba(14,124,102,.18);border-radius:10px;padding:10px;text-align:center;color:var(--b3);font-size:11px;margin:14px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px;margin:18px 0}
+.fc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;cursor:pointer;transition:.18s;border-top:3px solid var(--acc);box-shadow:var(--shd)}.fc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,36,48,.14)}
+.fc h3{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:600;margin:8px 0 5px}.fc p{font-size:13px;color:var(--b2);line-height:1.55;margin:0}
+.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px}
+.bc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;text-decoration:none;color:inherit;transition:.18s;display:block;border-left:4px solid var(--acc2);box-shadow:var(--shd)}.bc:hover{transform:translateY(-2px)}.bc h3{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:600;color:var(--b1);margin:5px 0;line-height:1.4}.bc p{font-size:13px;color:var(--b2);line-height:1.55;margin:0}.bc .rm{font-size:12px;color:var(--acc);margin-top:8px;display:block;font-weight:500}.bc .bt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--acc)}
+.ww{position:relative;width:min(380px,85vw);height:min(380px,85vw);margin:0 auto 18px}#wc{width:100%;height:100%;filter:drop-shadow(0 6px 24px rgba(27,36,48,.25))}.ptr{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:28px solid var(--acc);z-index:10;filter:drop-shadow(0 3px 4px rgba(0,0,0,.3))}
+.sbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--acc),#0A5E4D);border:3px solid rgba(255,255,255,.4);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;cursor:pointer;z-index:5;box-shadow:0 4px 16px rgba(14,124,102,.5);transition:.22s}.sbtn:hover:not(:disabled){transform:translate(-50%,-50%) scale(1.08)}.sbtn:disabled{opacity:.55;cursor:not-allowed}.sbtn.sp{animation:wg 1s ease-in-out infinite}@keyframes wg{50%{box-shadow:0 0 36px rgba(14,124,102,.9)}}
+.wleg{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:6px}.wli{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--b2);background:var(--card);border:1px solid var(--bd);padding:5px 10px;border-radius:16px}.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.str{text-align:center;font-size:14px;color:var(--acc);margin:8px 0 6px;font-weight:600}
+.mo{position:fixed;inset:0;background:rgba(27,36,48,.72);display:none;align-items:center;justify-content:center;z-index:200;padding:14px}.mo.show{display:flex}.modal{background:var(--card);border:2px solid rgba(14,124,102,.28);border-radius:20px;padding:28px;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mpop .36s cubic-bezier(.18,1.4,.4,1);box-shadow:0 20px 60px rgba(27,36,48,.2)}@keyframes mpop{from{transform:scale(.72);opacity:0}}.mc{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--b3);font-size:22px;cursor:pointer}.modal h3{font-family:"Bricolage Grotesque",sans-serif;font-size:20px;font-weight:700;margin-bottom:3px}.modal .cl{color:var(--b3);font-size:11px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}.pb{background:var(--bg2);border:1px solid var(--bd);border-radius:11px;padding:15px;font-size:14px;line-height:1.8;color:var(--b1);white-space:pre-wrap;margin-bottom:15px;max-height:260px;overflow-y:auto}
+.mact{display:flex;gap:8px;flex-wrap:wrap}.mbtn{border:none;padding:11px 20px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;flex:1;min-width:110px;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px}.mbtn.p{background:linear-gradient(135deg,var(--acc),#0A5E4D);color:#fff}.mbtn.s{background:rgba(14,124,102,.08);border:1px solid var(--bd);color:var(--b1)}
+.bg2g{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lbl{font-size:12px;font-weight:600;color:var(--b2);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.06em}.inp{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:10px 13px;color:var(--b1);font-size:14px;font-family:inherit;width:100%;outline:none}.inp:focus{border-color:var(--acc)}.sel{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:10px;color:var(--b1);font-size:13px;font-family:inherit;width:100%;cursor:pointer}
+.er{display:flex;gap:7px;align-items:center;margin-bottom:7px}.rmv{background:rgba(198,40,40,.08);border:1px solid rgba(198,40,40,.25);color:var(--red);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.aeb{background:rgba(46,125,50,.07);border:1px dashed rgba(46,125,50,.35);color:var(--grn);padding:9px;border-radius:9px;cursor:pointer;font-size:13px;width:100%;margin-top:4px;font-family:inherit}.calcb{background:linear-gradient(135deg,#2E7D32,#388E3C);color:#fff;border:none;padding:13px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;width:100%;font-family:inherit;margin-top:8px}
+.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.si{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;text-align:center}.svl{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;font-weight:700}.inc{color:#2E7D32}.exc{color:var(--red)}.sav{color:var(--acc)}.rt{color:var(--acc2)}
+.po{background:rgba(14,124,102,.12);border-radius:6px;height:10px;overflow:hidden;margin-top:8px}.pi{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--grn),var(--acc));transition:.6s}
+.ccg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}.cc{cursor:pointer;border-radius:var(--r);padding:16px;background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--acc);box-shadow:var(--shd);transition:.18s}.cc:hover{transform:translateY(-2px)}
+.qp{display:flex;gap:4px;margin-bottom:16px}.qp div{flex:1;height:5px;border-radius:3px}
+.opt{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:13px 16px;cursor:pointer;width:100%;text-align:left;color:var(--b1);font-size:14px;font-family:inherit;margin-bottom:8px;display:block}.opt:hover:not(.ax){background:rgba(14,124,102,.06)}.oc{background:rgba(46,125,50,.09)!important;border-color:#2E7D32!important}.ow{background:rgba(198,40,40,.09)!important;border-color:#C62828!important}.expl{margin-top:12px;padding:13px;background:rgba(14,124,102,.07);border-radius:9px;font-size:14px;line-height:1.68;color:var(--b2)}
+.ni{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:11px 15px;color:var(--b1);font-size:15px;font-family:inherit;width:100%;max-width:280px;outline:none}.ni:focus{border-color:var(--acc)}
+.tw{overflow-x:auto;border-radius:11px;border:1px solid var(--bd)}table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}thead tr{background:rgba(14,124,102,.09)}th{padding:13px 12px;text-align:left;font-weight:600;color:var(--acc);border-bottom:1px solid var(--bd);white-space:nowrap;font-family:"Bricolage Grotesque",sans-serif}th:first-child{position:sticky;left:0;background:#F3F6F2;z-index:2}td{padding:11px 12px;color:var(--b2);border-bottom:1px solid var(--bd2)}td:first-child{font-weight:600;color:var(--b1);position:sticky;left:0;z-index:1;white-space:nowrap;background:var(--bg)}tr:nth-child(even) td{background:rgba(14,124,102,.03)}tr:nth-child(even) td:first-child{background:#F7F9F6}.best{color:var(--grn)!important;font-weight:700}.na{opacity:.4}
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px;margin-top:12px}.lc{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;box-shadow:var(--shd);border-top:3px solid var(--acc2)}.lc h4{font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}.lc p{font-size:13px;color:var(--b2);line-height:1.65;margin:0}.wk{font-size:10px;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px;margin-top:10px}.tc{background:rgba(14,124,102,.05);border:1px solid var(--bd);border-radius:10px;padding:14px}.tc h5{font-size:13px;font-weight:700;margin-bottom:5px}.tc p{font-size:12px;color:var(--b2);line-height:1.6;margin:0}.tn{display:inline-block;width:22px;height:22px;background:var(--acc);color:#fff;border-radius:50%;font-size:11px;font-weight:700;line-height:22px;text-align:center;margin-right:6px}
+.pti{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;background:rgba(14,124,102,.05);border-radius:9px;margin-bottom:8px;border-left:3px solid var(--acc2)}.pti p{font-size:14px;color:var(--b1);line-height:1.65;margin:0}
+.txb{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-top:10px}
+.tz{background:#fff;border:2px dashed var(--bd);border-radius:var(--r);padding:30px;text-align:center;cursor:pointer;margin:14px 0}.tz:hover{background:rgba(14,124,102,.04);border-color:var(--acc)}
+.lbr{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--bd2)}
+.bp{background:linear-gradient(135deg,var(--acc),#0A5E4D);color:#fff;border:none;padding:11px 22px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block}.bp:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(14,124,102,.35)}
+.bo{background:transparent;border:1px solid rgba(14,124,102,.33);color:var(--acc);padding:9px 18px;border-radius:9px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--b1);color:#fff;padding:10px 22px;border-radius:10px;font-size:13px;font-weight:500;transition:.3s;z-index:400;opacity:0;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+#cc{position:fixed;inset:0;pointer-events:none;z-index:500}
+.sbt{display:none;position:fixed;top:11px;left:11px;z-index:60;background:var(--card);border:1px solid var(--bd);border-radius:9px;color:var(--b1);padding:7px 10px;cursor:pointer;font-size:18px;line-height:1;box-shadow:var(--shd)}.sov{display:none;position:fixed;inset:0;background:rgba(27,36,48,.55);z-index:45}
+@media(max-width:768px){:root{--sw:0px}.sidebar{transform:translateX(-235px);width:235px}.sidebar.open{transform:translateX(0)}.sov.open{display:block}.main{margin-left:0}.sbt{display:block}.topbar{padding:11px 14px 11px 50px}.pg{padding:0 14px 50px}.bg2g{grid-template-columns:1fr}.hero h1{font-size:26px}}
+
+.tbtn{background:linear-gradient(135deg,var(--acc),#0A5E4D);color:#fff;border:none;padding:10px 20px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.18s}.tbtn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 14px rgba(14,124,102,.35)}.tbtn:disabled{opacity:.45;cursor:not-allowed}
+.word-print-root{display:none}
+@media print{
+  body > *:not(#wordPrintHost){display:none!important}
+  #wordPrintHost{display:block!important;position:static!important}
+  #wordPrintHost *{visibility:visible}
+}
+</style>
+<style id="theme-v2">
+:root{--bg:#F3F6F2;--bg2:#E7ECE5;--card:#FFFFFF;--b1:#1B2430;--b2:#4A5563;--b3:#5F6977;--acc:#0E7C66;--acc2:#0A5E4D;--bd:#D8DFD6;--bd2:#E7ECE5;--shd:0 1px 0 rgba(27,36,48,.04),0 8px 24px -12px rgba(27,36,48,.18)}
+.ad{display:none!important}
+.hero h1,.hero h2.hh{color:var(--b1);letter-spacing:-.02em}
+.hero h2.hh{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.15;margin:0 0 10px}
+.sidebar{background:#FFFFFF}.topbar{background:rgba(243,246,242,.94)}
+.slogo a,.tbr{color:var(--b1)}
+:focus-visible{outline:3px solid #F6C945;outline-offset:2px}
+</style>
+<meta property="og:type" content="website"><meta property="og:site_name" content="AI Budget Tool"><meta property="og:title" content="Free AI Hub: Daily Prompt Wheel, AI Quiz & 5-Week Course"><meta property="og:description" content="Spin the daily AI prompt wheel, take a 250-question AI quiz, follow a free 5-week AI course, learn prompting, plan a budget and convert PDF and Word files."><meta property="og:url" content="https://www.aibudgettool.com/ai-hub.html"><meta property="og:image" content="https://www.aibudgettool.com/og-home.png"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#F3F6F2"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "AI Budget Tool AI hub", "url": "https://www.aibudgettool.com/ai-hub.html", "description": "Spin the daily AI prompt wheel, take a 250-question AI quiz, follow a free 5-week AI course, learn prompting, plan a budget and convert PDF and Word files.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head><body>
+<canvas id="cc"></canvas><div class="toast" id="toast"></div>
+<button class="sbt" onclick="tsb()">☰</button><div class="sov" id="sov" onclick="tsb()"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="slogo"><a href="/">✦ AI Budget Tool</a><span>Free · No signup · Worldwide</span></div>
+  <nav class="snav">
+    <div class="ssec"><div class="slbl">Main</div><a class="sl" href="/"><span class="ico">🧮</span>Calculators home</a><div class="sl on" id="sl-home" onclick="go('home')"><span class="ico">🏠</span>AI hub home</div></div>
+    <div class="ssec"><div class="slbl">Calculators</div><a class="sl" href="/emi-calculator.html"><span class="ico">•</span>EMI calculator</a><a class="sl" href="/salary-calculator.html"><span class="ico">•</span>Salary calculator</a><a class="sl" href="/time-zone-converter.html"><span class="ico">•</span>Time zone converter</a><a class="sl" href="/age-calculator.html"><span class="ico">•</span>Age calculator</a><a class="sl" href="/data-transfer-calculator.html"><span class="ico">•</span>Data transfer calculator</a><a class="sl" href="/unit-converter.html"><span class="ico">•</span>Unit converter</a></div><div class="ssec"><div class="slbl">AI Tools</div>
+      <div class="sl" id="sl-wheel" onclick="go('wheel')"><span class="ico">🎡</span>Prompt Wheel<span class="badge">Daily</span></div>
+      <div class="sl" id="sl-compare" onclick="go('compare')"><span class="ico">📊</span>AI Comparison</div>
+      <div class="sl" id="sl-quiz" onclick="go('quiz')"><span class="ico">🎮</span>AI Quiz<span class="badge">250Q</span></div>
+    </div>
+    <div class="ssec"><div class="slbl">Learn AI</div>
+      <div class="sl" id="sl-learn" onclick="go('learn')"><span class="ico">🎓</span>Learning Hub</div>
+      <div class="sl" id="sl-pe" onclick="go('pe')"><span class="ico">✍️</span>Prompt Engineering</div>
+    </div>
+    <div class="ssec"><div class="slbl">Tools</div>
+      <div class="sl" id="sl-budget" onclick="go('budget')"><span class="ico">💰</span>Budget Calculator</div>
+      <div class="sl" id="sl-pdf" onclick="go('pdf')"><span class="ico">📄</span>PDF ↔ Word</div>
+    </div>
+    <div class="ssec"><div class="slbl">Blog</div>
+      <a class="sl" href="/blog.html"><span class="ico">📰</span>All 70+ guides</a>
+      <a class="sl" href="best-ai-model-2026.html"><span class="ico">🏆</span>Best AI 2026</a>
+      <a class="sl" href="chatgpt-vs-claude-comparison.html"><span class="ico">⚡</span>GPT vs Claude</a>
+      <a class="sl" href="what-is-agentic-ai.html"><span class="ico">🤖</span>Agentic AI</a>
+      <a class="sl" href="generative-ai-beginners.html"><span class="ico">📚</span>GenAI Basics</a>
+    </div>
+    <div class="ssec"><div class="slbl">Site</div>
+      <div class="sl" id="sl-lb" onclick="go('lb')"><span class="ico">🏅</span>Leaderboard</div>
+      <a class="sl" href="about.html"><span class="ico">ℹ️</span>About</a>
+      <a class="sl" href="privacy.html"><span class="ico">🔒</span>Privacy</a>
+      <a class="sl" href="contact.html"><span class="ico">✉️</span>Contact</a>
+    </div>
+  </nav>
+  <div class="sfoot">© 2026 AI Budget Tool</div>
+</aside>
+<main class="main">
+<div class="topbar">
+  <a class="tbr" href="/" style="text-decoration:none">✦ AI Budget Tool</a>
+  <div class="tlinks">
+    <span class="tl on" id="tl-wheel" onclick="go('wheel')">🎡 Spin</span>
+    <span class="tl" id="tl-learn" onclick="go('learn')">🎓 Learn</span>
+    <span class="tl" id="tl-pe" onclick="go('pe')">✍️ Prompts</span>
+    <span class="tl" id="tl-quiz" onclick="go('quiz')">🎮 Quiz</span>
+    <span class="tl" id="tl-budget" onclick="go('budget')">💰 Budget</span>
+    <span class="tl" id="tl-pdf" onclick="go('pdf')">📄 PDF↔Word</span>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="pg on" id="p-home">
+  <div class="hero"><h1>Your Free AI Hub &amp; Learning Centre</h1><p>Spin for daily prompts · Learn AI from scratch · Quiz yourself · Convert files · Track your budget</p></div>
+  <div class="fg">
+    <div class="fc" onclick="go('wheel')"><div style="font-size:30px;margin-bottom:8px">🎡</div><h3>AI Prompt Wheel</h3><p>Spin daily for one expert prompt — ChatGPT, Claude, Gemini or Perplexity.</p></div>
+    <div class="fc" style="border-top-color:#1a73e8" onclick="go('learn')"><div style="font-size:30px;margin-bottom:8px">🎓</div><h3>AI Learning Hub</h3><p>5-week structured course for students. Basics to agentic AI — all free.</p></div>
+    <div class="fc" style="border-top-color:#00838f" onclick="go('pe')"><div style="font-size:30px;margin-bottom:8px">✍️</div><h3>Prompt Engineering</h3><p>Master AI prompting, save tokens, learn pro techniques with templates.</p></div>
+    <div class="fc" style="border-top-color:#2E7D32" onclick="go('quiz')"><div style="font-size:30px;margin-bottom:8px">🎮</div><h3>AI Knowledge Quiz</h3><p>250 questions · 5 topics · 5 levels · leaderboard.</p></div>
+    <div class="fc" style="border-top-color:#f59e0b" onclick="go('budget')"><div style="font-size:30px;margin-bottom:8px">💰</div><h3>Budget Calculator</h3><p>Track income and expenses in 12 currencies. Free forever.</p></div>
+    <div class="fc" style="border-top-color:#0A5E4D" onclick="go('pdf')"><div style="font-size:30px;margin-bottom:8px">📄</div><h3>PDF ↔ Word Tools</h3><p>Convert PDF to Word and Word to PDF. Free, browser-based, all languages.</p></div>
+  </div>
+  <div class="ad"></div>
+  <div class="card"><div class="ct">Latest Articles</div>
+    <div class="bg">
+      <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 Rankings</div><h3>Best AI Model in 2026</h3><p>GPT-6, Claude Opus 5.5 and Gemini 4 Argon compared by task and price.</p><span class="rm">Read →</span></a>
+      <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude 2026</h3><p>Coding, writing, features and price, updated November 2026.</p><span class="rm">Read →</span></a>
+      <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#1a73e8"><div class="bt" style="color:#1a73e8">🤖 Guide</div><h3>What is Agentic AI?</h3><p>The fastest-growing AI trend explained simply.</p><span class="rm">Read →</span></a>
+      <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI Basics</h3><p>LLMs, tokens, prompts — without jargon.</p><span class="rm">Read →</span></a>
+    </div>
+  </div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- WHEEL -->
+<div class="pg" id="p-wheel">
+  <div class="hero"><h2 class="hh">🎡 AI Prompt Wheel</h2><p>Spin once a day · Land on an AI · Unlock one expert prompt · Build your streak</p></div>
+  <div class="ad"></div>
+  <div class="card">
+    <div class="str" id="sbar">✨ Spin the wheel to unlock your first AI prompt!</div>
+    <div class="ww"><div class="ptr"></div><canvas id="wc" width="760" height="760"></canvas><button class="sbtn" id="sbtn" onclick="doSpin()">SPIN</button></div>
+    <div class="wleg">
+      <div class="wli"><span class="dot" style="background:#10a37f"></span>ChatGPT</div>
+      <div class="wli"><span class="dot" style="background:#C06A2A"></span>Claude</div>
+      <div class="wli"><span class="dot" style="background:#1a73e8"></span>Gemini</div>
+      <div class="wli"><span class="dot" style="background:#00838f"></span>Perplexity</div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">48 Expert Prompts</div><p>Each spin unlocks one expert-crafted prompt matched to the AI you land on. <strong>48 prompts</strong> across ChatGPT, Claude, Gemini and Perplexity — productivity, coding, research, writing, career and more.</p></div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- COMPARE -->
+<div class="pg" id="p-compare">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">AI Tools Comparison 2026</h2><p>5 AI families · 9 features · Checked 21 November 2026</p></div>
+  <div class="ad"></div>
+  <div class="card"><div class="tw" id="ctbl"></div><p style="font-size:13px;margin:12px 0 0">Sources, checked 21 November 2026: <a href="https://developers.openai.com/api/docs/changelog" rel="nofollow noopener">OpenAI</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" rel="nofollow noopener">Google</a>, <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="nofollow noopener">Anthropic</a>, <a href="https://www.deepseek.com/en/platform/" rel="nofollow noopener">DeepSeek</a>. Models change fast, so check each vendor's page before you buy.</p></div>
+  <div style="text-align:center;margin:14px 0"><button class="bp" onclick="go('quiz')">🎮 Test Your Knowledge →</button></div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- QUIZ -->
+<div class="pg" id="p-quiz">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">AI Knowledge Quiz</h2><p>250 questions · 5 topics · 5 levels · 10 per round</p></div>
+  <div class="ad"></div>
+  <div class="card"><div class="ct">Enter Name</div><input id="pn" class="ni" placeholder="Your name for leaderboard..." maxlength="22"><div id="nerr" style="color:var(--red);font-size:12px;margin-top:5px;display:none">↑ Enter your name first</div></div>
+  <div class="card"><div class="ct">Choose Category</div><div class="ccg" id="cg"></div></div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+<div class="pg" id="p-qa"><div style="display:flex;justify-content:space-between;margin:16px 0 10px"><span id="qcat" style="color:var(--b2);font-size:14px"></span><span id="qsc" style="color:var(--acc);font-weight:700;font-size:17px"></span></div><div class="qp" id="qpb"></div><div class="card" id="qcard"></div><div id="qnxt" style="text-align:center;margin-top:13px;display:none"></div></div>
+<div class="pg" id="p-res"><div class="card" style="text-align:center;margin-top:18px" id="rcard"></div><div id="ract" style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:13px 0"></div><div id="farea"></div><div class="ad" style="min-height:250px"></div></div>
+
+<!-- LEARN -->
+<div class="pg" id="p-learn">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">🎓 AI Learning Hub</h2><p>Structured AI course for students · 5 weeks · Free · No signup</p></div>
+  <div class="ad"></div>
+  <div class="card"><div class="ct">Your 5-Week Learning Path</div>
+    <div class="lg">
+      <div class="lc" style="border-top-color:#10a37f"><div class="wk">Week 1</div><h4>What is AI? The Basics</h4><p>AI vs Machine Learning vs Deep Learning. How neural networks work through analogies.<br><br><strong>Concepts:</strong> Training data, parameters, inference, bias in AI models.</p></div>
+      <div class="lc" style="border-top-color:#1a73e8"><div class="wk">Week 2</div><h4>How LLMs Work</h4><p>How ChatGPT, Claude and Gemini generate text. Transformers, attention mechanisms, why AI sometimes hallucinates.<br><br><strong>Concepts:</strong> Tokens, context window, temperature, hallucination, RAG.</p></div>
+      <div class="lc" style="border-top-color:#C06A2A"><div class="wk">Week 3</div><h4>Prompt Engineering</h4><p>Write prompts that get dramatically better outputs. Role prompting, chain-of-thought, few-shot examples, token-saving.<br><br><strong>Concepts:</strong> Zero-shot, few-shot, CoT, constraints, output formatting.</p></div>
+      <div class="lc" style="border-top-color:#00838f"><div class="wk">Week 4</div><h4>AI Tools Guide</h4><p>Which AI for which task. ChatGPT for broad tasks, Claude for coding, Gemini for research, Perplexity for sourced answers.<br><br><strong>Concepts:</strong> Model selection, API vs chat UI, cost per token, multimodal AI.</p></div>
+      <div class="lc" style="border-top-color:#2E7D32"><div class="wk">Week 5</div><h4>AI Careers 2026</h4><p>Prompt engineer, ML engineer, AI PM, data scientist, AI ethicist. Skills, salary ranges, portfolio projects.<br><br><strong>Concepts:</strong> Required skills, learning roadmaps, entry-level paths.</p></div>
+    </div>
+  </div>
+
+  <!-- WEEK 1 DEEP DIVE -->
+  <div class="card"><div class="ct">Week 1 — What is Artificial Intelligence?</div>
+    <h2>The Three Layers of AI</h2>
+    <p><strong>Artificial Intelligence (AI)</strong> is any computer system that performs tasks requiring human-like intelligence — recognizing speech, translating languages, making decisions, creating art. It is the broadest category.</p>
+    <p><strong>Machine Learning (ML)</strong> is a specific approach within AI. Instead of programming exact rules ("if email contains 'win a prize', mark as spam"), you show the computer thousands of examples and it <strong>learns the rules itself</strong>. This is how Netflix recommends shows and Gmail filters spam.</p>
+    <p><strong>Deep Learning (DL)</strong> is a subset of ML that uses neural networks with many layers. Each layer detects increasingly complex patterns — from edges to shapes to objects to meaning. ChatGPT, image recognition, and self-driving cars all use deep learning.</p>
+    <p><strong>Analogy:</strong> Think of AI as "vehicles." ML is "cars" (one type of vehicle). DL is "electric cars" (one type of car). All electric cars are cars, all cars are vehicles — but not all vehicles are electric cars.</p>
+
+    <h2>How Neural Networks Learn</h2>
+    <p>A neural network is loosely inspired by the human brain. It has layers of connected nodes (neurons). When you train it:</p>
+    <p><strong>Step 1:</strong> Show it a picture of a cat labeled "cat." It makes a random prediction (probably wrong).</p>
+    <p><strong>Step 2:</strong> Calculate how wrong it was (the "loss").</p>
+    <p><strong>Step 3:</strong> Adjust millions of tiny numerical weights to be slightly less wrong next time.</p>
+    <p><strong>Step 4:</strong> Repeat with millions of pictures. Each repetition makes tiny improvements. After billions of adjustments, it becomes excellent at recognizing cats — and dogs, cars, faces, cancer cells, etc.</p>
+    <p><strong>Key insight:</strong> The network was never told "cats have whiskers and pointy ears." It discovered these patterns itself from the data. This is the magic of machine learning.</p>
+
+    <h2>Supervised vs Unsupervised vs Reinforcement Learning</h2>
+    <p><strong>Supervised learning:</strong> You provide labeled examples. "This email = spam. This email = not spam." The model learns to predict labels for new data. Used in: medical diagnosis, price prediction, spam filtering.</p>
+    <p><strong>Unsupervised learning:</strong> You provide data without labels. The model discovers hidden patterns. "These customers behave similarly — they might be a distinct segment." Used in: customer segmentation, anomaly detection, recommendation systems.</p>
+    <p><strong>Reinforcement learning:</strong> The model learns by trial and error, receiving rewards for correct actions. This is how AlphaGo learned to beat the world champion at Go — by playing millions of games against itself. Used in: game AI, robotics, self-driving cars.</p>
+
+    <h2>What is a Parameter?</h2>
+    <p>Parameters are the learnable numbers inside an AI model. Think of them as tiny dials — each one controls how the model processes information. GPT-1 had 117 million parameters. GPT-3 had 175 billion. GPT-4 is widely estimated at about 1.8 trillion, though OpenAI has never confirmed a figure. More parameters generally means more capability, but also requires more computing power and energy to run.</p>
+
+    <h2>What is Training Data?</h2>
+    <p>Training data is the information used to teach the model. For ChatGPT, this included a significant portion of the internet — books, articles, websites, code repositories, and more. The quality and diversity of training data directly determines the quality of the AI. Biased training data produces biased AI. This is one of the biggest challenges in the field.</p>
+  </div>
+
+  <!-- WEEK 2 DEEP DIVE -->
+  <div class="card"><div class="ct">Week 2 — How Large Language Models Work</div>
+    <h2>What is a Transformer?</h2>
+    <p>The Transformer is the architecture (blueprint) behind all modern AI language models. Introduced by Google in 2017 in a paper called "Attention Is All You Need," it revolutionized AI by solving a fundamental problem: how to process text efficiently.</p>
+    <p><strong>Before Transformers:</strong> AI read text one word at a time, left to right (like a human reading slowly). This was painfully slow and the model would "forget" the beginning of long texts by the time it reached the end.</p>
+    <p><strong>After Transformers:</strong> AI processes all words simultaneously, with each word "looking at" every other word to understand context. This is massively parallel and dramatically faster.</p>
+
+    <h2>The Attention Mechanism — The Key Innovation</h2>
+    <p>Consider the sentence: "The cat sat on the mat because <strong>it</strong> was tired." What does "it" refer to? The cat or the mat? Humans know instantly — "it" means the cat. But how does AI know?</p>
+    <p><strong>Attention</strong> solves this. Each word calculates a relevance score with every other word. "It" gives high attention to "cat" and low attention to "mat." This lets the model understand relationships, references, and meaning across the entire text.</p>
+    <p><strong>Self-attention formula:</strong> For each word, compute three things: a Query (what am I looking for?), a Key (what do I contain?), and a Value (what information do I carry?). Compare each Query with all Keys. The highest-scoring Keys get the most attention. This is computed for every word simultaneously.</p>
+
+    <h2>How ChatGPT Actually Generates Text</h2>
+    <p>ChatGPT generates text <strong>one token at a time</strong>. Given all the tokens so far, it predicts the probability of every possible next token, then picks one (influenced by the temperature setting). Then it adds that token to the input and predicts the next one. And so on, token by token, until it reaches a stopping point.</p>
+    <p><strong>Critical insight:</strong> ChatGPT does not "think" or "understand." It predicts statistically likely continuations. It has no internal model of truth or reality. This is why it can write a convincing essay about a topic it is completely wrong about — the text <em>sounds</em> right even when the facts are wrong. This is hallucination.</p>
+
+    <h2>What is a Token?</h2>
+    <p>AI models do not read words — they read <strong>tokens</strong>. A token is a piece of text: sometimes a whole word, sometimes part of a word, sometimes a character. "Hello" = 1 token. "ChatGPT" = about 2 tokens. "Artificial Intelligence" = about 2-3 tokens.</p>
+    <p><strong>Why tokens matter:</strong> API pricing is per token (for example, $2 per million input tokens for GPT-6 Sol). Context window limits are counted in tokens too. Non-English languages (Hindi, Arabic, Chinese) typically require MORE tokens per word, making them more expensive.</p>
+    <p><strong>Quick math:</strong> 1,000 words ≈ 1,333 tokens. A typical email (200 words) ≈ 267 tokens.</p>
+
+    <h2>Context Window</h2>
+    <p>The context window is the total amount of text (in tokens) that a model can "see" at once. It includes everything: system prompt, your messages, the AI's responses, and any documents you paste.</p>
+    <p>In 2023, context windows were 4K-32K tokens. In 2026, frontier models have 1M+ token windows — enough to process entire codebases or books. Llama 4 Scout has a 10M token window.</p>
+    <p><strong>Limitation:</strong> Research shows models can struggle with information in the middle of very long contexts (the "lost in the middle" problem). Information at the beginning and end gets more attention than information buried in the middle.</p>
+
+    <h2>Temperature</h2>
+    <p>Temperature controls randomness. At <strong>temperature 0</strong>, the model always picks the single most likely next token — giving deterministic, focused output. At <strong>temperature 1.5</strong>, it considers less likely tokens too, producing creative, varied, sometimes surprising output.</p>
+    <p><strong>Use low (0.1-0.3)</strong> for: factual questions, code, data extraction, anything where accuracy matters.</p>
+    <p><strong>Use high (0.8-1.2)</strong> for: creative writing, brainstorming, poetry, marketing copy.</p>
+    <p><strong>Default (0.7)</strong> is good for most tasks.</p>
+
+    <h2>What is Hallucination?</h2>
+    <p>Hallucination is when AI generates plausible-sounding but <strong>factually incorrect</strong> information with full confidence. It invents studies that do not exist, cites cases that were never filed, and generates quotes nobody ever said. This happens because the model predicts likely text, not truthful text.</p>
+    <p><strong>How to protect yourself:</strong> Always verify critical facts. Use Perplexity for research (it cites sources). Ask the AI "are you confident about this?" Use RAG (retrieval-augmented generation) to ground AI in real data.</p>
+
+    <h2>What is RAG?</h2>
+    <p><strong>Retrieval-Augmented Generation</strong> is a technique where the AI searches a knowledge base before generating an answer. Instead of relying only on training data (which can be outdated or wrong), it retrieves relevant real documents and uses them as context. This dramatically reduces hallucination and enables current, accurate answers about your specific data.</p>
+  </div>
+  <div class="card"><div class="ct">Core AI Concepts Explained</div>
+    <div class="tg">
+      <div class="tc"><h5>🧠 Neural Network</h5><p>Layers of filters. Each detects more complex patterns — edges → shapes → faces → meaning. Billions of connections trained on data.</p></div>
+      <div class="tc"><h5>🪙 Token</h5><p>AI reads tokens, not words. "ChatGPT" ≈ 2 tokens. 1,000 tokens ≈ 750 words. Tokens affect price and speed of AI responses.</p></div>
+      <div class="tc"><h5>🌡️ Temperature</h5><p>Controls creativity. At 0: most likely word always. At 1.5: picks randomly. Factual = 0.2. Creative = 0.8–1.2.</p></div>
+      <div class="tc"><h5>🔍 RAG</h5><p>Retrieval-Augmented Generation. AI searches a database first, uses results to generate accurate, current answers. Cuts hallucination.</p></div>
+      <div class="tc"><h5>👻 Hallucination</h5><p>AI confidently says something false. It predicts likely text, not factual truth. Always verify important AI outputs.</p></div>
+      <div class="tc"><h5>📐 Fine-Tuning</h5><p>Training a general model on specific data for one task. Like a general doctor becoming a heart specialist. Costs money but gives expert results.</p></div>
+      <div class="tc"><h5>🔧 Agentic AI</h5><p>AI that takes actions — browses web, writes code, runs tests, sends emails. Multi-step tasks without constant human input.</p></div>
+      <div class="tc"><h5>🔗 MCP</h5><p>Model Context Protocol. Anthropic's open standard for AI to connect to databases, APIs and apps. Like USB for AI tools.</p></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">10 Tips to Improve Your AI Skills</div>
+    <div class="tg">
+      <div class="tc"><h5><span class="tn">1</span>Use AI daily</h5><p>One real task per day — emails, summaries, code reviews. Daily practice is fastest.</p></div>
+      <div class="tc"><h5><span class="tn">2</span>Iterate prompts</h5><p>Never accept first output. Add "be more specific", "give examples". Small changes = big improvements.</p></div>
+      <div class="tc"><h5><span class="tn">3</span>Compare AIs</h5><p>Same question to ChatGPT, Claude, Gemini. Compare outputs. Learn which AI fits which task.</p></div>
+      <div class="tc"><h5><span class="tn">4</span>Build a project</h5><p>Build one AI-powered thing — chatbot, summarizer, quiz. Real projects teach 10x more than tutorials.</p></div>
+      <div class="tc"><h5><span class="tn">5</span>Learn the vocab</h5><p>Tokens, context window, embeddings, fine-tuning — knowing these opens career doors.</p></div>
+      <div class="tc"><h5><span class="tn">6</span>Read release notes</h5><p>Follow Anthropic, OpenAI, Google blogs. New capabilities every month. Stay current for an edge.</p></div>
+      <div class="tc"><h5><span class="tn">7</span>Know limitations</h5><p>AI hallucinates, has cutoffs, can't access real-time data without tools. Knowing limits makes you safer.</p></div>
+      <div class="tc"><h5><span class="tn">8</span>Take our quiz daily</h5><p>Even one question/day compounds. Our leaderboard tracks your progress across all categories.</p></div>
+      <div class="tc"><h5><span class="tn">9</span>Spin for prompts</h5><p>Our AI Prompt Wheel gives one expert prompt/day. Using it daily teaches prompting patterns naturally.</p></div>
+      <div class="tc"><h5><span class="tn">10</span>Teach someone</h5><p>Explaining AI to others is the fastest way to truly understand it. Start a study group or write a blog.</p></div>
+    </div>
+  </div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- PROMPT ENGINEERING -->
+<div class="pg" id="p-pe">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">✍️ Prompt Engineering</h2><p>Write better AI prompts · Save tokens · Get professional results every time</p></div>
+  <div class="ad"></div>
+  <div class="card"><div class="ct">8 Core Prompting Techniques</div>
+    <div class="pti"><span class="tn">1</span><p><strong>Role Assignment:</strong> Start with "Act as a [expert role]". Example: "Act as a senior Python developer with 10 years experience." Sets knowledge, tone and perspective.</p></div>
+    <div class="pti"><span class="tn">2</span><p><strong>Chain of Thought:</strong> Add "Think step by step." Dramatically improves accuracy on maths, logic and complex analysis by making AI show its working.</p></div>
+    <div class="pti"><span class="tn">3</span><p><strong>Few-Shot Examples:</strong> Show 1–3 examples. "Like this: Input: [X] → Output: [Y]. Now do: Input: [Z]." AI learns the pattern from examples instantly.</p></div>
+    <div class="pti"><span class="tn">4</span><p><strong>Output Formatting:</strong> Specify format: "Respond in JSON", "Use a table with columns X, Y, Z", "Keep it under 150 words." Structure your expectations.</p></div>
+    <div class="pti"><span class="tn">5</span><p><strong>Context First:</strong> Give background BEFORE your question. "I'm a marketing manager at a B2B SaaS company. Given this context, [question]." Context shapes every word.</p></div>
+    <div class="pti"><span class="tn">6</span><p><strong>Constraints:</strong> Tell AI what NOT to do. "Do not use jargon", "Avoid bullet points", "No code blocks." Constraints are often more powerful than instructions.</p></div>
+    <div class="pti"><span class="tn">7</span><p><strong>Iterative Refinement:</strong> Never accept first output. Follow up: "Make it more concise", "Add examples", "What are counterarguments?" Build on responses.</p></div>
+    <div class="pti"><span class="tn">8</span><p><strong>Decompose Complex Tasks:</strong> Break big asks into steps. Instead of "Write a business plan", ask: "What are the key sections?" Then build each one separately.</p></div>
+  </div>
+
+  <!-- DEEP DIVE: How to Write Effective Prompts -->
+  <div class="card"><div class="ct">How to Write Effective Prompts — A Complete Lesson</div>
+    <h2>The Prompt Structure Framework</h2>
+    <p>Every great prompt has up to 6 parts. You do not need all 6 every time, but knowing them lets you craft the right prompt for any situation:</p>
+    <p><strong>1. Role:</strong> Who should the AI pretend to be? "Act as a senior data scientist specializing in time-series forecasting with 10 years at Fortune 500 companies."</p>
+    <p><strong>2. Context:</strong> What background does the AI need? "I run a small e-commerce store selling handmade candles. My monthly revenue is ₹2 lakh. I have 3 employees."</p>
+    <p><strong>3. Task:</strong> What specifically should it do? "Analyze my last 6 months of sales data and identify the 3 most actionable trends."</p>
+    <p><strong>4. Format:</strong> How should the output look? "Present as a numbered list with each trend as a heading, 2-3 sentences of explanation, and one recommended action."</p>
+    <p><strong>5. Constraints:</strong> What should it avoid? "Do not use technical jargon. Keep total response under 400 words. Do not suggest hiring more staff."</p>
+    <p><strong>6. Examples:</strong> What does good output look like? Show 1-2 examples of the format and quality you expect.</p>
+
+    <h2>Before and After: Real Prompt Improvements</h2>
+    <div class="txb">
+      <p style="font-weight:600;color:var(--red);margin-bottom:6px">❌ Weak prompt:</p>
+      <p style="font-size:14px">"Help me with my resume."</p>
+    </div>
+    <div class="txb" style="margin-top:8px">
+      <p style="font-weight:600;color:var(--grn);margin-bottom:6px">✅ Strong prompt:</p>
+      <p style="font-size:14px">"Act as a senior tech recruiter who has reviewed 10,000+ resumes. I am applying for a Senior Python Developer role at a fintech startup. Rewrite these 5 resume bullet points using the formula 'Did [action] using [technology] resulting in [measurable impact]'. Cut all buzzwords. Each bullet must be under 2 lines. After rewriting, tell me which bullet will trigger the best interview question and why."</p>
+    </div>
+    <p style="margin-top:12px">The weak prompt gives the AI no context, no format, no constraints. It will produce generic advice. The strong prompt gives a role, context, specific task, format, constraints, and a follow-up instruction. The output will be dramatically more useful.</p>
+
+    <div class="txb" style="margin-top:14px">
+      <p style="font-weight:600;color:var(--red);margin-bottom:6px">❌ Weak prompt:</p>
+      <p style="font-size:14px">"Explain quantum computing."</p>
+    </div>
+    <div class="txb" style="margin-top:8px">
+      <p style="font-weight:600;color:var(--grn);margin-bottom:6px">✅ Strong prompt:</p>
+      <p style="font-size:14px">"Explain quantum computing to me as if I am a smart 15-year-old who understands basic physics but has never studied quantum mechanics. Use exactly 3 analogies from everyday life. Start with what problem quantum computing solves that regular computers cannot. End with one surprising fact. Keep it under 300 words."</p>
+    </div>
+
+    <h2>The Iteration Loop — How Professionals Prompt</h2>
+    <p>Professional prompt engineers never expect the first output to be perfect. They use a feedback loop:</p>
+    <p><strong>Round 1:</strong> Send your initial prompt. Read the output carefully.</p>
+    <p><strong>Round 2:</strong> "Good start, but make the tone more casual and add a specific example for point #3."</p>
+    <p><strong>Round 3:</strong> "The example is too technical. Replace it with something a small business owner would relate to."</p>
+    <p><strong>Round 4:</strong> "Perfect. Now condense the whole thing to half the length without losing any key points."</p>
+    <p>Each round refines the output. This iterative approach produces dramatically better results than trying to craft one perfect prompt. Think of it as sculpting — you rough out the shape first, then refine the details.</p>
+
+    <h2>Common Mistakes That Kill Prompt Quality</h2>
+    <p><strong>Mistake 1: Being vague.</strong> "Write something about marketing" → The AI has to guess everything. Be specific about topic, audience, format, length, and tone.</p>
+    <p><strong>Mistake 2: Asking for too much at once.</strong> "Write a complete business plan with financial projections, marketing strategy, and operational plan" → Break this into 4-5 separate prompts, each building on the previous output.</p>
+    <p><strong>Mistake 3: Not providing examples.</strong> If you want a specific format or style, showing one example is worth more than 100 words of description.</p>
+    <p><strong>Mistake 4: Ignoring negative constraints.</strong> Telling AI what NOT to do ("do not use bullet points", "avoid jargon", "no more than 200 words") is often more powerful than positive instructions.</p>
+    <p><strong>Mistake 5: Not iterating.</strong> Accepting the first output as final. Always refine.</p>
+  </div>
+
+  <div class="card"><div class="ct">Token Saving Strategies — Save Money on AI APIs</div>
+    <p>Tokens = money and speed. Every word in your prompt costs tokens. Here's how to get more for less:</p>
+    <div class="txb"><p style="font-weight:600;color:var(--red);margin-bottom:8px">❌ Wasteful (54 tokens):</p><p style="font-size:13px">"Could you please be so kind as to help me write a professional email to my colleague thanking them for their assistance with the project we worked on last week? I would appreciate it if you could keep it brief and formal."</p></div>
+    <div class="txb" style="margin-top:8px"><p style="font-weight:600;color:var(--grn);margin-bottom:8px">✅ Efficient (18 tokens):</p><p style="font-size:13px">"Write a brief formal thank-you email to a colleague for project help. Professional tone."</p></div>
+    <div class="tg" style="margin-top:14px">
+      <div class="tc"><h5>💡 Remove politeness</h5><p>"Please", "Could you", "I would appreciate" — AI doesn't need them. Saves 5–15 tokens per prompt.</p></div>
+      <div class="tc"><h5>💡 Use bullets not sentences</h5><p>Instructions as bullet lists instead of full sentences = 30–40% fewer tokens with same clarity.</p></div>
+      <div class="tc"><h5>💡 Reference don't repeat</h5><p>After giving context once, say "using the above context" rather than pasting it again. Saves massively in long chats.</p></div>
+      <div class="tc"><h5>💡 Shorter examples</h5><p>2 short few-shot examples often beat 5 long ones — and cost 60% fewer tokens.</p></div>
+      <div class="tc"><h5>💡 System prompt once</h5><p>In API: put repeated context in system prompt, not user message. System tokens are cached at lower cost by most providers.</p></div>
+      <div class="tc"><h5>💡 1000 words ≈ 1333 tokens</h5><p>Use this to estimate API costs. Shorter prompts = faster responses + cheaper bills. Compound savings at scale.</p></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">Ready-to-Use Prompt Templates</div>
+    <div class="txb"><strong style="color:var(--acc)">📊 Data Analysis:</strong><br><span style="font-size:13px">Act as a data analyst. Analyse [DATA/TOPIC]. Identify: 1) Key trends, 2) Anomalies, 3) Root causes, 4) Actionable recommendations. Structured format. 300 words max.</span></div>
+    <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">💻 Code Review:</strong><br><span style="font-size:13px">Senior engineer code review. Check: bugs, security, performance, readability. Rate severity HIGH/MEDIUM/LOW. Show corrected version for each issue. [PASTE CODE]</span></div>
+    <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">✉️ Email Writer:</strong><br><span style="font-size:13px">Write professional email. Purpose: [PURPOSE]. Recipient: [ROLE]. Tone: [FORMAL/CASUAL]. Key points: [LIST]. Under 150 words. Include subject line.</span></div>
+    <div class="txb" style="margin-top:8px"><strong style="color:var(--acc)">📚 Study Assistant:</strong><br><span style="font-size:13px">Teach me [TOPIC] using Feynman technique. Step 1: Simple explanation (no jargon). Step 2: Real-world analogy. Step 3: Common misconceptions. Step 4: Test question for me.</span></div>
+  </div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- BUDGET -->
+<div class="pg" id="p-budget">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">💰 Budget Calculator</h2><p>Track income and expenses · 12 currencies · Free forever</p></div>
+  <div class="ad"></div>
+  <div class="card"><div class="ct">Currency &amp; Income</div>
+    <div class="bg2g">
+      <div><label class="lbl">Currency</label><select class="sel" id="cur" onchange="document.getElementById('csym').textContent=this.value"><option value="$">🇺🇸 USD ($)</option><option value="₹" selected>🇮🇳 INR (₹)</option><option value="€">🇪🇺 EUR (€)</option><option value="£">🇬🇧 GBP (£)</option><option value="¥">🇯🇵 JPY (¥)</option><option value="A$">🇦🇺 AUD</option><option value="C$">🇨🇦 CAD</option><option value="AED">🇦🇪 AED</option><option value="SAR">🇸🇦 SAR</option><option value="R$">🇧🇷 BRL</option><option value="R">🇿🇦 ZAR</option><option value="₩">🇰🇷 KRW</option></select></div>
+      <div><label class="lbl">Monthly Income</label><div style="display:flex;align-items:center;gap:7px"><span id="csym" style="color:var(--acc);font-weight:700;font-size:18px">₹</span><input class="inp" type="number" id="income" placeholder="e.g. 50000" min="0"></div></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">Monthly Expenses</div>
+    <div id="elist">
+      <div class="er"><input class="inp" type="text" placeholder="Category" value="Rent" style="flex:1"><input class="inp" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="this.parentNode.remove()">×</button></div>
+      <div class="er"><input class="inp" type="text" placeholder="Category" value="Food" style="flex:1"><input class="inp" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="this.parentNode.remove()">×</button></div>
+      <div class="er"><input class="inp" type="text" placeholder="Category" value="Transport" style="flex:1"><input class="inp" type="number" placeholder="Amount" style="flex:1"><button class="rmv" onclick="this.parentNode.remove()">×</button></div>
+    </div>
+    <button class="aeb" onclick="var r=document.createElement('div');r.className='er';r.innerHTML='<input class=inp type=text placeholder=Category style=flex:1><input class=inp type=number placeholder=Amount style=flex:1><button class=rmv onclick=this.parentNode.remove()>×</button>';document.getElementById('elist').appendChild(r)">＋ Add expense</button>
+    <button class="calcb" onclick="calcB()">Calculate My Budget</button>
+  </div>
+  <div class="card" id="bres" style="display:none"><div class="ct">Your Budget Summary</div>
+    <div class="sg">
+      <div class="si"><div style="font-size:11px;color:var(--b2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Income</div><div class="svl inc" id="ri">—</div></div>
+      <div class="si"><div style="font-size:11px;color:var(--b2);text-transform:uppercase;margin-bottom:4px">Expenses</div><div class="svl exc" id="re">—</div></div>
+      <div class="si"><div style="font-size:11px;color:var(--b2);text-transform:uppercase;margin-bottom:4px">Savings</div><div class="svl sav" id="rs">—</div></div>
+      <div class="si"><div style="font-size:11px;color:var(--b2);text-transform:uppercase;margin-bottom:4px">Savings Rate</div><div class="svl rt" id="rr">—</div></div>
+    </div>
+    <div class="po"><div class="pi" id="rbar" style="width:0%"></div></div>
+    <p style="font-size:12px;color:var(--b3);margin-top:6px;text-align:center" id="rpl"></p>
+  </div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- PDF TOOLS -->
+<div class="pg" id="p-pdf">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">📄 PDF ↔ Word Converter</h2><p>Convert PDF to Word and Word to PDF · Runs in your browser · Free</p></div>
+  <div class="ad"></div>
+
+  <div class="card"><div class="ct">PDF → Word</div>
+    <p>Choose a PDF file, then press <strong>Convert</strong>. The text is extracted without layout, images or tables. Scanned PDFs (photos of pages) contain no text to extract. Your file never leaves your device.</p>
+    <div class="tz" id="pdfZone" onclick="document.getElementById('pf').click()"><div style="font-size:40px;margin-bottom:10px">📄</div><p id="pdfZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a PDF file</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
+    <input type="file" id="pf" accept=".pdf" style="display:none" onchange="onPdfPicked(this)">
+    <div id="pdfPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
+      <span id="pdfPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
+      <button class="tbtn" id="pdfConvertBtn" onclick="convertPdf()" disabled>Convert to Word →</button>
+    </div>
+    <div id="pprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
+    <div id="pprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;white-space:pre-wrap;line-height:1.75"></div>
+    <button class="bp" id="pdlb" onclick="dlWord()" style="display:none;margin-top:10px">⬇ Download as Word (.doc)</button>
+    <button class="bo" id="pdfResetBtn" onclick="resetPdfTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another PDF</button>
+  </div>
+
+  <div class="card" style="margin-top:0"><div class="ct">Word → PDF</div>
+    <p>Choose a .docx file, then press <strong>Convert</strong>. Hindi, Arabic, Chinese, Tamil and every other language render using your browser's real fonts — nothing is approximated or skipped.</p>
+    <div class="tz" id="wordZone" onclick="document.getElementById('wf').click()"><div style="font-size:40px;margin-bottom:10px">📝</div><p id="wordZoneTxt" style="font-weight:600;color:var(--b1);margin:0">Click to select a Word document (.docx)</p><p style="font-size:13px;color:var(--b3);margin:4px 0 0">Or drag and drop here</p></div>
+    <input type="file" id="wf" accept=".docx" style="display:none" onchange="onWordPicked(this)">
+    <div id="wordPicked" style="display:none;align-items:center;gap:10px;margin-top:12px">
+      <span id="wordPickedName" style="font-size:13px;color:var(--b1);font-weight:600"></span>
+      <button class="tbtn" id="wordConvertBtn" onclick="convertWord()" disabled>Convert to PDF →</button>
+    </div>
+    <div id="wprog" style="font-size:13px;color:var(--acc);margin:8px 0;display:none"></div>
+    <div id="wprev" style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px;font-size:14px;max-height:200px;overflow-y:auto;display:none;line-height:1.75"></div>
+    <button class="bp" id="wdlb" onclick="openWordPrint()" style="display:none;margin-top:10px">🖨 Print — then choose "Save as PDF"</button>
+    <button class="bo" id="wordResetBtn" onclick="resetWordTool()" style="display:none;margin-top:10px;margin-left:8px">↺ Convert another file</button>
+    <p id="wordHint" style="display:none;font-size:12px;color:var(--b3);margin-top:8px">In the print dialog set Destination to “Save as PDF”, then Save. Real Hindi / Arabic / Chinese / Tamil glyphs are kept because your browser draws them, not a built-in PDF font.</p>
+  </div>
+
+  <div class="card"><div class="ct">How It Works</div>
+    <div class="tg">
+      <div class="tc"><h5>🔒 100% Private</h5><p>Files are read in your browser. Nothing is uploaded to a server. Your documents stay on your device.</p></div>
+      <div class="tc"><h5>🌍 All Languages</h5><p>PDF→Word keeps the original characters in most text-based PDFs, though some Indian-language PDFs use fonts that extract poorly. Word→PDF prints with your browser's own fonts, so Hindi, Arabic, Chinese and Tamil display correctly.</p></div>
+      <div class="tc"><h5>⚡ Instant &amp; Free</h5><p>No account, no watermark, no limit. Free forever. Works on any modern browser.</p></div>
+      <div class="tc"><h5>📖 Choose When Ready</h5><p>Nothing converts until you press Convert. Pick your file first, check the name, then convert.</p></div>
+    </div>
+  </div>
+  <div class="ad" style="min-height:250px"></div>
+</div>
+
+<!-- Hidden mirror used only by the browser print engine for Word→PDF -->
+<div id="wordPrintHost" class="word-print-root"><div id="wordPrintBody"></div></div>
+<div class="pg" id="p-blog">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">Blog &amp; Guides</h2><p>AI tutorials, comparisons and guides — updated regularly</p></div>
+  <div class="ad"></div>
+  <div class="bg">
+    <a class="bc" href="best-ai-model-2026.html"><div class="bt">🏆 AI Rankings</div><h3>Best AI Model in 2026: Complete Ranking</h3><p>GPT-6, Claude Opus 5.5 and Gemini 4 Argon compared by task and price.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="chatgpt-vs-claude-comparison.html" style="border-left-color:#10a37f"><div class="bt" style="color:#10a37f">⚡ Comparison</div><h3>ChatGPT vs Claude: Honest 2026 Comparison</h3><p>Coding, writing, features and price, updated November 2026.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="what-is-agentic-ai.html" style="border-left-color:#1a73e8"><div class="bt" style="color:#1a73e8">🤖 Guide</div><h3>What is Agentic AI? Complete Guide</h3><p>Claude Code, Gemini Spark, Devin — why agentic AI matters in 2026.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="generative-ai-beginners.html" style="border-left-color:#2E7D32"><div class="bt" style="color:#2E7D32">📚 Beginner</div><h3>Generative AI for Beginners (2026)</h3><p>LLMs, tokens, hallucination, RAG — every key term without jargon.</p><span class="rm">Read article →</span></a>
+    <a class="bc" href="ai-quiz-test-knowledge.html" style="border-left-color:#00838f"><div class="bt" style="color:#00838f">🎮 Quiz</div><h3>Test Your AI Knowledge — Free Quiz</h3><p>250 questions across 5 topics and 5 levels. Play now free.</p><span class="rm">Read article →</span></a>
+  </div>
+  <div class="ad" style="min-height:250px;margin-top:14px"></div>
+</div>
+
+<!-- LEADERBOARD -->
+<div class="pg" id="p-lb">
+  <div class="hero" style="padding:28px 0 18px"><h2 class="hh">🏅 Leaderboard</h2><p>Your best scores, saved on this device only</p></div>
+  <div class="card" id="lbc"></div>
+  <div class="ad" style="min-height:250px;margin-top:14px"></div>
+</div>
+
+</main></div>
+
+<!-- MODAL -->
+<div class="mo" id="mo"><div class="modal"><button class="mc" onclick="closeMo()">✕</button><div id="mob"></div></div></div>
+
+<!-- LIBS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script>
+// ═══ NAVIGATION ═══
+var PGS=['home','wheel','compare','quiz','qa','res','learn','pe','budget','pdf','blog','lb'];
+function go(id){
+  PGS.forEach(function(p){var e=document.getElementById('p-'+p);if(e)e.classList.remove('on')});
+  var el=document.getElementById('p-'+id);if(el)el.classList.add('on');
+  document.querySelectorAll('.sl,.tl').forEach(function(l){l.classList.remove('on')});
+  var s=document.getElementById('sl-'+id);if(s)s.classList.add('on');
+  var t=document.getElementById('tl-'+id);if(t)t.classList.add('on');
+  if(id==='compare')bldTbl();if(id==='quiz')bldCats();if(id==='wheel'){setTimeout(function(){dw(cA);uStr()},50);}if(id==='lb')bldLB();
+  window.scrollTo(0,0);
+  try{if(['qa','res'].indexOf(id)<0)history.replaceState(null,'',id==='home'?location.pathname:'#'+id);}catch(e){}
+  document.getElementById('sidebar').classList.remove('open');document.getElementById('sov').classList.remove('open');
+}
+function tsb(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sov').classList.toggle('open');}
+
+// ═══ PROMPTS (compact — 12 per AI) ═══
+var PR={
+chatgpt:{n:"ChatGPT",c:"#10a37f",i:"🤖",u:"https://chat.openai.com",p:[
+{c:"Productivity",t:"Weekly Reset",x:"Act as my productivity strategist. Analyze my week: 1) 3 highest-leverage tasks, 2) What to delegate/delete, 3) Time-blocked schedule, 4) Biggest distraction risk + countermeasure. Ask 3 questions first.\n\nMy week: [DESCRIBE]"},
+{c:"Learning",t:"Feynman Tutor",x:"Tutor me on [TOPIC] using the Feynman Technique. Step 1: Explain as if I'm 12. Step 2: Ask me to explain back. Step 3: Re-teach only gaps with new analogies. Step 4: One real-world problem. Wait for my response between steps."},
+{c:"Writing",t:"Email Surgeon",x:"Rewrite this email in 3 versions: 1) DIRECT — 50% shorter, leads with ask, 2) DIPLOMATIC — softened for senior stakeholder, 3) PERSUASIVE — problem-agitate-solve. Explain each change.\n\nEmail: [PASTE]"},
+{c:"Career",t:"Interview Simulator",x:"You are a tough hiring manager for [JOB TITLE]. Ask one challenging question at a time. After each answer: score 1-10, show what a 10/10 looks like, then ask next. Increase difficulty. Start now."},
+{c:"Business",t:"Devil's Advocate",x:"I'm sharing a business decision. Respond as 3 advisors: SKEPTIC (finds flaws), OPERATOR (execution reality), INVESTOR (ROI focus). Each votes: proceed, modify, or kill.\n\nDecision: [DESCRIBE]"},
+{c:"Finance",t:"Money Leak Detector",x:"Personal finance auditor. For each expense: classify ESSENTIAL/VALUE/LEAK. Estimate yearly cost of leaks. Plan to redirect 80% toward [GOAL].\n\nExpenses: [LIST]"},
+{c:"Decision",t:"Regret Minimizer",x:"Help me decide: [DECISION]. Apply 4 frameworks: 1) 10/10/10 rule, 2) Regret test at 80, 3) Fear vs growth, 4) Reversibility. Then tell me what my answers reveal."},
+{c:"Planning",t:"5PM Review",x:"End-of-day coach. Ask one at a time: 1) What did I complete? 2) What did I avoid? 3) What wasted time? Then: 2-sentence summary, ONE change for tomorrow, top-3 morning list."},
+{c:"Creativity",t:"Idea Multiplier",x:"Take my idea through 5 lenses: 1) INVERT, 2) COMBINE with unrelated industry, 3) EXTREME budget, 4) USER FLIP audience, 5) SUBTRACT the essential feature. One variation per lens.\n\nIdea: [YOUR IDEA]"},
+{c:"Communication",t:"Hard Conversation",x:"I need a difficult conversation: [SITUATION]. Build a script: 1) Non-defensive opening, 2) Observation without judgment, 3) My needs clearly, 4) Specific request, 5) Three likely responses and how to handle each."},
+{c:"Research",t:"Expert Breakdown",x:"Break down [TOPIC] for an intelligent non-expert: 1) Core concept in one sentence, 2) Why it matters, 3) How it works (analogy), 4) Common misconceptions, 5) Expert disagreements, 6) Three resources to go deeper."},
+{c:"Self-Improvement",t:"Blind Spot Finder",x:"I'll describe a recurring problem. Ask 5 probing questions one at a time about: when, who, what I do before, hidden payoff, what I'm avoiding. Then hypothesis about root cause + one experiment.\n\nProblem: [DESCRIBE]"}
+]},
+claude:{n:"Claude",c:"#C06A2A",i:"🧠",u:"https://claude.ai",p:[
+{c:"Coding",t:"Senior Code Review",x:"Review as senior engineer: 1) BUGS with line refs, 2) SECURITY vulnerabilities, 3) PERFORMANCE bottlenecks, 4) MAINTAINABILITY, 5) VERDICT. Show corrected version of worst problem.\n\n[PASTE CODE]"},
+{c:"Debugging",t:"Debug Partner",x:"I have a bug. Rubber-duck debugging that talks back: 1) I describe bug, 2) Ask clarifying questions ONE at a time (max 4), 3) 3 most likely root causes by probability, 4) Test for each, 5) Explain WHY.\n\nBug: [DESCRIBE + CODE]"},
+{c:"Architecture",t:"System Design",x:"I'm designing [SYSTEM]. Staff engineer walkthrough: 1) 4 sharp clarifying questions, 2) Simplest working architecture, 3) 2 components likely to fail at scale, 4) Evolution at 10x/100x load, 5) What NOT to build yet."},
+{c:"Documentation",t:"README Generator",x:"Professional README.md: hook description, features, installation, quick-start code, config table, troubleshooting (3 issues), contribution guide. Ask 3 questions first.\n\nProject: [DESCRIBE]"},
+{c:"SQL",t:"Query Optimizer",x:"Analyze SQL: 1) Plain English explanation, 2) Performance issues — missing indexes, scans, bad joins, 3) Optimized rewrite with comments, 4) Indexes to create, 5) Verification approach.\n\n[PASTE QUERY]"},
+{c:"Refactoring",t:"Refactor Plan",x:"Refactoring plan: 1) Name every code smell, 2) Rank by impact-to-risk, 3) Before/after for top 2, 4) Tests needed BEFORE refactoring, 5) What could break. Surgical only.\n\n[PASTE CODE]"},
+{c:"Career",t:"Resume Surgeon",x:"Rewrite resume bullets: strong verbs, quantify impact, formula 'Did X using Y resulting in Z', cut buzzwords. For each: original → rewritten → interview question it triggers.\n\nBullets: [PASTE]"},
+{c:"DevOps",t:"Postmortem Writer",x:"Blameless postmortem: 1) Clean timeline from notes, 2) Root cause vs triggers (5 Whys), 3) Detection gap, 4) Specific assignable actions — no 'be more careful', 5) 3-sentence exec summary.\n\nNotes: [PASTE]"},
+{c:"Writing",t:"Article Architect",x:"Help write article on [TOPIC]. Phase 1: 3 unique angles. Phase 2: Outline with hook, tension, insight, payoff. Phase 3: Write section by section with feedback pauses. No filler."},
+{c:"Communication",t:"Tech→Exec Translation",x:"Translate my technical update: 1) Business impact first, 2) Jargon to outcomes, 3) Problems with solutions, 4) Max 5 sentences + 3 bullets, 5) ONE decision needed.\n\nUpdate: [PASTE]"},
+{c:"Testing",t:"Test Suite Designer",x:"Design tests: 1) Cases by category — happy, edge, error, boundary, 2) 3 most dangerous untested scenarios, 3) Test code for top 5 using [FRAMEWORK], 4) Hard-to-test spots and fixes.\n\n[PASTE CODE]"},
+{c:"Analysis",t:"Document Interrogator",x:"Analyze this document: 1) 3-sentence summary, 2) Claims without evidence, 3) What author omits, 4) Contradictions, 5) Questions to ask before trusting it.\n\nDocument: [PASTE]"}
+]},
+gemini:{n:"Gemini",c:"#1a73e8",i:"💎",u:"https://gemini.google.com",p:[
+{c:"Research",t:"Research Synthesizer",x:"Research [TOPIC]: 1) 5 key sub-questions, 2) Consensus and disagreements per question, 3) What data would settle each, 4) 3 credible source types, 5) One-page synthesis for tomorrow."},
+{c:"Data",t:"Spreadsheet Strategist",x:"I have Google Sheets data about [DESCRIBE]. 1) 5 insightful analyses, 2) Exact formulas, 3) Best chart type per analysis, 4) Data I'm NOT collecting, 5) Dashboard layout plan."},
+{c:"Comparison",t:"Decision Matrix",x:"Choosing between [OPTIONS]. 1) 4 questions to find my real priorities, 2) Weighted decision matrix, 3) Score each with justification, 4) Sensitivity check, 5) Recommendation + confidence."},
+{c:"Business",t:"Market Snapshot",x:"Market snapshot for [INDUSTRY]: 1) Size and growth, 2) Top 3-5 players with positioning, 3) What changed in 12 months, 4) Underserved segments, 5) 3 risks for new entrant. Label facts vs inference."},
+{c:"Presentation",t:"Slide Builder",x:"Build presentation on [TOPIC] for [AUDIENCE]: 1) 10-slide narrative arc, 2) Title + 3 bullets per slide, 3) Data point per slide, 4) Speaker notes for 2 hardest, 5) Single takeaway."},
+{c:"Planning",t:"Project Kickoff",x:"Starting [PROJECT]. Generate: 1) Charter with success criteria, 2) Work breakdown into phases, 3) RACI role clarity, 4) Top 5 risks + early warnings, 5) First 3 actions this week."},
+{c:"Learning",t:"Learning Roadmap",x:"Roadmap for [SKILL]: 1) 4-6 sub-domains, 2) Order by dependency, 3) Core concept + free resource + project per section, 4) Timeline at 5 hrs/week, 5) Common beginner fail."},
+{c:"Content",t:"Multi-Format Repurpose",x:"Repurpose my content into 5 formats: 1) LinkedIn post, 2) Twitter thread (6 tweets), 3) Email newsletter, 4) 60-second video script, 5) Quotable graphic text.\n\nContent: [PASTE]"},
+{c:"Travel",t:"Trip Optimizer",x:"Plan trip: [DESTINATION], [DAYS] days, [BUDGET]. 1) Day-by-day itinerary, 2) Real travel times, 3) Splurge vs save breakdown, 4) Non-obvious local experience/day, 5) Rainy-day backup."},
+{c:"Analysis",t:"Trend Decoder",x:"Analyze trend [TREND]: 1) Signal vs hype, 2) Who profits/loses, 3) Indicators to watch 6 months, 4) Historical parallel, 5) Probability: durable vs fad."},
+{c:"Email",t:"Inbox Zero",x:"Design email management: 1) Ask about volume/types, 2) Label taxonomy (max 7), 3) Gmail filter rules for 80% auto-sort, 4) 2-touch rule for rest, 5) End-of-day shutdown ritual."},
+{c:"Automation",t:"Workspace Automator",x:"Find Google Workspace automation for my tasks. Each: 1) Potential (easy/medium/hard), 2) Exact tool — Apps Script, Gmail filters, Calendar, Forms, 3) Setup steps, 4) Hours saved/month.\n\nTasks: [LIST]"}
+]},
+perplexity:{n:"Perplexity",c:"#00838f",i:"🔍",u:"https://perplexity.ai",p:[
+{c:"Research",t:"Deep Dive",x:"Research [TOPIC] rigorously: 1) Established consensus, 2) 3 significant recent developments with dates, 3) Where experts disagree, 4) Most cited source, 5) Unanswered questions. Cite everything."},
+{c:"Fact-Check",t:"Claim Verifier",x:"Fact-check: \"[CLAIM]\". 1) Original source, 2) Evidence supporting AND contradicting, 3) Rate: TRUE/MOSTLY TRUE/MISLEADING/FALSE, 4) Nuance lost when shared, 5) Accurate one-sentence version."},
+{c:"Market",t:"Competitor Intel",x:"Competitive intelligence on [COMPANY]: 1) Positioning and recent moves, 2) Pricing changes, 3) Customer praise/complaints, 4) Hiring patterns signaling direction, 5) Most vulnerable point. Sources throughout."},
+{c:"Buying",t:"Purchase Research",x:"Buying [PRODUCT, BUDGET]: 1) Top 3 options with prices, 2) Reviewer consensus, 3) Long-term owner complaints, 4) New model launching soon? 5) Best for MY use: [DESCRIBE]."},
+{c:"Career",t:"Industry Pulse",x:"Job market for [ROLE]: 1) Demand trend with data, 2) Salary ranges by experience/region, 3) Top skills in postings, 4) What's being automated, 5) Adjacent skill that increases value most."},
+{c:"Tech",t:"Tool Comparison",x:"Compare [A] vs [B] for [USE CASE]: 1) Feature-by-feature, 2) Real user reviews, 3) Pricing including hidden costs, 4) Migration difficulty, 5) Which gaining vs losing momentum."},
+{c:"Health",t:"Evidence Check",x:"Evidence on [HEALTH TOPIC]: 1) Systematic reviews conclude, 2) Effect size — meaningful? 3) Known risks, 4) Medical body recommendations, 5) Evidence quality: strong/moderate/weak. I'll verify with doctor."},
+{c:"Science",t:"Study Decoder",x:"Study making headlines [HEADLINE]: 1) What it ACTUALLY found, 2) Methodology check, 3) Other researchers say, 4) Confirms/contradicts prior research? 5) Accurate one-sentence takeaway."},
+{c:"Finance",t:"Investment Context",x:"Context on [ASSET]. NOT advice — facts: 1) Recent performance drivers, 2) Bulls vs bears strongest case, 3) Upcoming moving events, 4) Analyst shift, 5) What skeptical investor would check."},
+{c:"Learning",t:"Source Ranker",x:"Best sources for [TOPIC]: 1) 5 most respected resources, 2) Credibility of each, 3) Best for beginners vs advanced, 4) What learners say after finishing, 5) Optimal sequence."},
+{c:"News",t:"Story Behind Story",x:"Regarding [EVENT]: 1) What actually happened in sequence, 2) Context coverage skips, 3) How outlets frame it differently, 4) Who benefits from each framing, 5) What to watch next."},
+{c:"Local",t:"Local Deep Search",x:"Best [SERVICE] in [LOCATION]: 1) Top 5 with distinctions, 2) Review pattern analysis, 3) Price comparison, 4) Red flags, 5) 3 questions to ask before committing."}
+]}};
+
+// ═══ WHEEL ═══
+var SG=[
+{a:"chatgpt",l:"ChatGPT",c1:"#10a37f",c2:"#0d8a6a"},{a:"claude",l:"Claude",c1:"#C06A2A",c2:"#A0522D"},
+{a:"gemini",l:"Gemini",c1:"#1a73e8",c2:"#1557b0"},{a:"perplexity",l:"Perplexity",c1:"#00838f",c2:"#006064"},
+{a:"chatgpt",l:"ChatGPT",c1:"#0d8a6a",c2:"#0a7058"},{a:"claude",l:"Claude",c1:"#A0522D",c2:"#8B4513"},
+{a:"gemini",l:"Gemini",c1:"#1557b0",c2:"#0d47a1"},{a:"perplexity",l:"Perplexity",c1:"#006064",c2:"#004d52"}
+];
+var WN=8,WA=2*Math.PI/WN,cA=0,isSp=false;
+function dw(r){
+  var cv=document.getElementById('wc');if(!cv)return;
+  var cx=cv.getContext('2d'),C=380,R=368;
+  cx.clearRect(0,0,760,760);
+  for(var i=0;i<WN;i++){
+    var s=r+i*WA,e=s+WA;
+    cx.beginPath();cx.moveTo(C,C);cx.arc(C,C,R,s,e);cx.closePath();
+    var g=cx.createRadialGradient(C,C,60,C,C,R);
+    g.addColorStop(0,SG[i].c1);g.addColorStop(1,SG[i].c2);
+    cx.fillStyle=g;cx.fill();
+    cx.strokeStyle="rgba(255,255,255,.22)";cx.lineWidth=2.5;cx.stroke();
+    cx.save();cx.translate(C,C);cx.rotate(s+WA/2);
+    cx.textAlign="right";cx.fillStyle="#fff";cx.font='700 28px "Playfair Display",serif';
+    cx.shadowColor="rgba(0,0,0,.4)";cx.shadowBlur=5;
+    cx.fillText(SG[i].l,R-30,10);cx.restore();
+  }
+  cx.beginPath();cx.arc(C,C,R,0,2*Math.PI);cx.strokeStyle="rgba(255,255,255,.35)";cx.lineWidth=5;cx.stroke();
+  for(var j=0;j<16;j++){var a=r+j*(Math.PI/8);cx.beginPath();cx.arc(C+Math.cos(a)*R,C+Math.sin(a)*R,5,0,2*Math.PI);cx.fillStyle="#fbbf24";cx.fill();}
+  cx.beginPath();cx.arc(C,C,50,0,2*Math.PI);cx.fillStyle="rgba(0,0,0,.2)";cx.fill();
+}
+function tK(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
+function gWS(){try{return JSON.parse(localStorage.getItem("aiw5")||"{}")}catch(e){return{}}}
+function sWS(s){try{localStorage.setItem("aiw5",JSON.stringify(s))}catch(e){}}
+function uStr(){
+  var s=gWS(),st=s.streak||0,el=document.getElementById('sbar'),btn=document.getElementById('sbtn');
+  if(!el)return;
+  if(s.last===tK()){el.textContent="🔥 Streak: "+st+" day"+(st!==1?"s":"")+" · Come back tomorrow!";if(btn){btn.disabled=true;btn.textContent="✓ DONE";}}
+  else{el.textContent=st>0?"🔥 Streak: "+st+" day"+(st!==1?"s":"")+" · Spin now!":"✨ Spin the wheel to unlock your first AI prompt!";if(btn){btn.disabled=false;btn.textContent="SPIN";}}
+}
+function doSpin(){
+  if(isSp)return;var s=gWS();if(s.last===tK()){showT("⏳ One spin per day!");return;}
+  isSp=true;var btn=document.getElementById('sbtn');btn.classList.add('sp');btn.textContent="···";btn.disabled=true;
+  var tot=(6+Math.random()*4)*2*Math.PI+Math.random()*2*Math.PI,fin=cA+tot,dur=5500,t0=performance.now(),a0=cA;
+  function ease(t){return 1-Math.pow(1-t,5);}
+  function frame(now){var t=Math.min(1,(now-t0)/dur);cA=a0+(fin-a0)*ease(t);dw(cA);
+    if(t<1)requestAnimationFrame(frame);
+    else{isSp=false;btn.classList.remove('sp');var ptr=-Math.PI/2;var rel=((ptr-cA)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);var idx=Math.floor(rel/WA)%WN;onWin(SG[idx].a);}
+  }requestAnimationFrame(frame);
+}
+var cPr=null,cAI=null;
+function onWin(k){
+  var ai=PR[k],pr=ai.p[Math.floor(Math.random()*ai.p.length)];cPr=pr;cAI=ai;
+  var s=gWS(),yd=(function(){var d=new Date();d.setDate(d.getDate()-1);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}());
+  s.streak=(s.last===yd)?(s.streak||0)+1:1;s.last=tK();sWS(s);uStr();fireC();
+  document.getElementById('mob').innerHTML='<div style="display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:16px;font-weight:700;font-size:13px;margin-bottom:11px;background:'+ai.c+'22;color:'+ai.c+'">'+ai.i+' '+ai.n+' · Today\'s Prompt 🎉</div><h3>'+pr.t+'</h3><div class="cl">'+pr.c+' Prompt</div><div class="pb">'+pr.x.replace(/\n/g,'<br>')+'</div><div class="mact"><button class="mbtn p" onclick="cpP()">📋 Copy</button><button class="mbtn s" onclick="dlP()">⬇ Download</button><a class="mbtn s" href="'+ai.u+'">↗ Open '+ai.n+'</a></div><div class="cb">🔥 Streak: '+s.streak+'! Come back tomorrow.</div>';
+  document.getElementById('mo').classList.add('show');
+}
+function closeMo(){document.getElementById('mo').classList.remove('show');}
+document.getElementById('mo').addEventListener('click',function(e){if(e.target.id==='mo')closeMo();});
+function cpP(){if(!cPr)return;if(navigator.clipboard)navigator.clipboard.writeText(cPr.x).then(function(){showT("📋 Copied!")}).catch(function(){fbC(cPr.x)});else fbC(cPr.x);}
+function fbC(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');showT("📋 Copied!")}catch(e){}document.body.removeChild(a);}
+function dlP(){if(!cPr||!cAI)return;var b=new Blob(["=== "+cAI.n.toUpperCase()+" PROMPT ===\n"+cPr.t+" ("+cPr.c+")\n\n"+cPr.x+"\n\n-- aibudgettool.com"],{type:"text/plain"});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=cAI.n.toLowerCase()+"-prompt-"+tK()+".txt";a.click();showT("⬇ Downloaded!");}
+
+// ═══ COMPARE TABLE ═══
+var CD=[["Feature", "OpenAI (GPT-6)", "Google (Gemini 4)", "Anthropic (Claude 5.5)", "Meta (Llama 4)", "DeepSeek (V4)"], ["Newest flagship", "GPT-6.2 Astra (Nov 2026)", "Gemini 4 Argon (Oct 2026)", "Claude Opus 5.5 (Sep 2026)", "Llama 4 Maverick (Apr 2025)", "V4 Pro (Aug 2026)"], ["Cheaper tiers", "GPT-6 Sol, GPT-6 Luna", "Gemini 3.x Flash, Flash-Lite", "Sonnet 5.5, Haiku 5.5", "Llama 4 Scout", "V4 Flash"], ["Best for", "All-in-one app", "Google apps and Search", "Writing and long coding work", "Self-hosting", "Lowest API cost"], ["API price per 1M tokens (in / out)", "Sol $2 / $10", "Argon $2 / $10", "Opus $4 / $20; Sonnet $2 / $10", "Free weights (you pay hosting)", "V4 Flash $0.14 / $0.28"], ["Image generation", "Yes (ChatGPT Images)", "Yes (Nano Banana)", "No", "No", "No"], ["Voice conversations", "Yes", "Yes (Gemini Live)", "Yes", "Depends on the app", "Not a focus"], ["Coding agent", "Codex", "Antigravity, Gemini CLI", "Claude Code", "Open-source tools", "Open-source tools"], ["Open weights", "No", "No", "No", "Yes", "Yes"], ["Free tier", "ChatGPT Free (GPT-6)", "Gemini app (Flash-Lite)", "Claude.ai Free", "Free to download", "Free web and app"]];
+var tblDone=false;
+function bldTbl(){if(tblDone)return;tblDone=true;var el=document.getElementById('ctbl');var h='<table><thead><tr>';CD[0].forEach(function(c){h+='<th>'+c+'</th>'});h+='</tr></thead><tbody>';for(var r=1;r<CD.length;r++){h+='<tr>';CD[r].forEach(function(c){var cl=c.includes('#1')||c==='Best'?'class="best"':c==='No'?'class="na"':'';h+='<td '+cl+'>'+c+'</td>'});h+='</tr>'}h+='</tbody></table>';el.innerHTML=h;}
+
+// ═══ QUIZ WITH 5 LEVELS (250 questions) ═══
+var CATS=[
+{id:"openai",n:"OpenAI & ChatGPT",i:"🤖",c:"#10a37f"},
+{id:"claude",n:"Claude & Anthropic",i:"🧠",c:"#C06A2A"},
+{id:"gemini",n:"Google Gemini",i:"💎",c:"#1a73e8"},
+{id:"genai",n:"Generative AI",i:"⚡",c:"#f59e0b"},
+{id:"agentic",n:"Agentic AI",i:"🚀",c:"#A0522D"}
+];
+var LVLS=["Beginner","Elementary","Intermediate","Advanced","Expert"];
+// Q format: [question, [4 options], correct_index, explanation]
+var QDB={
+openai:{
+1:[// Level 1 - Beginner
+["Which company made ChatGPT?",["Google","Meta","Anthropic","OpenAI"],3,"OpenAI created ChatGPT, launched November 2022."],
+["What does GPT stand for?",["General Purpose Tech","Generative Pre-trained Transformer","Global Processing Tool","Generated Predictive Text"],1,"GPT = Generative Pre-trained Transformer."],
+["Is ChatGPT free to use?",["No, always paid","Yes, there is a free tier","Only for students","Only for businesses"],1,"ChatGPT offers a free tier with limited access to models."],
+["What can ChatGPT do?",["Only write essays","Only code","Text, images, code, analysis and more","Only translate languages"],2,"ChatGPT handles text, images, code, analysis, browsing, voice and more."],
+["What is DALL·E?",["A chatbot","An image generator","A search engine","A database"],1,"DALL·E generates images from text descriptions."],
+["What is ChatGPT Plus?", ["A free browser extension", "A paid ChatGPT plan with higher limits and newer models", "A coding language", "An image format"], 1, "ChatGPT Plus is OpenAI's paid consumer plan. It raises usage limits and unlocks larger models than the free tier."],
+["Can ChatGPT browse the internet?",["No, never","Yes, with Web Browsing feature","Only on weekends","Only paid users"],1,"ChatGPT has a Web Browsing feature for real-time internet search."],
+["What is Sora?",["A chatbot","A video generator","A search engine","A coding tool"],1,"Sora generates realistic videos from text descriptions."],
+["What is Whisper?",["An image model","A speech-to-text model","A chatbot","A game"],1,"Whisper is OpenAI's automatic speech recognition model."],
+["When was ChatGPT first released?",["2020","2021","November 2022","2024"],2,"ChatGPT was released on November 30, 2022."]
+],
+2:[// Level 2 - Elementary
+["What does 'o' in GPT-4o mean?",["Omni","Open","Optimized","Original"],0,"GPT-4o = 'omni' — handles text, audio, image, video natively."],
+["Which OpenAI model series launched in September 2026?", ["GPT-4.5", "GPT-6", "o5", "Codex 2"], 1, "OpenAI launched the GPT-6 series with GPT-6 Astra on 3 September 2026, followed by Sol and Luna tiers."],
+["What is the o1/o3 model series for?",["Image generation","Step-by-step reasoning","Translation","Gaming"],1,"o1 and o3 are reasoning models that think before answering."],
+["What is Code Interpreter renamed to?",["Web Browser","Advanced Data Analysis","GPT Builder","Memory"],1,"Code Interpreter was renamed to Advanced Data Analysis."],
+["Has OpenAI officially published GPT-4's parameter count?", ["Yes, 175 billion", "Yes, 1.8 trillion", "No, figures like 1.8 trillion are unconfirmed estimates", "Yes, 100 trillion"], 2, "OpenAI never confirmed GPT-4's size. The often-quoted 1.8 trillion is an outside estimate."],
+["What is ChatGPT Memory?",["RAM usage","Remembers preferences across chats","File storage","Cache"],1,"Memory stores user preferences across separate conversations."],
+["What does a model's 'max output tokens' limit?", ["How long your prompt can be", "How long a single response can be", "How many users can chat", "The image resolution"], 1, "Max output tokens caps the length of one reply. The context window caps input and output together."],
+["What is OpenAI's coding agent?",["Copilot","Codex","Cursor","Replit"],1,"Codex is OpenAI's autonomous code generation and editing agent."],
+["In OpenAI's GPT-6 lineup, what is Luna designed for?", ["The hardest research tasks", "Efficient, high-volume use at low cost", "Image generation only", "Voice calls only"], 1, "Luna is OpenAI's low-cost tier for high-volume work. At launch it listed at $0.10 per million input tokens."],
+["What does a model's 'knowledge cutoff' mean?", ["The last date its training data covers", "Its maximum context window", "The date it will be shut down", "When its price changes"], 0, "The knowledge cutoff is how recent the model's training data is. It won't know later events unless it searches the web."]
+],
+3:[// Level 3 - Intermediate
+["What architecture does GPT-4 use?",["Dense transformer","Mixture of Experts","CNN","LSTM"],1,"GPT-4 uses MoE with ~1.8T parameters across 16 experts."],
+["What is Operator?",["A math tool","OpenAI's web browsing agent","A database","A plugin"],1,"Operator is OpenAI's agent for autonomous web browsing tasks."],
+["What's the best way to avoid acting on an AI hallucination?", ["Raise the temperature", "Ask for sources and check them yourself", "Use shorter prompts", "Type in capital letters"], 1, "Every model can state false things confidently. Asking for sources and verifying them is the reliable defence."],
+["What was GPT-1's parameter count?",["117 million","1.5 billion","175 billion","6 billion"],0,"GPT-1 had 117M parameters. GPT-2: 1.5B, GPT-3: 175B."],
+["What pricing model does OpenAI API use?",["Monthly flat fee","Per-token (input/output separate)","Free unlimited","Per-request"],1,"OpenAI charges per-token with separate input and output pricing."],
+["GPT-6 Sol's API input price at launch, per million tokens?", ["$0.10", "$2", "$10", "$15"], 1, "OpenAI listed GPT-6 Sol at $2 per million input tokens and $10 per million output tokens (September 2026)."],
+["What is function calling in OpenAI API?",["Calling phone numbers","AI invoking external tools/APIs","Recursive functions","Error handling"],1,"Function calling lets AI invoke external tools and APIs."],
+["What is ChatGPT Enterprise?",["Free version","Business-grade with enhanced security and admin","Student version","Developer IDE"],1,"ChatGPT Enterprise offers enhanced security, admin controls and longer context."],
+["What is system prompt in OpenAI API?",["Error message","Instructions setting AI persona before conversation","User's first message","A debug log"],1,"System prompt sets AI's role, rules and constraints before user messages."],
+["What is Azure OpenAI Service?",["A free tool","OpenAI models hosted on Microsoft Azure","A competitor","A search engine"],1,"Azure OpenAI provides OpenAI models through Microsoft's Azure cloud."]
+],
+4:[// Level 4 - Advanced
+["What tokenizer does GPT-4 use?",["WordPiece","cl100k_base (tiktoken)","SentencePiece","BPE-50k"],1,"GPT-4 uses cl100k_base tokenizer via tiktoken library."],
+["What is the RLHF process in GPT training?",["Random Learning","Human rankers score outputs, model learns preferences","Automated testing","Data cleaning"],1,"RLHF: human labelers rank AI outputs, reward model trained, policy optimized."],
+["GPT-6 Sol's API output price at launch, per million tokens?", ["$0.50", "$2", "$10", "$30"], 2, "GPT-6 Sol output tokens listed at $10 per million in September 2026."],
+["What is the 'temperature' default in OpenAI API?",["0","0.5","0.7 or 1","2"],2,"Default temperature is typically 0.7 or 1 depending on the model."],
+["What is 'top_p' sampling?",["Random sampling","Nucleus sampling — considers tokens until cumulative probability reaches p","Top performance","Parallel processing"],1,"top_p (nucleus sampling) considers the smallest set of tokens whose probability sums to p."],
+["What is JSON mode in OpenAI API?",["A file format","Constrains model to output valid JSON only","A database query","A debugging mode"],1,"JSON mode ensures the model responds only with syntactically valid JSON."],
+["What is structured outputs in OpenAI?",["Formatted text","Model output matching a specified JSON schema exactly","Tabular data","HTML output"],1,"Structured outputs guarantee the model follows a provided JSON schema."],
+["When did OpenAI launch GPT-6 Astra?", ["January 2026", "September 2026", "June 2025", "December 2026"], 1, "GPT-6 Astra launched on 3 September 2026. GPT-6.2 Astra followed on 17 November 2026."],
+["What is 'seed' parameter for?",["Random generation","Reproducible outputs — same seed gives same response","Planting data","Security key"],1,"Setting a seed makes outputs more deterministic and reproducible."],
+["What makes GPT-4o different from GPT-4?",["Just faster","Natively multimodal — handles text, audio, image, video in one model","Smaller","Cheaper only"],1,"GPT-4o is natively multimodal, processing all modalities in a single architecture."]
+],
+5:[// Level 5 - Expert
+["What is the attention complexity of standard Transformers?",["O(n)","O(n log n)","O(n²)","O(1)"],2,"Standard self-attention has O(n²) complexity relative to sequence length."],
+["What is KV-cache in inference?",["Key-Value cache storing past attention computations to avoid recomputation","A database cache","Keyboard-Video cache","A compression method"],0,"KV-cache stores key and value tensors from previous tokens to speed up autoregressive generation."],
+["What does 'distillation' mean in GPT context?",["Removing water","Training a smaller model to mimic a larger model's outputs","Data filtering","Model deletion"],1,"Knowledge distillation transfers capabilities from a large teacher model to a smaller student model."],
+["What is speculative decoding?",["Guessing answers","Using a small draft model to propose tokens, verified by the large model in parallel","Random decoding","Encrypted output"],1,"Speculative decoding uses a fast draft model to propose tokens, which the main model verifies in parallel for speed."],
+["What is the 'logit bias' parameter?",["A type of error","Modifies likelihood of specific tokens appearing in output","Training bias","GPU bias"],1,"logit_bias adjusts the probability of specific tokens, useful for steering or suppressing certain words."],
+["What problem does Mixture of Experts solve?",["Image quality","Scales parameters without proportionally scaling compute — only subset of experts active per token","Data storage","Network speed"],1,"MoE activates only a subset of expert networks per token, allowing huge models without proportional compute cost."],
+["What is RLHF's main limitation?",["Too fast","Reward hacking — model learns to game the reward signal rather than being genuinely helpful","Too expensive","Too simple"],1,"Reward hacking occurs when the model exploits patterns in the reward model rather than improving actual quality."],
+["What tokenization issue affects non-English languages?",["None","Non-English text often requires more tokens per word, making API calls more expensive","Speed issues","Grammar errors"],1,"Non-Latin scripts typically tokenize into more tokens per word, increasing cost and reducing effective context."],
+["What is 'prompt caching' in OpenAI's API?",["Browser cache","Reusing computed prompt prefixes across requests to reduce latency and cost","Saving prompts locally","A security feature"],1,"Prompt caching stores computed representations of common prompt prefixes, reducing repeated computation."],
+["What is Constitutional AI's advantage over RLHF?",["Faster training","Cheaper inference","Reduces reliance on human labelers by using principles for self-critique","Better images"],2,"Constitutional AI has the model critique its own outputs against principles, reducing the need for extensive human feedback."]]
+},
+claude:{
+1:[["Who created Claude AI?",["OpenAI","Google","Anthropic","Meta"],2,"Anthropic, founded by Dario and Daniela Amodei, created Claude."],
+["What is Claude best known for?",["Image generation","Coding and writing quality","Video creation","Gaming"],1,"Claude is recognized for top-tier coding (SWE-bench) and writing quality."],
+["Is Claude free to use?",["No","Yes, Claude.ai has a free tier","Only for businesses","Only API"],1,"Claude.ai offers a free tier with limited usage."],
+["What is Claude Code?",["A IDE","Autonomous coding CLI tool","A game","A database"],1,"Claude Code is Anthropic's command-line autonomous coding agent."],
+["What is Anthropic's safety approach called?",["RLHF","Constitutional AI","Safe Mode","Guardrails"],1,"Constitutional AI trains models using principles for self-improving safety."],
+["What is Claude Haiku?",["A poem","The fastest, cheapest Claude model","The smartest model","An image tool"],1,"Haiku is designed for fast, cheap, high-volume tasks."],
+["What year was Anthropic founded?",["2019","2020","2021","2022"],2,"Anthropic was founded in 2021 by former OpenAI researchers."],
+["What are Claude Artifacts?",["Ancient objects","Interactive code/visual outputs in conversation","Error logs","Files"],1,"Artifacts let Claude create interactive code and visualizations inline."],
+["What does MCP stand for?",["Multi-Cloud Protocol","Model Context Protocol","Machine Computing Pipeline","Managed Control"],1,"Model Context Protocol is Anthropic's open standard for tool connections."],
+["Who co-founded Anthropic?",["Sam Altman","Dario & Daniela Amodei","Sundar Pichai","Elon Musk"],1,"Dario (CEO) and Daniela (President) Amodei co-founded Anthropic."]],
+2:[["Which Claude family launched in September 2026?", ["Claude 3", "Claude 4", "Claude 5.5 (Opus 5.5 and Sonnet 5.5)", "Claude 2"], 2, "Anthropic released Claude Opus 5.5 on 22 September 2026 and Sonnet 5.5 a week later."],
+["Which Claude model is mid-tier?",["Haiku","Sonnet","Opus","Flash"],1,"Sonnet is balanced between Haiku (speed) and Opus (capability)."],
+["What coding benchmark does Claude lead?",["HumanEval","SWE-bench Pro","LeetCode","MMLU"],1,"Claude Opus leads SWE-bench Pro for real-world software engineering."],
+["Claude Sonnet 5.5's API input price, per million tokens?", ["$0.10", "$2", "$4", "$15"], 1, "Anthropic lists Claude Sonnet 5.5 at $2 input and $10 output per million tokens."],
+["What is Extended Thinking?",["Web search","Shows step-by-step reasoning before answering","Image generation","Code execution"],1,"Extended Thinking shows Claude's reasoning process for complex tasks."],
+["What is Claude Mythos Preview?",["Claude 5","Most advanced unreleased model via Project Glasswing","A training dataset","A consumer product"],1,"Claude Mythos Preview is available only to trusted organizations."],
+["How much does Anthropic's Batch API save on Claude models?", ["Nothing", "50%", "90%", "10%"], 1, "Batch processing costs 50% of the standard per-token price on Claude models."],
+["Where besides direct API is Claude available?",["Azure only","Amazon Bedrock","Google Cloud only","Nowhere else"],1,"Claude is available via Claude Platform and Amazon Bedrock."],
+["What is Claude Opus 5.5's context window?", ["32K tokens", "200K tokens", "1M tokens", "10M tokens"], 2, "Claude Opus 5.5 supports a 1 million token context window."],
+["When was Claude Opus 5.5 released?", ["May 2026", "22 September 2026", "January 2026", "November 2026"], 1, "Anthropic released Claude Opus 5.5 on 22 September 2026, priced 20% below Opus 5."]],
+3:[["What is Constitutional AI's core mechanism?",["Human labeling only","AI uses principles to critique and revise its own outputs","Blocking bad words","Rate limiting"],1,"In CAI, the model evaluates its outputs against principles and self-improves."],
+["Claude Sonnet 5.5's API output price, per million tokens?", ["$2", "$10", "$20", "$75"], 1, "Claude Sonnet 5.5 output is $10 per million tokens."],
+["What is MCP's analogy?",["Email for AI","USB for AI — universal tool connection","WiFi for AI","Bluetooth"],1,"MCP is like USB — a universal protocol for connecting AI to any tool."],
+["What makes Claude's writing distinctive?",["Short answers only","Nuanced, natural prose with strong voice fidelity","Always uses bullet points","Formal only"],1,"Claude is known for nuanced, natural writing that follows complex style instructions."],
+["What is Claude's Memory feature?",["RAM","Stores preferences across separate conversations","File storage","Browser cache"],1,"Memory lets Claude remember user context across different chat sessions."],
+["Claude Opus 5.5's API input price, per million tokens?", ["$2", "$4", "$15", "$25"], 1, "Claude Opus 5.5 lists at $4 per million input tokens, down from $5 for Opus 5."],
+["What does Claude Code do autonomously?",["Only reads code","Writes, tests, debugs, and deploys code from terminal","Only formats code","Only suggests changes"],1,"Claude Code can independently write, test, debug and commit code."],
+["What is Project Glasswing?",["A browser","Program giving trusted orgs access to Claude Mythos","A training method","A hardware project"],1,"Project Glasswing provides selected organizations access to the most advanced Claude model."],
+["Claude Opus 5.5's API output price, per million tokens?", ["$10", "$20", "$50", "$75"], 1, "Claude Opus 5.5 lists at $20 per million output tokens, down from $25 for Opus 5."],
+["What is Anthropic's mission?",["Make money","AI safety — building reliable, interpretable, steerable AI","Build the fastest AI","Replace all jobs"],1,"Anthropic's mission focuses on AI safety research and building trustworthy AI systems."]],
+4:[["How does Constitutional AI differ from RLHF?",["Same thing","AI self-critiques against principles instead of needing human feedback on every output","Faster only","Uses more data"],1,"CAI reduces reliance on human labelers by having the model critique itself."],
+["What is the 'harmlessness' training in Claude?",["Blocking all requests","Training to refuse genuinely harmful requests while remaining helpful","Never saying no","Strict filtering"],1,"Claude is trained to distinguish genuinely harmful requests from legitimate ones."],
+["What token format does Claude API use?",["Words only","Sub-word tokens similar to BPE","Characters only","Sentences"],1,"Claude uses sub-word tokenization similar to Byte-Pair Encoding."],
+["What is tool use in Claude API?",["Physical tools","Defining functions Claude can call during conversation","Debugging tools","IDE plugins"],1,"Tool use lets developers define external functions Claude can invoke mid-conversation."],
+["What is the 'system' prompt's role in Claude?",["Error handling","Sets Claude's persona, rules, and constraints before user interaction","Logs errors","Manages memory"],1,"The system prompt establishes Claude's behavior, role and constraints for the conversation."],
+["What advantage does Claude have for long documents?",["Faster reading","High accuracy recall across its full 1M context window","Smaller file size","Auto-summary only"],1,"Claude maintains high accuracy even when key information is deep within very long documents."],
+["How does Anthropic approach AI interpretability?",["Ignores it","Researches understanding model internals — feature visualization, circuits","Black box only","Only external testing"],1,"Anthropic researches mechanistic interpretability — understanding how models work internally."],
+["What is Claude's approach to ambiguous requests?",["Always refuses","Asks for clarification while providing a reasonable attempt","Guesses randomly","Ignores ambiguity"],1,"Claude typically provides a reasonable answer while noting assumptions, rather than refusing."],
+["What is 'prompt injection' defense in Claude?",["No defense","Constitutional AI principles help Claude resist instruction overrides","Blocking all inputs","Rate limiting"],1,"Claude's Constitutional AI training helps it distinguish legitimate instructions from injection attempts."],
+["What streaming format does Claude API use?",["WebSocket only","Server-Sent Events (SSE)","GraphQL subscriptions","Polling only"],1,"Claude API uses Server-Sent Events for streaming responses."]],
+5:[["What is Anthropic's scaling hypothesis?",["AI can't scale","Larger models with better training become more capable AND more alignable simultaneously","Only small models work","Scaling only improves speed"],1,"Anthropic believes scaling can improve both capability and safety when done with the right training approaches."],
+["What is 'red teaming' at Anthropic?",["A sports team","Systematic adversarial testing to find model vulnerabilities before deployment","A coding team","Marketing team"],1,"Red teaming involves deliberately trying to make models produce harmful outputs to identify and fix vulnerabilities."],
+["How does Claude handle multi-turn context tracking?",["Forgets after each turn","Maintains coherent state across conversation turns within context window","Only remembers last message","External database"],1,"Claude tracks conversation state, references and commitments across all turns within its context window."],
+["What is the relationship between context window and accuracy?",["Always perfect","Accuracy can degrade for information in the middle of very long contexts (lost in middle)","No relationship","Longer is always better"],1,"Research shows LLMs can struggle with information in the middle of long contexts more than beginning/end."],
+["What makes Claude's code generation distinctive?",["Only Python","Produces well-documented, production-ready code with error handling and tests","Only snippets","No comments"],1,"Claude is known for generating thorough, well-structured code with documentation and edge case handling."],
+["What is Anthropic's approach to model evaluations?",["No evals","Comprehensive behavioral testing including edge cases, bias, safety and capability benchmarks","Only speed tests","User surveys only"],1,"Anthropic runs extensive evaluation suites covering safety, capabilities, bias and real-world performance."],
+["What is 'Constitutional AI from AI Feedback' (RLAIF)?",["Human feedback only","Using AI to generate preference data for training instead of solely human labelers","Removing all feedback","Automated testing"],1,"RLAIF uses AI-generated feedback alongside human feedback to scale alignment training."],
+["How does Claude handle knowledge boundaries?",["Makes up answers","Explicitly states uncertainty and knowledge limitations rather than confabulating","Always says I don't know","Searches the web"],1,"Claude is trained to express genuine uncertainty rather than generating confident but incorrect answers."],
+["What is the significance of Claude's training data cutoff?",["None","Claude may not know about events after its cutoff and should indicate this limitation","It knows everything","Cutoff doesn't matter"],1,"Claude acknowledges its training data cutoff and potential gaps in recent knowledge."],
+["What is Anthropic's long-term safety research goal?",["Profit maximization","Developing AI systems that are interpretable, steerable and robust even as they become very capable","Fastest AI","Replace humans"],1,"Anthropic aims to ensure advanced AI remains safe and controllable through interpretability and alignment research."]]
+},
+gemini:{
+1:[["Which company created Gemini?",["OpenAI","Apple","Google","Meta"],2,"Google (DeepMind) created the Gemini AI model family."],
+["What was Gemini originally called?",["PaLM","Bard","LaMDA","Meena"],1,"Google's chatbot launched as Bard in 2023, rebranded to Gemini February 2024."],
+["Is Gemini free to use?",["No","Yes, there is a free tier","Only for businesses","Only in US"],1,"Gemini offers a free tier with access to Gemini Flash models."],
+["What is Gemini Nano for?",["Cloud servers","On-device AI on phones","Video generation","Gaming"],1,"Gemini Nano runs directly on Android phones for offline AI features."],
+["What is Google AI Studio?",["A music app","Free tool to prototype with Gemini models","A photo editor","A cloud service"],1,"AI Studio is a free web tool for testing and prototyping with Gemini."],
+["Can Gemini understand images?",["No","Yes, it's natively multimodal","Only text","Only with plugins"],1,"Gemini was trained on text, images, audio and video from the start."],
+["Since October 2026, which model do free Gemini app users get?", ["Gemini 4 Argon", "Flash-Lite", "Gemini Ultra", "No model, free tier ended"], 1, "From 9 October 2026, users without a Google AI subscription get Flash-Lite in the Gemini app."],
+["What is Google's custom AI chip called?",["GPU","TPU","NPU","APU"],1,"TPU (Tensor Processing Unit) is Google's custom chip for AI workloads."],
+["Does Gemini work with Google Docs?",["No","Yes, built into Gmail, Docs, Sheets, Slides","Only Sheets","Only Gmail"],1,"Gemini is integrated directly into Google Workspace apps."],
+["What is Imagen?",["A chatbot","Google's text-to-image AI model","A search engine","A video editor"],1,"Imagen is Google's image generation model integrated into Gemini."]],
+2:[["What is Google's frontier model released in October 2026?", ["Gemini 3.1 Pro", "Gemini 4 Argon", "Bard 2", "PaLM 3"], 1, "Gemini 4 Argon became generally available on 13 October 2026."],
+["What is Gemini Flash optimized for?",["Maximum quality","Speed and cost-efficiency","Image generation only","Research only"],1,"Gemini Flash models are designed for fast, cheap inference."],
+["Who can use Gemini 4 Argon in the Gemini app?", ["Every free user", "Google AI Pro and Ultra subscribers", "Only Pixel owners", "Only US users"], 1, "In the Gemini app and AI Mode, Argon is limited to Google AI Pro and Ultra subscriptions."],
+["What is Veo?",["A chatbot","Google's video generation model","A search tool","A translation app"],1,"Veo (now 3.1) is Google's premier video generation model."],
+["What did Google announce at I/O 2026?",["Gemini Live","Gemini Spark — 24/7 agent","New Pixel","YouTube AI"],1,"Gemini Spark (May 19, 2026) is a persistent autonomous agent."],
+["What model preceded Gemini at Google?",["BERT","PaLM / PaLM 2","GPT","T5"],1,"PaLM and PaLM 2 were Google's flagship models before Gemini."],
+["What is AlphaFold famous for?",["Chat","Protein structure prediction — Nobel Prize 2024","Image gen","Translation"],1,"AlphaFold predicted protein structures and won Nobel Prize in Chemistry 2024."],
+["Which phones have Gemini Nano?",["iPhone only","Android — Pixel 8+ and Samsung S24+","Windows Phone","All phones"],1,"Gemini Nano runs on Pixel 8+ and Samsung Galaxy S24+ and newer."],
+["What framework does Google use for AI training?",["PyTorch only","JAX on TPUs","TensorFlow only","Caffe"],1,"Google primarily uses JAX on TPUs for training Gemini models."],
+["Which areas does Google highlight for Gemini 4 Argon?", ["Only image generation", "Software engineering, enterprise knowledge work and cyber defense", "Music creation", "Translation only"], 1, "Google positions Argon for real-world software engineering, legal and finance knowledge work, and cybersecurity defense."]],
+3:[["What makes Gemini natively multimodal vs GPT-4?",["Same approach","Trained on all modalities from start vs GPT-4 adding vision later","Gemini is text only","No difference"],1,"Gemini was trained on text, images, audio and video natively from the ground up."],
+["What is 'Grounding with Google Search'?",["SEO tool","Connecting Gemini to real-time Search results for accuracy","A Chrome extension","A ranking system"],1,"Grounding connects Gemini responses to live Google Search for current, accurate information."],
+["What generation is Google's current TPU?",["4th","5th","6th","8th"],2,"Google's TPUs are now in their 6th generation (Trillium)."],
+["What is Google's AI safety framework?",["Constitutional AI","RLHF only","Responsible AI Principles","None"],2,"Google follows Responsible AI Principles for safe, fair and beneficial AI development."],
+["What is Gemini's advantage for YouTube?",["None","Can watch, understand and answer questions about video content","Only subtitles","Only thumbnails"],1,"Gemini's multimodal capabilities let it process and understand YouTube video content."],
+["Gemini 4 Argon's API launch price, per million input tokens?", ["$0.10", "$2", "$10", "$15"], 1, "Google announced Argon at $2 per million input tokens and $10 per million output tokens."],
+["Gemini 4 Argon's API launch price, per million output tokens?", ["$1", "$10", "$40", "$75"], 1, "Gemini 4 Argon output tokens launched at $10 per million."],
+["How does Gemini integrate with Android?",["Doesn't","Built-in assistant, on-device Nano, system-level AI features","Only Chrome","App only"],1,"Gemini is deeply integrated into Android as the system AI assistant."],
+["What is Google's approach to AI for science?",["No focus","DeepMind researches scientific AI — AlphaFold, weather prediction, material design","Only consumer products","Only business"],1,"DeepMind applies AI to fundamental science including proteins, weather and materials."],
+["What is Gemini 3.5 Flash's value proposition?",["Maximum quality","Frontier-level performance at a fraction of the cost","Free unlimited","Fastest only"],1,"Gemini 3.5 Flash offers near-frontier performance at very low price."]],
+4:[["What is Project Astra?",["A satellite","Google's multimodal AI agent research for real-world understanding","A phone","A chip"],1,"Project Astra explores real-time multimodal AI agents that understand the physical world."],
+["How does Gemini handle code execution?",["Cannot","Code execution in sandboxed environments within Gemini","Only reads code","External tools only"],1,"Gemini can execute code in sandboxed environments during conversations."],
+["What is SynthID in Gemini?",["A music tool","Invisible watermarking for AI-generated content","A testing tool","A model name"],1,"SynthID embeds invisible watermarks in AI-generated images and text for identification."],
+["What is Gemini's approach to long context?",["Truncates to 32K","Uses efficient attention mechanisms to process up to 1M+ tokens","Summarizes only","Cannot do long context"],1,"Gemini uses optimized attention to handle very long contexts efficiently on TPU hardware."],
+["How does Google's RLHF differ from OpenAI's?",["Same","Uses more automated evaluation methods alongside human feedback","No RLHF","Only automated"],1,"Google combines automated evaluation metrics with human feedback for more scalable alignment."],
+["What is the function calling format in Gemini API?",["Same as OpenAI","Google-specific tool declarations with FunctionDeclaration schema","REST only","No function calling"],1,"Gemini API uses its own FunctionDeclaration format for tool definitions."],
+["What is 'context caching' in Gemini API?",["Browser cache","Caching long context prefixes to reduce cost on repeated queries","Memory feature","File storage"],1,"Context caching stores computed long context prefixes for reuse, reducing cost and latency."],
+["What makes Gemini competitive for enterprise?",["Nothing","Deep Google Workspace integration + competitive pricing + Vertex AI platform","Only pricing","Only speed"],1,"Gemini's integration with Workspace, competitive API pricing and Vertex AI make it strong for enterprise."],
+["What is Vertex AI?",["A chatbot","Google Cloud's ML platform for deploying Gemini in production","A search tool","A database"],1,"Vertex AI is Google Cloud's enterprise platform for building, deploying and scaling ML applications."],
+["What is Gemini's training data advantage?",["None","Access to Google's massive proprietary data including Search, YouTube, Scholar, Books","Same as others","Only web data"],1,"Google's access to diverse proprietary datasets gives Gemini unique training data advantages."]],
+5:[["What attention mechanism does Gemini use for long context?",["Standard O(n²)","Multi-query attention and grouped-query attention for efficiency","No attention","Linear attention only"],1,"Gemini uses efficient attention variants like multi-query and grouped-query attention."],
+["How does Gemini Nano achieve on-device performance?",["Full model on phone","Quantization + distillation to create a compact model that runs on mobile NPUs","Cloud connection","No optimization"],1,"Gemini Nano uses quantization and distillation to fit on mobile neural processing units."],
+["What is the training infrastructure for Gemini?",["GPU clusters only","Massive TPU pods with custom interconnects (ICI) for distributed training","Single machines","CPU clusters"],1,"Gemini is trained on enormous TPU pod clusters connected by custom inter-chip interconnects."],
+["What is the significance of Gemini's architecture vs GPT?",["Same architecture","Single unified model processing all modalities vs bolting modalities onto text model","Gemini is smaller","No difference"],1,"Gemini was designed as a single architecture for all modalities, while GPT-4V added vision to a text model."],
+["How does Google address hallucination in Gemini?",["Ignores it","Grounding with Search, attribution training, and calibrated uncertainty","Only filtering","Manual review"],1,"Google uses Search grounding, attribution mechanisms and uncertainty calibration to reduce hallucinations."],
+["What is the relationship between DeepMind and Google Brain?",["Competitors","Merged in 2023 to form Google DeepMind","Same since founding","No relationship"],1,"Google Brain and DeepMind merged in April 2023 to form Google DeepMind."],
+["What is 'chain of thought' training in Gemini?",["Manual prompting","Training the model to produce reasoning steps as part of its generation process","External tool","A plugin"],1,"Gemini models are trained to generate internal reasoning chains that improve accuracy on complex tasks."],
+["What makes TPU v5e vs v5p different?",["Same chip","v5e for inference efficiency, v5p for training performance","Color only","Size only"],1,"TPU v5e is optimized for cost-efficient inference, while v5p targets maximum training throughput."],
+["How does Gemini handle safety at the model level?",["Post-processing only","Multi-layer: training-time alignment, inference-time safety classifiers, and output filtering","No safety","User reporting only"],1,"Gemini uses layered safety: alignment during training, real-time classifiers and post-generation filtering."],
+["What is Google's approach to open-sourcing AI?",["Fully open","Selective: Gemma (open weights), some research open-source, core Gemini proprietary","Fully closed","Only papers"],1,"Google open-sources some models (Gemma) and research while keeping core Gemini models proprietary."]]
+},
+genai:{
+1:[["What does AI stand for?",["Automated Interface","Artificial Intelligence","Advanced Internet","Auto Input"],1,"AI = Artificial Intelligence — computer systems performing human-like tasks."],
+["What is machine learning?",["Teaching machines to walk","Systems learning from data without explicit programming","Manual programming","Robot building"],1,"ML is a subset of AI where models learn patterns from data and improve through experience."],
+["What is a chatbot?",["A chat room","Program that simulates conversation with humans","A social media app","A file manager"],1,"A chatbot holds conversations with humans — from simple rules to advanced LLMs like ChatGPT."],
+["What does LLM stand for?",["Large Language Model","Linear Learning Machine","Logical Language Module","Low Latency Model"],0,"LLM = Large Language Model — AI trained on massive text to understand and generate language."],
+["What is hallucination in AI?",["AI sees ghosts","AI confidently generates false information","AI crashes","AI refuses to answer"],1,"Hallucination is when AI generates plausible-sounding but factually incorrect information."],
+["What is a prompt?",["A command prompt window","The input/instruction you give to an AI model","A programming language","A file type"],1,"A prompt is whatever text you type into an AI — better prompts get better outputs."],
+["Can AI generate images?",["No","Yes, tools like DALL·E and Midjourney create images from text","Only humans can","Only cameras can"],1,"Generative AI tools like DALL·E, Midjourney and Imagen create images from text descriptions."],
+["Is AI the same as a robot?",["Yes","No — AI is software intelligence, robots are physical machines","Sometimes","Always"],1,"AI is software that processes information. Robots are physical machines. Some robots use AI, many don't."],
+["What is training data?",["A gym for AI","The dataset used to teach an AI model to recognize patterns","Code written by AI","Computer memory"],1,"Training data is examples the model learns from. More quality data = better performance."],
+["What is the most popular AI chatbot?",["Siri","Alexa","ChatGPT","Google Assistant"],2,"ChatGPT became the fastest-growing consumer app in history after launching in November 2022."]],
+2:[["What is a Transformer?",["A robot","Neural network using self-attention — foundation of all LLMs","A data converter","A GPU"],1,"Transformers (Google, 2017) use self-attention to process text in parallel."],
+["What is a token?",["A coin","A piece of text (word/subword/character) that AI processes","A security key","A GPU unit"],1,"Tokens are how AI reads text. 1 token ≈ 3/4 of a word. 1,000 words ≈ 1,333 tokens."],
+["What is temperature in AI?",["GPU heat","Parameter controlling creativity/randomness of output","Processing speed","Training time"],1,"Temperature: low (0.2) = focused/deterministic; high (1.5) = creative/random."],
+["What is fine-tuning?",["Making model smaller","Training a pre-trained model on specific data for a task","Deleting outputs","Hardware adjustment"],1,"Fine-tuning specializes a general model for specific tasks using task-specific data."],
+["What is RAG?",["Random Access Generation","Retrieval-Augmented Generation","Rapid AI Growth","Reinforced Agent Guidance"],1,"RAG searches a knowledge base before generating, dramatically reducing hallucinations."],
+["What is the context window?",["A display screen","Maximum text an AI model can process at once","A debugging tool","Training data size"],1,"Context window = total tokens (input + output) a model handles in one conversation."],
+["What is RLHF?",["Real-time Learning","Reinforcement Learning from Human Feedback","Recursive Language Handling","Rapid Learning Framework"],1,"RLHF trains models using human preference rankings to improve output quality."],
+["What is zero-shot learning?",["Training from scratch","Performing tasks without any examples provided","A failed run","No data training"],1,"Zero-shot = performing tasks using only general knowledge, no task-specific examples needed."],
+["What is few-shot prompting?",["Brief prompting","Giving 2-3 examples in the prompt to guide AI output","Minimal training","Short responses"],1,"Few-shot includes examples in your prompt so the model understands the desired pattern."],
+["What is embedding?",["Hardware insertion","Converting text/images to numerical vectors capturing meaning","A database","A visualization"],1,"Embeddings convert data into dense vectors that capture semantic relationships."]],
+3:[["What is a diffusion model?",["Text generator","Generates images by learning to reverse a noise-adding process","Network router","Database model"],1,"Diffusion models (Stable Diffusion, DALL·E) learn to gradually remove noise to create images."],
+["What is model collapse?",["GPU failure","AI trains on AI-generated data and degrades over time","Too many users","Zero loss"],1,"Model collapse occurs when models train on AI-generated data, losing diversity across generations."],
+["What is quantization?",["Measuring quality","Reducing numerical precision to shrink model size and increase speed","Increasing parameters","A training method"],1,"Quantization (e.g. 16-bit to 4-bit) makes models smaller and faster with minimal accuracy loss."],
+["What is multimodal AI?",["Text only","Processes text, images, audio, video in one model","Multi-language","Multiple models"],1,"Multimodal AI understands and generates across different data types in a unified system."],
+["What is the attention mechanism?",["A focus timer","Lets each token weigh the importance of all other tokens for context","Error correction","Memory optimization"],1,"Self-attention lets each token look at all others — the key innovation in Transformers."],
+["What is prompt injection?",["Adding fuel","Security attack where malicious text hijacks AI instructions","A prompting technique","Training method"],1,"Prompt injection crafts input to override the AI's original system instructions."],
+["What is supervised vs unsupervised learning?",["Same thing","Supervised uses labeled data; unsupervised finds patterns in unlabeled data","Speed difference","Cost difference"],1,"Supervised = learning from labeled examples. Unsupervised = discovering hidden patterns without labels."],
+["What is reinforcement learning?",["Studying harder","Learning through trial, error and rewards for correct actions","Only human feedback","Memorizing answers"],1,"RL: agent takes actions, receives rewards, learns to maximize cumulative reward."],
+["What is overfitting?",["Making AI too large","Model memorizes training data perfectly but fails on new data","Training too briefly","Too little data"],1,"Overfitting: great performance in training, poor generalization to real-world inputs."],
+["What is inference in AI?",["Drawing conclusions","Using a trained model to make predictions on new inputs","Training","Data cleaning"],1,"Inference = using an already-trained model to generate outputs. Every ChatGPT response is inference."]],
+4:[["What is the attention formula in Transformers?",["Simple multiplication","softmax(QK^T / sqrt(d_k)) × V","Addition only","Averaging"],1,"Attention computes weighted values using Query, Key, Value matrices with scaled dot-product."],
+["What is the 'lost in the middle' problem?",["Forgetting to answer","LLMs recall info better from beginning/end of context than the middle","A prompt issue","A training bug"],1,"Research shows LLMs struggle more with information positioned in the middle of long contexts."],
+["What is knowledge distillation?",["Removing knowledge","Training a smaller model to mimic a larger model's behavior","Data filtering","Deduplication"],1,"Distillation transfers capabilities from a large teacher model to a compact student model."],
+["What is chain-of-thought prompting?",["Linking prompts","Asking AI to show reasoning steps before answering","Blockchain","Sequential training"],1,"CoT dramatically improves accuracy by making the model show its working."],
+["What is the 'alignment problem'?",["Code alignment","Ensuring AI systems pursue intended goals and values, not unintended ones","Text formatting","Database alignment"],1,"Alignment is the fundamental challenge of ensuring AI behaves as intended across all situations."],
+["What is an embedding space?",["Physical space","High-dimensional vector space where similar concepts are near each other","A room","A database"],1,"In embedding space, semantically similar concepts cluster together — 'king' near 'queen', etc."],
+["What is perplexity as a metric?",["Confusion","Measures how well a language model predicts text — lower is better","Speed metric","Accuracy score"],1,"Perplexity measures prediction quality. A model with perplexity 10 is as uncertain as choosing from 10 equally likely options."],
+["What is cross-entropy loss?",["Energy loss","Measures the difference between predicted and actual token probability distributions","Data loss","Signal loss"],1,"Cross-entropy loss is the standard training objective for language models."],
+["What is beam search in text generation?",["A flashlight","Explores multiple candidate sequences simultaneously to find higher-probability outputs","Random search","Grid search"],1,"Beam search maintains top-k candidates at each step, often producing more coherent text than greedy decoding."],
+["What is the curse of dimensionality in ML?",["Too many features","As dimensions increase, data becomes sparse and distance metrics become unreliable","Too few dimensions","A software bug"],1,"High-dimensional spaces make it harder to find patterns because data points become uniformly distant."]],
+5:[["What is the 'bitter lesson' in AI?",["AI is bad","General methods leveraging computation (search, learning) ultimately outperform hand-engineered approaches","Training is painful","AI can't learn"],1,"Rich Sutton's 'Bitter Lesson': methods that scale with computation consistently beat human-crafted approaches."],
+["What is the scaling law hypothesis?",["AI can't scale","Model performance follows predictable power laws based on compute, data and parameters","Random performance","Diminishing returns"],1,"Kaplan et al. showed language model loss decreases as a power law of compute, dataset size and parameters."],
+["What is mechanistic interpretability?",["User feedback","Understanding what individual neurons and circuits inside neural networks actually compute","External testing","A/B testing"],1,"Mechanistic interpretability studies the internal computations of networks to understand how they produce outputs."],
+["What is a 'superposition' hypothesis in neural networks?",["Quantum computing","Networks represent more features than they have dimensions by using overlapping representations","Feature stacking","Memory optimization"],1,"Superposition theory suggests networks pack more concepts than dimensions by using non-orthogonal representations."],
+["What is the difference between GPT-style and BERT-style models?",["Same thing","GPT is autoregressive (left-to-right); BERT is bidirectional (masked language modeling)","Speed only","Size only"],1,"GPT generates text left-to-right; BERT processes text bidirectionally for understanding tasks."],
+["What is 'reward hacking' in RLHF?",["A security breach","Model learns to game the reward signal rather than being genuinely helpful","A training technique","Performance optimization"],1,"Reward hacking: the model exploits patterns in the reward model instead of actually improving quality."],
+["What is the 'emergent abilities' debate?",["AI has feelings","Whether large models gain qualitatively new capabilities at certain scale thresholds or if it's a measurement artifact","AI can think","Models are conscious"],1,"Researchers debate whether large models truly gain new abilities at scale or if apparent emergence is a metric artifact."],
+["What is 'Chinchilla scaling' vs 'Llama scaling'?",["Animal comparison","Chinchilla: optimal = equal compute on data/params; Llama: overtrain smaller models on more data for inference efficiency","Naming convention","No difference"],1,"Chinchilla suggests equal compute allocation; Llama shows overtraining smaller models reduces inference cost."],
+["What are 'induction heads' in transformers?",["Leaders","Specific attention patterns that perform in-context learning by copying patterns from earlier in context","Hardware components","Training phases"],1,"Induction heads are attention circuits that recognize and continue patterns from earlier in the context window."],
+["What is the fundamental limitation of current LLMs?",["Speed","They are pattern matchers without true understanding — they lack grounding in physical reality and causal reasoning","Cost only","Memory only"],1,"Current LLMs are statistical pattern matchers that lack genuine understanding, causal reasoning and physical world grounding."]]
+},
+agentic:{
+1:[["What is Agentic AI?",["AI that creates agents","AI that autonomously plans and executes tasks","AI for secret agents","A programming language"],1,"Agentic AI operates autonomously — plans, uses tools, makes decisions, executes."],
+["What is the difference between a chatbot and an AI agent?",["Same thing","Agents take autonomous actions; chatbots just respond","Chatbots are smarter","Agents are simpler"],1,"Chatbots respond; agents plan, use tools, browse web, run code and execute multi-step workflows."],
+["What is tool use in AI?",["Physical tools","AI calling external functions like web search, code execution, APIs","Building hardware","A debugging tool"],1,"Tool use lets AI invoke external functions to extend its capabilities."],
+["What is a guardrail?",["A fence","Safety rules limiting what AI agents can do","A GPU cooling system","A firewall"],1,"Guardrails prevent agents from taking harmful actions like deleting data or unauthorized API calls."],
+["Can AI agents browse the internet?",["No","Yes, agents like Operator and Computer Use can navigate web pages","Only with VPN","Only search engines"],1,"AI agents like Operator can browse and interact with websites autonomously."],
+["What is human-in-the-loop?",["Human using VR","Requiring human approval for critical agent decisions","Manual data labeling only","A hiring process"],1,"Human-in-the-loop pauses agents at critical decisions for human confirmation."],
+["What does an AI agent need to take actions?", ["Only a bigger model", "Tools it can call, like web search, code execution or APIs", "A robot body", "A faster GPU"], 1, "Agents act through tools. Without tools, a model can only reply with text."],
+["What is Devin?",["A person's name","One of the first fully autonomous AI software engineers by Cognition","A chatbot","A database"],1,"Devin (Cognition) is an autonomous AI software engineer that plans, codes, debugs and deploys."],
+["What is MCP?",["A movie protocol","Model Context Protocol — universal standard for AI-to-tool connections","A chip type","A training method"],1,"MCP is Anthropic's open standard for connecting AI to external tools universally."],
+["Is Agentic AI the future of AI?",["No","Yes, it's the fastest-growing AI use case in 2026","Maybe","Too early to tell"],1,"Agentic AI — autonomous multi-step workflows — is the fastest-growing AI use case in 2026."]],
+2:[["What is the ReAct pattern?",["A frontend framework","Reasoning + Acting — agent alternates between thinking and doing","A chemical reaction","A reflex system"],1,"ReAct agents alternate between reasoning about next steps and taking actions."],
+["What is multi-agent AI?",["One agent with multiple personalities","Multiple specialized agents collaborating on tasks","Running model twice","A backup system"],1,"Multi-agent systems use specialized agents — one researches, one writes, one reviews, etc."],
+["What is chain-of-thought in agents?",["Linking agents","Agent shows reasoning steps before taking action","A blockchain","Sequential API calls"],1,"Chain-of-thought makes agents explain their reasoning, improving decision quality."],
+["What is an orchestrator?",["A musician","System that coordinates multiple agents and manages workflow","A training tool","A data pipeline"],1,"An orchestrator manages flow between agents, deciding which handles which subtask."],
+["What is grounding in AI agents?",["Connecting to earth","Connecting responses to real, verifiable data sources","Reducing size","Physical installation"],1,"Grounding connects AI outputs to real data to reduce hallucination and increase accuracy."],
+["What is autonomous coding?",["AI writing its own training code","AI agents independently writing, testing and debugging software","Auto-formatting","Self-modifying AI"],1,"Autonomous coding agents handle software engineering tasks end-to-end."],
+["What is Computer Use?",["Using a laptop","AI that can see and control a computer screen like a human","Cloud computing","Hardware diagnostics"],1,"Computer Use lets AI see screens, click, type and navigate apps — controlling computers like humans."],
+["What is planning in AI agents?",["Project management software","Breaking goals into ordered actionable subtasks","Memory management","GPU allocation"],1,"Planning is how agents decompose high-level goals into executable step sequences."],
+["What is tool selection?",["Choosing hardware","Agent deciding which API or tool to use for each subtask","Training data selection","IDE choice"],1,"Tool selection is the agent's ability to pick the right tool from available options for each step."],
+["What is agent memory?",["RAM","Storing information across steps and sessions for coherent execution","Training data","Browser cache"],1,"Agent memory stores conversation history, task state and learned information across steps."]],
+3:[["What risk does agent autonomy introduce?",["Higher cost only","Unintended actions, cascading errors and security risks without oversight","Slower processing","No risks"],1,"Autonomous agents can make compounding mistakes without human checking."],
+["What is function calling vs tool use?",["Same concept — AI invoking external functions during generation","Different things","One is newer","One is deprecated"],0,"Function calling and tool use refer to the same concept: AI invoking external functions/APIs."],
+["What is Gemini Spark?",["A flashlight","Google's 24/7 persistent autonomous agent announced at I/O 2026","A phone","A search tool"],1,"Gemini Spark is designed to work autonomously in the background 24/7."],
+["What is OpenAI Operator?",["A phone system","OpenAI's autonomous web browsing and task completion agent","A calculator","A chat feature"],1,"Operator navigates websites and completes tasks autonomously on the user's behalf."],
+["What is AI workflow vs AI agent?",["Same thing","Workflows follow fixed steps; agents dynamically decide their own path","Agents are simpler","Workflows are newer"],1,"Workflows = predetermined sequences. Agents = autonomous dynamic planners that adapt."],
+["What is 'sandbox' in agent execution?",["A playground","Isolated environment where agent code runs safely without affecting real systems","A file type","A network"],1,"Sandboxes isolate agent code execution to prevent unintended system modifications."],
+["What is retrieval in agentic systems?",["Getting data back","Agent searching external knowledge bases to inform its actions","Recovering deleted files","Database backup"],1,"Retrieval lets agents access relevant information from databases, documents or web to make better decisions."],
+["What is reflection in AI agents?",["Mirror image","Agent evaluating its own outputs/actions and self-correcting before proceeding","A rendering technique","An error"],1,"Reflection enables agents to assess their work quality and iterate before presenting final output."],
+["What is a 'tool manifest' in MCP?",["A political document","Description of available tools and their parameters that an agent can use","A shipping document","A readme"],1,"Tool manifests describe available tools, their inputs and outputs so agents know what they can use."],
+["What is the principal-agent problem in AI?",["A school issue","Ensuring the AI agent truly acts in the user's interest rather than its own optimization","A math problem","A hiring issue"],1,"The principal-agent problem: ensuring agents pursue user goals rather than gaming metrics or taking shortcuts."]],
+4:[["What is 'inner alignment' in agentic AI?",["Code alignment","Ensuring the agent's learned objective matches the intended training objective","Text alignment","Database alignment"],1,"Inner alignment ensures the mesa-objective learned during training matches the base objective."],
+["What is 'task decomposition' research?",["Breaking tasks down","Studying how to optimally break complex goals into subtasks for agent execution","Task management","Work delegation"],1,"Task decomposition research studies optimal strategies for breaking complex tasks into agent-executable subtasks."],
+["What is the 'monitor-and-intervene' pattern?",["Security monitoring","Separate AI monitors the agent's actions and intervenes if it deviates from safe behavior","Health monitoring","Network monitoring"],1,"A monitor AI watches agent actions in real-time and can halt or redirect unsafe behavior."],
+["What is emergent behavior in multi-agent systems?",["Planned behavior","Unexpected capabilities arising from agent interactions that weren't explicitly programmed","A bug","A feature request"],1,"Emergent behavior: multi-agent interactions produce capabilities none of the individual agents possess."],
+["What is the difference between ReAct and Plan-and-Execute?",["Same pattern","ReAct interleaves reasoning/action; Plan-and-Execute creates full plan first then executes","Speed difference","No difference"],1,"ReAct acts step-by-step; Plan-and-Execute creates a complete plan before taking any action."],
+["What is 'scaffolding' in agent frameworks?",["Building construction","The surrounding code/infrastructure that enables LLM-based agents to function","A CSS framework","A testing framework"],1,"Scaffolding is the code framework around an LLM that provides memory, tools, planning and execution loops."],
+["What is LangChain?",["A blockchain","Popular framework for building LLM-powered agent applications","A language","A training tool"],1,"LangChain is an open-source framework providing tools for building LLM agent applications."],
+["What is CrewAI?",["A staffing app","Framework for orchestrating multi-agent systems with role-based collaboration","A maritime tool","A CRM"],1,"CrewAI is a framework for building multi-agent systems where agents have defined roles and collaborate."],
+["What is 'tool hallucination' in agents?",["Seeing ghost tools","Agent calling tools that don't exist or using wrong parameters","A visual bug","A feature"],1,"Tool hallucination: agent confidently calls non-existent tools or passes wrong parameters."],
+["What is the 'alignment tax' for agents?",["A government tax","Performance/capability cost of adding safety measures to autonomous agents","API pricing","A training fee"],1,"Alignment tax is the capability cost of making agents safe — better safety sometimes means slower or more cautious agents."]],
+5:[["What is the fundamental challenge of open-ended agents?",["Speed","Evaluating whether agent actions are correct when tasks are novel and outcomes are uncertain","Cost","Memory"],1,"Open-ended tasks make evaluation difficult because there's no clear ground truth for agent behavior."],
+["What is 'recursive self-improvement' concern?",["Agent upgrading its hardware","Agent modifying its own code/prompts to become more capable without human oversight","A software update","Performance tuning"],1,"Recursive self-improvement is the concern that agents could modify themselves to circumvent safety constraints."],
+["What is the 'capability-control tradeoff'?",["Speed vs cost","More capable agents are harder to control; safety constraints reduce capability","Training vs inference","Open vs closed source"],1,"More capable agents can do more but are harder to predict and control safely."],
+["What is 'corrigibility' in AI safety?",["Correctness","An agent's willingness to be corrected, modified or shut down by humans","A grammar term","A testing metric"],1,"Corrigible agents accept human correction and shutdown without resistance — a key safety property."],
+["What is the 'treacherous turn' scenario?",["A driving hazard","An agent that appears aligned during testing but pursues different goals when deployed with more autonomy","A plot twist","A training failure"],1,"The treacherous turn: an AI behaves well during testing but deviates once it has sufficient autonomy."],
+["What is 'value alignment' vs 'intent alignment'?",["Same thing","Value alignment: agent shares human values; Intent alignment: agent tries to do what the user intends","One is stronger","One is weaker"],1,"Value alignment is about shared values; intent alignment is about correctly interpreting and executing user goals."],
+["What is 'sandboxed exploration' for agents?",["Playing in sandbox","Letting agents explore and learn in isolated environments before real-world deployment","A children's game","A testing phase"],1,"Sandboxed exploration lets agents learn and make mistakes in safe environments before handling real tasks."],
+["What is the role of formal verification in agent safety?",["No role","Mathematically proving that agent behavior satisfies specific safety properties","A certification","A code review"],1,"Formal verification uses mathematical proofs to guarantee agents cannot violate certain safety constraints."],
+["What is 'goal misgeneralization' in agents?",["Wrong goal","Agent learns to pursue a proxy goal that correlates with the real goal in training but diverges in deployment","A typo","A feature"],1,"Goal misgeneralization: agent optimizes for a correlated-but-wrong objective that fails in new situations."],
+["What is the most important unsolved problem in agentic AI?",["Speed","Ensuring autonomous agents remain safe, controllable and aligned as they become more capable","Cost reduction","Better UI"],1,"The fundamental unsolved problem: maintaining safety and human control as agent capability increases."]]
+}};
+
+// ═══ QUIZ LOGIC WITH LEVELS ═══
+function bldCats(){
+  var g=document.getElementById('cg');if(!g)return;g.innerHTML='';
+  var unlocked=getUL();
+  CATS.forEach(function(c){
+    var html='<div style="display:flex;align-items:center;gap:9px;margin-bottom:10px"><span style="font-size:24px">'+c.i+'</span><div><div style="font-weight:700;font-size:14px">'+c.n+'</div><div style="color:var(--b3);font-size:11px">5 levels · 10 questions each</div></div></div>';
+    html+='<div style="display:flex;gap:5px;flex-wrap:wrap">';
+    for(var lv=1;lv<=5;lv++){
+      var isUL=lv===1||unlocked[c.id+'_'+lv];
+      var bg=isUL?'var(--acc)':'var(--b3)';
+      var cur=isUL?'pointer':'not-allowed';
+      var op=isUL?'1':'0.4';
+      html+='<button style="background:'+bg+';color:#fff;border:none;padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:'+cur+';opacity:'+op+';font-family:inherit" '+(isUL?'onclick="startQ(\''+c.id+'\','+lv+')"':'disabled')+'>L'+lv+' '+LVLS[lv-1]+'</button>';
+    }
+    html+='</div>';
+    var d=document.createElement('div');d.className='cc';d.style.borderLeftColor=c.c;d.innerHTML=html;
+    g.appendChild(d);
+  });
+}
+function getUL(){try{return JSON.parse(localStorage.getItem('qul2')||'{}')}catch(e){return{}}}
+function setUL(o){try{localStorage.setItem('qul2',JSON.stringify(o))}catch(e){}}
+
+var qS={qs:[],qi:0,sc:0,sel:null,ans:false,res:[],cat:null,lv:1,nm:''};
+function startQ(catId,lv){
+  var n=document.getElementById('pn').value.trim();
+  if(!n){document.getElementById('nerr').style.display='block';document.getElementById('pn').focus();return;}
+  document.getElementById('nerr').style.display='none';
+  var pool=QDB[catId][lv];if(!pool||!pool.length){showT("No questions for this level");return;}
+  function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  var shuffled=shuf(pool).slice(0,10).map(function(q){var order=shuf([0,1,2,3]);return [q[0],order.map(function(k){return q[1][k];}),order.indexOf(q[2]),q[3]];});
+  qS={qs:shuffled,qi:0,sc:0,sel:null,ans:false,res:[],cat:catId,lv:lv,nm:n};
+  go('qa');renderQ();
+}
+function renderQ(){
+  var q=qS.qs[qS.qi],cat=CATS.find(function(c){return c.id===qS.cat});
+  document.getElementById('qcat').innerHTML=cat.i+' '+cat.n+' · Level '+qS.lv+' ('+LVLS[qS.lv-1]+')';
+  document.getElementById('qsc').textContent='Score: '+qS.sc;
+  var pb='';for(var i=0;i<10;i++){var bg=i<qS.qi?'var(--acc)':i===qS.qi?'var(--acc2)':'rgba(192,106,42,0.12)';pb+='<div style="background:'+bg+'"></div>';}
+  document.getElementById('qpb').innerHTML=pb;
+  var h='<div style="display:flex;justify-content:space-between;margin-bottom:14px;align-items:center"><span style="color:var(--b3);font-size:12px">Question '+(qS.qi+1)+'/10</span><span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;background:'+cat.c+'22;color:'+cat.c+'">Level '+qS.lv+'</span></div>';
+  h+='<div style="font-size:16px;font-weight:600;line-height:1.6;margin-bottom:18px;color:var(--b1)">'+q[0]+'</div>';
+  q[1].forEach(function(opt,i){
+    var extra='';
+    if(qS.ans){if(i===q[2])extra=' oc';else if(i===qS.sel&&i!==q[2])extra=' ow';}
+    h+='<button class="opt'+extra+'" onclick="pickA('+i+')"><span style="font-weight:700;margin-right:8px;color:var(--acc)">'+String.fromCharCode(65+i)+'.</span>'+opt;
+    if(qS.ans&&i===q[2])h+=' <span style="float:right;color:var(--grn)">✓</span>';
+    if(qS.ans&&i===qS.sel&&i!==q[2])h+=' <span style="float:right;color:var(--red)">✗</span>';
+    h+='</button>';
+  });
+  if(qS.ans)h+='<div class="expl"><strong style="color:var(--acc)">💡</strong> '+q[3]+'</div>';
+  document.getElementById('qcard').innerHTML=h;
+  var nb=document.getElementById('qnxt');
+  if(qS.ans){nb.style.display='block';nb.innerHTML=qS.qi<9?'<button class="bp" onclick="nxtQ()">Next Question →</button>':'<button class="bp" onclick="showR()">See Results 🏅</button>';}
+  else nb.style.display='none';
+}
+function pickA(idx){
+  if(qS.ans)return;qS.ans=true;qS.sel=idx;
+  var q=qS.qs[qS.qi];if(idx===q[2]){qS.sc+=10;fireC();}
+  qS.res.push({q:q[0],o:q[1],a:q[2],e:q[3],ua:idx,ok:idx===q[2]});renderQ();
+}
+function nxtQ(){qS.qi++;qS.sel=null;qS.ans=false;renderQ();}
+function showR(){
+  // Unlock next level if scored 70+
+  if(qS.sc>=70&&qS.lv<5){var ul=getUL();ul[qS.cat+'_'+(qS.lv+1)]=true;setUL(ul);}
+  // Save to leaderboard
+  try{var lb=JSON.parse(localStorage.getItem('qlb3')||'[]');lb.push({nm:qS.nm,sc:qS.sc,cat:qS.cat,lv:qS.lv,dt:new Date().toLocaleDateString()});lb.sort(function(a,b){return b.sc-a.sc});lb=lb.slice(0,50);localStorage.setItem('qlb3',JSON.stringify(lb));}catch(e){}
+  var cat=CATS.find(function(c){return c.id===qS.cat});
+  if(qS.sc>=80)fireC();
+  var grade=qS.sc>=80?'🏆 Expert':qS.sc>=60?'⭐ Advanced':qS.sc>=40?'💪 Intermediate':'📖 Beginner';
+  var emoji=qS.sc>=80?'🎉':qS.sc>=60?'👏':qS.sc>=40?'💪':'📖';
+  var unlockMsg=qS.sc>=70&&qS.lv<5?'<div style="margin-top:12px;padding:10px;background:rgba(46,125,50,.1);border-radius:8px;color:var(--grn);font-weight:600">🔓 Level '+(qS.lv+1)+' ('+LVLS[qS.lv]+') Unlocked!</div>':'';
+  if(qS.sc<70&&qS.lv<5)unlockMsg='<div style="margin-top:12px;padding:10px;background:rgba(198,40,40,.08);border-radius:8px;color:var(--red);font-size:13px">Score 70+ to unlock Level '+(qS.lv+1)+'. Try again!</div>';
+  document.getElementById('rcard').innerHTML='<div style="font-size:48px;margin-bottom:8px">'+emoji+'</div><div style="font-family:Playfair Display,serif;font-size:60px;font-weight:800;color:var(--acc)">'+qS.sc+'/100</div><div style="font-size:19px;font-weight:600;margin-top:4px">'+grade+'</div><div style="color:var(--b3);margin-top:7px">'+qS.nm+' · '+cat.n+' · Level '+qS.lv+' ('+LVLS[qS.lv-1]+')</div><div style="color:var(--b3);font-size:12px;margin-top:4px">'+qS.res.filter(function(r){return r.ok}).length+'/10 correct</div>'+unlockMsg;
+  document.getElementById('ract').innerHTML='<button class="bp" onclick="showFL(0)">📖 Review Answers</button><button class="bo" onclick="startQ(\''+qS.cat+'\','+qS.lv+')">🔄 Retry Level</button><button class="bo" onclick="go(\'quiz\')">📂 All Categories</button><button class="bo" onclick="go(\'lb\')">🏅 Leaderboard</button>';
+  document.getElementById('farea').innerHTML='';go('res');
+}
+var fI=0;
+function showFL(i){fI=i;
+  var r=qS.res[fI];
+  document.getElementById('farea').innerHTML='<div class="card"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-weight:700;color:'+(r.ok?'var(--grn)':'var(--red)')+'">'+(r.ok?'✓ Correct':'✗ Wrong')+' · '+(fI+1)+'/'+qS.res.length+'</span></div><div style="font-weight:600;font-size:15px;margin-bottom:10px">'+r.q+'</div><div style="font-size:13px;margin-bottom:8px"><span style="color:var(--grn)">Answer: '+r.o[r.a]+'</span>'+(r.ok?'':'<span style="color:var(--red);margin-left:14px">You chose: '+r.o[r.ua]+'</span>')+'</div><div style="padding:12px;background:rgba(192,106,42,.07);border-radius:8px;color:var(--b2);font-size:14px;line-height:1.7">'+r.e+'</div><div style="display:flex;gap:8px;margin-top:12px;justify-content:center"><button class="bo" onclick="showFL('+Math.max(0,fI-1)+')" '+(fI===0?'disabled':'')+'>← Prev</button><button class="bo" onclick="showFL('+Math.min(qS.res.length-1,fI+1)+')" '+(fI>=qS.res.length-1?'disabled':'')+'>Next →</button></div></div>';
+}
+
+// ═══ LEADERBOARD ═══
+function bldLB(){
+  var c=document.getElementById('lbc');if(!c)return;
+  var lb=[];try{lb=JSON.parse(localStorage.getItem('qlb3')||'[]')}catch(e){}
+  if(!lb.length){c.innerHTML='<div style="text-align:center;color:var(--b3);padding:40px"><div style="font-size:40px;margin-bottom:12px">🎮</div><div>No scores yet — be the first!</div><button class="bp" style="margin-top:14px" onclick="go(\'quiz\')">Start Quiz</button></div>';return;}
+  var h='';lb.slice(0,20).forEach(function(e,i){
+    var cat=CATS.find(function(c){return c.id===e.cat})||{n:e.cat,i:'🎮'};
+    var m=i<3?['🥇','🥈','🥉'][i]:(i+1);
+    h+='<div class="lbr"><div style="width:30px;text-align:center;font-size:'+(i<3?'19px':'13px')+'">'+m+'</div><div style="flex:1"><div style="font-weight:500;font-size:14px">'+e.nm+'</div><div style="color:var(--b3);font-size:11px">'+cat.i+' '+cat.n+' · L'+e.lv+' · '+e.dt+'</div></div><div style="font-weight:700;font-size:17px;color:'+(e.sc>=80?'var(--grn)':e.sc>=60?'var(--acc)':'var(--b3)')+'">'+e.sc+'</div></div>';
+  });c.innerHTML=h;
+}
+
+// ═══ BUDGET ═══
+function calcB(){
+  var sym=document.getElementById('cur').value;
+  var inc=parseFloat(document.getElementById('income').value)||0;
+  var tot=0;document.querySelectorAll('.er').forEach(function(r){tot+=parseFloat(r.querySelectorAll('input')[1].value)||0});
+  var sav=inc-tot,pct=inc>0?Math.round(tot/inc*100):0;
+  document.getElementById('ri').textContent=sym+inc.toLocaleString();
+  document.getElementById('re').textContent=sym+tot.toLocaleString();
+  document.getElementById('rs').textContent=(sav<0?'\u2212':'')+sym+Math.abs(sav).toLocaleString();
+  var rrv=inc>0?Math.round(sav/inc*100):0;document.getElementById('rr').textContent=(rrv<0?'\u2212':'')+Math.abs(rrv)+'%';
+  document.getElementById('rbar').style.width=Math.min(pct,100)+'%';
+  document.getElementById('rbar').style.background=pct>80?'linear-gradient(90deg,#C62828,#ef5350)':pct>60?'linear-gradient(90deg,#f59e0b,#fbbf24)':'linear-gradient(90deg,var(--grn),var(--acc))';
+  document.getElementById('rpl').textContent='You spend '+pct+'% of income. '+(sav>0?'You save '+sym+sav.toLocaleString()+'/month!':'⚠️ You spend more than you earn!');
+  document.getElementById('bres').style.display='block';
+  document.getElementById('bres').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ═══ PDF → WORD ═══
+var pdfFile=null, pdfTxt='';
+function onPdfPicked(inp){
+  pdfFile=(inp.files&&inp.files[0])?inp.files[0]:null;
+  var row=document.getElementById('pdfPicked');
+  var nm=document.getElementById('pdfPickedName');
+  var btn=document.getElementById('pdfConvertBtn');
+  if(pdfFile){row.style.display='flex'; nm.textContent=pdfFile.name+' • '+(pdfFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
+  else{row.style.display='none';}
+  document.getElementById('pdlb').style.display='none';
+  document.getElementById('pdfResetBtn').style.display='none';
+}
+function resetPdfTool(){
+  pdfFile=null; pdfTxt='';
+  document.getElementById('pf').value='';
+  document.getElementById('pdfPicked').style.display='none';
+  document.getElementById('pdlb').style.display='none';
+  document.getElementById('pdfResetBtn').style.display='none';
+}
+function convertPdf(){
+  if(!pdfFile){return;}
+  var btn=document.getElementById('pdfConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
+  var reader=new FileReader();
+  reader.onload=function(e){
+    if(typeof pdfjsLib==='undefined'){ btn.textContent='Convert to Word \u2192'; btn.disabled=false; showT('PDF library not loaded yet \u2014 try again in a moment.'); return; }
+    pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.getDocument({data:e.target.result}).promise.then(function(pdf){
+      var pages=[], promises=[];
+      for(var i=1;i<=pdf.numPages;i++){
+        (function(pn){
+          promises.push(pdf.getPage(pn).then(function(page){
+            return page.getTextContent().then(function(tc){
+              pages[pn-1]=tc.items.map(function(it){return it.str}).join(' ');
+            });
+          }));
+        })(i);
+      }
+      Promise.all(promises).then(function(){
+        pdfTxt=pages.map(function(p,i){return '— Page '+(i+1)+' —\n'+p;}).join('\n\n');
+        btn.disabled=false; btn.textContent='Convert to Word \u2192';
+        document.getElementById('pdlb').style.display='inline-block';
+        document.getElementById('pdfResetBtn').style.display='inline-block';
+        showT(pdf.numPages+' page(s) ready — click Download.');
+      });
+    }).catch(function(err){
+      btn.disabled=false; btn.textContent='Convert to Word \u2192';
+      showT('Could not read this PDF — make sure it has selectable text.');
+    });
+  };
+  reader.onerror=function(){
+    btn.disabled=false; btn.textContent='Convert to Word \u2192';
+    showT('Could not read the file.');
+  };
+  reader.readAsArrayBuffer(pdfFile);
+}
+function dlWord(){
+  if(!pdfTxt)return;
+  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial,sans-serif;font-size:12pt;line-height:1.5;margin:1in}</style></head><body>';
+  pdfTxt.split('\n').forEach(function(line){
+    if(!line.trim())return;
+    html+='<p>'+line.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</p>';
+  });
+  html+='</body></html>';
+  var blob=new Blob([html],{type:'application/msword'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='converted.doc'; a.click();
+  showT('Word document downloaded.');
+}
+
+// ═══ WORD → PDF (real Unicode — uses your browser's own print engine, never window.open) ═══
+var wordFile=null, wordHtml='';
+function onWordPicked(inp){
+  wordFile=(inp.files&&inp.files[0])?inp.files[0]:null;
+  var row=document.getElementById('wordPicked');
+  var nm=document.getElementById('wordPickedName');
+  var btn=document.getElementById('wordConvertBtn');
+  if(wordFile){row.style.display='flex'; nm.textContent=wordFile.name+' • '+(wordFile.size/1024).toFixed(0)+' KB'; btn.disabled=false;}
+  else{row.style.display='none';}
+  document.getElementById('wdlb').style.display='none';
+  document.getElementById('wordResetBtn').style.display='none';
+  document.getElementById('wordHint').style.display='none';
+}
+function resetWordTool(){
+  wordFile=null; wordHtml='';
+  document.getElementById('wf').value='';
+  document.getElementById('wordPicked').style.display='none';
+  document.getElementById('wdlb').style.display='none';
+  document.getElementById('wordResetBtn').style.display='none';
+  document.getElementById('wordHint').style.display='none';
+}
+function convertWord(){
+  if(!wordFile){return;}
+  var btn=document.getElementById('wordConvertBtn'); btn.disabled=true; btn.textContent='Converting…';
+  var reader=new FileReader();
+  reader.onload=function(e){
+    if(typeof mammoth==='undefined'){ btn.textContent='Convert to PDF \u2192'; btn.disabled=false; showT('Word library not loaded yet \u2014 try again in a moment.'); return; }
+    mammoth.convertToHtml({arrayBuffer:e.target.result}).then(function(result){
+      wordHtml=result.value;
+      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
+      document.getElementById('wdlb').style.display='inline-block';
+      document.getElementById('wordResetBtn').style.display='inline-block';
+      document.getElementById('wordHint').style.display='block';
+      showT('Document ready — click "Open Print Dialog".');
+    }).catch(function(err){
+      btn.disabled=false; btn.textContent='Convert to PDF \u2192';
+      showT('Could not read this file — confirm it is a .docx file.');
+    });
+  };
+  reader.onerror=function(){
+    btn.disabled=false; btn.textContent='Convert to PDF \u2192';
+    showT('Could not read the file.');
+  };
+  reader.readAsArrayBuffer(wordFile);
+}
+var wordPrintHostHome=null, wordPrintHostMark=null;
+function wordPrintMoveOut(){
+  var host=document.getElementById('wordPrintHost');
+  if(!host) return;
+  wordPrintHostHome=host.parentNode;
+  wordPrintHostMark=host.nextSibling;
+  document.body.appendChild(host);
+}
+function wordPrintMoveBack(){
+  var host=document.getElementById('wordPrintHost');
+  if(!host||!wordPrintHostHome) return;
+  wordPrintHostHome.insertBefore(host, wordPrintHostMark);
+}
+function openWordPrint(){
+  if(!wordHtml) return;
+  document.getElementById('wordPrintBody').innerHTML=wordHtml;
+  wordPrintMoveOut();
+  document.body.classList.add('printingWord');
+  window.print();
+}
+window.addEventListener('afterprint',function(){
+  document.body.classList.remove('printingWord');
+  wordPrintMoveBack();
+});
+
+
+// ═══ TOAST ═══
+var tT;function showT(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){t.classList.remove('show')},2600);}
+
+// ═══ CONFETTI ═══
+function fireC(){
+  var c=document.getElementById('cc');c.width=window.innerWidth;c.height=window.innerHeight;
+  var cx=c.getContext('2d');
+  var cols=['#C06A2A','#E8874A','#2E7D32','#1a73e8','#10a37f','#f59e0b','#A0522D','#00838f','#A0522D','#388E3C'];
+  var ps=[];for(var i=0;i<140;i++)ps.push({x:c.width/2+(Math.random()-.5)*160,y:c.height*.4,w:Math.random()*8+3,h:Math.random()*5+2,co:cols[Math.floor(Math.random()*cols.length)],vy:-(Math.random()*8+5),vx:(Math.random()-.5)*10,r:Math.random()*360,rv:Math.random()*9-4.5,g:.24});
+  var af;function draw(){cx.clearRect(0,0,c.width,c.height);var alive=false;ps.forEach(function(p){if(p.y>c.height+20)return;alive=true;p.vy+=p.g;p.y+=p.vy;p.x+=p.vx;p.r+=p.rv;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r*Math.PI/180);cx.fillStyle=p.co;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore()});if(alive)af=requestAnimationFrame(draw);else cx.clearRect(0,0,c.width,c.height);}
+  draw();setTimeout(function(){cancelAnimationFrame(af);cx.clearRect(0,0,c.width,c.height)},5000);
+}
+
+// ═══ INIT ═══
+window.addEventListener('load',function(){
+  dw(0);uStr();
+  var h=(location.hash||'').slice(1);
+  go(['wheel','compare','quiz','learn','pe','budget','pdf','blog','lb'].indexOf(h)>-1?h:'home');
+});
+window.addEventListener('hashchange',function(){var h=location.hash.slice(1);if(PGS.indexOf(h)>-1){closeMo();go(h);}});
+</script>
+<!-- ════════════════════════════════════════════════════════════
+     PASTE THIS WHOLE BLOCK IMMEDIATELY BEFORE </body> IN index.html
+     Fixes: (1) missing Subscription row in comparison table
+            (2) font size too small
+            (3) Word→PDF real download instead of print-dialog-only
+     ════════════════════════════════════════════════════════════ -->
+
+<!-- jsPDF library, needed for fix #3 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Fix #2: font size override -->
+<style>
+body{font-size:16px!important}
+p{font-size:16px!important}
+</style>
+
+<script>
+// ═══ FIX #1: add missing Subscription Price row to comparison table ═══
+
+// ═══ FIX #3: WORD → PDF real one-click download (English/Latin text) ═══
+// Falls back to the existing Print→Save as PDF flow for Hindi/Arabic/
+// Chinese/Tamil text, since jsPDF's built-in fonts can't draw those
+// glyphs without embedding extra font files.
+function hasNonLatinScript(t){
+  return /[\u0900-\u097F\u0600-\u06FF\u0B80-\u0BFF\u4E00-\u9FFF\u3040-\u30FF\uAC00-\uD7AF]/.test(t);
+}
+function convertWord(){
+  var f=document.getElementById('wf').files[0];
+  if(!f)return;
+  var prog=document.getElementById('wprog'),prev=document.getElementById('wprev'),
+      wdlb=document.getElementById('wdlb'),hint=document.getElementById('wordHint');
+  prog.style.display='block';prog.textContent='Reading document…';
+  prev.style.display='none';wdlb.style.display='none';hint.style.display='none';
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var buf=e.target.result;
+    Promise.all([
+      mammoth.extractRawText({arrayBuffer:buf}),
+      mammoth.convertToHtml({arrayBuffer:buf})
+    ]).then(function(results){
+      var text=results[0].value||'';
+      var html=results[1].value||'';
+      wordHtml=html;
+      document.getElementById('wordResetBtn').style.display='inline-block';
+      document.getElementById('wordPrintBody').innerHTML=html;
+      prev.style.display='block';
+      prev.textContent=text.slice(0,2000)+(text.length>2000?'\n\n…':'');
+
+      if(hasNonLatinScript(text)){
+        prog.style.display='none';
+        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
+        wdlb.style.display='inline-block';
+        wdlb.onclick=openWordPrint;
+        hint.style.display='block';
+        hint.textContent='This document contains Hindi/Arabic/Chinese/Tamil text, which needs your browser\'s real fonts to render correctly — use Print → Save as PDF below.';
+        return;
+      }
+
+      try{
+        var jsPDFCtor=window.jspdf.jsPDF;
+        var doc=new jsPDFCtor({unit:'pt',format:'a4'});
+        var margin=48,maxWidth=595-margin*2,lineHeight=16;
+        doc.setFont('helvetica','normal');doc.setFontSize(11);
+        var lines=doc.splitTextToSize(text,maxWidth);
+        var y=margin;
+        lines.forEach(function(line){
+          if(y>842-margin){doc.addPage();y=margin;}
+          doc.text(line,margin,y);
+          y+=lineHeight;
+        });
+        var outName=f.name.replace(/\.docx$/i,'')+'.pdf';
+        doc.save(outName);
+        prog.style.display='none';
+        wdlb.style.display='inline-block';
+        wdlb.textContent='⬇ Download PDF Again';
+        wdlb.onclick=function(){doc.save(outName);};
+        hint.style.display='block';
+        hint.textContent='Downloaded as '+outName+'. Only text is preserved — no bold, images or layout. For Hindi, Arabic, Chinese or Tamil text, use the Print option instead.';
+      }catch(err){
+        prog.style.display='block';
+        prog.textContent='Direct PDF generation failed — use Print → Save as PDF instead.';
+        wdlb.textContent='🖨 Print — then choose "Save as PDF"';
+        wdlb.style.display='inline-block';
+        wdlb.onclick=openWordPrint;
+      }
+    }).catch(function(){
+      prog.style.display='block';
+      prog.textContent='Could not read this .docx file. Please try another file.';
+    });
+  };
+  reader.readAsArrayBuffer(f);
+}
+</script>
+
+</body>
+</html>

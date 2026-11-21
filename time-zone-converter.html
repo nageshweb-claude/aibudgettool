@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Zone Converter: IST to EST, PST, GMT (DST Aware)</title>
+<meta name="description" content="Convert time between world time zones with daylight saving handled automatically. See the difference in plain words and the best meeting hours.">
+<link rel="canonical" href="https://www.aibudgettool.com/time-zone-converter.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Time Zone Converter: IST to EST, PST, GMT (DST Aware)">
+<meta property="og:description" content="Convert time between world time zones with daylight saving handled automatically. See the difference in plain words and the best meeting hours.">
+<meta property="og:url" content="https://www.aibudgettool.com/time-zone-converter.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-timezone.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Time zone converter","url":"https://www.aibudgettool.com/time-zone-converter.html","description":"Convert time between world time zones with daylight saving handled automatically. See the difference in plain words and the best meeting hours.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"AI Budget Tool","url":"https://www.aibudgettool.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.aibudgettool.com/#calculators"},{"@type":"ListItem","position":3,"name":"Time zone converter","item":"https://www.aibudgettool.com/time-zone-converter.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the time difference between India and the USA?","acceptedAnswer":{"@type":"Answer","text":"India (IST) is 10 hours 30 minutes ahead of New York when New York is on standard time (EST), and 9 hours 30 minutes ahead during US daylight saving time (EDT). For Los Angeles it is 13 hours 30 minutes (PST) or 12 hours 30 minutes (PDT)."}},{"@type":"Question","name":"Does India have daylight saving time?","acceptedAnswer":{"@type":"Answer","text":"No. India Standard Time stays at UTC+5:30 all year, so the gap to countries that change their clocks shifts by an hour twice a year."}},{"@type":"Question","name":"When do the US and Europe change their clocks?","acceptedAnswer":{"@type":"Answer","text":"The US moves clocks forward on the second Sunday of March and back on the first Sunday of November. The UK and EU move forward on the last Sunday of March and back on the last Sunday of October. For a few weeks each year the gap between them is an hour different from usual."}},{"@type":"Question","name":"How do I find a good meeting time across time zones?","acceptedAnswer":{"@type":"Answer","text":"Look at the timeline under the result. Hours shaded green are 9 AM to 6 PM in each place. Where both rows are green, both people are in working hours."}},{"@type":"Question","name":"Why does the converter show a different date?","acceptedAnswer":{"@type":"Answer","text":"If the converted time crosses midnight, the date changes too. The result tells you when it is the next day or the day before."}},{"@type":"Question","name":"Can I share a converted time?","acceptedAnswer":{"@type":"Answer","text":"Yes. The address bar updates as you change the settings. Use Share this time, or send it on WhatsApp, and the other person sees the same conversion."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators" aria-current="page">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li aria-current="page">Time zone converter</li></ol></nav><div class="wrap"><div class="intro"><h1>Time zone converter</h1><p>Convert a time between any two places, with daylight saving handled for the exact date you choose.</p></div>
+
+<section class="instrument" aria-label="Time zone converter">
+  <div class="controls">
+    <div class="field"><label for="from">From</label><select id="from"></select></div>
+    <div style="display:flex;justify-content:center;margin:-10px 0">
+      <button class="btn btn-ghost" type="button" id="swap" aria-label="Swap time zones" style="min-height:38px;padding:6px 14px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5"/></svg>Swap</button></div>
+    <div class="field"><label for="to">To</label><select id="to"></select></div>
+    <div class="inline">
+      <div class="field" style="flex:1"><label for="date">Date</label><input id="date" type="date"></div>
+      <div class="field" style="flex:1"><label for="time">Time</label><input id="time" type="time" step="60"></div>
+    </div>
+    <div class="field-row" style="flex-wrap:wrap">
+      <div class="seg" role="group" aria-label="Clock format"><button type="button" data-fmt="12" aria-pressed="true">12-hour</button><button type="button" data-fmt="24" aria-pressed="false">24-hour</button></div>
+      <button class="chip" type="button" id="now">Use current time</button>
+    </div>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div>
+      <div class="answer-label" id="toLabel">Time there</div>
+      <div class="answer num"><span class="hl" id="tOut">–</span></div>
+      <div class="answer-sub" id="tDate"></div>
+    </div>
+    <p id="diff" style="font-size:1.12rem;font-weight:600;margin:0"></p>
+    <div id="dst" class="muted" style="font-size:.98rem"></div>
+    <div>
+      <span class="lbl" style="font-weight:600">Across the day</span>
+      <p class="hint" style="margin:2px 0 10px">Tap an hour to pick it. Green shows 9 AM to 6 PM in each place.</p>
+      <div class="tl-scroll"><div id="tl" class="tl" role="group" aria-label="24-hour timeline"></div></div>
+      <p id="overlap" class="hint" style="margin:10px 0 0"></p>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" id="shareBtn">Share this time</button>
+      <button class="btn btn-wa" type="button" id="waBtn">Send on WhatsApp</button>
+    </div>
+  </div>
+</section>
+<style>
+.tl-scroll{overflow-x:auto;padding-bottom:4px}
+.tl{display:grid;grid-template-columns:auto repeat(24,minmax(44px,1fr));gap:2px;font-size:.74rem;font-variant-numeric:tabular-nums;min-width:max-content}
+.tl .z{position:sticky;left:0;background:var(--sheet);z-index:1}
+.tl .z{font-weight:600;color:var(--ink-2);padding-right:8px;white-space:nowrap;align-self:center;font-size:.78rem}
+.tl button{font:inherit;border:0;padding:8px 0;background:var(--rule-2);color:var(--ink-2);cursor:pointer;text-align:center;min-width:0}
+.tl button.work{background:var(--green-t);color:var(--green-d)}
+.tl button.sel{background:var(--ink);color:#fff;font-weight:700}
+.tl .row1{border-radius:6px 6px 0 0}.tl .row2{border-radius:0 0 6px 6px}
+
+</style>
+<div style="margin-top:18px"><span class="lbl" style="font-weight:600;margin-right:8px">Popular:</span><div class="chips" style="display:inline-flex;margin-top:8px"><a class="chip" href="?from=Asia/Kolkata&amp;to=America/New_York">IST to EST</a><a class="chip" href="?from=America/New_York&amp;to=Asia/Kolkata">EST to IST</a><a class="chip" href="?from=Asia/Kolkata&amp;to=America/Los_Angeles">IST to PST</a><a class="chip" href="?from=Asia/Kolkata&amp;to=Europe/London">IST to UK time</a><a class="chip" href="?from=Asia/Kolkata&amp;to=Europe/Berlin">IST to CET</a><a class="chip" href="?from=Asia/Kolkata&amp;to=Australia/Sydney">IST to Sydney</a><a class="chip" href="?from=Asia/Kolkata&amp;to=Asia/Dubai">IST to Dubai</a><a class="chip" href="?from=Asia/Kolkata&amp;to=Asia/Singapore">IST to Singapore</a><a class="chip" href="?from=Asia/Kolkata&amp;to=UTC">IST to UTC</a><a class="chip" href="?from=America/Chicago&amp;to=Asia/Kolkata">CST to IST</a><a class="chip" href="?from=Europe/London&amp;to=America/New_York">London to New York</a><a class="chip" href="?from=America/Los_Angeles&amp;to=America/New_York">PST to EST</a></div></div>
+
+
+<section class="section" id="how-it-works">
+  <div class="two-col">
+    <div class="prose">
+      <h2>How the converter handles daylight saving</h2>
+      <p class="lede">Countries change their clocks on different dates, and some never change them. A fixed table of offsets goes wrong twice a year, so this converter doesn't use one.</p>
+      <ol class="steps">
+        <li>You pick a date and time in the first place.</li>
+        <li>The converter asks your browser's built-in time zone database (the IANA database, which phones and computers use) what the UTC offset was in that place at that moment.</li>
+        <li>It then reads the local time in the second place at the same instant, so summer time is applied only where and when it really applies.</li>
+      </ol>
+      <p>Tip: choose a city, not an abbreviation. "CST" can mean US Central time or China Standard Time, and "IST" can mean India, Ireland or Israel.</p>
+    </div>
+    <div class="example">
+      <h3>Example</h3>
+      <p>A team call is at <strong>7:30 PM in India</strong> on a date in January.</p>
+      <p>New York is on standard time (EST) in winter, which is 10 hours 30 minutes behind India.</p>
+      <p>So the call is at <span class="hl"><strong>9:00 AM in New York</strong></span>.</p>
+      <p>In July, New York is on EDT, only 9 hours 30 minutes behind, so the same 7:30 PM call is at 10:00 AM there.</p>
+      <p><a href="?from=Asia/Kolkata&amp;to=America/New_York&amp;t=19:30">Try it with today's date</a></p>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq"><h2>Questions people ask</h2><div class="faq-list"><details class="faq"><summary>What is the time difference between India and the USA?</summary><p>India (IST) is 10 hours 30 minutes ahead of New York when New York is on standard time (EST), and 9 hours 30 minutes ahead during US daylight saving time (EDT). For Los Angeles it is 13 hours 30 minutes (PST) or 12 hours 30 minutes (PDT).</p></details><details class="faq"><summary>Does India have daylight saving time?</summary><p>No. India Standard Time stays at UTC+5:30 all year, so the gap to countries that change their clocks shifts by an hour twice a year.</p></details><details class="faq"><summary>When do the US and Europe change their clocks?</summary><p>The US moves clocks forward on the second Sunday of March and back on the first Sunday of November. The UK and EU move forward on the last Sunday of March and back on the last Sunday of October. For a few weeks each year the gap between them is an hour different from usual.</p></details><details class="faq"><summary>How do I find a good meeting time across time zones?</summary><p>Look at the timeline under the result. Hours shaded green are 9 AM to 6 PM in each place. Where both rows are green, both people are in working hours.</p></details><details class="faq"><summary>Why does the converter show a different date?</summary><p>If the converted time crosses midnight, the date changes too. The result tells you when it is the next day or the day before.</p></details><details class="faq"><summary>Can I share a converted time?</summary><p>Yes. The address bar updates as you change the settings. Use Share this time, or send it on WhatsApp, and the other person sees the same conversion.</p></details></div></section><section class="section"><h2>More free tools</h2><div class="related"><a href="/emi-calculator.html"><strong>EMI calculator</strong><span>What will my monthly loan payment be?</span></a><a href="/salary-calculator.html"><strong>Salary calculator</strong><span>What does my pay work out to per hour, month or year?</span></a><a href="/age-calculator.html"><strong>Age calculator</strong><span>How old am I exactly, and when is my next birthday?</span></a><a href="/data-transfer-calculator.html"><strong>Data transfer calculator</strong><span>How long will this file take to download or upload?</span></a><a href="/unit-converter.html"><strong>Unit converter</strong><span>How many inches, pounds, MB or mph is that?</span></a></div></section></div></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
+      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
+<script>
+
+(function(){
+var A=ABT,$=function(i){return document.getElementById(i)};
+var POP=[["Asia/Kolkata", "India", "IST", "IST"], ["America/New_York", "New York", "EST", "EDT"], ["America/Chicago", "Chicago", "CST", "CDT"], ["America/Denver", "Denver", "MST", "MDT"], ["America/Los_Angeles", "Los Angeles", "PST", "PDT"], ["America/Toronto", "Toronto", "EST", "EDT"], ["Europe/London", "London", "GMT", "BST"], ["Europe/Paris", "Paris", "CET", "CEST"], ["Europe/Berlin", "Berlin", "CET", "CEST"], ["Europe/Amsterdam", "Amsterdam", "CET", "CEST"], ["Asia/Dubai", "Dubai", "GST", "GST"], ["Asia/Riyadh", "Riyadh", "AST", "AST"], ["Asia/Singapore", "Singapore", "SGT", "SGT"], ["Asia/Tokyo", "Tokyo", "JST", "JST"], ["Asia/Shanghai", "China", "CST", "CST"], ["Asia/Hong_Kong", "Hong Kong", "HKT", "HKT"], ["Australia/Sydney", "Sydney", "AEST", "AEDT"], ["Pacific/Auckland", "Auckland", "NZST", "NZDT"], ["Asia/Karachi", "Pakistan", "PKT", "PKT"], ["Asia/Dhaka", "Bangladesh", "BST", "BST"], ["Asia/Kathmandu", "Nepal", "NPT", "NPT"], ["Asia/Colombo", "Sri Lanka", "SLST", "SLST"], ["Asia/Kuala_Lumpur", "Kuala Lumpur", "MYT", "MYT"], ["Asia/Manila", "Manila", "PHT", "PHT"], ["Asia/Jakarta", "Jakarta", "WIB", "WIB"], ["Europe/Moscow", "Moscow", "MSK", "MSK"], ["Africa/Johannesburg", "Johannesburg", "SAST", "SAST"], ["Africa/Lagos", "Lagos", "WAT", "WAT"], ["Africa/Nairobi", "Nairobi", "EAT", "EAT"], ["America/Sao_Paulo", "São Paulo", "BRT", "BRT"], ["UTC", "UTC", "UTC", "UTC"]];
+var INFO={}; POP.forEach(function(p){INFO[p[0]]={name:p[1],std:p[2],dst:p[3]};});
+var fromS=$('from'),toS=$('to'),dateI=$('date'),timeI=$('time'),h12=true;
+var all=[]; try{ all=Intl.supportedValuesOf('timeZone'); }catch(e){}
+function addOpts(sel){
+  var g1=document.createElement('optgroup'); g1.label='Popular';
+  POP.forEach(function(p){ var o=document.createElement('option'); o.value=p[0]; o.textContent=p[1]+' ('+(p[2]===p[3]?p[2]:p[2]+'/'+p[3])+')'; g1.appendChild(o); });
+  sel.appendChild(g1);
+  if(all.length){ var g2=document.createElement('optgroup'); g2.label='All time zones';
+    all.forEach(function(z){ if(INFO[z]) return; var o=document.createElement('option'); o.value=z; o.textContent=z.replace(/_/g,' '); g2.appendChild(o); }); sel.appendChild(g2); }
+}
+addOpts(fromS); addOpts(toS);
+var ALIAS={'Asia/Calcutta':'Asia/Kolkata','Asia/Katmandu':'Asia/Kathmandu','Asia/Rangoon':'Asia/Yangon','Asia/Saigon':'Asia/Ho_Chi_Minh','Europe/Kiev':'Europe/Kyiv','America/Buenos_Aires':'America/Argentina/Buenos_Aires','US/Eastern':'America/New_York','US/Pacific':'America/Los_Angeles','US/Central':'America/Chicago','Etc/UTC':'UTC','GMT':'UTC'};
+function valid(z){ try{ new Intl.DateTimeFormat('en-US',{timeZone:z}); return true; }catch(e){ return false; } }
+function ensure(sel,z){ z=ALIAS[z]||z; if(!valid(z)) return false; if(![].some.call(sel.options,function(o){return o.value===z;})){ var o=document.createElement('option'); o.value=z; o.textContent=z.replace(/_/g,' '); sel.appendChild(o);} sel.value=z; return true; }
+/* offset in minutes east of UTC for zone at instant */
+var dtfCache={};
+function dtf(z){ return dtfCache[z]||(dtfCache[z]=new Intl.DateTimeFormat('en-US',{timeZone:z,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'})); }
+function parts(z,d){ var o={}; dtf(z).formatToParts(d).forEach(function(p){o[p.type]=p.value;}); if(o.hour==='24')o.hour='00'; return o; }
+function offset(z,d){ var p=parts(z,d); var asUTC=Date.UTC(+p.year,+p.month-1,+p.day,+p.hour,+p.minute,+p.second); return Math.round((asUTC-Math.floor(d.getTime()/1000)*1000)/60000); }
+function zonedToUtc(y,mo,d,h,mi,z){
+  var g=Date.UTC(y,mo-1,d,h,mi), o1=offset(z,new Date(g)), t1=g-o1*60000, o2=offset(z,new Date(t1)), t2=g-o2*60000;
+  function ok(t){ var p=parts(z,new Date(t)); return +p.hour===h&&+p.minute===mi; }
+  if(ok(t1)) return new Date(t1); if(ok(t2)) return new Date(t2);
+  return new Date(Math.max(t1,t2)); /* time skipped by a clock change: move forward, as phones and calendars do */
+}
+function dstInfo(z,d){
+  var y=+parts(z,d).year, jan=offset(z,new Date(Date.UTC(y,0,1))), jul=offset(z,new Date(Date.UTC(y,6,1))), now=offset(z,d);
+  return {observes:jan!==jul, on:jan!==jul&&now===Math.max(jan,jul)};
+}
+function label(z){ return INFO[z]?INFO[z].name:z.split('/').pop().replace(/_/g,' '); }
+function gmt(m){ var s=m<0?'−':'+', a=Math.abs(m), h=Math.floor(a/60), mm=a%60; return 'GMT'+s+h+(mm?':'+String(mm).padStart(2,'0'):''); }
+function abbr(z,d){ var i=INFO[z], di=dstInfo(z,d); if(i) return di.on?i.dst:i.std; return gmt(offset(z,d)); }
+function dur(m){ var h=Math.floor(m/60), mm=m%60, s=[]; if(h) s.push(h+' hour'+(h===1?'':'s')); if(mm) s.push(mm+' minute'+(mm===1?'':'s')); return s.join(' '); }
+function fmtTime(z,d){ return new Intl.DateTimeFormat('en-US',{timeZone:z,hour:'numeric',minute:'2-digit',hour12:h12}).format(d); }
+function fmtDate(z,d){ return new Intl.DateTimeFormat('en-GB',{timeZone:z,weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(d); }
+function hourLbl(h,m){ if(!h12) return String(h).padStart(2,'0')+(m?':'+String(m).padStart(2,'0'):''); var hh=h%12||12; return hh+(m?':'+String(m).padStart(2,'0'):'')+(h<12?'a':'p'); }
+function longLbl(h){ return h12?((h%12||12)+' '+(h<12?'AM':'PM')):(String(h).padStart(2,'0')+':00'); }
+function inputs(){ var dv=dateI.value.split('-'), tv=(timeI.value||'00:00').split(':'); return {y:+dv[0],mo:+dv[1],d:+dv[2],h:+tv[0],mi:+tv[1]}; }
+function calc(){
+  var f=fromS.value,t=toS.value,i=inputs(); if(!i.y) return;
+  var inst=zonedToUtc(i.y,i.mo,i.d,i.h,i.mi,f);
+  $('toLabel').textContent='Time in '+label(t)+' ('+abbr(t,inst)+')';
+  $('tOut').textContent=fmtTime(t,inst);
+  var pf=parts(f,inst), pt=parts(t,inst), dayShift=Date.UTC(+pt.year,+pt.month-1,+pt.day)-Date.UTC(+pf.year,+pf.month-1,+pf.day);
+  $('tDate').textContent=fmtDate(t,inst)+(dayShift>0?', the next day':dayShift<0?', the day before':'');
+  var of=offset(f,inst), ot=offset(t,inst), df=ot-of, fl=label(f)+' ('+abbr(f,inst)+')', tlb=label(t)+' ('+abbr(t,inst)+')';
+  $('diff').textContent = df===0 ? fl+' and '+tlb+' are on the same time.' : tlb+' is '+dur(Math.abs(df))+(df>0?' ahead of ':' behind ')+fl+'.';
+  var lines=[f,t].filter(function(z,k){return k===0||z!==f;}).map(function(z){
+    var di=dstInfo(z,inst), n=label(z);
+    if(!di.observes) return n+': no daylight saving time. The clock stays the same all year.';
+    if(di.on) return n+' is on daylight saving time ('+abbr(z,inst)+') on this date.';
+    return n+' uses daylight saving time, but is on standard time ('+abbr(z,inst)+') on this date.';
+  });
+  var back=parts(f,inst);
+  if(+back.hour!==i.h||+back.minute!==i.mi){
+    lines.unshift('<strong>'+String(i.h).padStart(2,'0')+':'+String(i.mi).padStart(2,'0')+' does not exist in '+label(f)+' on this date</strong>, because the clocks jump forward an hour. It is treated as '+fmtTime(f,inst)+' local time.');
+  }
+  $('dst').innerHTML=lines.map(function(l){return '<div>'+l+'</div>';}).join('');
+  timeline(f,t,i);
+  save();
+}
+function timeline(f,t,i){
+  var tl=$('tl'), r1='<div class="z">'+(INFO[f]?INFO[f].std:label(f))+'</div>', r2='<div class="z">'+(INFO[t]?INFO[t].std:label(t))+'</div>', ov=[];
+  for(var h=0;h<24;h++){
+    var inst=zonedToUtc(i.y,i.mo,i.d,h,0,f), pt=parts(t,inst), th=+pt.hour, tm=+pt.minute;
+    var wf=h>=9&&h<18, wt=(th+tm/60)>=9&&(th+tm/60)<18, sel=h===i.h;
+    if(wf&&wt) ov.push(h);
+    r1+='<button type="button" class="row1'+(wf?' work':'')+(sel?' sel':'')+'" data-h="'+h+'" aria-label="'+hourLbl(h,0)+' in '+label(f)+'">'+hourLbl(h,0)+'</button>';
+    r2+='<button type="button" class="row2'+(wt?' work':'')+(sel?' sel':'')+'" data-h="'+h+'" aria-label="'+hourLbl(th,tm)+' in '+label(t)+'">'+hourLbl(th,tm)+'</button>';
+  }
+  tl.innerHTML=r1+r2;
+  var sc=tl.parentNode, sb=tl.querySelector('.sel'); if(sb&&sc.scrollWidth>sc.clientWidth) sc.scrollLeft=Math.max(0,sb.offsetLeft-sc.clientWidth/2);
+  if(ov.length){ var a=ov[0], b=ov[ov.length-1]+1;
+    $('overlap').textContent='Working hours overlap from '+longLbl(a)+' to '+longLbl(b%24)+', '+label(f)+' time.';
+  } else $('overlap').textContent='There is no overlap between 9 AM to 6 PM working hours on this date. Early mornings or late evenings work best.';
+}
+$('tl').addEventListener('click',function(e){ var b=e.target.closest('button[data-h]'); if(!b) return; var h=+b.dataset.h; timeI.value=String(h).padStart(2,'0')+':00'; calc(); });
+function setNow(){ var z=fromS.value, p=parts(z,new Date()); dateI.value=p.year+'-'+p.month+'-'+p.day; timeI.value=p.hour+':'+p.minute; }
+var save=A.debounce(function(){ A.setParams({from:fromS.value,to:toS.value,d:dateI.value,t:timeI.value}); },300);
+[fromS,toS,dateI,timeI].forEach(function(e){ e.addEventListener('change',calc); e.addEventListener('input',calc); });
+$('swap').addEventListener('click',function(){ var i=inputs(), inst=zonedToUtc(i.y,i.mo,i.d,i.h,i.mi,fromS.value), a=fromS.value; ensure(fromS,toS.value); ensure(toS,a); var p=parts(fromS.value,inst); dateI.value=p.year+'-'+p.month+'-'+p.day; timeI.value=p.hour+':'+p.minute; calc(); });
+$('now').addEventListener('click',function(){ setNow(); calc(); });
+document.querySelectorAll('[data-fmt]').forEach(function(b){ b.addEventListener('click',function(){ h12=b.dataset.fmt==='12'; document.querySelectorAll('[data-fmt]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');}); calc(); }); });
+function summary(){ return $('diff').textContent+' '+$('tOut').textContent+' in '+label(toS.value)+' on '+$('tDate').textContent+'.'; }
+$('shareBtn').addEventListener('click',function(){ A.share(summary()); });
+$('waBtn').addEventListener('click',function(){ A.whatsapp(summary()); });
+var q=A.params(), mine='Asia/Kolkata';
+try{ mine=Intl.DateTimeFormat().resolvedOptions().timeZone||mine; }catch(e){}
+mine=ALIAS[mine]||mine;
+if(!(q.from&&ensure(fromS,q.from))) ensure(fromS, valid(mine)?mine:'Asia/Kolkata');
+if(!(q.to&&ensure(toS,q.to))) ensure(toS, fromS.value==='Asia/Kolkata'?'America/New_York':'Asia/Kolkata');
+setNow();
+function realDate(v){ if(!/^\d{4}-\d{2}-\d{2}$/.test(v||'')) return false; var p=v.split('-').map(Number), d=new Date(Date.UTC(p[0],p[1]-1,p[2])); return d.getUTCFullYear()===p[0]&&d.getUTCMonth()===p[1]-1&&d.getUTCDate()===p[2]&&p[0]>1900&&p[0]<2200; }
+function realTime(v){ var m=/^(\d{2}):(\d{2})$/.exec(v||''); return !!m&&+m[1]<24&&+m[2]<60; }
+if(realDate(q.d)) dateI.value=q.d;
+if(realTime(q.t)) timeI.value=q.t;
+calc();
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Age Calculator: Exact Age in Years, Months &amp; Days</title>
+<meta name="description" content="Find your exact age in years, months and days, your age on any cut-off date for exam forms, and a countdown to your next birthday. Free and private.">
+<link rel="canonical" href="https://www.aibudgettool.com/age-calculator.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Age Calculator: Exact Age in Years, Months &amp; Days">
+<meta property="og:description" content="Find your exact age in years, months and days, your age on any cut-off date for exam forms, and a countdown to your next birthday. Free and private.">
+<meta property="og:url" content="https://www.aibudgettool.com/age-calculator.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-age.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Age calculator","url":"https://www.aibudgettool.com/age-calculator.html","description":"Find your exact age in years, months and days, your age on any cut-off date for exam forms, and a countdown to your next birthday. Free and private.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"AI Budget Tool","url":"https://www.aibudgettool.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.aibudgettool.com/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.aibudgettool.com/#calculators"},{"@type":"ListItem","position":3,"name":"Age calculator","item":"https://www.aibudgettool.com/age-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my exact age?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth. The calculator counts full years, then full months, then remaining days up to today, or up to any date you choose."}},{"@type":"Question","name":"How do I find my age on a specific date for an exam form?","acceptedAnswer":{"@type":"Answer","text":"Many exam and job forms ask for your age as on a cut-off date. Set the second date to that cut-off and the calculator shows your age on that day."}},{"@type":"Question","name":"How many days old am I?","acceptedAnswer":{"@type":"Answer","text":"The total days figure under your result shows exactly how many days have passed since you were born, counting leap years."}},{"@type":"Question","name":"What day of the week was I born?","acceptedAnswer":{"@type":"Answer","text":"It appears under the result as \"You were born on a\"."}},{"@type":"Question","name":"What if I was born on 29 February?","acceptedAnswer":{"@type":"Answer","text":"In years without 29 February, the calculator treats 28 February as your birthday when counting down to your next one."}},{"@type":"Question","name":"Is my date of birth stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculation runs in your browser. Nothing is sent to a server. Your date only appears in the page address so you can share or bookmark the result."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators" aria-current="page">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li aria-current="page">Age calculator</li></ol></nav><div class="wrap"><div class="intro"><h1>Age calculator</h1><p>Your exact age in years, months and days, plus a countdown to your next birthday. You can also check your age on any cut-off date.</p></div>
+
+<section class="instrument" aria-label="Age calculator">
+  <div class="controls">
+    <div class="field"><label for="dob">Date of birth</label><input id="dob" type="date" value="2000-01-15" max="9999-12-31"></div>
+    <div class="field"><div class="field-row"><label for="asof">Age on this date</label><button class="chip" type="button" id="today">Today</button></div>
+      <input id="asof" type="date"><span class="hint">Change this for exam or job forms that ask your age "as on" a cut-off date.</span></div>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div>
+      <div class="answer-label">Your age</div>
+      <div class="answer num"><span class="hl" id="aOut">–</span></div>
+      <div class="answer-sub" id="aSub"></div>
+    </div>
+    <div>
+      <div class="field-row"><span class="lbl" id="nbL">Next birthday</span><span class="hint" id="nbPct"></span></div>
+      <div style="height:10px;background:var(--rule-2);border-radius:6px;margin:8px 0 6px;overflow:hidden"><div id="nbBar" style="height:100%;width:0;background:var(--green);transition:width .6s"></div></div>
+      <div id="nbTxt" style="font-weight:600"></div>
+    </div>
+    <dl class="stats">
+      <div class="stat"><dt>Total months</dt><dd id="tM">–</dd></div>
+      <div class="stat"><dt>Total weeks</dt><dd id="tW">–</dd></div>
+      <div class="stat"><dt>Total days</dt><dd id="tD">–</dd></div>
+      <div class="stat"><dt>You were born on a</dt><dd id="bD">–</dd></div>
+    </dl>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" id="shareBtn">Share this result</button>
+      <button class="btn btn-wa" type="button" id="waBtn">Send on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="two-col">
+    <div class="prose">
+      <h2>How your age is counted</h2>
+      <p class="lede">Age is counted the way people say it: full years first, then full months, then the days left over.</p>
+      <ol class="steps">
+        <li>Count the whole years from your birthday to the chosen date.</li>
+        <li>Count the whole months after your last birthday.</li>
+        <li>Count the remaining days, using the real length of each month, including 28 or 29 days for February.</li>
+      </ol>
+      <p>Born on 29 February? In years without a 29th, this calculator counts your birthday on 28 February.</p>
+    </div>
+    <div class="example">
+      <h3>Example</h3>
+      <p>Born on <strong>15 August 1998</strong>. What is the age on <strong>1 January 2027</strong>?</p>
+      <p>15 Aug 1998 to 15 Aug 2026 is 28 years. 15 Aug to 15 Dec is 4 months. 15 Dec to 1 Jan is 17 days.</p>
+      <p>Age: <span class="hl"><strong>28 years, 4 months and 17 days</strong></span>.</p>
+      <p><a href="?dob=1998-08-15&amp;on=2027-01-01">Load this example</a></p>
+    </div>
+  </div>
+</section><section class="section" id="faq"><h2>Questions people ask</h2><div class="faq-list"><details class="faq"><summary>How do I calculate my exact age?</summary><p>Enter your date of birth. The calculator counts full years, then full months, then remaining days up to today, or up to any date you choose.</p></details><details class="faq"><summary>How do I find my age on a specific date for an exam form?</summary><p>Many exam and job forms ask for your age as on a cut-off date. Set the second date to that cut-off and the calculator shows your age on that day.</p></details><details class="faq"><summary>How many days old am I?</summary><p>The total days figure under your result shows exactly how many days have passed since you were born, counting leap years.</p></details><details class="faq"><summary>What day of the week was I born?</summary><p>It appears under the result as "You were born on a".</p></details><details class="faq"><summary>What if I was born on 29 February?</summary><p>In years without 29 February, the calculator treats 28 February as your birthday when counting down to your next one.</p></details><details class="faq"><summary>Is my date of birth stored anywhere?</summary><p>No. The calculation runs in your browser. Nothing is sent to a server. Your date only appears in the page address so you can share or bookmark the result.</p></details></div></section><section class="section"><h2>More free tools</h2><div class="related"><a href="/emi-calculator.html"><strong>EMI calculator</strong><span>What will my monthly loan payment be?</span></a><a href="/salary-calculator.html"><strong>Salary calculator</strong><span>What does my pay work out to per hour, month or year?</span></a><a href="/time-zone-converter.html"><strong>Time zone converter</strong><span>What time is it there when it's 7 PM here?</span></a><a href="/data-transfer-calculator.html"><strong>Data transfer calculator</strong><span>How long will this file take to download or upload?</span></a><a href="/unit-converter.html"><strong>Unit converter</strong><span>How many inches, pounds, MB or mph is that?</span></a></div></section></div></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
+      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
+<script>
+
+(function(){
+var A=ABT,$=function(i){return document.getElementById(i)};
+var dob=$('dob'),asof=$('asof');
+function pd(s){ var p=s.split('-'); if(p.length!==3) return null; var d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2])); return isNaN(d)?null:d; }
+function iso(d){ return d.toISOString().slice(0,10); }
+function dim(y,m){ return new Date(Date.UTC(y,m+1,0)).getUTCDate(); }
+function todayIso(){ var n=new Date(); return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0'); }
+function bday(y,b){ var m=b.getUTCMonth(), d=b.getUTCDate(); if(m===1&&d===29&&dim(y,1)===28) d=28; return new Date(Date.UTC(y,m,d)); }
+var WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+function pl(n,w){ return A.fmt(n,0)+' '+w+(n===1?'':'s'); }
+function calc(){
+  var b=pd(dob.value), e=pd(asof.value);
+  if(!b||!e){ $('aOut').textContent='–'; $('aSub').textContent='Pick your date of birth.'; return; }
+  if(b>e){ $('aOut').textContent='–'; $('aSub').textContent='The date of birth is after the "age on" date. Check both dates.'; return; }
+  var y=e.getUTCFullYear()-b.getUTCFullYear(), m=e.getUTCMonth()-b.getUTCMonth(), d=e.getUTCDate()-b.getUTCDate();
+  if(d<0){ m--; var pm=e.getUTCMonth()-1, py=e.getUTCFullYear(); if(pm<0){pm=11;py--;} d+=dim(py,pm); }
+  if(m<0){ y--; m+=12; }
+  $('aOut').textContent=pl(y,'year');
+  $('aSub').textContent=pl(m,'month')+' and '+pl(d,'day');
+  var days=Math.round((e-b)/864e5);
+  $('tM').textContent=A.fmt(y*12+m,0); $('tW').textContent=A.fmt(Math.floor(days/7),0); $('tD').textContent=A.fmt(days,0);
+  $('bD').textContent=WD[b.getUTCDay()];
+  var nb=bday(e.getUTCFullYear(),b); if(nb<=e) nb=bday(e.getUTCFullYear()+1,b);
+  var last=bday(nb.getUTCFullYear()-1,b); if(last<b) last=b;
+  var left=Math.round((nb-e)/864e5), span=Math.round((nb-last)/864e5), pct=Math.round((span-left)/span*100);
+  var isToday=(e.getUTCMonth()===b.getUTCMonth()&&e.getUTCDate()===b.getUTCDate()&&y>0);
+  $('nbL').textContent=isToday?'Happy birthday!':'Next birthday';
+  $('nbTxt').textContent=isToday?'You turn '+y+' today.':'In '+pl(left,'day')+', on '+WD[nb.getUTCDay()]+' '+nb.getUTCDate()+' '+nb.toLocaleString('en-GB',{month:'long',timeZone:'UTC'})+' '+nb.getUTCFullYear()+'. You will turn '+(y+1)+'.';
+  $('nbBar').style.width=(isToday?100:pct)+'%'; $('nbPct').textContent=isToday?'':pct+'% of the way there';
+  save();
+}
+var save=A.debounce(function(){ A.setParams({dob:dob.value, on: asof.value===todayIso()?'':asof.value}); },300);
+[dob,asof].forEach(function(x){x.addEventListener('input',calc);x.addEventListener('change',calc);});
+$('today').addEventListener('click',function(){ asof.value=todayIso(); calc(); });
+function summary(){ return 'I am '+$('aOut').textContent+', '+$('aSub').textContent+' old. Next birthday: '+$('nbTxt').textContent; }
+$('shareBtn').addEventListener('click',function(){A.share(summary());});
+$('waBtn').addEventListener('click',function(){A.whatsapp(summary());});
+var q=A.params(); asof.value=todayIso();
+if(q.dob&&pd(q.dob)) dob.value=q.dob; if(q.on&&pd(q.on)) asof.value=q.on;
+calc();
+})();
+
+</script>
+</body>
+</html>

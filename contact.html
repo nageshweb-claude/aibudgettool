@@ -1,139 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us — AI Budget Tool</title>
-<meta name="description" content="Contact AI Budget Tool. Send us feedback, bug reports, or suggestions. We reply within 24-48 hours.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#faf9ff;--bg2:#f3f1ff;--card:#ffffff;--border:#e8e4f7;
-  --accent:#7c3aed;--accent2:#4f46e5;--accent-light:#ede9fe;
-  --text:#1e1b2e;--text-muted:#6b6882;--text-light:#9994b0;
-  --radius:14px;--shadow:0 1px 3px rgba(124,58,237,0.06),0 4px 16px rgba(124,58,237,0.06);
-}
-body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:var(--text);overflow-x:hidden;}
-.container{max-width:680px;margin:0 auto;padding:0 16px 60px;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px;border-bottom:1px solid var(--border);}
-.logo{font-size:15px;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.01em;}
-.nav-links{display:flex;gap:20px;}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--accent);}
-.page-hero{text-align:center;padding:40px 0 28px;}
-.page-hero h1{font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:-.02em;}
-.page-hero p{font-size:14px;color:var(--text-muted);}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:16px;box-shadow:var(--shadow);}
-.section-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
-.reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
-.reason{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center;}
-.reason-icon{font-size:20px;margin-bottom:6px;}
-.reason-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;}
-.reason-desc{font-size:11px;color:var(--text-muted);}
-label{display:block;font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:5px;letter-spacing:.02em;text-transform:uppercase;}
-input,textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--text);background:var(--bg);outline:none;transition:border-color .2s;margin-bottom:14px;}
-input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
-textarea{resize:vertical;min-height:120px;}
-.btn{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:9px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,transform .1s;}
-.btn:hover{background:var(--accent2);}
-.btn:active{transform:scale(0.99);}
-.success-msg{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px 18px;font-size:13.5px;color:#166534;line-height:1.7;margin-top:12px;text-align:center;}
-.error-msg{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;font-size:13px;color:#dc2626;margin-top:10px;}
-footer{text-align:center;padding:24px 0 0;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:12px;}
-footer a{color:var(--text-muted);text-decoration:none;margin:0 10px;transition:color .2s;}
-footer a:hover{color:var(--accent);}
-.footer-copy{margin-top:8px;font-size:11px;color:var(--text-light);}
-@media(max-width:520px){.reasons{grid-template-columns:1fr;}.card{padding:16px 18px;}}
-</style>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact AI Budget Tool: Report a Bug or Suggest a Tool</title>
+<meta name="description" content="Contact AI Budget Tool to report a mistake, suggest a new calculator or AI guide, or send feedback. We usually reply within 2 working days.">
+<link rel="canonical" href="https://www.aibudgettool.com/contact.html">
+
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Budget Tool">
+<meta property="og:title" content="Contact AI Budget Tool: Report a Bug or Suggest a Tool">
+<meta property="og:description" content="Contact AI Budget Tool to report a mistake, suggest a new calculator or AI guide, or send feedback. We usually reply within 2 working days.">
+<meta property="og:url" content="https://www.aibudgettool.com/contact.html">
+<meta property="og:image" content="https://www.aibudgettool.com/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="/site.css?v=20261121">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact us","url":"https://www.aibudgettool.com/contact.html","description":"Contact AI Budget Tool to report a mistake, suggest a new calculator or AI guide, or send feedback. We usually reply within 2 working days."}</script>
 </head>
 <body>
-<div class="container">
-  <nav>
-    <a href="index.html" class="logo">✦ AI Budget Tool</a>
-    <div class="nav-links">
-      <a href="index.html">Calculator</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <h1>Contact Us</h1>
-    <p>We value your feedback, suggestions and questions. We typically respond within 24–48 hours.</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool <small>calculators and AI guides</small></span></a>
+    <button class="nav-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/#calculators">Calculators</a>
+      <a href="/ai-hub.html">AI hub</a>
+      <a href="/blog.html">Guides</a>
+      <a href="/about.html">About</a>
+    </nav>
   </div>
+</header>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Contact us</li></ol></nav>
+<article class="wrap article">
+  <h1>Contact us</h1>
+  <p class="a-meta">Questions, corrections and ideas are all welcome.</p>
+  
+<div class="lead">Found a wrong number, a broken page or an outdated AI fact? Want a new calculator? Send a message and we usually reply within 2 working days.</div>
+<form id="contactForm" class="cform" action="https://formspree.io/f/xeevkdlz" method="POST" novalidate>
+  <div class="field"><label for="name">Your name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required><span class="hint">Only used to reply to you.</span></div>
+  <div class="field"><label for="topic">Topic</label><select id="topic" name="topic"><option>Report a mistake or bug</option><option>Suggest a calculator or guide</option><option>Feedback</option><option>Something else</option></select></div>
+  <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
+  <button type="submit" class="btn btn-primary" id="submitBtn">Send message</button>
+  <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+</form>
+<p class="hint" style="margin-top:18px">Messages are delivered through Formspree. See the <a href="/privacy.html">privacy policy</a> for how they are handled.</p>
 
-  <div class="card">
-    <div class="reasons">
-      <div class="reason">
-        <div class="reason-icon">💬</div>
-        <div class="reason-title">Feedback & Suggestions</div>
-        <div class="reason-desc">Help us improve the tool with your ideas</div>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" style="color:#fff"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F6C945" stroke-width="2.4" stroke-linecap="round"><path d="M6 8h5M8.5 5.5v5M14 8h4.5M6 16.5h5M14 14.5h4.5M14 18h4.5"/></svg></span><span>AI Budget Tool</span></a>
+        <p style="margin-top:14px;max-width:34ch">Free calculators and plain-English AI guides. Everything runs in your browser, with no sign-up.</p>
       </div>
-      <div class="reason">
-        <div class="reason-icon">🐛</div>
-        <div class="reason-title">Report a Bug</div>
-        <div class="reason-desc">Found something broken? Let us know</div>
-      </div>
+      <div><h2>Calculators</h2><ul><li><a href="/emi-calculator.html">EMI calculator</a></li><li><a href="/salary-calculator.html">Salary calculator</a></li><li><a href="/time-zone-converter.html">Time zone converter</a></li><li><a href="/age-calculator.html">Age calculator</a></li><li><a href="/data-transfer-calculator.html">Data transfer calculator</a></li><li><a href="/unit-converter.html">Unit converter</a></li></ul></div>
+      <div><h2>AI hub</h2><ul>
+        <li><a href="/ai-hub.html#wheel">Daily prompt wheel</a></li>
+        <li><a href="/ai-hub.html#quiz">AI knowledge quiz</a></li>
+        <li><a href="/ai-hub.html#learn">5-week AI course</a></li>
+        <li><a href="/ai-hub.html#pe">Prompt engineering</a></li>
+        <li><a href="/ai-hub.html#budget">Budget planner</a></li>
+        <li><a href="/ai-hub.html#pdf">PDF and Word converter</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/blog.html">All guides</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
     </div>
-
-    <div class="section-label">Send Us a Message</div>
-
-    <form id="contactForm" action="https://formspree.io/f/xeevkdlz" method="POST">
-      <label for="name">Name *</label>
-      <input type="text" id="name" name="name" placeholder="Your name" required>
-
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" placeholder="your@email.com" required>
-
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
-
-      <button type="submit" class="btn" id="submitBtn">Send Message</button>
-      <div class="error-msg" id="errorMsg">Something went wrong. Please try again in a moment.</div>
-    </form>
-
-    <div class="success-msg" id="successMsg">
-      ✅ <strong>Message sent successfully!</strong><br>
-      Thank you for reaching out. We'll get back to you within 24–48 hours.
-    </div>
+    <p class="foot-note">© <span id="year">2026</span> AI Budget Tool. Results are estimates for planning. Check loan and salary figures with your bank or employer before you decide.</p>
   </div>
-
-  <footer>
-    <div>
-      <a href="index.html">Calculator</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </div>
-    <div class="footer-copy">© 2026 AI Budget Tool · Free forever · Works in 50+ currencies worldwide</div>
-  </footer>
-</div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/site.js?v=20261121"></script>
 <script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+
+document.getElementById('contactForm').addEventListener('submit', async function(e){
   e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  const err = document.getElementById('errorMsg');
-  const suc = document.getElementById('successMsg');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  err.style.display = 'none';
-  try {
-    const res = await fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      this.style.display = 'none';
-      suc.style.display = 'block';
-    } else {
-      throw new Error('failed');
-    }
-  } catch {
-    err.style.display = 'block';
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
+  var f=this, btn=document.getElementById('submitBtn'), msg=document.getElementById('formMsg');
+  if(!f.checkValidity()){ msg.textContent='Fill in your name, a valid email and a message, then send again.'; msg.className='form-msg err'; f.reportValidity(); return; }
+  btn.disabled=true; btn.textContent='Sending…'; msg.textContent=''; msg.className='form-msg';
+  try{
+    var res=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});
+    if(!res.ok) throw new Error('status '+res.status);
+    f.reset(); btn.textContent='Sent'; msg.textContent='Message sent. Thanks, we will reply by email.'; msg.className='form-msg ok';
+  }catch(err){
+    btn.disabled=false; btn.textContent='Send message';
+    msg.textContent='The message did not send. Check your connection and try again in a minute.'; msg.className='form-msg err';
   }
 });
 </script>
