@@ -43,7 +43,7 @@ p{margin:0 0 1em}
 .num{font-variant-numeric:tabular-nums}
 
 /* highlighter: the signature */
-.hl{background:linear-gradient(transparent 52%,var(--mark) 52%,var(--mark) 92%,transparent 92%);padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl{background:var(--mark);border-radius:.16em;padding:0 .16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
 /* header */
 .site-head{position:sticky;top:0;z-index:50;background:rgba(243,246,242,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--rule)}
@@ -118,7 +118,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 /* readout */
 .answer-label{font-size:.98rem;color:var(--ink-2);font-weight:500}
 .answer{font-family:var(--font-d);font-weight:800;font-size:clamp(2.6rem,6.5vw,4.4rem);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:6px 0 4px;word-break:break-word}
-.answer .hl{padding:0 .06em}
+.answer .hl{display:inline-block;line-height:1.08;padding:.03em .14em .01em;margin:0 0 .12em -.14em;border-radius:.14em}
 .answer-sub{color:var(--ink-2);font-size:1rem}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--rule-2)}
 .stat{padding:14px 16px 4px 0}
